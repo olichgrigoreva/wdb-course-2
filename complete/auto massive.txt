@@ -1,0 +1,37 @@
+<?php
+/*Есть массив данных, состоящий из 5 элементов. Каждый элемент является ассоциативным массивом. В ассоциативном массиве лежат данные автомобиля (модель, номер, пробег).
+Требуется вывести на экран данные автомобилей: один с наименьшим и один с наибольшим пробегом, а также какой процент их суммарный пробег составляет от общего пробега всех машин вместе взятых.*/
+	
+$auto = [
+                ["model"=>"Model_a","number"=>"ffff","mileage"=>"254555"],
+                ["model"=>"Model_b","number"=>"gggg","mileage"=>"1254855"],
+                ["model"=>"Model_c","number"=>"cccc","mileage"=>"1054548"],
+                ["model"=>"Model_d","number"=>"dddd","mileage"=>"42455"],
+                ["model"=>"Model_f","number"=>"eeee","mileage"=>"28555"],
+         ];
+
+$mileage_min = $auto[0]["mileage"];
+$mileage_max = $auto[0]["mileage"];
+$target_auto_whith_min_mileage = -1;
+$target_auto_whith_max_mileage = -1;
+$mileage_of_all_auto = 0;
+
+for($i=0; $i < count($auto); $i++){
+	$mileage_of_all_auto = $mileage_of_all_auto + $auto[$i]["mileage"];
+		if($mileage_min > $auto[$i]["mileage"]){
+			$mileage_min = $auto[$i]["mileage"];
+			$target_auto_whith_min_mileage = $i;
+		}
+		
+		if($mileage_max < $auto[$i]["mileage"]){
+			$mileage_max = $auto[$i]["mileage"];
+			$target_auto_whith_max_mileage = $i;
+		}
+}
+
+echo 'Машина с минимальным пробегом: ', $auto[$target_auto_whith_min_mileage]["model"];
+echo '<br/>Машина с максимальным пробегом: ', $auto[$target_auto_whith_max_mileage]["model"];
+
+echo "<br/>Процент суммарного пробега найденых машин от общего пробега всех машин: ", ($auto[$target_auto_whith_min_mileage]["mileage"] + $auto[$target_auto_whith_max_mileage]["mileage"])*100 / $mileage_of_all_auto;
+
+?>

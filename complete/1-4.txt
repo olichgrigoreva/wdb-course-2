@@ -1,0 +1,155 @@
+____________________________________________________________
+1.
+
+$a = $REQUEST["a"];
+$b = $REQUEST["b"];
+$c = $REQUEST["c"];
+
+function calculate_average($a, $b, $c){
+	$average = ($a+$b+$c)/3;
+	return $average;
+}
+
+function calculate_residual($a, $b, $c){
+	$residual = 2*($a+$c)-3*$b;
+	return $residual;
+}
+
+$average = calculate_average($a, $b, $c);
+echo $average;
+
+$residual = calculate_residual($a, $b, $c);
+echo $residual;
+
+
+___________________________________________________________
+2.
+
+//координаты левого нижнего угла и длины сторон первого прямоугольника
+$x1 = $REQUEST["x1"];
+$y1 = $REQUEST["y1"];
+$a1 = $REQUEST["a1"]; // длина по оси x
+$b1 = $REQUEST["b1"]; // длина по оси y
+
+//координаты левого нижнего угла и длины второго прямоугольника
+$x2 = $REQUEST["x2"];
+$y2 = $REQUEST["y2"];
+$a2 = $REQUEST["a2"];
+$b2 = $REQUEST["b2"];
+
+function calculate_max_coordinate($coordinateMin, $coordinate_difference, $length1, $length2){
+	if($coordinate_difference > $length1){
+	$max = $coordinate_difference + $length2;
+	}
+
+	else(){
+		if($length1 > $coordinate_difference + $length2){
+		$max = $coordinateMin + $length1;
+		}
+		else(){
+		$max = $coordinate_difference + $length2;
+		}
+	}
+	return $max;
+}
+
+
+//Вычисление X
+if($x1=$x2){
+	$Xmin = $x1;
+
+	if($a1>a2$){
+		$Xmax = $Xmin+$a1;
+	}
+	else(){
+		$Xmax = $Xmin+$a2;
+	}
+
+	echo $Xmin;
+	echo $Xmax;
+}
+
+
+if($x1<$x2){
+	$coordinateMin = $x1;
+	$coordinate_difference = $x2-x1;
+	$length1 = $a1;
+	$length2 = $a2;
+
+	echo $Xmin = $coordinateMin;
+	echo $Xmax = calculate_max_coordinate($coordinateMin, $coordinate_difference, $length1, $length2);
+	}
+
+else(){
+	$coordinateMin = $x2;
+	$coordinate_difference = $x1-x2;
+	$length1 = $a2;
+	$length2 = $a1;
+
+	echo $Xmin = $coordinateMin;
+	echo $Xmax = calculate_max_coordinate($coordinateMin, $coordinate_difference, $length1, $length2);	
+	}
+
+//Вычисление Y
+if($y1=$y2){
+	$Ymin = $y1;
+
+	if($b1>b2$){
+		$Xmax = $Xmin+$b1;
+	}
+	else(){
+		$Ymax = $Ymin+$b2;
+	}
+
+	echo $Ymin;
+	echo $Ymax;
+}
+
+if($y1<$y2){
+	$coordinateMin = $y1;
+	$coordinate_difference = $y2-y1;
+	$length1 = $b1;
+	$length2 = $b2;
+
+	echo $Ymin = $coordinateMin;
+	echo $Ymax = calculate_max_coordinate($coordinateMin, $coordinate_difference, $length1, $length2);
+	}
+
+else(){
+	$coordinateMin = $y2;
+	$coordinate_difference = $y1-y2;
+	$length1 = $b2;
+	$length2 = $b1;
+
+	echo $Ymin = $coordinateMin;
+	echo $Ymax = calculate_max_coordinate($coordinateMin, $coordinate_difference, $length1, $length2);	
+	}
+
+//Вывод координат точек
+echo "Координаты первой точки Xmin Ymin";
+echo "Координаты второй точки Xmax Ymax";
+
+_________________________________________________________
+3.
+
+$k = 15;
+$a1 = 1;
+$d = 1;
+$Sn = 0;
+
+for($i=1; $Sn < $k; $i++) {
+	$an = $a1 + $d*($i-1);
+	$Sn = ($a1 + $an)*$i/2;
+}
+
+if($k==$Sn){
+echo 'Sn: ',$Sn,'<br>';
+echo 'Величина an-го члена прогресии: ',$an,'<br>';	
+}
+else{
+echo 'Решений нет';
+}
+
+_________________________________________________________
+4. Найти количество чисел в массиве, которые делятся на 3, но не делятся на 7. [ДОПОЛНИТЕЛЬНО]
+

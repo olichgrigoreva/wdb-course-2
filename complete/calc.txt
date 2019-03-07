@@ -1,0 +1,25 @@
+$a = $REQUEST["a"];
+$b = $REQUEST["b"];
+$op = $REQUEST["+-*/"];
+
+if($op="+"){ echo $a+$b;
+}
+
+if($op="-"){ echo $a-$b;
+}
+
+if($op="*"){ echo $a*$b;
+}
+
+if($op="/"){
+	if($b=0){
+	echo "на нуль делить нельзя!";	
+	}
+
+	else(){ echo $a/$b;	
+	}
+}
+
+else(){
+	echo "не арифметическое действие!";	
+}

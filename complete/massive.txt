@@ -1,0 +1,151 @@
+<?php
+$person_list = [
+                ["lastname"=>"a","name"=>"f","age"=>"25","weight"=>"60"],
+                ["lastname"=>"b","name"=>"g","age"=>"15","weight"=>"38"],
+                ["lastname"=>"c","name"=>"h","age"=>"10","weight"=>"22"],
+                ["lastname"=>"d","name"=>"i","age"=>"45","weight"=>"55"],
+                ["lastname"=>"e","name"=>"j","age"=>"28","weight"=>"13"],
+                ];
+
+$person_age_0=$person_list[0]["age"];
+$person_age_1=$person_list[1]["age"];
+$person_age_2=$person_list[2]["age"];
+$person_age_3=$person_list[3]["age"];
+$person_age_4=$person_list[4]["age"];
+
+if ($person_age_0<$person_age_1){
+    
+    if ($person_age_0<$person_age_2){
+        
+        if ($person_age_0<$person_age_3){
+            if ($person_age_0<$person_age_4){
+                $youngest_person_weight=$person_list[0]["weight"];
+                echo "самый молодой: ", $person_list[0]["lastname"];
+                echo $person_list[0]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+            
+        }
+        
+        else {
+            if ($person_age_3<$person_age_4){
+                $youngest_person_weight=$person_list[3]["weight"];
+                echo "самый молодой: ", $person_list[3]["lastname"];
+                echo $person_list[3]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+                echo $person_list[4]["name"];
+            }
+            
+        }
+    }
+    else {
+        if ($person_age_2<$person_age_3){
+            if ($person_age_2<$person_age_4){
+                $youngest_person_weight=$person_list[2]["weight"];
+                echo "самый молодой: ", $person_list[2]["lastname"];
+                echo $person_list[2]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+        }
+        
+        else {
+            if ($person_age_3<$person_age_4){
+                $youngest_person_weight=$person_list[3]["weight"];
+                echo "самый молодой: ", $person_list[3]["lastname"];
+                echo $person_list[3]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+        }
+    }
+    
+}
+else {
+    
+    if ($person_age_1<$person_age_2){
+        
+        if ($person_age_1<$person_age_3){
+            if ($person_age_1<$person_age_4){
+                $youngest_person_weight=$person_list[1]["weight"];
+                echo "самый молодой: ", $person_list[1]["lastname"];
+                echo $person_list[1]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+            
+        }
+        
+        else {
+            if ($person_age_3<$person_age_4){
+                $youngest_person_weight=$person_list[3]["weight"];
+                echo "самый молодой: ", $person_list[3]["lastname"];
+                echo $person_list[3]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+            
+        }
+    }
+    else {
+        if ($person_age_2<$person_age_3){
+            if ($person_age_2<$person_age_4){
+                $youngest_person_weight=$person_list[2]["weight"];
+                echo "самый молодой: ", $person_list[2]["lastname"];
+                echo $person_list[2]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+        }
+        
+        else {
+            if ($person_age_3<$person_age_4){
+                $youngest_person_weight=$person_list[3]["weight"];
+                echo "самый молодой: ", $person_list[3]["lastname"];
+                echo $person_list[3]["name"];
+            }
+            else {
+            $youngest_person_weight=$person_list[4]["weight"];
+            echo "самый молодой: ", $person_list[4]["lastname"];
+            echo $person_list[4]["name"];
+            }
+        }
+    }
+}
+
+echo ' <br/> вес: ', $youngest_person_weight;
+
+$person_weight_0=$person_list[0]["weight"];
+$person_weight_1=$person_list[1]["weight"];
+$person_weight_2=$person_list[2]["weight"];
+$person_weight_3=$person_list[3]["weight"];
+$person_weight_4=$person_list[4]["weight"];
+
+$weight_sum=$person_weight_0+$person_weight_1+$person_weight_2+$person_weight_3+$person_weight_4;
+
+echo ' <br/> процент: ', $percent_of_weight=100*$youngest_person_weight/$weight_sum;
+
+?>
+
