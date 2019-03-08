@@ -35,8 +35,8 @@
     </style>
     <script type="text/javascript">
         function calculate_result() {
-          let first_digit = document.querySelector(".first_digit").value;
-          let second_digit = document.querySelector(".second_digit").value;
+          let first_digit = +document.querySelector(".first_digit").value;
+          let second_digit = +document.querySelector(".second_digit").value;
           let operation = document.querySelector("select").value;
 
           if (operation == "+"){
