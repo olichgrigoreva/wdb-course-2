@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Калькулятор</title>
+    <script type="text/javascript">
+      function calculate() {
+        let operand_1=Number(document.querySelector(".operand_1").value);
+        let operand_2=Number(document.querySelector(".operand_2").value);
+        let operator_1=document.querySelector(".operator_1").value;
+        if(document.querySelector(".operand_1").value=="" || document.querySelector(".operand_2").value=="") {
+            document.querySelector(".result").innerHTML="введите оба значения";
+            return;
+        }
+        if(document.querySelector(".operand_2").value=="0" && operator_1=="/"){
+          document.querySelector(".result").innerHTML="введите второе число отличное от 0";
+          return;
+        }
+        if(operator_1=="+") {
+          document.querySelector(".result").innerHTML=operand_1+operand_2;
+        }
+        if(operator_1=="-") {
+          document.querySelector(".result").innerHTML=operand_1-operand_2;
+        }
+        if(operator_1=="*") {
+          document.querySelector(".result").innerHTML=operand_1*operand_2;
+        }
+        if(operator_1=="/") {
+          document.querySelector(".result").innerHTML=operand_1/operand_2;
+        }
+      }
+      function reset() {
+        document.querySelector(".operand_1").value="";
+        document.querySelector(".operand_2").value="";
+        document.querySelector(".result").innerHTML="";
+      }
+    </script>
+    <style media="screen">
+      .text_1 {
+        display: flex;
+        justify-content: center;
+        font-size: 40px
+      }
+      .text_2 {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+      }
+      .button_1 {
+        border-radius: 100px;
+        height: 50px;
+        width: 200px;
+        font-size: 28px;
+      }
+      .select_1 {
+        height: 40px;
+        width: 85px;
+        font-size: 28px;
+        text-align: center;
+      }
+      .input_1 {
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        font-size: 20px;
+      }
+      .centr_1 {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text_1">
+      Калькулятор
+    </div>
+    <br>
+    <div class="centr_1">
+      <input type="text" class="operand_1 input_1" value="">
+      <select class="operator_1 select_1" name="">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" class="operand_2 input_1" value="">
+      <br><br>
+    </div>
+    <div class="centr_1">
+      <button class="button_1" onclick="calculate()">Вычислить</button>
+      <button class="button_1" onclick="reset()">Очистить</button>
+    </div>
+    <br><br>
+    <div class="text_2">
+      Результат:
+      <output class="result"></output>
+    </div>
+  </body>
+</html>
