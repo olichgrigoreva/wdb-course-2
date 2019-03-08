@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Main page</title>
+    <style>
+      body {
+        background-color: bisque;
+      }
+      input {
+        margin: 5px;
+        padding: 3px;
+      }
+      select {
+        margin: 5px;
+        padding: 3px;
+      }
+      section  {
+        font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        overflow: hidden;
+        width: 240px;
+      }
+      fieldset {
+        border-radius: 5px;
+      }
+      h1 {
+        margin: 5px;
+      }
+      .action {
+        margin: 5px;
+        padding: 3px;
+      }
+
+
+    </style>
+    <script type="text/javascript">
+        function calculate_result() {
+          let first_digit = document.querySelector(".first_digit").value;
+          let second_digit = document.querySelector(".second_digit").value;
+          let operation = document.querySelector("select").value;
+
+          if (operation == "+"){
+            result = first_digit+second_digit;
+          }
+          if (operation == "-"){
+           result = first_digit-second_digit;
+          }
+          if (operation == "*"){
+            result = first_digit*second_digit;
+          }
+          if (operation == "/"){
+            if (second_digit == 0){
+              alert('Invalid operation with zero');
+            }
+            else{
+              result = first_digit/second_digit;
+            }
+          }
+          document.querySelector("output").innerHTML = result;
+        }
+
+    </script>
+  </head>
+
+  <body>
+    <header>    </header>
+    
+    <section>
+       <fieldset class="input_fields">
+          <legend><h1>Simple calc</h1></legend>
+          <div>
+            <input type="number" class="first_digit" name="Input A" placeholder="Input A">
+          </div>
+          <div>
+            <select name="Operation" Operation>
+                <option value="">Select operation</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+          </div>
+          <div>
+            <input type="number" class="second_digit" name="Input B" placeholder="Input B">
+          </div>
+      </fieldset>
+      <button onclick="calculate_result()" name="calculate_button">Calculate result</button>
+      
+      <fieldset>
+        <legend><h2>Calculated result</h2></legend>
+        <output name="result">0</output>
+      </fieldset>
+    </section>
+
+    <footer>    </footer>
+  </body>
