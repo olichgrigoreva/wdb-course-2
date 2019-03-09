@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Calculator</title>
+        <script type="text/javascript">
+            function Calculate() {
+              let operand1=Number(document.querySelector(".operand1").value);
+              let operand2=Number(document.querySelector(".operand2").value);
+              let operation=document.querySelector(".select").value;
+              if (operation=="+"){
+                  result=operand1+operand2;
+              }
+              else if (operation=="-"){
+                  result=operand1-operand2;
+              }
+              else if (operation=="*"){
+                  result=operand1*operand2
+              }
+              else if(operation=="/"){
+                  if(operand2==0){
+                      result="на 0 делить нельзя";
+                  }
+                  else result=operand1/operand2;
+              }
+              document.querySelector(".result").innerHTML = result;
+            } 
+        </script>
+        <style>
+            fieldset {
+                position: absolute;
+                border-radius: 5%;
+                border-color: chartreuse;
+                border-width: 10px;
+                font-size:30;
+                width: 30%;
+                background-color: coral;
+                padding: 15px;
+                top: 100px;
+                left:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend><u>Калькулятор</u></legend>
+             <input style="font-size: 15px; background-color: mediumspringgreen;" type="number" class="operand1"/><br>
+             <strong> Выбери операцию</strong>
+             <select class="select">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br>
+            <input style="font-size: 15px; background-color: mediumspringgreen;" type="number" class="operand2"/>
+            <button style="font-size: 20px; background-color: yellowgreen;" onclick="Calculate ()">
+                Вычислить
+            </button>
+            <p><u>Результат</u><br></p>
+            <output type="number" class="result"></output>
+        </fieldset>
+    </body>
+</html>
