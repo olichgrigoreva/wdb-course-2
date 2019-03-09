@@ -1,5 +1,6 @@
 <html>
 	<head>
+	<meta charset="utf-8">
 		<script>
 			function calcutator(){
 				function plus(){
@@ -30,12 +31,12 @@
 		</script>
 	</head>
 	<body>
-	<p>Первое число: <input type="number" id="num1"></p>
-	<p>Второе число: <input type="number" id="num2"></p>
-	<button oneclick="plus()">Сложить</button>
-	<button oneclick="minus()">Вычесть</button>
-	<button oneclick="multiplication">Умножить</button>
-	<button oneclick="division">Разделить</button>
+	<p>ГЏГҐГ°ГўГ®ГҐ Г·ГЁГ±Г«Г®: <input type="number" id="num1"></p>
+	<p>Г‚ГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: <input type="number" id="num2"></p>
+	<button oneclick="plus()">Г‘Г«Г®Г¦ГЁГІГј</button>
+	<button oneclick="minus()">Г‚Г»Г·ГҐГ±ГІГј</button>
+	<button oneclick="multiplication">Г“Г¬Г­Г®Г¦ГЁГІГј</button>
+	<button oneclick="division">ГђГ Г§Г¤ГҐГ«ГЁГІГј</button>
 	<p><div class="result"></div></p>
 	</body>
 </html>	
