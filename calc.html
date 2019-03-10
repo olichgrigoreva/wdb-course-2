@@ -35,7 +35,16 @@
         document.querySelector(".result").innerHTML="Результат.";
       }
     </script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css">
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.js">  </script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js">  </script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js">  </script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js">  </script>
     <style media="screen">
       .width_1 {
         width: 500px;
@@ -58,10 +67,10 @@
   </div>
   <div class="row no-gutters">
     <div class="col-5">
-      <input type="text" class="operand_1 input_1 form-control" value="" placeholder="Первое число">
+      <input type="text" class="operand_1 input_1 form-control" value="" placeholder="Первое число" data-placement title="введите первое число">
     </div>
     <div class="col-2">
-      <select class="operator_1 select_1 custom-select" name="">
+      <select class="operator_1 select_1 custom-select" name="" data-placement title="выберите операцию">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
@@ -69,20 +78,20 @@
       </select>
     </div>
     <div class="col-5">
-      <input type="text" class="operand_2 input_1 form-control" value="" placeholder="Второе число">
+      <input type="text" class="operand_2 input_1 form-control" value="" placeholder="Второе число" data-placement title="введите второе число">
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <div class="alert alert-primary result centr_1" role="alert">
+      <div class="alert alert-primary result centr_1" role="alert" data-placement title="поле с результатом">
         Результат.
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col centr_1">
-      <button class="btn btn-success" onclick="calculate()">Вычислить</button>
-      <button class="btn btn-danger" onclick="reset()">Очистить</button>
+      <button class="btn btn-success" onclick="calculate()" data-placement title="нажмите чтобы посчитать">Вычислить</button>
+      <button class="btn btn-danger" onclick="reset()" data-placement title="нажмите чтобы очистить поля">Очистить</button>
     </div>
   </div>
 </div>
