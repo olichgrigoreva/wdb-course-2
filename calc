@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8" />
+ <title>Калькулятор</title>
+ <script>
+  function Calculate(){
+   var number1 = document.getElementById('number1').value;
+   var action = document.getElementById('action').value;
+   var number2 = document.getElementById('number2').value;
+   if (action="+") {
+    var result = number1 + number2;
+   }
+   else if (action="-") {
+    var result = number1 - number2;
+   }
+   else if (action="*") {
+    var result = number1 * number2;
+   }
+   else {
+    var result = number1 / number2;
+   }
+   document.getElementById('result').innerHTML = 'Результат: ' + result;
+  }
+ </script>
+ </head>
+ <body>
+  <div>
+   <input type="number" id="number1"> <br>
+   <select id="action">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+   </select> <br>
+   <input type="number" id="number2"> <br>
+   <button onclick="Calculate();">Расчет</button> <br>
+   <div style="font-weight:bold" id="result"></div>
+  </div>
+ </body>
+</html>
