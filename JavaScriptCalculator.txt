@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 	<meta charset="utf-8">
 		<script>
@@ -31,12 +31,12 @@
 		</script>
 	</head>
 	<body>
-	<p>Ïåðâîå ÷èñëî: <input type="number" id="num1"></p>
-	<p>Âòîðîå ÷èñëî: <input type="number" id="num2"></p>
-	<button oneclick="plus()">Ñëîæèòü</button>
-	<button oneclick="minus()">Âû÷åñòü</button>
-	<button oneclick="multiplication">Óìíîæèòü</button>
-	<button oneclick="division">Ðàçäåëèòü</button>
+	<p>Первое число: <input type="number" id="num1"></p>
+	<p>Второе число: <input type="number" id="num2"></p>
+	<button oneclick="plus()">Сложение</button>
+	<button oneclick="minus()">Вычитание</button>
+	<button oneclick="multiplication">Умножение</button>
+	<button oneclick="division">Деление</button>
 	<p><div class="result"></div></p>
 	</body>
 </html>	
