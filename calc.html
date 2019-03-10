@@ -32,68 +32,59 @@
       function reset() {
         document.querySelector(".operand_1").value="";
         document.querySelector(".operand_2").value="";
-        document.querySelector(".result").innerHTML="";
+        document.querySelector(".result").innerHTML="Результат.";
       }
     </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style media="screen">
+      .width_1 {
+        width: 500px;
+      }
       .text_1 {
-        display: flex;
-        justify-content: center;
-        font-size: 40px
-      }
-      .text_2 {
-        display: flex;
-        justify-content: center;
-        font-size: 25px;
-      }
-      .button_1 {
-        border-radius: 100px;
-        height: 50px;
-        width: 200px;
-        font-size: 28px;
-      }
-      .select_1 {
-        height: 40px;
-        width: 85px;
-        font-size: 28px;
-        text-align: center;
-      }
-      .input_1 {
-        border-radius: 10px;
-        height: 40px;
-        width: 150px;
-        font-size: 20px;
+        font-size: 30px;
+        color: #208ee8;
       }
       .centr_1 {
-        display: flex;
-        justify-content: center;
+        text-align: center;
       }
     </style>
   </head>
-  <body>
-    <div class="text_1">
+<body>
+<div class="container width_1">
+  <div class="row">
+    <div class="col text_1 centr_1">
       Калькулятор
     </div>
-    <br>
-    <div class="centr_1">
-      <input type="text" class="operand_1 input_1" value="">
-      <select class="operator_1 select_1" name="">
+  </div>
+  <div class="row no-gutters">
+    <div class="col-5">
+      <input type="text" class="operand_1 input_1 form-control" value="" placeholder="Первое число">
+    </div>
+    <div class="col-2">
+      <select class="operator_1 select_1 custom-select" name="">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
         <option value="/">/</option>
       </select>
-      <input type="text" class="operand_2 input_1" value="">
-      <br><br>
     </div>
-    <div class="centr_1">
-      <button class="button_1" onclick="calculate()">Вычислить</button>
-      <button class="button_1" onclick="reset()">Очистить</button>
+    <div class="col-5">
+      <input type="text" class="operand_2 input_1 form-control" value="" placeholder="Второе число">
     </div>
-    <br><br>
-    <div class="text_2">
-      Результат:
-      <output class="result"></output>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary result centr_1" role="alert">
+        Результат.
+      </div>
     </div>
-  </body>
+  </div>
+  <div class="row">
+    <div class="col centr_1">
+      <button class="btn btn-success" onclick="calculate()">Вычислить</button>
+      <button class="btn btn-danger" onclick="reset()">Очистить</button>
+    </div>
+  </div>
+</div>
+</body>
 </html>
