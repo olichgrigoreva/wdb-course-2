@@ -1,12 +1,48 @@
 <html>
     <head>
+        <script>
+            function calculate() {
+                let a=+document.querySelector("input").value;
+                let b=+document.querySelector("input").value;
+                let c=document.querySelector("select").value;
+                let d=document.querySelector("output").innerHTML;
 
+                if (c=="+"){
+                    d=a+b;
+                }
+                if (c=="-"){
+                    d=a-b;
+                }
+                if (c=="*"){
+                    d=a*b;
+                }
+                if (c=="/" && b!=0){
+                    d=a/b;
+                } else {
+                    d="mistake/error";
+                }
+                return d;
+                }
+        </script>
     </head>
     <body>
         <div>
-            <div stule="background-color: darkkhaki">
-                <input name="first">
-                <button>РЕЗУЛЬТАТ</button>
+            <div>
+                <input name=a><br>
+                <div>
+                <select name=c>
+                    <option>выберите операцию</option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select><br>
+                </div>
+                <input name=b><br>
+                <button onclick="calculate()">ВЫЧИСЛИТЬ</button>
+                <div>
+                    Результат:<output name=d></output>
+                </div>
             </div>
         </div>
     </body>
