@@ -1,0 +1,23 @@
+.value_inp {
+  font-size:24px;
+  width:150px;
+}
+
+.operationType {
+  font-size:24px;
+  background:transparent;
+  border:none;
+  outline:0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none !important;  
+}
+
+.operationType:hover {
+  border: solid;
+}
+
+.result {
+  font-size:24px;
+}
