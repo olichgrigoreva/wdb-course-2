@@ -1,4 +1,4 @@
-var a,b,c,d
+var a,b,c,
     function calculate(a,b,c) {
         if (c="+"){
             d=a+b;

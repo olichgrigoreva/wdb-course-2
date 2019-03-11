@@ -2,25 +2,25 @@
     <head>
         <script>
             function calculate() {
-                let a=+document.querySelector("input").value;
-                let b=+document.querySelector("input").value;
-                let c=document.querySelector("select").value;
+                let a=+document.querySelector(".a").value;      //первый операнд
+                let b=+document.querySelector(".b").value;      //второй операнд 
+                let c=document.querySelector("select").value;   //операция
                 
                 if (c=="+"){
-                    d= a + b;
+                    d=a+b;
                 }
                 if (c=="-"){
-                    d= a - b;
+                    d=a-b;
                 }
                 if (c=="*"){
-                    d= a * b;
+                    d= a*b;
                 }
                 if (c=="/"){
-                     if (b!=0){
-                        d= a / b;
+                    if (b!=0){
+                        d=a/b;
                     } else {
                         d="mistake/error";
-                    }
+                        }
                 }
                 
                 document.querySelector("output").innerHTML = d;
@@ -30,9 +30,9 @@
     <body>
         <div>
             <div>
-                <input type = "text"><br>
+                <input type ="text" class ="a"><br>
                 <div>
-                <select >
+                <select>
                     <option>выберите операцию</option>
                     <option value="+">+</option>
                     <option value="-">-</option>
@@ -40,7 +40,7 @@
                     <option value="/">/</option>
                 </select><br>
                 </div>
-                <input type="text"><br>
+                <input type="text" class="b"><br>
                 <button onclick="calculate()">ВЫЧИСЛИТЬ</button>
                 <div>
                     Результат:<output></output>
