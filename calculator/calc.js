@@ -1,17 +1,18 @@
 var a,b,c,
     function calculate(a,b,c) {
-        if (c="+"){
+        if (c=="+"){
             d=a+b;
         }
-        if (c="-"){
+        if (c=="-"){
             d=a-b;
         }
-        if (c="*"){
+        if (c=="*"){
             d=a*b;
         }
-        if (c="/" && b!=0){
+        if (c=="/" && b!=0){
             d=a/b;
-        } else {
+        } 
+        if (c=="/" && b==0)
             d="mistake/error";
         }
         return d;
