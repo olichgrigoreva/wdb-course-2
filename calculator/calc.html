@@ -1,5 +1,20 @@
 <html>
     <head>
+        <style>
+            #rectangle{
+                width:400px;
+                height:200px;
+                background:silver;
+                border: 4px solid black;
+                border-radius: 10px;
+                
+            } 
+
+            input{
+                margin: 10px;
+            } 
+ 
+        </style>
         <script>
             function calculate() {
                 let a=+document.querySelector(".a").value;      //первый операнд
@@ -28,24 +43,26 @@
         </script>
     </head>
     <body>
-        <div>
-            <div>
+        <center>
+        <div id="rectangle">
+            <div>Псевдокалькулятор<br>
                 <input type ="text" class ="a"><br>
                 <div>
-                <select>
-                    <option>выберите операцию</option>
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
-                </select><br>
+                    <select>
+                        <option>выберите операцию</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select><br>
                 </div>
                 <input type="text" class="b"><br>
-                <button onclick="calculate()">ВЫЧИСЛИТЬ</button>
+                <button onclick="calculate()" >ВЫЧИСЛИТЬ</button>
                 <div>
                     Результат:<output></output>
                 </div>
             </div>
         </div>
+    </center>
     </body>
 </html>
