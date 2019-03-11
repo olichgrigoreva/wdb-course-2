@@ -12,7 +12,7 @@ var a,b,c,
         if (c=="/" && b!=0){
             d=a/b;
         } 
-        if (c=="/" && b==0)
+        if (c=="/" && b==0){
             d="mistake/error";
         }
         return d;
