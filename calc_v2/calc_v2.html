@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор v.2</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", loaded);
+
+        function loaded(event) {
+            let input = document.createElement("input");
+            input.type = "text";
+            input.classList.add("input");
+
+            document.querySelector("body").append(input);
+
+            let button = document.createElement("button");
+            let buttonText = document.createTextNode("Say Hi");
+            button.append(buttonText);
+
+            document.querySelector("body").append(button);
+
+            //document.querySelector("button"). or
+            button.addEventListener("click", say);
+        }
+
+        function say(event) {
+            console.dir(event.target);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
