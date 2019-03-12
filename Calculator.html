@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      .topic_text {
+        background-color: CCCCCC;
+        font-size: 32px;
+        font-style: italic;
+        color: red;
+        padding-top: 10px;
+        text-align: center;
+      }
+      .space {
+        padding: 10px;
+      }
+    </style>
+    <script type="text/javascript">
+      function Calc() {
+        let n1=parseFloat(document.querySelector(".n1").value);
+        let n2=parseFloat(document.querySelector(".n2").value);
+        let op=document.querySelector(".OperLi").value;
+        if (op=="+") {
+          document.querySelector(".result").innerHTML=n1+n2;
+        }
+        else {
+          if (op=="-") {
+            document.querySelector(".result").innerHTML=n1-n2;
+          }
+          else {
+            if (op=="*") {
+              document.querySelector(".result").innerHTML=n1*n2;
+            }
+            else {
+              document.querySelector(".result").innerHTML=n1/n2;
+            }
+          }
+        }
+ 	    }
+    </script>
+  </head>
+  <body>
+    <div class="topic_text" "space">
+      Калькулятор
+      <hr>
+    </div>
+		<div>
+	    <input type="text" class="n1">
+	    <select name="oper" class="OperLi">
+				<option value="+" selected="selected">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+	    </select>
+      <input type="text" class="n2">
+ 	  	<button onclick="Calc()"> = </button>
+  	  <div class="result"></div>
+    </div>
+  </body>
+</html>
