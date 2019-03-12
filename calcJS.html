@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+
+    <title>CalcJS</title>
+    <style>
+      body {
+        background-color: bisque;
+      }
+      input {
+        margin: 5px;
+        padding: 3px;
+      }
+      select {
+        margin: 5px;
+        padding: 3px;
+      }
+      section  {
+        border: 2px;
+        font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        overflow: hidden;
+        width: 240px;
+      }
+      fieldset {
+        border-radius: 5px;
+      }
+      h1 {
+        margin: 5px;
+      }
+      .action {
+        margin: 5px;
+        padding: 3px;
+      }
+      .selector-for-some-widget {
+        box-sizing: content-box;
+      }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", loaded);
+            /*function create_nput(tag, tag_type, tag_class, tag_name, tag_placeholder){
+                let tag = document.createElement(tag);
+                tag.type = tag_type;
+                tag.classList.add(tag_class);
+                tag.name = tag_name;
+                tag.placeholder = tag_placeholder;
+                document.querySelector("body").append(tag);
+            }*/
+            function loaded(event){
+                /*function create_nput(input, "number", "first_digit", "Input A", "Input A");*/
+            let section_1 = document.createElement("section");
+            //добавляем calc_field в section_1
+                let calc_field = document.createElement("fieldset");
+                calc_field.classList.add("input_fields");
+                let legend_for_calc_field = document.createElement("legend");
+                legend_for_calc_field.name = "result";
+                legend_for_calc_field.innerHTML = "<h1>Simple calc</h1>";
+                calc_field.appendChild(legend_for_calc_field);    
+                    
+                //создание первого поля ввода в calc_field
+                    let Input_A = document.createElement("input");
+                    Input_A.type = "number";
+                    Input_A.classList.add("first_digit");
+                    Input_A.name = "Input A";
+                    Input_A.placeholder = "Input A";
+                    calc_field.appendChild(Input_A);
+                
+                //создание элемента select со списком опций в calc_field
+                    let op_select = document.createElement("select");
+                    op_select.classList.add("operation");
+                    op_select.name = "operation";
+                        let operation_0 = document.createElement("option");
+                        operation_0.value="";
+                        operation_0.innerText="Select operation";
+                        op_select.appendChild(operation_0);
+
+                        let operation_1 = document.createElement("option");
+                        operation_1.value="+";
+                        operation_1.innerText="+";
+                        op_select.appendChild(operation_1);
+
+                        let operation_2 = document.createElement("option");
+                        operation_2.value="-";
+                        operation_2.innerText="-";
+                        op_select.appendChild(operation_2);
+
+                        let operation_3 = document.createElement("option");
+                        operation_3.value="*";
+                        operation_3.innerText="*";
+                        op_select.appendChild(operation_3);
+
+                        let operation_4 = document.createElement("option");
+                        operation_4.value="/";
+                        operation_4.innerText="/";
+                        op_select.appendChild(operation_4);
+                    calc_field.appendChild(op_select);
+
+                //создание второго поля ввода в calc_field
+                    let Input_B = document.createElement("input");
+                    Input_B.type = "number";
+                    Input_B.classList.add("second_digit");
+                    Input_B.name = "Input B";
+                    Input_B.placeholder = "Input B";
+                    calc_field.appendChild(Input_B);
+
+                //создание кнопки расчитать в calc_field
+                    let button = document.createElement("button");
+                    button.innerText = "Calculate";
+                    calc_field.appendChild(button);
+                //добавляем эвент на кнопку Calculate
+                    calc_field.querySelector("button").addEventListener("click", calculate_result);
+                section_1.appendChild(calc_field);
+            
+            //добавляем result_field в section_1
+                let result_field = document.createElement("fieldset");
+                let legend_for_result_field = document.createElement("legend");
+                legend_for_result_field.name = "result";
+                legend_for_result_field.innerHTML = "<h2>Calculated result</h2>";
+                result_field.appendChild(legend_for_result_field);
+
+                    let calculation_result = document.createElement("output");
+                    calculation_result.innerText="0";
+                    result_field.appendChild(calculation_result);
+
+                section_1.appendChild(result_field);
+            //выводим section_1 в body
+            document.querySelector("body").append(section_1);
+            }
+
+            function calculate_result() {
+                let first_digit = +document.querySelector(".first_digit").value;
+                let second_digit = +document.querySelector(".second_digit").value;
+                let operation = document.querySelector("select").value;
+
+                if (operation == "+"){
+                    result = first_digit+second_digit;
+                }
+                if (operation == "-"){
+                    result = first_digit-second_digit;
+                }
+                if (operation == "*"){
+                    result = first_digit*second_digit;
+                }
+                if (operation == "/"){
+                    if (second_digit == 0){
+                    alert('Invalid operation with zero');
+                    }
+                    else{
+                    result = first_digit/second_digit;
+                    }
+                }
+                document.querySelector("output").innerHTML = result;
+            }
+
+        
+    </script>
+    </head>
+
+    <body>
+        
+    </body>
+</html>
