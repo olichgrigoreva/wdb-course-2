@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+комментарий
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        function calc() {
+            let operand1 = +document.querySelector('#operand1').value;
+            let operand2 = +document.querySelector('#operand2').value;
+            let action = document.querySelector('select').value;
+            var result;
+            if (action=="+"){
+                result=operand1+operand2;
+            }
+            if (action=="-"){
+                result=operand1-operand2;
+            }
+            if (action=="*"){
+                result=operand1*operand2;
+            }
+            if (action=="/"){
+                result=operand1/operand2;
+            }
+            document.querySelector('.result').innerHTML=operand1+action+operand2+"="+result;
+        }
+    </script>
+</head>
+<body>
+<div class="p-3">
+    <h4> Калькулятор </h4>
+    <input class="form-control mb-3" id="operand1" type="number" placeholder="Введите число">
+    <select class="form-control mb-3">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input class="form-control mb-3" id="operand2" type="number" placeholder="Сюда тоже число">
+    <button class="btn btn-info" onclick="calc()">Посчитать</button>
+</div>
+<h4 class="result p-3"></h4>
+
+</body>
+</html>
