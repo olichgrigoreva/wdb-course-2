@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор v.2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loaded);
+
+        function loaded(event) {
+            input();
+            button();
+        }
+
+        function input() {
+            let input = document.createElement("input");
+            input.type = "text";
+            //input.classList.add("input" + "form-control" + "mb-3");
+
+            document.querySelector("body").append(input);
+        }
+
+        function button() {
+            let button = document.createElement("button");
+            let buttonText = document.createTextNode("Say Hi");
+            button.append(buttonText);
+            //button.classList.add("button" + "btn" + "btn-info");
+
+            document.querySelector("body").append(button);
+
+            //document.querySelector("button"). or
+            button.addEventListener("click", say);
+        }
+
+        function say(event) {
+            console.dir(event.target);
+            alert( "Привет, " + event);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
