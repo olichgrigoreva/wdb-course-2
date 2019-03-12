@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+        padding-top: 200px;
+    }
+     main {
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 500px;
+        height: 100px;
+        border-radius: 10px;
+        background-color: rgb(29, 224, 238);
+    }
+
+    input,
+    select {
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+    }
+
+    button {
+        width: 150px;
+        border-radius: 5px;
+        background-color: beige;
+        border: none;
+    }
+
+    button:hover {
+        background-color: rgb(224, 224, 156);
+    }
+
+    button:active {
+        background-color: rgb(217, 231, 91);
+    }
+  </style>
+  <script>
+
+    function getResult(value) {
+        if(isNaN(value)) {
+            return alert('Enter the Number');
+        }
+        document.querySelector(".result span").innerHTML = value;
+    }
+
+    function calc() {
+        const firstNum = +document.querySelector(".first").value;
+        const secondNum = +document.querySelector(".second").value;
+        const operation = document.querySelector("select").value;
+            
+
+        if(operation === '+') {
+            getResult(firstNum + secondNum);
+        } else if (operation === '-') {
+            getResult(firstNum - secondNum);
+        } else if (operation === '*') {
+            getResult(firstNum * secondNum);
+        } else {
+            getResult(firstNum / secondNum);
+        }
+            
+    }
+
+    function createMain() {
+      const main = document.createElement("main");
+      document.querySelector("body").append(main);
+    }
+
+    function createInput(type, cls, ph) {
+      const input = document.createElement("input");
+      input.type = type;
+      input.placeholder = ph;
+      input.classList.add(cls);
+      document.querySelector("main").append(input);
+    }
+
+    function createSelect() {
+      const arr = ['+', '-', '*', '/'];
+      const select = document.createElement("select");
+
+      arr.forEach(function(v){
+        const opt = document.createElement("option");
+        opt.value = v;
+        opt.text = v;
+        select.add(opt);
+      });
+    
+      document.querySelector("main").append(select);
+    }
+
+    function createSpan(txt) {
+      const span = document.createElement("span");
+      const spanTxt = document.createTextNode(txt);
+      span.append(spanTxt);
+
+      if(txt !=="=") {
+        return span;
+      }
+
+      document.querySelector("main").append(span);
+    }
+
+    function createDivWithSpan() {
+      const div = document.createElement("div");
+      div.classList.add("result");
+      div.append(createSpan('0'));
+      document.querySelector("main").append(div);
+    }
+
+    function createButton(txt, func) {
+      const button = document.createElement("button");
+      const buttonTxt = document.createTextNode(txt);
+
+      button.append(buttonTxt);
+      document.querySelector("main").append(button);
+      document.querySelector("button").addEventListener("click", func);
+    }
+
+    function loaded() {
+      createMain();
+      createInput("text", "first", "Enter The First Number");
+      createSelect();
+      createInput("text", "second", "Enter The Second Number");
+      createSpan("=");
+      createDivWithSpan();
+      createButton("Calculate", calc);
+    }
+
+    document.addEventListener("DOMContentLoaded", loaded);
+  </script>
+  <title>Calculator</title>
+</head>
+<body>
+</body>
+</html>
