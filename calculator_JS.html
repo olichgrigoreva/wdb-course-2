@@ -1,9 +1,39 @@
 <html>
 
     <head>
+        <meta charset="utf-8"/>
         <title>Калькулятор на JS</title>
+        <style>
+
+        </style>
         <script>
 
+            function calculation(){
+		        let first_operand = +document.querySelector(".first_operand").value;
+		        let second_operand = +document.querySelector(".second_operand").value;
+		        let sign_of_arithmetic_operation = document.querySelector("select").value;
+			    if (sign_of_arithmetic_operation == "+"){
+			    	temp=first_operand + second_operand;
+			    }
+			    if (sign_of_arithmetic_operation == "-"){
+			    	temp=first_operand - second_operand;
+			    }
+			    if (sign_of_arithmetic_operation == "*"){
+			    	temp=first_operand * second_operand;
+			    }
+			    else if(sign_of_arithmetic_operation == "/"){
+			    	if(second_operand==0){
+			    		alert("на ноль делить нельзя")
+			    		return
+			    	}
+			    	else temp=first_operand / second_operand;
+			        }
+		        document.querySelector(".result").value = temp;
+	        }
+
+            let input=document.createElement("input");// создаем элемент поля ввода
+            input.type="number";//атрибут поля ввода со значением для цифр
+            input.classList.add("first_operand");
         </script>
     </head>
     
