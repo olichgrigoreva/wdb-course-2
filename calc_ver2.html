@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Калькулятор-2</title>
+    <script type="text/javascript">
+      /* скрипты для калькулятора */
+      function calculate() {
+        let operand_1=Number(document.querySelector(".operand_1").value);
+        let operand_2=Number(document.querySelector(".operand_2").value);
+        let operator_1=document.querySelector(".operator_1").value;
+        if(document.querySelector(".operand_1").value=="" || document.querySelector(".operand_2").value=="") {
+            document.querySelector(".result").innerHTML="введите оба значения";
+            return;
+        }
+        if(document.querySelector(".operand_2").value=="0" && operator_1=="/"){
+          document.querySelector(".result").innerHTML="введите второе число отличное от 0";
+          return;
+        }
+        if(operator_1=="+") {
+          document.querySelector(".result").innerHTML=operand_1+operand_2;
+        }
+        if(operator_1=="-") {
+          document.querySelector(".result").innerHTML=operand_1-operand_2;
+        }
+        if(operator_1=="*") {
+          document.querySelector(".result").innerHTML=operand_1*operand_2;
+        }
+        if(operator_1=="/") {
+          document.querySelector(".result").innerHTML=operand_1/operand_2;
+        }
+      }
+      function reset() {
+        document.querySelector(".operand_1").value="";
+        document.querySelector(".operand_2").value="";
+        document.querySelector(".result").innerHTML="Результат.";
+      }
+      /* скрипты для построения тела страницы */
+      document.addEventListener("DOMContentLoaded", div_1);
+      document.addEventListener("DOMContentLoaded", div_11);
+      document.addEventListener("DOMContentLoaded", div_111);
+      document.addEventListener("DOMContentLoaded", div_12);
+      document.addEventListener("DOMContentLoaded", div_121);
+      document.addEventListener("DOMContentLoaded", div_122);
+      document.addEventListener("DOMContentLoaded", div_123);
+      document.addEventListener("DOMContentLoaded", input_1);
+      document.addEventListener("DOMContentLoaded", input_2);
+      document.addEventListener("DOMContentLoaded", select_1);
+      document.addEventListener("DOMContentLoaded", option_1);
+      document.addEventListener("DOMContentLoaded", option_2);
+      document.addEventListener("DOMContentLoaded", option_3);
+      document.addEventListener("DOMContentLoaded", option_4);
+      document.addEventListener("DOMContentLoaded", div_13);
+      document.addEventListener("DOMContentLoaded", div_131);
+      document.addEventListener("DOMContentLoaded", div_1311);
+      document.addEventListener("DOMContentLoaded", div_14);
+      document.addEventListener("DOMContentLoaded", div_141);
+      document.addEventListener("DOMContentLoaded", button_1);
+      document.addEventListener("DOMContentLoaded", button_2);
+      function div_1(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_1", "container", "width_1");
+        document.querySelector("body").append(div);
+      }
+      function div_11(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_11", "row");
+        document.querySelector(".div_1").append(div);
+      }
+      function div_111(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_111", "col", "text_1", "centr_1");
+        let text=document.createTextNode("Калькулятор");
+        div.append(text);
+        document.querySelector(".div_11").append(div);
+      }
+      function div_12(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_12", "row", "no-gutters");
+        document.querySelector(".div_1").append(div);
+      }
+      function div_121(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_121", "col-5");
+        document.querySelector(".div_12").append(div);
+      }
+      function div_122(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_122", "col-2");
+        document.querySelector(".div_12").append(div);
+      }
+      function div_123(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_123", "col-5");
+        document.querySelector(".div_12").append(div);
+      }
+      function input_1(event) {
+        let input=document.createElement("input");
+        input.type="text";
+        input.value="";
+        input.placeholder="Первое число";
+        input.classList.add("operand_1", "input_1", "form-control");
+        document.querySelector(".div_121").append(input);
+      }
+      function input_2(event) {
+        let input=document.createElement("input");
+        input.type="text";
+        input.value="";
+        input.placeholder="Первое число";
+        input.classList.add("operand_2", "input_1", "form-control");
+        document.querySelector(".div_123").append(input);
+      }
+      function select_1(event) {
+        let select=document.createElement("select");
+        select.name="";
+        select.classList.add("operator_1", "select_1", "custom-select");
+        document.querySelector(".div_122").append(select);
+      }
+      function option_1(event) {
+        let option=document.createElement("option");
+        option.value="+";
+        let text=document.createTextNode("+");
+        option.append(text);
+        document.querySelector(".select_1").append(option);
+      }
+      function option_2(event) {
+        let option=document.createElement("option");
+        option.value="-";
+        let text=document.createTextNode("-");
+        option.append(text);
+        document.querySelector(".select_1").append(option);
+      }
+      function option_3(event) {
+        let option=document.createElement("option");
+        option.value="*";
+        let text=document.createTextNode("*");
+        option.append(text);
+        document.querySelector(".select_1").append(option);
+      }
+      function option_4(event) {
+        let option=document.createElement("option");
+        option.value="/";
+        let text=document.createTextNode("/");
+        option.append(text);
+        document.querySelector(".select_1").append(option);
+      }
+      function div_13(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_13", "row");
+        document.querySelector(".div_1").append(div);
+      }
+      function div_131(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_131", "col");
+        document.querySelector(".div_13").append(div);
+      }
+      function div_1311(event) {
+        let div=document.createElement("div");
+        div.role="alert";
+        div.classList.add("alert", "alert-primary", "result", "centr_1");
+        let text=document.createTextNode("Результат.");
+        div.append(text);
+        document.querySelector(".div_131").append(div);
+      }
+      function div_14(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_14", "row");
+        document.querySelector(".div_1").append(div);
+      }
+      function div_141(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_141","col", "centr_1");
+        document.querySelector(".div_14").append(div);
+      }
+      function button_1() {
+        let button=document.createElement("button");
+        button.classList.add("btn", "btn-success");
+        let text=document.createTextNode("Вычислить");
+        button.append(text);
+        document.querySelector(".div_141").append(button);
+        document.querySelector(".btn-success").addEventListener("click", calculate)
+      }
+      function button_2() {
+        let button=document.createElement("button");
+        button.classList.add("btn", "btn-danger");
+        let text=document.createTextNode("Очистить");
+        button.append(text);
+        document.querySelector(".div_141").append(button);
+        document.querySelector(".btn-danger").addEventListener("click", reset)
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css">
+    <style media="screen">
+      .width_1 {
+        width: 500px;
+      }
+      .text_1 {
+        font-size: 30px;
+        color: #208ee8;
+      }
+      .centr_1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+  </body>
+</html>
