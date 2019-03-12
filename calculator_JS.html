@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Занятие JS-11-03-2019-</title>
+        <script>
+        document.addEventListener("DOMContentloaded", loaded);//если случилось событие DOMContetlodaded то запусти вункцию loaded
+        function loaded (event){
+            let input=document.createElement("input");//элемент поля ввода
+            input.type="text";//атрибут поля ввода со значением текст
+            input.classList.add("input");//атрибут поля ввода со значением класс <input type="text' class="input">
+            document.querySelector("body").append(input);// qS возвращает узлы аппенд инпут. выбрали некий узел ДОМ сделали аппенд к нему созданного элелемна инпут он появится на странице
+            let button=document.createElement("button");//создаем кнопку
+            let buttonText=document.createTextNode("SayHi");//текст кнопки
+            button.append(buttonText);//аппенд добавляет один документ в другой
+            document.querySelector("body").append(button);//кнопку добавляем на страницу
+            document.querySelector("button").addEventListener("click", say);// для кнопки мы вешаем обработчик события клик, которая запускает функцию say
+        }
+        function say (event){
+        consoledir (event.target);
+        }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
