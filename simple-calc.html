@@ -1,0 +1,47 @@
+<html>
+	
+	<head>
+	<meta charset="utf-8"/>
+	<title>Очень простой калькулятор</title>
+	<script>
+	function calculation() {
+		let first_operand = +document.querySelector(".first_operand").value;
+		let second_operand = +document.querySelector(".second_operand").value;
+		let sign_of_arithmetic_operation = document.querySelector("select").value;
+			if (sign_of_arithmetic_operation == "+"){
+				temp=first_operand + second_operand;
+			}
+			if (sign_of_arithmetic_operation == "-"){
+				temp=first_operand - second_operand;
+			}
+			if (sign_of_arithmetic_operation == "*"){
+				temp=first_operand * second_operand;
+			}
+			else if(sign_of_arithmetic_operation == "/"){
+				if(second_operand==0){
+					alert("на ноль делить нельзя")
+					return
+				}
+				else temp=first_operand / second_operand;
+			}
+		document.querySelector(".result").value = temp;
+	}
+	</script>
+	</head>
+	
+	<body>
+	
+		<input type="number" class="first_operand" placeholder="введите число">
+		<select>
+			<option value=""selected="selected">Выберите операцию</option>
+			<option value="+">Сложение</option>
+			<option value="-">Вычитание</option>
+			<option value="*">Умножение</option>
+			<option value="/">Деление</option>
+		  </select>
+		<input type="number" class="second_operand" placeholder="введите число">
+		<button onclick="calculation()">Вычислить</button>
+		<input type="number" class="result">
+		</body>
+
+</html>
