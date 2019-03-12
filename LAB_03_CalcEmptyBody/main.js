@@ -1,7 +1,8 @@
-function createInput(parentObject, className, value) {
+function createInput(parentObject, className, value, comment) {
   let objInput=document.createElement("input");
   objInput.type="text";
   if (className) objInput.classList.add(className);
+  if (comment) objInput.placeholder = comment;
   document.querySelector(parentObject).append(objInput);
   return objInput;
 }
@@ -73,9 +74,9 @@ function bCalculate(val1, val2, operation) {
 
 function createPage(){
   var list = ["+","-","*","/"];
-  inputVal1=createInput("body", "value_inp", "");
+  inputVal1=createInput("body", "value_inp", "", "first_number");
   selectOperation=createSelect("body", "operationType", list, 0);
-  inputVal2=createInput("body", "value_inp", "");
+  inputVal2=createInput("body", "value_inp", "", "second_number");
   aEqvText=createA("body", "value_inp", " = ");
   aResult=createA("body", "value_inp", "");
   divEmpty=createDiv("body", "value_inp", "");
