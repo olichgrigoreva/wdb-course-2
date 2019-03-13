@@ -1,0 +1,29 @@
+body {
+    background-color: bisque;
+  }
+  input {
+    margin: 5px;
+    padding: 3px;
+  }
+  select {
+    margin: 5px;
+    padding: 3px;
+  }
+  section  {
+    font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    width: 240px;
+  }
+  fieldset {
+    border-radius: 5px;
+  }
+  h1 {
+    margin: 5px;
+  }
+  .action {
+    margin: 5px;
+    padding: 3px;
+  }
+  .selector-for-some-widget {
+    box-sizing: content-box;
+  }
