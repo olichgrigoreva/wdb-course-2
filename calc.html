@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+    function result(){
+      let operand1 = document.querySelector(".operand1").value;
+      let operand2 = document.querySelector(".operand2").value;
+      let sigh = document.querySelector("select").value;
+      if (sigh == "+"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 + +operand2);}
+      if (sigh == "-"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 - +operand2);}
+      if (sigh == "*"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 * +operand2);}
+      if (sigh == "/"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 / +operand2);}
+      else {console.dir("Выберите действие.")}
+    }
+    </script>
+  </head>
+  <body>
+    <input class="operand1" type="text" placeholder="1 число">
+    <select size="5" name="sigh">
+      <option disabled>Выберите действие</option>
+      <option value="+">сложить</option>
+      <option value="-">вычесть</option>
+      <option value="*">умножить</option>
+      <option value="/">разделить</option>
+    </select>
+    <input class="operand2" type="text" placeholder="2 число">
+    <button onclick="result()">Вычислить</button>
+    <div class="result"></div>
+  </body>
+</html>
