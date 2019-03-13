@@ -32,7 +32,12 @@
                 document.querySelector(".result").innerHTML=parseFloat(n1)*parseFloat(n2);
               }
               else {
-                document.querySelector(".result").innerHTML=parseFloat(n1)/parseFloat(n2);
+                if (parseFloat(n2)==0) {
+                  document.querySelector(".result").innerHTML="На ноль не делится!";
+                }
+                else {
+                  document.querySelector(".result").innerHTML=parseFloat(n1)/parseFloat(n2);
+                }
               }
             }
           }
