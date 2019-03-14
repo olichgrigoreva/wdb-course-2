@@ -44,6 +44,7 @@
                     let op_select = document.createElement("select");
                     op_select.classList.add("operation");
                     op_select.name = "operation";
+                    op_select.classList.add("btn", "btn-secondary");
                         let operation_0 = document.createElement("option");
                         operation_0.value="";
                         operation_0.innerText="Select operation";
@@ -82,7 +83,7 @@
                     let button = document.createElement("button");
                     button.type = "button";
                     button.innerText = "Calculate";
-                    button.classList.add("btn", "btn-primary");
+                    button.classList.add("btn", "btn-secondary");
                     calc_field.appendChild(button);
                 //добавляем эвент на кнопку Calculate
                     calc_field.querySelector("button").addEventListener("click", calculate_result);
