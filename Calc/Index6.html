@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Мой первый калькулятор</title>
+<script>
+	function calc()
+	{
+		var num1 = parseInt(document.getElementById('first_number').value);
+		var num2 = parseInt(document.getElementById('second_number').value);
+		var oper = document.getElementById('operand').value;
+		var result;
+			if (oper == "plus"){
+			result = num1 + num2;
+			}
+			if (oper == "minus"){
+			result = num1 - num2;
+			}
+			if (oper == "multiply"){
+			result = num1 * num2;
+			}
+			if (oper == "divide"){
+			result = num1 / num2;
+			}
+		alert(result);
+		document.getElementById('res').innerHTML = result;
+
+	}
+</script>
+</head>
+<body>
+<h1> Калькулятор</h1>
+	<div>
+		<p>
+			<input type="text" id="first_number" title="Введите первое число"> 
+			<input type="text" id="second_number" title="Введите второе число">
+		</p>
+		<p>
+			<select title="Выберите действие" id="operand">
+				<option value="plus">+</option>
+				<option value="minus">-</option>
+				<option value="multiply">*</option>
+				<option value="divide">/</option>
+			</select>
+		</p>
+	</div>
+	<input type="button" id="btn" value="Показать результат" onclick="calc()">
+	<div>
+
+		РЕЗУЛЬТАТ<p id="res"></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<HTML>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded",loaded);
+            function loaded(event){
+                let input_first=document.createElement("input");
+                input_first.type="text";
+                input_first.classList.add("input");
+                document.querySelector("body").append(input_first);
+                
+                let input_second=document.createElement("input");
+                input_second.type="text";
+                input_second.classList.add("input");
+                document.querySelector("body").append(input_second);
+
+                let button=document.createElement("button");
+                let buttonText=document.createTextNode("Жмякни сюда");
+                button.append(buttonText);
+                document.querySelector("body").append(button);
+                document.querySelector("button").addEventListener("click",getResult);
+
+
+
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</HTML>
