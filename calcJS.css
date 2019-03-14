@@ -1,3 +1,12 @@
+#wrapper {
+	max-width: 960px;
+  margin: auto;
+  padding: 3px;
+}
+header {
+	padding: 20px 0;
+}
+
 input {
   margin: 5px;
   padding: 3px;
@@ -5,6 +14,9 @@ input {
 select {
   margin: 5px;
   padding: 3px;
+}
+button {
+  margin: auto;
 }
 section  {
   border: 2px;

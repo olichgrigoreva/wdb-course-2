@@ -2,8 +2,12 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>CalcJS</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--My CSS-->
     <link rel="stylesheet" href="calcJS.css">
 
     <script type="text/javascript">
@@ -19,6 +23,7 @@
             function loaded(event){
                 /*function create_nput(input, "number", "first_digit", "Input A", "Input A");*/
             let section_1 = document.createElement("section");
+            section_1.id = "wrapper";
             //добавляем calc_field в section_1
                 let calc_field = document.createElement("fieldset");
                 calc_field.classList.add("input_fields");
@@ -75,7 +80,9 @@
 
                 //создание кнопки расчитать в calc_field
                     let button = document.createElement("button");
+                    button.type = "button";
                     button.innerText = "Calculate";
+                    button.classList.add("btn", "btn-primary");
                     calc_field.appendChild(button);
                 //добавляем эвент на кнопку Calculate
                     calc_field.querySelector("button").addEventListener("click", calculate_result);
@@ -85,7 +92,7 @@
                 let result_field = document.createElement("fieldset");
                 let legend_for_result_field = document.createElement("legend");
                 legend_for_result_field.name = "result";
-                legend_for_result_field.innerHTML = "<h2>Calculated result</h2>";
+                legend_for_result_field.innerHTML = "<h3>Calculated result</h3>";
                 result_field.appendChild(legend_for_result_field);
 
                     let calculation_result = document.createElement("output");
@@ -127,6 +134,10 @@
     </head>
 
     <body>
-        
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
     </body>
 </html>
