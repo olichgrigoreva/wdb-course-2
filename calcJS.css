@@ -10,13 +10,19 @@ header {
 input {
   margin: 5px;
   padding: 3px;
+  border-radius: 6px;
 }
 select {
   margin: 5px;
   padding: 3px;
 }
 button {
-  margin: auto;
+  margin: 10px;
+  float: right;
+}
+output{
+  float: right;
+  padding-right: 10px;
 }
 section  {
   border: 2px;
@@ -29,7 +35,7 @@ section  {
   display: block;
 }
 fieldset {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 h1 {
   margin: 5px;
