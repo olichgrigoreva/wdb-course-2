@@ -1,15 +1,46 @@
-<HTML>
-    <head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
         <script>
             document.addEventListener("DOMContentLoaded",loaded);
             function loaded(event){
                 let input_first=document.createElement("input");
                 input_first.type="text";
+                input_first.id="first_number";
                 input_first.classList.add("input");
                 document.querySelector("body").append(input_first);
-                
+
+                let select=document.createElement("select");
+                select.id="operand";
+              //  menu.classList.add("select"); - УТОЧНИТЬ!!!
+                document.querySelector("body").append(select);
+                let menu=document.createElement("select");
+
+                    let add=document.createElement("option");
+                    add.value="plus";
+                    add.innerHTML="+";
+                    document.querySelector("select").append(add);
+
+                    let subtract=document.createElement("option");
+                    subtract.value="minus";
+                    subtract.innerHTML="-";
+                    document.querySelector("select").append(subtract);
+
+                    let multiply=document.createElement("option");
+                    multiply.value="times";
+                    multiply.innerHTML="*";
+                    document.querySelector("select").append(multiply);
+
+                    let divide=document.createElement("option");
+                    divide.value="div_to";
+                    divide.innerHTML="/";
+                    document.querySelector("select").append(divide);
+
                 let input_second=document.createElement("input");
                 input_second.type="text";
+                input_second.id="second_number";
                 input_second.classList.add("input");
                 document.querySelector("body").append(input_second);
 
@@ -17,10 +48,33 @@
                 let buttonText=document.createTextNode("Жмякни сюда");
                 button.append(buttonText);
                 document.querySelector("body").append(button);
-                document.querySelector("button").addEventListener("click",getResult);
+                document.querySelector("button").addEventListener("click",calc);
+
+                let show_result=document.createElement("p");
+                show_result.id="res";
+                document.querySelector("body").append(show_result);
+            }
 
 
-
+            function calc(){
+          		var num1=document.getElementById('first_number').value * 1;
+          		var num2=document.getElementById('second_number').value * 1;
+          		var oper=document.getElementById('operand').value;
+          		var result;
+          			if (oper == "plus"){
+          			     result = num1 + num2;
+          			}
+          			if (oper == "minus"){
+          			     result = num1 - num2;
+          			}
+          			if (oper == "times"){
+          			     result = num1 * num2;
+          			}
+          			if (oper == "div_to"){
+          			     result = num1 / num2;
+          			}
+          		alert(result);
+          		document.getElementById('res').innerHTML = result;
             }
         </script>
     </head>
