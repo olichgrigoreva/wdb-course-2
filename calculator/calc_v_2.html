@@ -13,7 +13,21 @@
             input{
                 margin: 10px;
             } 
- 
+            
+            bunner{
+                display: block; /*нашел на просторах интернета, не спрашивай, сам в шоке*/
+                margin: 10px;
+            }
+            input{
+                display: block;
+            }
+            select{
+                display: block;
+            }
+            button{
+                display: block;
+                margin: 10px;
+            }
         </style>
         <script>
             document.addEventListener("DOMContentLoaded", drawing);
@@ -23,77 +37,86 @@
                 bunner.append(bunner_text);
                 document.querySelector("div").append(bunner);
 
-                let operand_1 = document.createElement("input");
+                let operand_1 = document.createElement("input"); //как использовать стиль только для этого поля ввода?
                 operand_1.type ="text";
-                operand_1.classList.add("input");
+                operand_1.classList.add("operand_1");
                 document.querySelector("div").append(operand_1);
 
                 let operation = document.createElement("select");
                 
-                let operation_title = document.createElement("option");
-                operation_title.innerHTML="Выберите действие"; // магия какая то(((
-                //operation_title.value = "test";
-                operation.append(operation_title);
+                    let operation_title = document.createElement("option");
+                    operation_title.innerHTML="Выберите действие"; // магия какая то(((
+                    operation_title.value = "test";
+                    operation.append(operation_title);
 
-                let operation_1 = document.createElement("option");
-                operation_1.innerHTML="Сложение"; 
-                operation_1.value = "+";
-                operation.append(operation_1);
+                    let operation_1 = document.createElement("option");
+                    operation_1.innerHTML="Сложение"; 
+                    operation_1.value = "+";
+                    operation.append(operation_1);
 
-                let operation_2 = document.createElement("option");
-                operation_2.innerHTML="Вычитание"; 
-                operation_2.value = "-";
-                operation.append(operation_2);
+                    let operation_2 = document.createElement("option");
+                    operation_2.innerHTML="Вычитание"; 
+                    operation_2.value = "-";
+                    operation.append(operation_2);
 
-                let operation_3 = document.createElement("option");
-                operation_3.innerHTML="Умножение"; 
-                operation_3.value = "*";
-                operation.append(operation_3);
+                    let operation_3 = document.createElement("option");
+                    operation_3.innerHTML="Умножение"; 
+                    operation_3.value = "*";
+                    operation.append(operation_3);
 
-                let operation_4 = document.createElement("option");
-                operation_4.innerHTML="Деление";
-                operation_4.value = "/";
-                operation.append(operation_4);
-                
+                    let operation_4 = document.createElement("option");
+                    operation_4.innerHTML="Деление";
+                    operation_4.value = "/";
+                    operation.append(operation_4);
+                    
                 document.querySelector("div").append(operation);
-
-                //let operation
-                
 
                 let operand_2 = document.createElement("input");
                 operand_2.type ="text";
-                operand_2.classList.add("input");
+                operand_2.classList.add("operand_2");
                 document.querySelector("div").append(operand_2);
-            }
-            function calc_2() {
-                let a=+document.querySelector(".operand_1").value;      
+
+                let button_calc = document.createElement("button");
+                let button_text = document.createTextNode("Вычислить");
+                button_calc.append(button_text);
+                document.querySelector("div").append(button_calc);
+                document.querySelector("button_calc").addEventListener("click", calc_2);
+
+                let result = document.createElement("result");
+                let result_text = document.createTextNode("РЕЗУЛЬТАТ: ");
+                result.append(result_text);
+                document.querySelector("div").append(result);
+
+            
+            function calc_2(event) {
+                let a=+document.querySelector(".operand_1").value;     
                 let b=+document.querySelector(".operand_2").value;      
-                let c=document.querySelector(".operation").value; 
+                let c=document.querySelector("operation").value;   
                 
-                    if (c=="+"){
-                        d=a+b;
-                    }
-                    if (c=="-"){
-                        d=a-b;
-                    }
-                    if (c=="*"){
-                        d=a*b;
-                    }
-                    if (c=="/" && b!=0){
-                        d=a/b;
-                    } 
-                    if (c=="/" && b==0){
-                        d="mistake/error";
-                    }
-                    return d;
+                if (c=="+"){
+                    d=a+b;
                 }
-                
-                //document.querySelector("output").innerHTML = d;
+                if (c=="-"){
+                    d=a-b;
+                }
+                if (c=="*"){
+                    d= a*b;
+                }
+                if (c=="/"){
+                    if (b!=0){
+                        d=a/b;
+                    } else {
+                        d="mistake/error";
+                        }
+                }
+                document.querySelector("result").innerHTML = d;
+                }
+            }
         </script>
     </head>
-    <body>  
+    <body >  
         <center>
-            <div>
+            <div id="rectangle">
             </div>
         </center>     
     </body>
