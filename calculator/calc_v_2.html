@@ -18,18 +18,44 @@
         <script>
             document.addEventListener("DOMContentLoaded", drawing);
             function drawing(event){
+                let bunner = document.createElement("bunner");
+                let bunner_text = document.createTextNode("Псевдокалькулятор");
+                bunner.append(bunner_text);
+                document.querySelector("div").append(bunner);
+
                 let operand_1 = document.createElement("input");
                 operand_1.type ="text";
                 operand_1.classList.add("input");
-                document.querySelector("body").append(operand_1);
+                document.querySelector("div").append(operand_1);
 
                 let operation = document.createElement("select");
-                /*let operation_title = document.createElement("option")
-                operation_title.type="text";
-                operation_title.value = "test";
-                button.append(button_text);
-                operation.append(operation_title);*/
-                document.querySelector("body").append(operation);
+                
+                let operation_title = document.createElement("option");
+                operation_title.innerHTML="Выберите действие"; // магия какая то(((
+                //operation_title.value = "test";
+                operation.append(operation_title);
+
+                let operation_1 = document.createElement("option");
+                operation_1.innerHTML="Сложение"; 
+                operation_1.value = "+";
+                operation.append(operation_1);
+
+                let operation_2 = document.createElement("option");
+                operation_2.innerHTML="Вычитание"; 
+                operation_2.value = "-";
+                operation.append(operation_2);
+
+                let operation_3 = document.createElement("option");
+                operation_3.innerHTML="Умножение"; 
+                operation_3.value = "*";
+                operation.append(operation_3);
+
+                let operation_4 = document.createElement("option");
+                operation_4.innerHTML="Деление";
+                operation_4.value = "/";
+                operation.append(operation_4);
+                
+                document.querySelector("div").append(operation);
 
                 //let operation
                 
@@ -37,7 +63,7 @@
                 let operand_2 = document.createElement("input");
                 operand_2.type ="text";
                 operand_2.classList.add("input");
-                document.querySelector("body").append(operand_2);
+                document.querySelector("div").append(operand_2);
             }
             function calc_2() {
                 let a=+document.querySelector(".operand_1").value;      
@@ -66,6 +92,9 @@
         </script>
     </head>
     <body>  
-        <center></center>     
+        <center>
+            <div>
+            </div>
+        </center>     
     </body>
 </html>
