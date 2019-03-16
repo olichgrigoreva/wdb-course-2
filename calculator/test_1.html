@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", loaded);
+            function loaded(event){
+                let input = document.createElement("input");
+                input.type ="text";
+                input.classList.add("input");
+                document.querySelector("body").append(input);
+
+                let button = document.createElement("button");
+                //button.innerHTML = "SayHi";
+                
+                let button_text = document.createTextNode("SayHi");
+                button.append(button_text);
+                document.querySelector("body").append(button);
+                document.querySelector("button").addEventListener("click", SayHi);
+
+                function SayHi(event){
+                    alert ("РАБОТАТ")
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

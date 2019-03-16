@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <style>
+            #rectangle{
+                width:400px;
+                height:200px;
+                background:silver;
+                border: 4px solid black;
+                border-radius: 10px;
+                
+            } 
+
+            input{
+                margin: 10px;
+            } 
+ 
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", drawing);
+            function drawing(event){
+                let operand_1 = document.createElement("input");
+                operand_1.type ="text";
+                operand_1.classList.add("input");
+                document.querySelector("body").append(operand_1);
+
+                let operation = document.createElement("select");
+                /*let operation_title = document.createElement("option")
+                operation_title.type="text";
+                operation_title.value = "test";
+                button.append(button_text);
+                operation.append(operation_title);*/
+                document.querySelector("body").append(operation);
+
+                //let operation
+                
+
+                let operand_2 = document.createElement("input");
+                operand_2.type ="text";
+                operand_2.classList.add("input");
+                document.querySelector("body").append(operand_2);
+            }
+            function calc_2() {
+                let a=+document.querySelector(".operand_1").value;      
+                let b=+document.querySelector(".operand_2").value;      
+                let c=document.querySelector(".operation").value; 
+                
+                    if (c=="+"){
+                        d=a+b;
+                    }
+                    if (c=="-"){
+                        d=a-b;
+                    }
+                    if (c=="*"){
+                        d=a*b;
+                    }
+                    if (c=="/" && b!=0){
+                        d=a/b;
+                    } 
+                    if (c=="/" && b==0){
+                        d="mistake/error";
+                    }
+                    return d;
+                }
+                
+                //document.querySelector("output").innerHTML = d;
+        </script>
+    </head>
+    <body>  
+        <center></center>     
+    </body>
+</html>
