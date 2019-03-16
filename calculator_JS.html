@@ -1,15 +1,71 @@
+<!DOCTYPE html>
 <html>
 
     <head>
         <meta charset="utf-8"/>
         <title>Калькулятор на JS</title>
         <style>
-
+					
         </style>
         <script>
+			document.addEventListener("DOMContentLoaded",loaded);
+			function loaded(event){
+				
+				let pole_odin = document.createElement("input");
+				pole_odin.type = "number";
+				pole_odin.classList.add("input");
+				pole_odin.name = "first_operand";
+				pole_odin.placeholder = "Введите первое число";
+				document.querySelector("body").append(pole_odin);
 
-            function calculation(){
-		        let first_operand = +document.querySelector(".first_operand").value;
+				let pole_vibora = document.createElement("select");
+                pole_vibora.classList.add("sign_of_arithmetic_operation");
+				pole_vibora.name = "sign_of_arithmetic_operation";
+				
+				 	let vibor_operaciy = document.createElement("option");
+                	vibor_operaciy.value="";
+                	vibor_operaciy.innerText="Выберите операцию";
+                	pole_vibora.append(vibor_operaciy);
+                	let slojenie = document.createElement("option");
+                	slojenie.value="+";
+                	slojenie.innerText="+";
+                	pole_vibora.append(slojenie);
+                	let minus = document.createElement("option");
+                	minus.value="-";
+                	minus.innerText="-";
+                	pole_vibora.append(minus);
+                	let umnojit = document.createElement("option");
+                	umnojit.value="*";
+                	umnojit.innerText="*";
+                	pole_vibora.append(umnojit);
+                	let delenie = document.createElement("option");
+                	delenie.value="/";
+                	delenie.innerText="/";
+					pole_vibora.append(delenie);
+				document.querySelector("body").append(pole_vibora);
+			
+				let pole_dva = document.createElement("input");
+				pole_dva.type = "number";
+				pole_dva.classList.add("input");
+				pole_dva.name = "second_operand";
+				pole_dva.placeholder = "Введите второе число";
+				document.querySelector("body").append(pole_dva);
+				
+				let button = document.createElement("button");
+				let buttonText = document.createTextNode("Вычислить");
+                button.append(buttonText);
+                document.querySelector("body").append(button);
+				document.querySelector("button").addEventListener("click",calculation);
+				
+				let pole_rezultat = document.createElement("input");
+				pole_rezultat.classList.add("result");
+				pole_rezultat.placeholder = "Тут выйдет результат";
+				document.querySelector("body").append(pole_rezultat);
+		}
+
+            function calculation(){				
+				
+				let first_operand = +document.querySelector(".first_operand").value;
 		        let second_operand = +document.querySelector(".second_operand").value;
 		        let sign_of_arithmetic_operation = document.querySelector("select").value;
 			    if (sign_of_arithmetic_operation == "+"){
@@ -31,9 +87,6 @@
 		        document.querySelector(".result").value = temp;
 	        }
 
-            let input=document.createElement("input");// создаем элемент поля ввода
-            input.type="number";//атрибут поля ввода со значением для цифр
-            input.classList.add("first_operand");
         </script>
     </head>
     
