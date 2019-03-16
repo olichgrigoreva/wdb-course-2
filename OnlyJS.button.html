@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+			<script>
+				document.addEventListener("DOMContentLoaded", loaded);
+				
+				function loaded(event){
+				let section_1 = document.createElement("section");
+
+				let field = document.createElement("field");
+				input.classList.add("input_field");
+				let input = document.createElement("legend");
+				input.name = "result";
+				input.innerHTML = "";
+				field.appendChild(field);
+				
+				let input_first_number = document.createElement("input")
+				input_first_number.type = "number";
+				input_first_number.classList.add("first_number");
+				first_number.append(input_first_number);
+				
+				let button_plus = document.createElement("button_plus");
+				button_plus.value="+";
+				button_plus.innerHTML="+";
+				button_plus.append(button_plus);
+				document.querySelector("body").append(button_plus);
+				
+				let button_minus = document.createElement("button_minus");
+				button_minus.value="-";
+				button_minus.innerHTML="-";
+				button_minus.append(button_minus);
+				document.querySelector("body").append(button_minus);
+
+				let button_multiplication = document.createElement("multiplication");
+				button_multiplication.value="*";
+				button_multiplication.innerHTML="*";
+				button_multiplication.append(button_multiplication);
+				document.querySelector("body").append(button_multiplication);
+
+				let button_division = document.createElement("button_division");
+				button_division.value="/";
+				button_division.innerHTML="/";
+				button.append(button_division);
+				document.querySelector("body").append(button_division);
+
+				let input_second_number = document.createElement("input");
+				input_second_number.type = "number";
+				input_second_number.classList.add("second_number");
+				second_number.appendChild(input_second_number);
+
+				let button = document.createElement("button");
+				button.type = "button";
+				button.innerHTML = "result";
+				button.classList.add("button");
+				button.append(button);
+				button.querySelector("body").append("button");
+				document.querySelector("button").addEventListener("click", result);
+
+				let field = document.createElement("field");
+				field.name = "result";
+				field.innerHTML = "";
+				field.append(result);
+					
+					let result = document.createElement("output");
+					result.innerHTML = "";
+					field.append(result);
+					
+						section_1.append(field);
+						document.querySelector("body").appned(section_1);
+				}
+				
+				function result(){
+				let First_number = document.getElementById(".First_number").value;
+				let Second_number = document.getElementById(".Second_number").value;
+				let button = document.getElementById("button").value;
+				
+				if(button_1 == "+"){
+					result = First_number+Second_number;
+				}
+				if(button_2 == "-"){
+					result = First_number-Second_number;
+				}
+				if(button_3 == "*"){
+					result = First_number*Second_number;
+				}
+				if(button_1 == "/"){
+					result = First_number/Second_number;
+				}
+				document.getElementById("output").innerHTML = result;
+				}
+	</script>
+	</head>	
+	<body>
+	</body>
+</html>
