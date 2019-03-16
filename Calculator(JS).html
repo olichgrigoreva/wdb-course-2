@@ -57,13 +57,6 @@
         return displObj
       }
 
-      function newDiv(parentObj, className, value) {
-        let divObj=document.createElement("div");
-        let divText=document.createTextNode(value);
-        divObj.append(divText);
-        document.querySelector(parentObj).append(divObj);
-      }
-
       function Calc(n1, n2, op) {
         if ((!(!n1)) && (!(!n2))) {
           if (op=="+") {
