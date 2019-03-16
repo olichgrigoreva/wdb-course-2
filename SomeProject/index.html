@@ -40,9 +40,21 @@
 
             let field_password_repeate=document.createElement("input");
             field_password_repeate.type="password";
-            field_password_repeate.id="enterPass";
+            field_password_repeate.id="repeatePass";
             field_password_repeate.classList="input";
             document.querySelector("body").append(field_password_repeate);
+          // поле для мыла
+            let field_email_sign=document.createElement("div");
+            let field_email_signText=document.createTextNode("Введите ваш e-mail:");
+            field_email_sign.append(field_email_signText);
+            field_email_sign.id="fe_sign";
+            document.querySelector("body").append(field_email_sign);
+
+            let field_email=document.createElement("input");
+            field_email.type="text";
+            field_email.id="enterEmail";
+            field_email.classList="input";
+            document.querySelector("body").append(field_email);
 
         }
     </script>
