@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Final project</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",logination_page);
+
+        function logination_page(event){
+          //поле ввода для логина
+            let field_name_sign=document.createElement("div");
+            let field_name_signText=document.createTextNode("Введите логин:");
+            field_name_sign.append(field_name_signText);
+            field_name_sign.id="fn_sign";
+            document.querySelector("body").append(field_name_sign);
+
+            let field_name=document.createElement("input");
+            field_name.type="text";
+            field_name.id="enterName";
+            field_name.classList="input";
+            document.querySelector("body").append(field_name);
+          //поле ввода для пароля
+            let field_password_sign=document.createElement("div");
+            let field_password_signText=document.createTextNode("Введите пароль:");
+            field_password_sign.append(field_password_signText);
+            field_password_sign.id="fp_sign";
+            document.querySelector("body").append(field_password_sign);
+
+            let field_password=document.createElement("input");
+            field_password.type="password";
+            field_password.id="enterPass";
+            field_password.classList="input";
+            document.querySelector("body").append(field_password);
+          //поле для повтора пароля
+            let field_password_repeate_sign=document.createElement("div");
+            let field_password_repeate_signText=document.createTextNode("Пожалуйста, повторите пароль:");
+            field_password_repeate_sign.append(field_password_repeate_signText);
+            field_password_repeate_sign.id="fpr_sign";
+            document.querySelector("body").append(field_password_repeate_sign);
+
+            let field_password_repeate=document.createElement("input");
+            field_password_repeate.type="password";
+            field_password_repeate.id="enterPass";
+            field_password_repeate.classList="input";
+            document.querySelector("body").append(field_password_repeate);
+
+        }
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>
