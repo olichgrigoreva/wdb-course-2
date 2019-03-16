@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let input1 = document.createElement("input");
+          input1.classList.add("operand1");
+          input1.type = "text";
+          input1.placeholder = "1 число";
+        document.querySelector("body").append(input1);
+
+        let select = document.createElement("select");
+          select.size = "5";
+        document.querySelector("body").append(select);
+          let option1 = document.createElement("option");
+            option1.disabled = true;
+            let option1text = "Выберите действие";
+            option1.append(option1text);
+          select.append(option1);
+            let option2 = document.createElement("option");
+            option2.value = "+";
+            let option2text = "сложить";
+            option2.append(option2text);
+          select.append(option2);
+          let option3 = document.createElement("option");
+            option3.value = "-";
+            let option3text = "вычесть";
+            option3.append(option3text);
+          select.append(option3);
+          let option4 = document.createElement("option");
+            option4.value = "*";
+            let option4text = "умножить";
+            option4.append(option4text);
+          select.append(option4);
+          let option5 = document.createElement("option");
+            option5.value = "/";
+            let option5text = "разделить";
+            option5.append(option5text);
+          select.append(option5);
+
+        let input2 = document.createElement("input");
+          input2.classList.add("operand2");
+          input2.type = "text";
+          input2.placeholder = "2 число";
+        document.querySelector("body").append(input2);
+
+        let button = document.createElement("button");
+        let buttonText = document.createTextNode("Вычислить");
+        button.append(buttonText);
+        document.querySelector("body").append(button);
+
+        let result = document.createElement("div");
+        result.classList.add("result");
+        document.querySelector("body").append(result);
+
+        button.addEventListener("click", function(event){
+          let operand1 = document.querySelector(".operand1").value;
+          let operand2 = document.querySelector(".operand2").value;
+          let sigh = document.querySelector("select").value;
+            if (!sigh) {alert("Выберите действие.")}
+            if (sigh == "+"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 + +operand2);}
+            if (sigh == "-"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 - +operand2);}
+            if (sigh == "*"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 * +operand2);}
+            if (sigh == "/"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 / +operand2);}
+          console.dir(event.target);
+        })
+      })
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
