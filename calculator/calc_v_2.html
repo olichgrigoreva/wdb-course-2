@@ -45,8 +45,8 @@
                 let operation = document.createElement("select");
                 
                     let operation_title = document.createElement("option");
-                    operation_title.innerHTML="Выберите действие"; // магия какая то(((
-                    operation_title.value = "test";
+                    operation_title.innerHTML="Выберите действие";
+                    operation_title.value = "test"; //надо задать результат выполнения подобного условия
                     operation.append(operation_title);
 
                     let operation_1 = document.createElement("option");
@@ -68,7 +68,8 @@
                     operation_4.innerHTML="Деление";
                     operation_4.value = "/";
                     operation.append(operation_4);
-                    
+
+                  
                 document.querySelector("div").append(operation);
 
                 let operand_2 = document.createElement("input");
@@ -80,9 +81,10 @@
                 let button_text = document.createTextNode("Вычислить");
                 button_calc.append(button_text);
                 document.querySelector("div").append(button_calc);
-                document.querySelector("button_calc").addEventListener("click", calc_2);
+                document.querySelector("button").addEventListener("click", calc_2);
 
                 let result = document.createElement("result");
+                result.classList.add("result");
                 let result_text = document.createTextNode("РЕЗУЛЬТАТ: ");
                 result.append(result_text);
                 document.querySelector("div").append(result);
@@ -91,8 +93,11 @@
             function calc_2(event) {
                 let a=+document.querySelector(".operand_1").value;     
                 let b=+document.querySelector(".operand_2").value;      
-                let c=document.querySelector("operation").value;   
+                let c=document.querySelector("select").value;   
                 
+                if(c=="test"){
+                    alert ("Дибилушка, ты не выбрал операцию!");
+                }    
                 if (c=="+"){
                     d=a+b;
                 }
@@ -110,6 +115,7 @@
                         }
                 }
                 document.querySelector("result").innerHTML = d;
+                //alert ("дибилушка");
                 }
             }
         </script>
