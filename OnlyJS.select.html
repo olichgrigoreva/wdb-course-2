@@ -9,6 +9,12 @@
 				input_first_number.id="first_number";
 				input_first_number.classList.add("input");
 				document.querySelector("body").append(input_first_number);
+			
+				let input_second_number=document.createElement("input");
+				input_second_number.type="number";
+				input_second_number.id="second_number";
+				input_second_number.classList.add("input");
+				document.querySelector("body").append(input_second_number);
 
 				let select=document.createElement("select");
 				select.id="operand";
@@ -34,15 +40,9 @@
 				operation_devision.value="/";
 				operation_devision.innerHTML="/";
 				document.querySelector("select").append(operation_devision);
-
-				let input_second_number=document.createElement("input");
-				input_second_number.type="number";
-				input_second_number.id="second_number";
-				input_second_number.classList.add("input");
-				document.querySelector("body").append(input_second_number);
 				
 				let button=document.createElement("button");
-				let buttonText=document.createTextNode("Результат");
+				let buttonText=document.createTextNode("Result");
                 		button.append(buttonText);
                			document.querySelector("body").append(button);
 				document.querySelector("button").addEventListener("click",calculator);

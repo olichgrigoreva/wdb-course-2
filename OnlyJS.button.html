@@ -1,95 +1,129 @@
 <html>
 	<head>
-		<meta charset="utf-8">
+	<style>
+	#menu_body li ul{
+	display:none;
+	}
+	#menu_body li:hover ul, #menu_body li.over ul{
+	display:block;
+	}
+	#menu_body{
+	background:#81A192;
+	width:200px
+	}
+	
+	#menu_body ul li{
+	list-style-type:none;
+	border-bottom:1px solid #fff;
+	margin-left:-40px;
+	padding-left:7px
+	}
+
+	#menu_body ul li a{
+	color:#fff;
+	font-family:verdana,arial,sans-serif;
+	text-decoration:none
+	}
+	
+	#menu_body ul li ul li{
+	border:0;
+	list-style-type:square;
+	color:#fff;
+	list-style-position:inside
+	}
+	
+	#menu_body ul li ul{
+	border-top:1px solid #fff;
+	margin-left:-7px;
+	padding-left:50px
+	}
+	</style>
+		<meta charset="utf=8">
 			<script>
-				document.addEventListener("DOMContentLoaded", loaded);
-				
+				document.addEventListener("DOMContentLoaded",loaded);
 				function loaded(event){
-				let section_1 = document.createElement("section");
 
-				let field = document.createElement("field");
-				input.classList.add("input_field");
-				let input = document.createElement("legend");
-				input.name = "result";
-				input.innerHTML = "";
-				field.appendChild(field);
+				let input_first_number=document.createElement("input");
+				input_first_number.type="number";
+				input_first_number.id="first_number";
+				input_first_number.classList.add("input");
+				document.querySelector("body").append(input_first_number);
+						
+				let input_second_number=document.createElement("input");
+				input_second_number.type="number";
+				input_second_number.id="second_number";
+				input_second_number.classList.add("input");
+				document.querySelector("body").append(input_second_number);
 				
-				let input_first_number = document.createElement("input")
-				input_first_number.type = "number";
-				input_first_number.classList.add("first_number");
-				first_number.append(input_first_number);
+				let show_result=document.createElement("result");
+				show_result.id="result";
+				document.querySelector("body").append(show_result);				
+
+				let starlist=document.createElement("starlist");
+				starlist.id="operand";
+				document.querySelector("body").append(starlist);
+				let menu=document.createElement("starlist");
+			
+				startList = function(){
+					if (document.all&&document.getElementById){
+					navRoot = document.getElementById("ul1");
+						for (i=0; i<navRoot.childNodes.length; i++){
+						node = navRoot.childNodes[i];
+							if (node.nodeName=="LI"){
+								node.onmouseover=function(){
+								this.className+=" over";
+								}
+							node.onmouseout=function(){
+							this.className=this.className.replace(" over","");
+								}
+							}
+						}
+					}
+				}
+							
+							window.onload=startList;
 				
-				let button_plus = document.createElement("button_plus");
-				button_plus.value="+";
-				button_plus.innerHTML="+";
-				button_plus.append(button_plus);
-				document.querySelector("body").append(button_plus);
+				let button=document.createElement("button");
+				let buttonText=document.createTextNode("Результат");
+                		button.append(buttonText);
+               			document.querySelector("body").append(button);
+				document.querySelector("button").addEventListener("click",calculator);
 				
-				let button_minus = document.createElement("button_minus");
-				button_minus.value="-";
-				button_minus.innerHTML="-";
-				button_minus.append(button_minus);
-				document.querySelector("body").append(button_minus);
-
-				let button_multiplication = document.createElement("multiplication");
-				button_multiplication.value="*";
-				button_multiplication.innerHTML="*";
-				button_multiplication.append(button_multiplication);
-				document.querySelector("body").append(button_multiplication);
-
-				let button_division = document.createElement("button_division");
-				button_division.value="/";
-				button_division.innerHTML="/";
-				button.append(button_division);
-				document.querySelector("body").append(button_division);
-
-				let input_second_number = document.createElement("input");
-				input_second_number.type = "number";
-				input_second_number.classList.add("second_number");
-				second_number.appendChild(input_second_number);
-
-				let button = document.createElement("button");
-				button.type = "button";
-				button.innerHTML = "result";
-				button.classList.add("button");
-				button.append(button);
-				button.querySelector("body").append("button");
-				document.querySelector("button").addEventListener("click", result);
-
-				let field = document.createElement("field");
-				field.name = "result";
-				field.innerHTML = "";
-				field.append(result);
-					
-					let result = document.createElement("output");
-					result.innerHTML = "";
-					field.append(result);
-					
-						section_1.append(field);
-						document.querySelector("body").appned(section_1);
 				}
-				
-				function result(){
-				let First_number = document.getElementById(".First_number").value;
-				let Second_number = document.getElementById(".Second_number").value;
-				let button = document.getElementById("button").value;
-				
-				if(button_1 == "+"){
-					result = First_number+Second_number;
+				function calculator(){
+						var num1=document.getElementById("first_number").value * 1;
+						var num2=document.getElementById("second_number").value * 1;
+						var operand=document.getElementById("operand").value;
+						var result;
+							if (operand == "+"){
+							result = num1 + num2;
+							}
+							if (operand == "-"){
+							result = num1 - num2;
+							}
+							if (operand == "*"){
+							result = num1 * num2;
+							}
+							if (operand == "/"){
+							result = num1 / num2;
+							}
+							alert(result);
+							document.getElementById("result").innerHTML = result;
 				}
-				if(button_2 == "-"){
-					result = First_number-Second_number;
-				}
-				if(button_3 == "*"){
-					result = First_number*Second_number;
-				}
-				if(button_1 == "/"){
-					result = First_number/Second_number;
-				}
-				document.getElementById("output").innerHTML = result;
-				}
-	</script>
-	</head>	
-	<body>
-	</body>
+			</script>
+	</head>
+<body>
+<div id="menu_body">
+	<ul id="ul1">
+		<li><a href="#">Арифметическое действие</a>
+			<ul>
+				<li><a href="#">+</a></li>
+				<li><a href="#">-</a></li>
+				<li><a href="#">*</a></li>
+				<li><a href="#">/</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
 </html>
