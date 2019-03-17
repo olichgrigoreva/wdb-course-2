@@ -8,17 +8,17 @@
 
         function logination_page(event){
         //поле ввода для логина
-            let field_name_sign=document.createElement("div");
-            let field_name_signText=document.createTextNode("Введите логин:");
-            field_name_sign.append(field_name_signText);
-            field_name_sign.id="fn_sign";
-            document.querySelector("body").append(field_name_sign);
+            let field_login_sign=document.createElement("div");
+            let field_login_signText=document.createTextNode("Введите логин:");
+            field_login_sign.append(field_login_signText);
+            field_login_sign.id="fl_sign";
+            document.querySelector("body").append(field_login_sign);
 
-            let field_name=document.createElement("input");
-            field_name.type="text";
-            field_name.id="enterName";
-            field_name.classList="input";
-            document.querySelector("body").append(field_name);
+            let field_login=document.createElement("input");
+            field_login.type="text";
+            field_login.id="enterLogin";
+            field_login.classList="input";
+            document.querySelector("body").append(field_login);
         //поле ввода для пароля
             let field_password_sign=document.createElement("div");
             let field_password_signText=document.createTextNode("Введите пароль:");
@@ -66,6 +66,40 @@
             //document.querySelector("button").addEventListener("click",);
 
         }
+      /*  function check_field(){
+          //login check
+            var enterLogin=document.getElementById('enterLogin').value;
+            if (enterLogin =" "){
+                alert("Введите логин");
+            }
+            if (enterLogin=""){
+                alert("Введите логин");
+            }
+          //password check
+            var enterPass=document.getElementById('enterPass').value;
+            if (enterPass =" "){
+                alert("Введите пароль");
+            }
+            if (enterPass=""){
+                alert("Введите пароль");
+            }
+          //repeate the password check
+            var repeatPass=document.getElementById('repeatPass').value;
+            if (repeatPass =" "){
+                alert("Повторите пароль");
+            }
+            if (enterPass=""){
+                alert("Повторите пароль");
+            }
+          // check e-mail
+            var enterEmail=document.getElementById('enterEmail').value;
+            if (enterEmail =" "){
+                alert("Введите адрес электронной почты");
+            }
+            if (enterEmail=""){
+                alert("Введите адрес электронной почты");
+            }
+        }*/
     </script>
 
   </head>
