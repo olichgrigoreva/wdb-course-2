@@ -1,19 +1,20 @@
 .container{
-	padding: 10px 25px 10px 25px;
 	display: flex;
 	flex-direction: column;
 	margin-top: 15%;
-
-		}
+}
 .calcul{
 	align-self: center;
-	top: 100px;
 }
 .resul{
 	color: white;
 	align-self: center;
 	height: 160px;
     width: 160px;
+}
+form{
+    display: flex;
+    flex-direction: column;
 }
 .size1{
 	height: 80px;
@@ -63,21 +64,21 @@
 .resul{
 	color: white;
 	align-self: center;
-	height: 20px;
+	height: 30px;
     width: 60px;
 }
 .size1{
-	height: 20px;
+	height: 30px;
     width: 150px;
 	border-radius: 5px;
 }
 .size{
-	height: 20px;
+	height: 30px;
     width: 150px;
 	border-radius: 5px;
 }
 .size2{
-	height: 20px;
+	height: 30px;
     width: 150px;
 	border-radius: 5px;
 }
