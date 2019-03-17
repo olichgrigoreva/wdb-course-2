@@ -1,0 +1,78 @@
+<html>
+	<head>
+			<script>
+				document.addEventListener("DOMContentLoaded",loaded);
+				function loaded(event){
+
+				let input_first_number=document.createElement("input");
+				input_first_number.type="number";
+				input_first_number.id="first_number";
+				input_first_number.classList.add("input");
+				document.querySelector("body").append(input_first_number);
+			
+				let input_second_number=document.createElement("input");
+				input_second_number.type="number";
+				input_second_number.id="second_number";
+				input_second_number.classList.add("input");
+				document.querySelector("body").append(input_second_number);
+
+				let select=document.createElement("select");
+				select.id="operand";
+				document.querySelector("body").append(select);
+				let menu=document.createElement("select");
+				
+				let operation_plus=document.createElement("option");
+				operation_plus.value="+";
+				operation_plus.innerHTML="+";
+				document.querySelector("select").append(operation_plus);
+				
+				let operation_minus=document.createElement("option");
+				operation_minus.value="-";
+				operation_minus.innerHTML="-";
+				document.querySelector("select").append(operation_minus);
+
+				let operation_multiplication=document.createElement("option");
+				operation_multiplication.value="*";
+				operation_multiplication.innerHTML="*";
+				document.querySelector("select").append(operation_multiplication);
+
+				let operation_devision=document.createElement("option");
+				operation_devision.value="/";
+				operation_devision.innerHTML="/";
+				document.querySelector("select").append(operation_devision);
+				
+				let button=document.createElement("button");
+				let buttonText=document.createTextNode("Result");
+                		button.append(buttonText);
+               			document.querySelector("body").append(button);
+				document.querySelector("button").addEventListener("click",calculator);
+				
+				let show_result=document.createElement("result");
+				show_result.id="result";
+				document.querySelector("body").append(show_result);
+				}
+				function calculator(){
+						var num1=document.getElementById("first_number").value * 1;
+						var num2=document.getElementById("second_number").value * 1;
+						var operand=document.getElementById("operand").value;
+						var result;
+							if (operand == "+"){
+							result = num1 + num2;
+							}
+							if (operand == "-"){
+							result = num1 - num2;
+							}
+							if (operand == "*"){
+							result = num1 * num2;
+							}
+							if (operand == "/"){
+							result = num1 / num2;
+							}
+							alert(result);
+							document.getElementById("result").innerHTML = result;
+				}
+		</script>
+	</head>
+<body>
+</body>
+</html>
