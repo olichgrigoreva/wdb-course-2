@@ -18,8 +18,23 @@
         let message_2;
         let message_3;
         let message_4;
+        /*проверка поля имя на соответствие символов*/
+        let symbol_massiv="1234567890QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm._-";
+        let length_symbol_massiv=symbol_massiv.length;
+        let k;
+        let l;
+        let sootv_name=0;
+        if(lenght_user_name>2) {
+          for(k=0; k<lenght_user_name; k++) {
+            for(l=0; l<length_symbol_massiv; l++) {
+              if(user_name.charAt(k)==symbol_massiv.charAt(l)) {
+                sootv_name=sootv_name+1;
+              }
+            }
+          }
+        }
         /*проверка поля имя*/
-        if(lenght_user_name>2 && lenght_user_name<33) {
+        if(lenght_user_name>2 && lenght_user_name<33 && sootv_name==lenght_user_name) {
           message_1=document.createTextNode("");
         }
         else {
@@ -40,8 +55,23 @@
         else {
           message_2=document.createTextNode("Введите корректный e-mail. ");
         }
+        /*проверка поля пароль на соответствие символов*/
+        let symbol_massiv_pass="1234567890QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm";
+        let length_symbol_massiv_pass=symbol_massiv_pass.length;
+        let m;
+        let n;
+        let sootv_password=0;
+        if(lenght_password>5) {
+          for(m=0; m<lenght_password; m++) {
+            for(n=0; n<length_symbol_massiv_pass; n++) {
+              if(password.charAt(m)==symbol_massiv_pass.charAt(n)) {
+                sootv_password=sootv_password+1;
+              }
+            }
+          }
+        }
         /*проверка поля пароль*/
-        if(lenght_password>5 && lenght_password<33) {
+        if(lenght_password>5 && lenght_password<33 && sootv_password==lenght_password) {
           message_3=document.createTextNode("");
         }
         else {
