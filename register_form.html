@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Форма регистрации</title>
+    <script type="text/javascript">
+      function registr() {
+        let user_name=document.querySelector("#enter_username_1").value;
+        let email=document.querySelector("#enter_email_1").value;
+        let password=document.querySelector("#enter_password_1").value;
+        let confirm_password=document.querySelector("#confirm_password_1").value;
+        let lenght_user_name=user_name.length;
+        let lenght_email=email.length;
+        let lenght_password=password.length;
+        let lenght_confirm_password=confirm_password.length;
+
+        let message_1;
+        let message_2;
+        let message_3;
+        let message_4;
+        /*проверка поля имя*/
+        if(lenght_user_name>2 && lenght_user_name<33) {
+          message_1=document.createTextNode("");
+        }
+        else {
+          message_1=document.createTextNode("Введите корректное имя пользователя. ");
+        }
+        /*проверка поля емейл на наличие @*/
+        let i;
+        let sobaka;
+        for(i=0; i<lenght_email; i++) {
+          if(email.charAt(i)=="@") {
+            sobaka=1;
+          }
+        }
+        /*проверка поля емейл*/
+        if(lenght_email>2 && sobaka==1) {
+          message_2=document.createTextNode("");
+        }
+        else {
+          message_2=document.createTextNode("Введите корректный e-mail. ");
+        }
+        /*проверка поля пароль*/
+        if(lenght_password>5 && lenght_password<33) {
+          message_3=document.createTextNode("");
+        }
+        else {
+          message_3=document.createTextNode("Введите корректный пароль. ");
+        }
+        /*проверка поля подтвердить пароль*/
+        if(password==confirm_password) {
+          message_4=document.createTextNode("");
+        }
+        else {
+          message_4=document.createTextNode("Поле ПОДТВЕРДИТЕ ПАРОЛЬ должно совпадать с полем ПАРОЛЬ.");
+        }
+
+        let length_message_1=message_1.length;
+        let length_message_2=message_2.length;
+        let length_message_3=message_3.length;
+        let length_message_4=message_4.length;
+
+        if(length_message_1==0 && length_message_2==0 && length_message_3==0 && length_message_4==0) {
+          let div=document.createElement("div");
+          div.classList.add("alert", "alert-success");
+          div.role="alert";
+          let text=document.createTextNode("Форма регистрации успешно отправлена");
+          div.append(text);
+          document.querySelector(".div_1_1").innerHTML="";
+          document.querySelector(".div_1_1").append(div);
+        }
+        else {
+          let div=document.createElement("div");
+          div.classList.add("alert", "alert-danger");
+          div.role="alert";
+          div.append(message_1);
+          div.append(message_2);
+          div.append(message_3);
+          div.append(message_4);
+          document.querySelector(".div_1_1").innerHTML="";
+          document.querySelector(".div_1_1").append(div);
+        }
+      }
+      /* построение тела страницы */
+      document.addEventListener("DOMContentLoaded", div_1);
+      document.addEventListener("DOMContentLoaded", div_1_1);
+      document.addEventListener("DOMContentLoaded", div_2);
+      document.addEventListener("DOMContentLoaded", form_1);
+      document.addEventListener("DOMContentLoaded", div_2_1);
+      document.addEventListener("DOMContentLoaded", div_2_2);
+      document.addEventListener("DOMContentLoaded", div_2_3);
+      document.addEventListener("DOMContentLoaded", div_2_4);
+      document.addEventListener("DOMContentLoaded", div_2_5);
+      document.addEventListener("DOMContentLoaded", div_3);
+      function div_1(event) {
+        let div=document.createElement("div");
+        div.classList.add("text_1", "centr_1", "div_1");
+        let div_br_1=document.createElement("div");
+        div_br_1.innerHTML="<br>";
+        div.append(div_br_1);
+        let text=document.createTextNode("Форма регистрации.");
+        div.append(text);
+        let div_br_2=document.createElement("div");
+        div_br_2.innerHTML="<br>"
+        div.append(div_br_2);
+        document.querySelector("body").append(div);
+      }
+      function div_1_1(event) {
+        let div=document.createElement("div");
+        div.classList.add("centr_1", "div_1_1");
+        document.querySelector("body").append(div);
+      }
+      function div_2(event) {
+        let div=document.createElement("div");
+        div.classList.add("width_1", "container", "div_2");
+        let div_br=document.createElement("div");
+        div_br.innerHTML="<br> <br> <br> <br>";
+        div.append(div_br);
+        document.querySelector("body").append(div);
+      }
+      function form_1(event) {
+        let form=document.createElement("form");
+        form.classList.add("form_1");
+        document.querySelector(".div_2").append(form);
+      }
+      function div_2_1(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_2_1");
+        let label=document.createElement("label");
+        label.setAttribute("for", "enter_username_1");
+        let text=document.createTextNode("Имя пользователя");
+        label.append(text);
+        div.append(label);
+        let input=document.createElement("input");
+        input.classList.add("form-control");
+        input.type="text";
+        input.value="";
+        input.placeholder="Введите имя пользователя";
+        input.id="enter_username_1";
+        input.setAttribute("aria-describedby", "enter_email_1_Help");
+        div.append(input);
+        let small=document.createElement("small");
+        small.classList.add("form-text", "text-muted");
+        small.id="enter_email_1_Help";
+        let text_small=document.createTextNode("Может содержать от 3 до 32 латинских букв, цифр, а также символы .  _  - . Должен начинаться и заканчиваться на букву или цифру, нельзя использовать подряд два одинаковых спецсимвола.");
+        small.append(text_small);
+        div.append(small);
+        document.querySelector(".form_1").append(div);
+      }
+      function div_2_2(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_2_2");
+        let div_br=document.createElement("div");
+        div_br.innerHTML="<br>";
+        div.append(div_br);
+        let label=document.createElement("label");
+        label.setAttribute("for", "enter_email_1");
+        let text=document.createTextNode("Ваш e-mail адрес");
+        label.append(text);
+        div.append(label);
+        let input=document.createElement("input");
+        input.classList.add("form-control");
+        input.type="email";
+        input.value="";
+        input.placeholder="name@example.com";
+        input.id="enter_email_1";
+        input.setAttribute("aria-describedby", "enter_email_1_Help");
+        div.append(input);
+        let small=document.createElement("small");
+        small.classList.add("form-text", "text-muted");
+        small.id="enter_email_1_Help";
+        let text_small=document.createTextNode("Введите Ваш e-mail адрес в формате name@example.com.");
+        small.append(text_small);
+        div.append(small);
+        document.querySelector(".form_1").append(div);
+      }
+      function div_2_3(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_2_3");
+        let div_br=document.createElement("div");
+        div_br.innerHTML="<br>";
+        div.append(div_br);
+        let label=document.createElement("label");
+        label.setAttribute("for", "enter_password_1");
+        let text=document.createTextNode("Пароль");
+        label.append(text);
+        div.append(label);
+        let input=document.createElement("input");
+        input.classList.add("form-control");
+        input.type="password";
+        input.value="";
+        input.placeholder="Введите пароль";
+        input.id="enter_password_1";
+        input.setAttribute("aria-describedby", "enter_password_1_Help");
+        div.append(input);
+        let small=document.createElement("small");
+        small.classList.add("form-text", "text-muted");
+        small.id="enter_password_1_Help";
+        let text_small=document.createTextNode("Может содержать от 6 до 32 латинских букв, цифр.");
+        small.append(text_small);
+        div.append(small);
+        document.querySelector(".form_1").append(div);
+      }
+      function div_2_4(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_2_4");
+        let div_br=document.createElement("div");
+        div_br.innerHTML="<br>";
+        div.append(div_br);
+        let label=document.createElement("label");
+        label.setAttribute("for", "confirm_password_1");
+        let text=document.createTextNode("Подтвердите пароль.");
+        label.append(text);
+        div.append(label);
+        let input=document.createElement("input");
+        input.classList.add("form-control");
+        input.type="password";
+        input.value="";
+        input.placeholder="Введите пароль еще раз";
+        input.id="confirm_password_1";
+        input.setAttribute("aria-describedby", "confirm_password_1_Help");
+        div.append(input);
+        let small=document.createElement("small");
+        small.classList.add("form-text", "text-muted");
+        small.id="confirm_password_1_Help";
+        let text_small=document.createTextNode("Введите пароль еще раз. Он должен совпадать с полем Пароль.");
+        small.append(text_small);
+        div.append(small);
+        document.querySelector(".form_1").append(div);
+      }
+      function div_2_5(event) {
+        let div=document.createElement("div");
+        div.classList.add("div_2_5", "centr_1");
+        let div_br_1=document.createElement("div");
+        div_br_1.innerHTML="<br>";
+        div.append(div_br_1);
+        let button=document.createElement("button");
+        button.classList.add("btn", "btn-success");
+        button.type="button";
+        let text=document.createTextNode("Регистрация");
+        button.append(text);
+        div.append(button);
+        let div_br_2=document.createElement("div");
+        div_br_2.innerHTML="<br> <br> <br> <br> <br>";
+        div.append(div_br_2);
+        document.querySelector(".form_1").append(div);
+        document.querySelector(".btn-success").addEventListener("click", registr);
+      }
+      function div_3(event) {
+        let div=document.createElement("div");
+        div.classList.add("text_2", "centr_1");
+        let div_br_1=document.createElement("div");
+        div_br_1.innerHTML="<br> <br>";
+        div.append(div_br_1);
+        let text=document.createTextNode("Выполнил: Бронников С.");
+        div.append(text);
+        let div_br_2=document.createElement("div");
+        div_br_2.innerHTML="<br> <br>";
+        div.append(div_br_2);
+        document.querySelector("body").append(div);
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css">
+    <style media="screen">
+      .width_1 {
+        width: 500px;
+      }
+      .text_1 {
+        font-size: 30px;
+        background: #8a736b;
+      }
+      .text_2 {
+        font-size: 10px;
+        background: #8a736b;
+      }
+      .centr_1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+  </body>
+</html>
