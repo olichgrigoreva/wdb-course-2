@@ -1,0 +1,73 @@
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin ="anonymous">
+	<script>
+	<style>
+	</style>
+	</head>
+	<body>
+	<div class = "container" id = "container">
+		<div class = "flat-design-form" id = "flat-design-form">
+        		<ul class = "tabs" id = "tabs">
+            			<li><a class = "active" href = "#login" id = "login-tab" name = "login-tab"><span id="login_icon"></span> Login</a></li>
+            			<li><a href = "#register" id = "register-tab" name = "register-tab"><span id = "signup_icon"></span> Register</a></li>
+        		</ul>
+		</div>
+	</div>
+	<div class = "form-display show" id = "login">
+	<h1 class = "Login id = "Login">Login</h1>
+		<form action = "" method = "post" novalidate = "">
+			<fieldset>
+				<ul>
+                 			 <li>
+						<div class = "item" id = "item" >
+							<input data-validate-length-range = "6" name = "name" placeholder = "Username" required = "required" type = "text">
+						</div>
+					</li>
+					<li>
+						<div class="item" = id = "item">
+							<input data-validate-length-range = "6" name = "password" placeholder = "Password" required = "required" type = "password">
+						</div>
+					</li>
+							<li><input class = "button-login" type = "submit" value = "Login"></li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+	<div class="form-display hide" id="register">
+	<h1 class = "Register" id = "Register" >Register</h1>
+	<form action = "" method = "post" novalidate = "">
+		<fieldset>
+			<ul>
+				<li>
+					<div class = "item" id = "item">
+							<input data-validate-length-range = "6" name = "name" placeholder = "Username" required = "required" type = "text">
+					</div>
+					</li>
+					<li>
+					<div class = "item" id = "item">
+							<input data-validate-length = "8" name = "password"  placeholder = "Password" required = "required" type = "text">
+					</div>
+					</li>
+					<li>
+					<div class = "item" id = "item">
+							<input data-validate-length = "8" name = "password"  placeholder = "Confirm password" required = "required" type="text">
+					</div>
+					</li>
+					<li>
+					<div class = "item" id = "item">
+							<input class = "email" name = "email" placeholder = "Email" required = "required" type = "email">
+                       			</div>
+					</li>
+					<li><input class = "button-register" id = "button-register" type = "submit" value = "Register"></li>
+				</ul>
+		</fieldset>
+	</form>
+	</div>
+	<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin = "anonymous"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous"></script>
+	</body>
+</html>

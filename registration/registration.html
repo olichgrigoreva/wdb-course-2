@@ -1,0 +1,104 @@
+<html lang = "ru">
+<head>
+	<meta charset ="utf-8">
+        <meta name = "viewport" conten t = "width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
+    		<script>
+        	document.addEventListener("DOMContentLoaded", loaded);
+            	function fill_created_tag(tag_name, tag_type, tag_class, field_name, tag_placeholder, query_Selector){
+                tag_name.type = tag_type;
+                tag_name.classList.add(tag_class);
+                tag_name.name = field_name;
+                tag_name.placeholder = tag_placeholder;
+                document.querySelector(query_Selector).append(tag_name);
+           	}
+           	function loaded(){
+                let username = document.createElement("input");
+                fill_created_tag(username, "text", "form-control", "username_field", "Username",  ".container");
+                username.classList.add("reg_fields");
+                
+                let password = document.createElement("input");
+                fill_created_tag(password, "password", "form-control", "pass_field", "Password", ".container");
+                password.classList.add("reg_fields");
+                
+		let confirm_password = document.createElement("input");
+                fill_created_tag(confirm_password, "password", "form-control", "confirm_field", "Confirm password", ".container");
+                confirm_password.classList.add("reg_fields");
+
+                let e_mail = document.createElement("input");
+                fill_created_tag(e_mail, "email", "form-control", "email_field", "EMail", ".container");
+                e_mail.classList.add("reg_fields");
+                let reg_button = document.createElement("button");
+
+                fill_created_tag(reg_button, "button", "btn-primary", "button", "Register", ".container");
+                reg_button.innerHTML = "<b>Register</b>";
+                document.querySelector("button").addEventListener("click", check_form);
+		
+            	}
+            	function check_form(){
+                if (document.querySelector("username_field").value == ""){
+                alert("Need's login and Password");
+		}
+		if (document.querySelector("email_field").value != "@"){
+		alert("False");
+		}
+		if (document.querySelector("email_field").value == "/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/"){
+			if (document.querySelector("email_field").value = document.forms[field].elements[email].value){
+				if (document.querySelector("email_field").value == false){
+				alert("Need's correct e-mail");
+				}
+			}
+		}
+            	}
+    	</script>
+	<style>
+	#header{
+	background-color: CCCCCC;
+	}
+	#navbar{
+	background-color: CCCCCC;
+	text-align: center;
+	}
+	.reg_fields{
+	border-radius: 1px;
+    	width: 400px;
+	}
+	#footer{
+	background-color: CCCCCC;
+	}
+	button{
+	display: block;
+    	margin: 30px;
+    	border-radius: 1px;
+    	width: 150px;
+    	padding: 1px;
+    	margin-left: auto;
+	margin-right: auto;
+	}
+	input{
+    	display: block;
+    	margin: 20px;
+    	padding: 1px;
+    	border-radius: 5px;
+    	margin-left: auto;
+	margin-right: auto;
+	}
+	</style>
+</head>
+    
+<body>
+    <nav class = "navbar" id = "navbar"><h1 class = "h1" id = "h1"><small>Super Notebook</small></h1></nav>
+    <header class = "header" id = "header">
+        <div class = "overlay" id = class = "overlay"></div>
+    </header>
+    <div class = "container form-group" id = "container form-group"></div>
+        <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin = "anonymous"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin = "anonymous"></script>
+        <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous"></script>    
+ </body>
+
+ <footer class = "page-footer font-small blue" id = "footer">
+            <div class = "footer-copyright text-center py-3">Copyright by...., 2019
+            </div>
+</footer>
+</html>
