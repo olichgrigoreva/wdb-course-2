@@ -1,0 +1,28 @@
+.textHeader {
+  padding:20px;
+  font-size:18px;
+  background:silver;
+  text-align:center;
+}
+
+.textFooter {
+  margin:30px 0px;
+  padding:20px;
+  font-size:18px;
+  background:silver;
+  text-align:center;
+  width: 100%;
+}
+
+.container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.formInput {
+  margin:30px 0px;
+  border-radius:0px!important;
+  -webkit-border-radius:0px!important;
+  -moz-border-radius:0px!important;
+}
