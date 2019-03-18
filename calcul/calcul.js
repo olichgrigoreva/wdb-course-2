@@ -64,9 +64,7 @@ function createOption(znak){
 
 function createButton(){
     let createButton = document.createElement("button");
-    createButton.onclick = function () {
-            return fetchData(event);
-    }
+    createButton.onclick = fetchData;
     createButton.classList.add("size");
     createButton.innerHTML = "Решить";
     document.querySelector("form").append(createButton);
@@ -75,7 +73,6 @@ function createButton(){
 function createResult(){
     let createResult = document.createElement("div");
     createResult.classList.add("resul");
-    createResult.innerHTML = "Результат =";
     document.querySelector(".container").append(createResult);
 };
 
@@ -87,10 +84,10 @@ function createResultat(){
 
 function fetchData(event) {
     event.preventDefault();
-    var form = document.querySelector("form");
-    fetch('calcul.php', {
+    var form = document.querySelector('form');
+    fetch("calcul.php", {
         method: "POST",
-        body: new FormData("form"),
+        body: new FormData('form'),
     })
         .then(response => {
             return response.text();
@@ -100,5 +97,6 @@ function fetchData(event) {
         })
     return false;
 };
+
 
 
