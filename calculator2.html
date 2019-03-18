@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+   document.addEventListener("DOMContentLoaded",loaded);
+   function loaded(){
+    let number1 = document.createElement("input");
+     input type = "number";
+     number1.classList.add("input");
+     document.querySelector("body").append(number1);
+    let select = document.createElement("select");
+     let options = ["+", "-", "*", "/"];
+     for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement("option");
+      el.textContent = opt;
+      el.value = opt;
+      select.appendChild(el);
+     }​
+    let number2 = document.createElement("input");
+     input type = "number";
+     number2.classList.add("input");
+     document.querySelector("body").append(number2);
+    let button = document.CreateElement("button");
+     let buttonText = document.CreateTextNode ("Расчёт");
+     button.append (buttonText);
+     document.querySelector("body").append(button);
+     document.querySelector("button").addEventListener("click",Calculate);
+   });
+   function Calculate(){
+    let number1 = parseInt(document.getElementById('number1').value);
+    let number2 = parseInt(document.getElementById('number2').value;
+    let action = document.getElementById('action').value;
+    if (action == "+") {
+     var result = number1 + number2;
+    }
+    else if (action == "-") {
+     var result = number1 - number2;
+    }
+    else if (action == "*") {
+     var result = number1 * number2;
+    }
+    else {
+     if (number2 == 0) {
+      var result = 'error';
+     }
+     var result = number1 / number2;
+    }
+    document.getElementById('result').innerHTML = 'Результат: ' + result;
+   }
+  </script>
+ </head>
+ <body>
+ </body>
+</html>
