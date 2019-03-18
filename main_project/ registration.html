@@ -1,1 +1,35 @@
+<html>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", drawing);
+            function drawing(event){
+                
+                let input_un=document.createElement("input");
+                input_un.type = "text";
+                input_un.classList.add("un");
+                document.querySelector("body").append(input_un);
 
+                let test_button=document.createElement("button")
+                let test_button_text=document.createTextNode("TEST");
+                test_button.append(test_button_text);
+                document.querySelector("body").append(test_button);
+
+                document.querySelector("button").addEventListener("click", registration );
+
+                function registration(event) {
+                    let s="";
+                    let un = document.querySelector(".un").value;
+                        if (un == s){
+                            alert("ПУСТО");
+                        }else{
+                            alert('ПОРЯДОК');
+                        }
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
