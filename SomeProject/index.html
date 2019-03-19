@@ -3,103 +3,128 @@
   <head>
     <meta charset="utf-8">
     <title>Final project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         document.addEventListener("DOMContentLoaded",logination_page);
+        // document.classList.add("input", "reg_sign");
 
         function logination_page(event){
+
+          let div_registration_form=document.createElement("div");
+          // div_registration_form.type="div";
+          div_registration_form.id="div_regForm";
+          div_registration_form.style="text-align: center";
+          document.querySelector("body").append(div_registration_form);
+
+          //название
+              let registration_page_sign=document.createElement("div");
+              // let registration_page_signText=document.createTextNode("SomeProject");
+              // registration_page_sign.append(registration_page_signText);
+              registration_page_sign.innerHTML='<h3>SUPER NOTEBOOK</h3>';
+              registration_page_sign.id="rp_sign";
+              registration_page_sign.classList="reg_page_sign";
+              document.querySelector("div").append(registration_page_sign);
+
         //поле ввода для логина
             let field_login_sign=document.createElement("div");
             let field_login_signText=document.createTextNode("Введите логин:");
             field_login_sign.append(field_login_signText);
             field_login_sign.id="fl_sign";
-            document.querySelector("body").append(field_login_sign);
+            field_login_sign.classList="reg_sign";
+            document.querySelector("div").append(field_login_sign);
 
             let field_login=document.createElement("input");
             field_login.type="text";
             field_login.id="enterLogin";
             field_login.classList="input";
-            document.querySelector("body").append(field_login);
+            document.querySelector("div").append(field_login);
         //поле ввода для пароля
             let field_password_sign=document.createElement("div");
             let field_password_signText=document.createTextNode("Введите пароль:");
             field_password_sign.append(field_password_signText);
             field_password_sign.id="fp_sign";
-            document.querySelector("body").append(field_password_sign);
+            field_password_sign.classList="reg_sign";
+            document.querySelector("div").append(field_password_sign);
 
             let field_password=document.createElement("input");
             field_password.type="password";
             field_password.id="enterPass";
             field_password.classList="input";
-            document.querySelector("body").append(field_password);
+            document.querySelector("div").append(field_password);
         //поле для повтора пароля
             let field_password_repeat_sign=document.createElement("div");
             let field_password_repeat_signText=document.createTextNode("Пожалуйста, повторите пароль:");
             field_password_repeat_sign.append(field_password_repeat_signText);
             field_password_repeat_sign.id="fpr_sign";
-            document.querySelector("body").append(field_password_repeat_sign);
+            field_password_repeat_sign.classList="reg_sign";
+            document.querySelector("div").append(field_password_repeat_sign);
 
             let field_password_repeat=document.createElement("input");
             field_password_repeat.type="password";
             field_password_repeat.id="repeatPass";
             field_password_repeat.classList="input";
-            document.querySelector("body").append(field_password_repeat);
+            document.querySelector("div").append(field_password_repeat);
         // поле для мыла
             let field_email_sign=document.createElement("div");
             let field_email_signText=document.createTextNode("Введите ваш e-mail:");
             field_email_sign.append(field_email_signText);
             field_email_sign.id="fe_sign";
-            document.querySelector("body").append(field_email_sign);
+            field_email_sign.classList="reg_sign";
+            document.querySelector("div").append(field_email_sign);
 
             let field_email=document.createElement("input");
             field_email.type="text";
             field_email.id="enterEmail";
             field_email.classList="input";
-            document.querySelector("body").append(field_email);
+            document.querySelector("div").append(field_email);
         //кнопка
             let div_simple=document.createElement("div");
-            document.querySelector("body").append(div_simple);
+            div_simple.classList="reg_sign";
+            document.querySelector("div").append(div_simple);
 
             let button_register=document.createElement("button");
             let button_registerText=document.createTextNode("Зарегистрироваться");
             button_register.append(button_registerText);
-            document.querySelector("body").append(button_register);
-            //document.querySelector("button").addEventListener("click",);
+            button_register
+            document.querySelector("div").append(button_register);
+            document.querySelector("button").addEventListener("click",check_field);
 
         }
-      /*  function check_field(){
+        function check_field(){
           //login check
             var enterLogin=document.getElementById('enterLogin').value;
-            if (enterLogin =" "){
+            if (enterLogin ==" "){
                 alert("Введите логин");
             }
-            if (enterLogin=""){
+            if (enterLogin==""){
                 alert("Введите логин");
             }
           //password check
             var enterPass=document.getElementById('enterPass').value;
-            if (enterPass =" "){
+            if (enterPass ==" "){
                 alert("Введите пароль");
             }
-            if (enterPass=""){
+            if (enterPass==""){
                 alert("Введите пароль");
             }
           //repeate the password check
             var repeatPass=document.getElementById('repeatPass').value;
-            if (repeatPass =" "){
+            if (repeatPass ==" "){
                 alert("Повторите пароль");
             }
-            if (enterPass=""){
+            if (enterPass==""){
                 alert("Повторите пароль");
             }
           // check e-mail
             var enterEmail=document.getElementById('enterEmail').value;
-            if (enterEmail =" "){
+            if (enterEmail ==" "){
                 alert("Введите адрес электронной почты");
             }
-            if (enterEmail=""){
+            if (enterEmail==""){
                 alert("Введите адрес электронной почты");
             }
-        }*/
+        }
     </script>
 
   </head>
