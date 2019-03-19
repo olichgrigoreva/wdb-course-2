@@ -4,17 +4,31 @@
     <head>
         <meta charset="utf-8">
         <title>Страница регистрации</title>
-        
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <style>
-        
+        input {
+            display: block;
+            margin: 19px;
+            padding: 3px;
+            border-radius: 6px;
+            margin-left: auto;
+	        margin-right: auto;
+            width: 155px;
+        }
+        button {
+            display: block;
+            margin: 19px;
+            padding: 3px;
+            border-radius: 6px;
+            margin-left: auto;
+	        margin-right: auto;
+            width: 155px;
+        }
         </style>
         
         <script>
-          //  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
-          // <link rel="stylesheet" href="css/bootstrap.min.css" >
-        /* Теперь попробуйте на Javascript построить приложенный экран.
-        Экран регистрации пользователя. Этот экран нужен будет для финального проекта. 
-        При нажатии на кнопку "Register" вы должны проверить, что все поля не пустые, 
+         /*  При нажатии на кнопку "Register" вы должны проверить, что все поля не пустые, 
         поле Password совпадает с Confirm Password, а в поле Email имеется 1 символ @. 
         В случае, если хотя бы одно из условий не выполняется вывести сообщение 
         об ошибке(-ах) в стиле библиотеки Bootstrap. Оформление экрана также должно
@@ -23,7 +37,8 @@
 			function loaded(event){
                 
                 let user_name_window = document.createElement("input");
-				user_name_window.type = "text";
+                user_name_window.type = "text";
+               // user_name_window.name = "Username";
 				user_name_window.placeholder = "Username";
 				document.querySelector("body").append(user_name_window);
             
@@ -57,6 +72,7 @@
     </head>
 
     <body> 
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     </body>
 
 </html>
