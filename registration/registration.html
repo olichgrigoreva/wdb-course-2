@@ -1,0 +1,128 @@
+<html lang = "ru">
+<head>
+	<meta charset ="utf-8">
+        <meta name = "viewport" conten t = "width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
+    	<script>
+	document.addEventListener("DOMContentLoaded", loaded);
+	function loaded() {
+	
+	let username = document.createElement("input");
+	username.type = "text";
+	username.placeholder = "Username";
+	username.classList.add("username");
+	username.className = "form_control";
+	username.name = "input_id_1";
+	document.querySelector("body").append(username);
+
+	let password = document.createElement("input");
+	password.type = "password";
+	password.placeholder = "Password";
+	password.classList.add("password");
+	password.className = "form_control";
+	password.name = "input_id_2";
+	document.querySelector("body").append(password);
+
+	let confirm_password = document.createElement("input");
+	confirm_password.type = "password";
+	confirm_password.placeholder = "Confirm password";
+	confirm_password.classList.add("confirm_password");
+	confirm_password.className = "form_control";
+	confirm_password.name = "input_id_3";
+	document.querySelector("body").append(confirm_password);
+
+	let e_mail = document.createElement("input");
+	e_mail.type = "text";
+	e_mail.placeholder = "Email"
+	e_mail.classList.add("e_mail");
+	e_mail.className = "form_control";
+	e_mail.name = "input_id_4";
+	document.querySelector("body").append(e_mail);
+
+	let button_registration = document.createElement("button");
+	let buttonText = document.createTextNode("Register");
+	button_registration.classList.add("button_registration");
+	button_registration.className = "btn-primary";
+	button_registration.name = "button_id";
+	button_registration.append(buttonText);
+	document.querySelector("body").append(button_registration);
+	document.querySelector(".btn-primary").addEventListener("click", registration, check_form, validateEmail);
+	}
+	function registration() {
+	}
+	function check_form() {
+		if (document.querySelector(".input_id_1").value == " "){
+			if (document.querySelector(".input_id_2").value == " "){
+				if (document.querySelector(".input_id_3").value == " "){
+					if (document.querySelector(".input_id_4").value == " "){
+					alert("Some fields are empty");
+					return false;
+					}
+				}
+			}
+		}
+	}
+	function validateEmail() {
+		if (document.querySelector(".input_id_4").value != "@"){
+		alert("Invalid email adress");
+		return false;
+		}
+	}
+    	</script>
+	<style>
+	#h1 {
+	text-align: center;
+	}
+	small {
+	text-align: center;
+	}
+	#navbar {
+	background-color: CCCCCC;
+	text-align: center;
+	}
+	#footer {
+	background-color: CCCCCC;
+	position: fixed;
+	left: 0;
+	bottom:0;
+	right:0
+	}
+	input {
+	display: block;
+	margin: 20;
+	width: 200px;
+	padding: 1px;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	button {
+	display: block;
+	magrin: 20px;
+	border-radius: 5px;
+	width: 200px;
+	padding: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	</style>
+</head>
+<body>
+	<nav class = "navbar" id = "navbar"><h1><small>Super Notebook</small></h1></nav>
+	<header class = "header" id = "header">
+		<div class = "overlay" id = "overlay">
+		</div>
+	</header>
+	<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin = "anonymous">
+	</script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin = "anonymous">
+	</script>
+        <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous">
+	</script>
+
+	<footer class = "page-footer font-small blue" id = "footer">
+	<div class = "footer-copyright text-center py-3"> Copyright by ..., 2019
+	</div>
+	</footer>
+</body>
+</html>
