@@ -1,0 +1,9 @@
+.p-3{
+    width: 30%;
+    background-color: bisque;
+    margin: 0 auto;
+}
+
+.btn, select{
+    margin-bottom: 1rem!important;
+}

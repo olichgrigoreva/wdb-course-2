@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор v.2</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loaded);
+
+        function loaded(event) {
+            div();
+            h4('','Калькулятор');
+            input('num1');
+            select();
+            input('num2');
+            button();
+            h4('result');
+        }
+
+        function input(name) {
+            let input = document.createElement("input");
+            input.type = "text";
+            input.className = "input form-control mb-3";
+            input.placeholder ='Введите число';
+            input.type='number';
+            input.setAttribute('id',name);
+            document.querySelector("div").append(input);
+        }
+
+        function button() {
+            let button = document.createElement("button");
+            button.append(document.createTextNode('Вычислить'));
+            button.className = "button btn btn-info";
+            document.querySelector("div").append(button);
+            button.addEventListener("click", calculate());
+        }
+
+        function select() {
+            let select = document.createElement("select");
+            select.className = "button btn btn-info";
+            document.querySelector("div").append(select);
+            let opt_plus = new Option('+','+');
+            let opt_sub = new Option('-','-');
+            let opt_div = new Option('/','/');
+            let opt_mul = new Option('*','*');
+            select.appendChild(opt_plus);
+            select.appendChild(opt_sub);
+            select.appendChild(opt_div);
+            select.appendChild(opt_mul);
+        }
+
+        function div() {
+            let div = document.createElement("div");
+            div.className = "p-3";
+            document.querySelector("body").append(div);
+        }
+
+        function h4(class_type, text) {
+            let h4 = document.createElement("h4");
+            h4.className = class_type;
+            h4.append(document.createTextNode(text));
+            document.querySelector("div").append(h4);
+        }
+
+        function calculate() {
+            let first_digit = document.querySelector("[id='num1']").value;
+            /*let second_digit = +document.querySelector("num2").value;
+            let operation = document.querySelector("select").value;
+            if (operation == "+"){
+                result = first_digit+second_digit;
+            }
+            if (operation == "-"){
+                result = first_digit-second_digit;
+            }
+            if (operation == "*"){
+                result = first_digit*second_digit;
+            }
+            if (operation == "/"){
+                if (second_digit == 0){
+                    alert('Invalid operation with zero');
+                }
+                else{
+                    result = first_digit/second_digit;
+                }
+            }*/
+            alert(first_digit);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
