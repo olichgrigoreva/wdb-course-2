@@ -7,7 +7,11 @@
 }
 footer {
     background-color: #d8d2d2;
-  }
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
 
 .reg_fields{
     border-radius: 5px;
