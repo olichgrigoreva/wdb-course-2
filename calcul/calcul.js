@@ -64,10 +64,10 @@ function createOption(znak){
 
 function createButton(){
     let createButton = document.createElement("button");
-    createButton.onclick = fetchData;
     createButton.classList.add("size");
     createButton.innerHTML = "Решить";
     document.querySelector("form").append(createButton);
+	createButton.onclick = fetchData;
 };
 
 function createResult(){
