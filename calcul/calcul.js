@@ -73,6 +73,7 @@ function createButton(){
 function createResult(){
     let createResult = document.createElement("div");
     createResult.classList.add("resul");
+    createResult.innerHTML  =  "Результат = " ;
     document.querySelector(".container").append(createResult);
 };
 
@@ -93,10 +94,8 @@ function fetchData(event) {
             return response.text();
         })
         .then(text => {
-            document.querySelector(".showResult").replaceWith(text);
+            document.querySelector(".showResult").innerHTML = text;
         })
     return false;
 };
-
-
 
