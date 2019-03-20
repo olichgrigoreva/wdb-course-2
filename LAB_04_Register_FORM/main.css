@@ -6,6 +6,8 @@
 }
 
 .textFooter {
+  position:fixed;
+  bottom:0px;
   margin:30px 0px;
   padding:20px;
   font-size:18px;
