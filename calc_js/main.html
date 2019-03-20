@@ -16,7 +16,7 @@
             select();
             input('num2');
             button();
-            h4('result');
+            h4('result','');
         }
 
         function input(name) {
@@ -34,7 +34,7 @@
             button.append(document.createTextNode('Вычислить'));
             button.className = "button btn btn-info";
             document.querySelector("div").append(button);
-            button.addEventListener("click", calculate());
+            button.addEventListener("click", calculate);
         }
 
         function select() {
@@ -65,30 +65,35 @@
         }
 
         function calculate() {
-            let first_digit = document.querySelector("[id='num1']").value;
-            /*let second_digit = +document.querySelector("num2").value;
+
+            //document.querySelector('.').value = '';
+            let first_digit = +(document.querySelector("#num1").value);
+            let second_digit = +(document.querySelector("#num2").value);
             let operation = document.querySelector("select").value;
             if (operation == "+"){
                 result = first_digit+second_digit;
+                result=first_digit + "+" + second_digit + "=" + result;
             }
             if (operation == "-"){
                 result = first_digit-second_digit;
+                result=first_digit + "-" + second_digit + "=" + result;
             }
             if (operation == "*"){
                 result = first_digit*second_digit;
+                result=first_digit + "*" + second_digit + "=" + result;
             }
             if (operation == "/"){
                 if (second_digit == 0){
-                    alert('Invalid operation with zero');
+                    result ='Деление на ноль!';
                 }
                 else{
                     result = first_digit/second_digit;
+                    result=first_digit + "/" + second_digit + "=" + result;
+
                 }
-            }*/
-            alert(first_digit);
+            }
+            document.querySelector(".result").innerHTML = result;
         }
-
-
 
     </script>
 </head>

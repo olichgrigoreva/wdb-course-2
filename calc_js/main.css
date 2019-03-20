@@ -1,7 +1,9 @@
 .p-3{
     width: 30%;
     background-color: bisque;
-    margin: 0 auto;
+    position: fixed;
+    top: 35%;
+    left: 35%;
 }
 
 .btn, select{
