@@ -16,7 +16,7 @@ function createReg() {
 }
 function createRegHeader() {
     let createRegHeader= document.createElement("header");
-    document.querySelector(".container").append(createRegHeader);
+    document.querySelector("body").append(createRegHeader);
 };
 
 function createRegHeaderSecond() {
@@ -32,9 +32,12 @@ function createRegForm() {
     document.querySelector(".container").append(createRegForm);
 };
 
-function createInput(appendClass){
+function createInput(ClassName,){
     let createInput = document.createElement("input");
-    createInput.classList.add(appendClass);
+    createInput.classList.add(ClassName);
+    // createInput.type.add(typeName);
+    // createInput.placeholder = ("Username");
+    // createInput.placeholder = ("Password");
     document.querySelector(".reg_form").append(createInput);
 };
 
@@ -49,5 +52,5 @@ function createRegFormDiv() {
     let createRegFormDiv= document.createElement("div");
     createRegFormDiv.classList.add("footer");
     createRegFormDiv.innerHTML = "Copyright by ..., 2016";
-    document.querySelector(".container").append(createRegFormDiv);
+    document.querySelector("body").append(createRegFormDiv);
 };

@@ -23,14 +23,14 @@
 {
     display: flex;
     flex-direction: column;
-    width: 558px;
-    height: 602px;
-    background-color: #ffffff;
+    width: 500px;
+    height: 500px;
+    background-color: #27b0ff;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 70px;
     border-radius: 24px;
-    margin-top: 5%;
+    margin-top: 4%;
     padding-top: 5%;
 }
 
@@ -77,8 +77,20 @@ button
     }
 
     .reg_form {
-        margin-top: 0;
-        padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    background-color: #fefffd;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    border-radius: 24px;
+    margin-top: 4%;
+    padding-top: 5%;
+        /**/
+    /*margin-top: 0;*/
+    /*padding-top: 0;*/
     }
 
     input, button {
@@ -88,13 +100,12 @@ button
         margin-right: auto;
         margin-left: auto;
         display: block;
-        margin-top: 10px;
         outline: none;
         font-size: 20px;
     }
 
     .footer {
-	 position: absolute;
-     margin-bottom: 0px;
+
+        margin-bottom: auto;
     }
 }
