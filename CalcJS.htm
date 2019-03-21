@@ -1,0 +1,69 @@
+<html>
+	<head>
+	<title>Калькулятор</title>
+                
+        <!-- отключение стрелок в поле ввода -->
+	<style>
+
+	 
+	.raz { 
+              -moz-appearance: textfield;
+	     }
+            .raz::-webkit-inner-spin-button { 
+  	    display: none;
+	    }
+	</style>
+
+	<script>
+	function getres(){
+	let sel1 = document.getElementById('number1').value;
+	let sel2 = document.getElementById('selectoperation').value;
+	let sel3 = document.getElementById('number2').value;
+	let sel1int = parseFloat(sel1);
+	let sel3int = parseFloat(sel3);
+	if (sel2==0){
+	document.getElementById('result').value = sel1int+sel3int;
+	 }
+	if (sel2==1){
+        document.getElementById('result').value = sel1int-sel3int;
+	 }
+	if (sel2==2){
+	document.getElementById('result').value = sel1int*sel3int;
+	 }
+	if (sel2==3){
+	document.getElementById('result').value = sel1int/sel3int;
+	 }
+	}
+	</script>
+
+	</head>
+	
+	<body>
+	<!--Поле ввода первого числа-->
+	<input type="number" class="raz" id="number1" step="any"><text> Число 1 </text>
+	<br>
+
+	<!--Выпадающий список с выбором математической операции-->
+	<select id="selectoperation">
+	<option value=" "> </option>
+	<option value="0">Сумма </option>
+	<option value="1">Разность </option>
+	<option value="2">Произведение </option>
+	<option value="3">Деление </option>
+	</select>
+	<br>
+
+        <!--Поле ввода второго числа-->
+	<input type="number" class="raz" id="number2" step="any"><text> Число 2 </text>
+	<br>
+
+
+	<!--кнопка выполнить-->
+	<input type="button" onclick="getres()" value="Вычислить" />
+	<br>
+
+        <!--Вывод результата-->
+	<input id="result" /><text> Результат </text>
+	<br>
+
+	</body>
