@@ -1,0 +1,37 @@
+.p-3{
+    width: 30%;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+}
+input:placeholder-shown{
+    border: 0.5px solid orange;
+}
+
+footer{
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    border-top: 1px solid #e9a244;
+
+}
+
+header{
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    top: 0; /* Левый нижний угол */
+    border-bottom: 1px solid #e9a244;
+}
+
+header, footer{
+    padding: 2%;
+    background-color: bisque;
+    width: 100%; /* Ширина слоя */
+    text-align: center;
+}
+
+#inblock{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #005cff;
+}

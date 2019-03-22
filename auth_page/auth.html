@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор v.2</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loaded);
+
+        function loaded(event) {
+            form();
+            footer('Copyright &copy; 2019');
+            header('Welcome!');
+            div('form','p-3');
+            input(true, 'Username', '', 'username');
+            input(true, 'Password', 'password', 'password');
+            input(true, 'Confirm password','password','confirm');
+            input(true, 'E-mail','email', 'email');
+            button('submit','inblock', doSend);
+        }
+
+        function input(required, in_placeholder, input_type, name) {
+            let input = document.createElement("input");
+            input.required = required;
+            input.type = "text";
+            input.className = "input form-control mb-3";
+            input.placeholder =in_placeholder;
+            input.type=input_type;
+            input.name=name;
+            //input.setAttribute('name',name);
+            document.querySelector("div").append(input);
+        }
+
+        function header(text) {
+            let header = document.createElement("header");
+            header.className = "footer navbar-fixed-bottom";
+            document.querySelector("body").append(header);
+            document.querySelector('header').innerHTML=text;
+
+        }
+
+        function footer(text) {
+            let footer = document.createElement("footer");
+            footer.className = "footer navbar-fixed-bottom";
+            document.querySelector("body").append(footer);
+            document.querySelector('footer').innerHTML=text;
+
+        }
+
+        function button(type, id, in_function) {
+            let button = document.createElement("button");
+            button.append(document.createTextNode('Register'));
+            button.setAttribute('type',type);
+            button.setAttribute('id',id);
+            button.className = "button btn btn-info";
+            document.querySelector("div").append(button);
+            button.addEventListener('click',in_function);
+        }
+
+        function form() {
+            let form = document.createElement("form");
+            document.querySelector("body").append(form);
+        }
+
+        function select() {
+            let select = document.createElement("select");
+            select.className = "button btn btn-info";
+            document.querySelector("div").append(select);
+            let opt_plus = new Option('+','+');
+            let opt_sub = new Option('-','-');
+            let opt_div = new Option('/','/');
+            let opt_mul = new Option('*','*');
+            select.appendChild(opt_plus);
+            select.appendChild(opt_sub);
+            select.appendChild(opt_div);
+            select.appendChild(opt_mul);
+        }
+
+        function div(appendto, classname) {
+            let div = document.createElement("div");
+            div.className = classname;
+            document.querySelector(appendto).append(div);
+        }
+
+        function h4(class_type, text) {
+            let h4 = document.createElement("h4");
+            h4.className = class_type;
+            h4.append(document.createTextNode(text));
+            document.querySelector("div").append(h4);
+        }
+
+        function doSend() {
+
+            //alert('evenfdfgdghghgjhhkhkt');
+            let user = document.querySelector("[name='username']").value;
+            let password = document.querySelector("[name='password']").value;
+            let confirm = document.querySelector("[name='confirm']").value;
+            let email = document.querySelector("[name='email']").value;
+
+            /*if((email.indexOf("@",1))==-1){
+                alert('Адрес e-mail указан неверно')
+                document.user.email.select()
+                document.user.email.focus()
+            }
+            else{
+                document.user.submit();
+             }*/
+            //alert(user);
+            if (password !== confirm){
+                alert('Пароли не совпадают!');
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
