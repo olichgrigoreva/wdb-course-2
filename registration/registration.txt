@@ -6,21 +6,21 @@
     	<script>
 	document.addEventListener("DOMContentLoaded", loaded);
 	function loaded() {
-	
+		
 	let username = document.createElement("input");
 	username.type = "text";
-	username.placeholder = "Username";
+	username.placeholder = "Enter username";
 	username.classList.add("username");
 	username.className = "form_control";
-	username.name = "input_id_1";
+	username.name = "input_username1";
 	document.querySelector("body").append(username);
 
 	let password = document.createElement("input");
 	password.type = "password";
-	password.placeholder = "Password";
+	password.placeholder = "Enter password";
 	password.classList.add("password");
 	password.className = "form_control";
-	password.name = "input_id_2";
+	password.name = "input_password1";
 	document.querySelector("body").append(password);
 
 	let confirm_password = document.createElement("input");
@@ -28,27 +28,33 @@
 	confirm_password.placeholder = "Confirm password";
 	confirm_password.classList.add("confirm_password");
 	confirm_password.className = "form_control";
-	confirm_password.name = "input_id_3";
-	document.querySelector("body").append(confirm_password);
-
+	confirm_password.name = "input_confirm_password1";
+	document.querySelector("body").append(confirm_password);	
+	
 	let e_mail = document.createElement("input");
-	e_mail.type = "text";
-	e_mail.placeholder = "Email"
+	e_mail.type = "email";
+	e_mail.placeholder = "Enter email";
+	e_mail.ariaDescribedby = "emailHelp";
 	e_mail.classList.add("e_mail");
 	e_mail.className = "form_control";
-	e_mail.name = "input_id_4";
+	e_mail.name = "input_email1";
 	document.querySelector("body").append(e_mail);
 
 	let button_registration = document.createElement("button");
 	let buttonText = document.createTextNode("Register");
 	button_registration.classList.add("button_registration");
 	button_registration.className = "btn-primary";
-	button_registration.name = "button_id";
+	button_registration.name = "button_registration1";
 	button_registration.append(buttonText);
 	document.querySelector("body").append(button_registration);
-	document.querySelector(".btn-primary").addEventListener("click", registration, check_form, validateEmail);
+	document.querySelector(".btn-primary").addEventListener("click", email);
+	document.querySelector(".btn-primary").addEventListener("click", check_form);
+	document.querySelector(".btn-primary").addEventListener("click", validateEmail);
 	}
-	function registration() {
+	function email() {
+	if (document.querySelector(".input_email1").value == "") {
+	$("#myAlert").append(<div class = alert alert-warning alert-dismissibl id = myAlert2> <button type = button class = close data-dismiss = alert  aria-label=  true>&times;</button>Success!</div>);
+	}
 	}
 	function check_form() {
 		if (document.querySelector(".input_id_1").value == " "){
@@ -62,13 +68,7 @@
 			}
 		}
 	}
-	function validateEmail() {
-		if (document.querySelector(".input_id_4").value != "@"){
-		alert("Invalid email adress");
-		return false;
-		}
-	}
-    	</script>
+	</script>
 	<style>
 	#h1 {
 	text-align: center;
@@ -108,7 +108,7 @@
 	</style>
 </head>
 <body>
-	<nav class = "navbar" id = "navbar"><h1><small>Super Notebook</small></h1></nav>
+	<nav class = "navbar" id = "navbar"><h3><small>Super Notebook</small></h3></nav>
 	<header class = "header" id = "header">
 		<div class = "overlay" id = "overlay">
 		</div>
@@ -119,7 +119,14 @@
 	</script>
         <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous">
 	</script>
-
+	<form>
+	<div class = "alert alert-warning alert-dismissible fade show" role = "alert">
+	<stong>You should check email form</strong>
+	<button type = "button" class = "close" data-dismiss = "alert" aria-label = "close">
+	<span aria-hidden = "true">&times;</span>
+	<button>
+        </div>
+	</form>
 	<footer class = "page-footer font-small blue" id = "footer">
 	<div class = "footer-copyright text-center py-3"> Copyright by ..., 2019
 	</div>
