@@ -2,16 +2,16 @@ createP();
 createContainer();
 createCalcul();
 createForm();
-createInput("size1");
+createInput("size", "number", "num1", "ввести число");
 createSelect();
-createInput("size2");
-createButton();
-createResult();
 createOptionDisabled();
 createOption("/");
 createOption("*");
 createOption("-");
 createOption("+");
+createInput("size", "number", "num2", "ввести число");
+createButton();
+createResult();
 createResultat();
 
 function createP(){
@@ -38,15 +38,19 @@ function createForm(){
     document.querySelector(".calcul").append(createForm);
 };
 
-function createInput(appendClass){
+function createInput(appendClass, typeInput, numInput, placeholderInput){
     let createInput = document.createElement("input");
     createInput.classList.add(appendClass);
+    createInput.type = typeInput;
+    createInput.name = numInput;
+    createInput.placeholder = placeholderInput;
     document.querySelector("form").append(createInput);
 };
 
 function createSelect(){
     let createSelect = document.createElement("select");
     createSelect.classList.add("size");
+    createSelect.name = "operator";
     document.querySelector("form").append(createSelect);
 };
 
@@ -86,16 +90,15 @@ function createResultat(){
 function fetchData(event) {
     event.preventDefault();
     var form = document.querySelector('form');
-    fetch("calcul.php", {
+    fetch('calcul.php', {
         method: "POST",
-        body: new FormData('form'),
+        body: new FormData(form),
     })
         .then(response => {
             return response.text();
         })
         .then(text => {
-            document.querySelector(".showResult").innerHTML = text;
+            document.querySelector(".showResult").replaceWith(text);
         })
     return false;
 };
-
