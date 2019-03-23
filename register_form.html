@@ -92,24 +92,41 @@
 
         if(length_message_1==0 && length_message_2==0 && length_message_3==0 && length_message_4==0) {
           let div=document.createElement("div");
-          div.classList.add("alert", "alert-success");
-          div.role="alert";
+          div.classList.add("close_1", "info_message", "centr_1");
           let text=document.createTextNode("Форма регистрации успешно отправлена");
           div.append(text);
-          document.querySelector(".div_1_1").innerHTML="";
+          let br=document.createElement("br");
+          div.append(br);
+          div.append("(нажмите чтобы закрыть)");
           document.querySelector(".div_1_1").append(div);
         }
         else {
           let div=document.createElement("div");
-          div.classList.add("alert", "alert-danger");
-          div.role="alert";
+          div.classList.add("close_1", "info_message", "centr_1");
           div.append(message_1);
           div.append(message_2);
           div.append(message_3);
           div.append(message_4);
-          document.querySelector(".div_1_1").innerHTML="";
+          let br=document.createElement("br");
+          div.append(br);
+          div.append("(нажмите чтобы закрыть)");
           document.querySelector(".div_1_1").append(div);
         }
+// Закрывание сообщений
+        let crosses=document.querySelectorAll(".close_1");
+        console.log(crosses);
+        let q;
+        for (q=0; q<crosses.length; q++) {
+          crosses[q].addEventListener("click", close);
+        }
+
+        function close(event) {
+          let cross=event.target;
+          let block=cross.closest("div");
+          block.style.display="none";
+        }
+
+
       }
       /* построение тела страницы */
       document.addEventListener("DOMContentLoaded", div_1);
@@ -137,7 +154,7 @@
       }
       function div_1_1(event) {
         let div=document.createElement("div");
-        div.classList.add("centr_1", "div_1_1");
+        div.classList.add("centr_1", "div_1_1", "info_box");
         document.querySelector("body").append(div);
       }
       function div_2(event) {
@@ -311,6 +328,19 @@
       .centr_1 {
         text-align: center;
       }
+      .info_message {
+        background: #ebcf44;
+        border-radius: 10px;
+        margin: 10px;
+      }
+      .info_box {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        margin: 10px;
+      }
+
     </style>
   </head>
   <body>
