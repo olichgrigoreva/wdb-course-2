@@ -10,12 +10,12 @@
       if (sigh == "-"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 - +operand2);}
       if (sigh == "*"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 * +operand2);}
       if (sigh == "/"){document.querySelector(".result").innerHTML = "Ответ: " + (+operand1 / +operand2);}
-      else {alert("Выберите действие.")}
+      if (!sigh) {alert("Выберите действие.")}
     }
     </script>
   </head>
   <body>
-    <input class="operand1" type="text" placeholder="1 число">
+    <input class="operand1" type="number" placeholder="1 число">
     <select size="5" name="sigh">
       <option disabled>Выберите действие</option>
       <option value="+">сложить</option>
@@ -23,7 +23,7 @@
       <option value="*">умножить</option>
       <option value="/">разделить</option>
     </select>
-    <input class="operand2" type="text" placeholder="2 число">
+    <input class="operand2" type="number" placeholder="2 число">
     <button onclick="result()">Вычислить</button>
     <div class="result"></div>
   </body>
