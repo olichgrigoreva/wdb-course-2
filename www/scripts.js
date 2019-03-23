@@ -32,16 +32,42 @@ function loaded() {
     e_mail.classList.add("email_field");
 
     let reg_button = document.createElement("button");
-    fill_created_tag(reg_button, "button", "btn-primary", "register_button","Register", ".container");
+    fill_created_tag(reg_button, "submit", "btn-primary", "register_button","Register", ".container");
     reg_button.innerHTML = "<b>Register</b>";
     reg_button.classList.add("register_button");
 
     document.querySelector("button").addEventListener("click", check_form);
     }
 
+ 
 function check_form(){
-    if (document.querySelector(".username_field").value == '') {
-        $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+    if (document.querySelector(".username_field").value == '' || document.querySelector(".pass_field").value == '' || document.querySelector(".confirm_field").value == '' || document.querySelector(".email_field").value == '') {
+        let myalert = document.createElement("div");
+        myalert.className="alert alert-warning alert-dismissible fade show";
+        myalert.role = "alert";
+        myalert.innerHTML='<strong>Fill all fields!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+       document.querySelector(".container").append(myalert);
     }
+
+    if (document.querySelector(".pass_field").value !== document.querySelector(".confirm_field").value){
+        let myalert = document.createElement("div");
+        myalert.className="alert alert-warning alert-dismissible fade show";
+        myalert.role = "alert";
+        myalert.innerHTML='<strong>Passwords d\'not match!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+       document.querySelector(".container").append(myalert);
+    }
+
+    var mailformat = /.+@.+\..+/i;
+    if(mailformat.test(document.querySelector(".email_field").value) == false){
+        let myalert = document.createElement("div");
+        myalert.className="alert alert-warning alert-dismissible fade show";
+        myalert.role = "alert";
+        myalert.innerHTML='<strong>Wrong email format!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+       document.querySelector(".container").append(myalert);
+    }
+
+    window.setTimeout(function(){
+        $(".alert").alert('close');
+    },5000);
 }
 
