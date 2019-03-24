@@ -9,3 +9,7 @@
 .btn, select{
     margin-bottom: 1rem!important;
 }
+
+select{
+    width: 100%;
+}

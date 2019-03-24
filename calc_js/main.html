@@ -7,56 +7,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", loaded);
+        document.addEventListener("DOMContentLoaded", loaded);//по событию, когда весь HTML был полностью загружен - loaded
 
+        //элементы документа
         function loaded(event) {
-            div();
-            h4('','Калькулятор');
-            input('num1');
+            div(); //блок div
+            h4('','Калькулятор'); //заголовок
+            input('num1'); //значение атрибута id
             select();
             input('num2');
-            button();
-            h4('result','');
+            button();//кнопка передачи данных
+            h4('result','');//вывод результата
         }
 
-        function input(name) {
-            let input = document.createElement("input");
-            input.type = "text";
-            input.className = "input form-control mb-3";
-            input.placeholder ='Введите число';
-            input.type='number';
-            input.setAttribute('id',name);
-            document.querySelector("div").append(input);
-        }
-
-        function button() {
-            let button = document.createElement("button");
-            button.append(document.createTextNode('Вычислить'));
-            button.className = "button btn btn-info";
-            document.querySelector("div").append(button);
-            button.addEventListener("click", calculate);
-        }
-
-        function select() {
-            let select = document.createElement("select");
-            select.className = "button btn btn-info";
-            document.querySelector("div").append(select);
-            let opt_plus = new Option('+','+');
-            let opt_sub = new Option('-','-');
-            let opt_div = new Option('/','/');
-            let opt_mul = new Option('*','*');
-            select.appendChild(opt_plus);
-            select.appendChild(opt_sub);
-            select.appendChild(opt_div);
-            select.appendChild(opt_mul);
-        }
-
+        //создание блока div с элементами
         function div() {
             let div = document.createElement("div");
             div.className = "p-3";
             document.querySelector("body").append(div);
         }
 
+        //параметры заголовка (имя класса, текст для вывода)
         function h4(class_type, text) {
             let h4 = document.createElement("h4");
             h4.className = class_type;
@@ -64,11 +35,54 @@
             document.querySelector("div").append(h4);
         }
 
-        function calculate() {
+        //input (имя атрибута id)
+        function input(id) {
+            let input = document.createElement("input");
+            input.type = "text";
+            input.className = "input form-control mb-3";
+            input.placeholder ='Введите число';
+            input.type='number';
+            input.setAttribute('id',id);//прописываем атрибут id
+            document.querySelector("div").append(input);
+        }
 
-            //document.querySelector('.').value = '';
-            let first_digit = +(document.querySelector("#num1").value);
+        //select (обязательное поле или нет)
+        function select() {
+            let select = document.createElement("select");
+            select.className = "button btn btn-info";
+            document.querySelector("div").append(select);//добавить select в div
+            //создание опций
+            //option = new Option(text, value, defaultSelected, selected);
+            let opt_placeholder = new Option('Выберите действие','',false, false);
+            let opt_plus = new Option('+','+');
+            let opt_sub = new Option('-','-');
+            let opt_div = new Option('/','/');
+            let opt_mul = new Option('*','*');
+            //добавление к родительскому элементу
+            select.appendChild(opt_placeholder);
+            select.appendChild(opt_plus);
+            select.appendChild(opt_sub);
+            select.appendChild(opt_div);
+            select.appendChild(opt_mul);
+        }
+
+        //создание кнопки
+        function button() {
+            let button = document.createElement("button");
+            //подпись кнопки
+            button.append(document.createTextNode('Вычислить'));
+            button.className = "button btn btn-info";
+            document.querySelector("div").append(button);
+            //назначение на событие клика обработчика - функция вычислить
+            button.addEventListener("click", calculate);
+        }
+
+        //функция вычисления
+        function calculate() {
+            //+= приведение типов к числу, получение значений
+            let first_digit = +(document.querySelector("#num1").value);//поиск элемента со значением атрибута num1
             let second_digit = +(document.querySelector("#num2").value);
+            //поиск тега select
             let operation = document.querySelector("select").value;
             if (operation == "+"){
                 result = first_digit+second_digit;
@@ -89,14 +103,14 @@
                 else{
                     result = first_digit/second_digit;
                     result=first_digit + "/" + second_digit + "=" + result;
-
                 }
             }
-            document.querySelector(".result").innerHTML = result;
+            document.querySelector(".result").innerHTML = result;//вывод результата текстом
         }
 
     </script>
 </head>
+
 <body>
 
 </body>
