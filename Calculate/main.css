@@ -1,0 +1,11 @@
+.p-3{
+    width: 30%;
+    background-color: bisque;
+    position: fixed;
+    top: 25%;
+    left: 35%;
+}
+
+.btn, select{
+    margin-bottom: 1rem!important;
+}
