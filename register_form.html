@@ -114,7 +114,6 @@
         }
 // Закрывание сообщений
         let crosses=document.querySelectorAll(".close_1");
-        console.log(crosses);
         let q;
         for (q=0; q<crosses.length; q++) {
           crosses[q].addEventListener("click", close);
@@ -125,8 +124,6 @@
           let block=cross.closest("div");
           block.style.display="none";
         }
-
-
       }
       /* построение тела страницы */
       document.addEventListener("DOMContentLoaded", div_1);
@@ -139,6 +136,12 @@
       document.addEventListener("DOMContentLoaded", div_2_4);
       document.addEventListener("DOMContentLoaded", div_2_5);
       document.addEventListener("DOMContentLoaded", div_3);
+      document.addEventListener("DOMContentLoaded", podsvet_name);
+      document.addEventListener("DOMContentLoaded", podsvet_email);
+      document.addEventListener("DOMContentLoaded", podsvet_password);
+      document.addEventListener("DOMContentLoaded", podsvet_confirm_password);
+
+
       function div_1(event) {
         let div=document.createElement("div");
         div.classList.add("text_1", "centr_1", "div_1");
@@ -175,6 +178,7 @@
         div.classList.add("div_2_1");
         let label=document.createElement("label");
         label.setAttribute("for", "enter_username_1");
+        label.id="podsvet_name";
         let text=document.createTextNode("Имя пользователя");
         label.append(text);
         div.append(label);
@@ -202,6 +206,7 @@
         div.append(div_br);
         let label=document.createElement("label");
         label.setAttribute("for", "enter_email_1");
+        label.id="podsvet_email";
         let text=document.createTextNode("Ваш e-mail адрес");
         label.append(text);
         div.append(label);
@@ -229,6 +234,7 @@
         div.append(div_br);
         let label=document.createElement("label");
         label.setAttribute("for", "enter_password_1");
+        label.id="podsvet_password";
         let text=document.createTextNode("Пароль");
         label.append(text);
         div.append(label);
@@ -256,6 +262,7 @@
         div.append(div_br);
         let label=document.createElement("label");
         label.setAttribute("for", "confirm_password_1");
+        label.id="podsvet_confirm_password";
         let text=document.createTextNode("Подтвердите пароль.");
         label.append(text);
         div.append(label);
@@ -306,6 +313,100 @@
         div.append(div_br_2);
         document.querySelector("body").append(div);
       }
+
+// подсветка полей
+// подсветка имя
+      function podsvet_name(event) {
+        let podsvet_name=document.getElementById("enter_username_1");
+        podsvet_name.onkeyup=function podsvet() {
+          let user_name=document.querySelector("#enter_username_1").value;
+          let lenght_user_name=user_name.length;
+          let symbol_massiv="1234567890QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm._-";
+          let length_symbol_massiv=symbol_massiv.length;
+          let k;
+          let l;
+          let sootv_name=0;
+            if(lenght_user_name>2) {
+              for(k=0; k<lenght_user_name; k++) {
+                for(l=0; l<length_symbol_massiv; l++) {
+                  if(user_name.charAt(k)==symbol_massiv.charAt(l)) {
+                    sootv_name=sootv_name+1;
+                  }
+                }
+              }
+            }
+          if(lenght_user_name>2 && lenght_user_name<33 && sootv_name==lenght_user_name) {
+            document.getElementById("podsvet_name").className="good";
+          }
+          else {
+            document.getElementById("podsvet_name").className="bad";
+          }
+        }
+      }
+// подсветка емейл
+      function podsvet_email(event) {
+        let podsvet_name=document.getElementById("enter_email_1");
+        podsvet_name.onkeyup=function podsvet() {
+          let email=document.querySelector("#enter_email_1").value;
+          let lenght_email=email.length;
+          let i;
+          let sobaka;
+          for(i=0; i<lenght_email; i++) {
+            if(email.charAt(i)=="@") {
+              sobaka=1;
+            }
+          }
+          if(lenght_email>2 && sobaka==1) {
+            document.getElementById("podsvet_email").className="good";
+          }
+          else {
+            document.getElementById("podsvet_email").className="bad";
+          }
+        }
+      }
+// подсветка пароль
+      function podsvet_password(event) {
+        let podsvet_name=document.getElementById("enter_password_1");
+        podsvet_name.onkeyup=function podsvet() {
+          let password=document.querySelector("#enter_password_1").value;
+          let lenght_password=password.length;
+          let symbol_massiv_pass="1234567890QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm";
+          let length_symbol_massiv_pass=symbol_massiv_pass.length;
+          let m;
+          let n;
+          let sootv_password=0;
+          if(lenght_password>5) {
+            for(m=0; m<lenght_password; m++) {
+              for(n=0; n<length_symbol_massiv_pass; n++) {
+                if(password.charAt(m)==symbol_massiv_pass.charAt(n)) {
+                  sootv_password=sootv_password+1;
+                }
+              }
+            }
+          }
+          if(lenght_password>5 && lenght_password<33 && sootv_password==lenght_password) {
+            document.getElementById("podsvet_password").className="good";
+          }
+          else {
+            document.getElementById("podsvet_password").className="bad";
+          }
+        }
+      }
+// подсветка проверка пароль
+      function podsvet_confirm_password(event) {
+        let podsvet_name=document.getElementById("confirm_password_1");
+        podsvet_name.onkeyup=function podsvet() {
+          let password=document.querySelector("#enter_password_1").value;
+          let confirm_password=document.querySelector("#confirm_password_1").value;
+          if(password==confirm_password) {
+            document.getElementById("podsvet_confirm_password").className="good";
+          }
+          else {
+            document.getElementById("podsvet_confirm_password").className="bad";
+          }
+        }
+      }
+
     </script>
     <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
@@ -340,7 +441,12 @@
         right: 10px;
         margin: 10px;
       }
-
+      .good {
+        color: green;
+      }
+      .bad {
+        color: red;
+      }
     </style>
   </head>
   <body>
