@@ -49,11 +49,12 @@
 	document.querySelector("body").append(button_registration);
 	document.querySelector(".btn-primary").addEventListener("click", email);
 	document.querySelector(".btn-primary").addEventListener("click", check_form);
-	document.querySelector(".btn-primary").addEventListener("click", validateEmail);
+	// document.querySelector(".btn-primary").addEventListener("click", validateEmail);
 	}
 	function email() {
 	if (document.querySelector(".input_email1").value == "") {
-	$("#myAlert").append(<div class = alert alert-warning alert-dismissibl id = myAlert2> <button type = button class = close data-dismiss = alert  aria-label=  true>&times;</button>Success!</div>);
+	$("#myAlert").on("closed.bs.alert", function(email){
+	})
 	}
 	}
 	function check_form() {
