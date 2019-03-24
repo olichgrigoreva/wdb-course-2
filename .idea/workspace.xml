@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="696825a4-46e9-4034-878d-26361b93a2ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/calcul/calcul PHP.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calcul/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/calcul/login/login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,20 +19,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calcul/calcul.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/calcul/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+            <state relative-caret-position="561">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calcul/login/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="28" selection-end-line="12" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calcul/login/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="57" column="24" selection-end-line="110" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -55,7 +74,6 @@
         <option value="$PROJECT_DIR$/a.html" />
         <option value="$PROJECT_DIR$/calcul/calcul.html" />
         <option value="$PROJECT_DIR$/calcul1.html" />
-        <option value="$PROJECT_DIR$/calcul/login/login.js" />
         <option value="$PROJECT_DIR$/calculphp.html" />
         <option value="$PROJECT_DIR$/calculphp.php" />
         <option value="$PROJECT_DIR$/calcul.php" />
@@ -66,7 +84,7 @@
         <option value="$PROJECT_DIR$/calcul JS/calcul.js" />
         <option value="$PROJECT_DIR$/calcul JS/calcul.php" />
         <option value="$PROJECT_DIR$/calcul JS/calcul.html" />
-        <option value="$PROJECT_DIR$/calcul/calculphp.php" />
+        <option value="$PROJECT_DIR$/calcul/login/login.js" />
       </list>
     </option>
   </component>
@@ -74,10 +92,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="35" />
-    <option name="y" value="69" />
-    <option name="width" value="1423" />
-    <option name="height" value="972" />
+    <option name="x" value="541" />
+    <option name="y" value="72" />
+    <option name="width" value="1130" />
+    <option name="height" value="967" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -87,6 +105,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,21 +113,10 @@
               <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
               <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
-              <item name="calcul" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
-              <item name="calcul FETCH" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,7 +168,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83062000" />
+    <option name="totallyTimeSpent" value="83815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -172,10 +180,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="69" width="1423" height="972" extended-state="0" />
+    <frame x="874" y="54" width="1130" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.17472924" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.16758242" />
       <window_info id="Structure" order="1" sideWeight="0.50057936" side_tool="true" weight="0.3375984" />
       <window_info id="Favorites" order="2" sideWeight="0.50086355" side_tool="true" weight="0.3375984" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
@@ -210,39 +218,13 @@
     <entry file="file://$PROJECT_DIR$/a.js" />
     <entry file="file://$PROJECT_DIR$/s.html" />
     <entry file="file://$PROJECT_DIR$/a.php" />
-    <entry file="file://$PROJECT_DIR$/calcul/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a.html" />
     <entry file="file://$PROJECT_DIR$/calcul1.html" />
-    <entry file="file://$PROJECT_DIR$/calcul/login/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calcul.php" />
     <entry file="file://$PROJECT_DIR$/calcul.html" />
     <entry file="file://$PROJECT_DIR$/calculphp.php" />
-    <entry file="file://$PROJECT_DIR$/calcul PHP/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.php" />
+    <entry file="file://$PROJECT_DIR$/calcul PHP/calcul.php" />
     <entry file="file://$PROJECT_DIR$/calcul/calcul.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -250,63 +232,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/calcul/calcul.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calcul/calculphp.php" />
     <entry file="file://$PROJECT_DIR$/calcul/calcul.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+        <state relative-caret-position="214">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.html">
+    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.html" />
+    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.php" />
+    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.html" />
+    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.js" />
+    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.css" />
+    <entry file="file://$PROJECT_DIR$/calcul/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="51">
+          <caret line="3" column="28" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.js">
+    <entry file="file://$PROJECT_DIR$/calcul/login/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="n#!!block;n#createOption#0" />
-            <element signature="n#!!block;n#createButton#0" />
-          </folding>
+        <state relative-caret-position="101">
+          <caret line="57" column="24" selection-end-line="110" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.php">
+    <entry file="file://$PROJECT_DIR$/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.html">
+    <entry file="file://$PROJECT_DIR$/calcul/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul/calculphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="2" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+        <state relative-caret-position="306">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
