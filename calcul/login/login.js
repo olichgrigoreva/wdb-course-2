@@ -29,12 +29,12 @@ function createRegForm() {
     createRegForm.classList.add("reg_form");
     document.querySelector(".container").append(createRegForm);
 };
-function createInput(ClassName, typeName, valueName, placeholdername){
+function createInput(ClassName, typeName, valueName, placeholder){
     let createInput = document.createElement("input");
     createInput.classList.add(ClassName);
     createInput.type.add = typeName;
     createInput.value = valueName;
-    createInput.placeholder = placeholdername;
+    createInput.placeholder = placeholder;
     document.querySelector(".reg_form").append(createInput);
 };
 function createButton(){
@@ -53,7 +53,7 @@ function check() {
         window.alert("Приветствую, дорогой друг!!!");
     }
     else {
-        window.alert("Упс! Где то ошибка, попробуй ещё раз, дорогой друг!!!")
+        window.alert("Упс! Где-то ошибка, попробуй ещё раз, дорогой друг!!!")
     }
 };
 function createRegFormDiv() {

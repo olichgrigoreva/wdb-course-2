@@ -44,7 +44,7 @@ input,button
     display: block;
     margin-top: 27px;
     outline:none;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 input
@@ -101,7 +101,7 @@ button
         margin-left: auto;
         display: block;
         outline: none;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .footer {
