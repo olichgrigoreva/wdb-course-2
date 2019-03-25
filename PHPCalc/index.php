@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -10,8 +10,23 @@
   <body>
     <div  style="text-align:center;">
       <h1> Калькулятор</h1>
-
-      <form class="" action="index.html" method="post">
+  <?php
+    $first_number = $_REQUEST["first_number"];
+    $operand = $_REQUEST["operand"];
+    $second_number = $_REQUEST["second_number"];
+        if ($operand == "plus"){
+            $result = $first_number + $second_number;      }
+        if ($operand == "minus"){
+            $result = $first_number - $second_number;
+        }
+        if ($operand == "multiply"){
+           $result = $first_number * $second_number;
+        }
+        if ($operand == "divide"){
+            $result = $first_number / $second_number;
+        }
+  ?>
+      <form name="calc" method="post">
         <p>
           <input type="text" name="first_number" title="Введите первое число">
           <input type="text" name="second_number" title="Введите второе число">
@@ -25,12 +40,16 @@
           </select>
         </p>
         <p>
-          <input type="button" name="btn" value="Показать результат" onclick="calc()">
+          <input type="submit" value="Посчитать">
         </p>
         <p>
-          РЕЗУЛЬТАТ<p name="res"></p>
+          РЕЗУЛЬТАТ<p name="res">
+            <?php
+            echo $result;
+            ?>
+          </p>
         </p>
-        </form>
+      </form>
     </div>
     </body>
 </html>
