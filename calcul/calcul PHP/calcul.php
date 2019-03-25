@@ -1,15 +1,12 @@
 <?php
 ini_set("display_errors",1);
 error_reporting(E_ALL);
-
 //echo "<pre>";
 //print_r($_REQUEST);
-
 function calcul($num1, $num2, $operator){
     $num1 = $_REQUEST['num1'];
     $num2 = $_REQUEST['num2'];
     $operator = $_REQUEST['operator'];
-
     if ($operator == '+'){
         $result = $num1 + $num2;
     }else if ($operator == '-'){
@@ -30,7 +27,6 @@ function calcul($num1, $num2, $operator){
 //     echo  $calcul;
  }
 ?>
-
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -40,7 +36,7 @@ function calcul($num1, $num2, $operator){
 </head>
 <body>
 <form method="POST">
-    <input class="size" type="number" name="num1"/><br>
+    <input class="size" type="text" name="num1"/><br>
     <select class="size" name="operator">
         <option disabled>выбрать действие</option>
         <option>+</option>
@@ -48,7 +44,7 @@ function calcul($num1, $num2, $operator){
         <option>*</option>
         <option>/</option>
     </select><br>
-    <input class="size" type="number" name="num2"/><br>
+    <input class="size" type="text" name="num2"/><br>
     <input class="size" type="submit" name="submit" value="Pешить"/><br>
 </form>
 Pезультат = <?php echo  $calcul;?>

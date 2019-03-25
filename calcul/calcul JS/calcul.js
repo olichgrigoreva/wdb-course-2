@@ -101,4 +101,4 @@ function fetchData(event) {
             document.querySelector(".showResult").replaceWith(text);
         })
     return false;
-};
+}
