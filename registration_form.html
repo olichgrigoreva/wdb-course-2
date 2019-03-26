@@ -2,47 +2,69 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Регистрация</title>
-    <style>
-    </style>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        let page = document.createElement("div");
+          page.classList.add("container-fluid");
+        let header = document.createElement("header");
+          document.querySelector("body").append(header);
+          header.append("HEADER");
+          header.className = "bg-secondary p-4 text-center";
+        let footer = document.createElement("footer");
+          document.querySelector("body").append(footer);
+          footer.append("FOOTER");
+          footer.className = "fixed-bottom bg-secondary p-1 text-center";
+
         let form = document.createElement("form");
-        document.querySelector("body").append(form);
+          form.className = "col-sm-7 col-lg-3 mx-auto";
+          document.querySelector("body").append(form);
+
           let username = document.createElement("input");
           let email = document.createElement("input");
           let password = document.createElement("input");
           let confpassword = document.createElement("input");
-            username.classList.add("textfield");
-            email.classList.add("textfield");
-            password.classList.add("textfield");
-            confpassword.classList.add("textfield");
+
+            username.className = "form-control mt-5 mb-2 shadow-sm";
+            email.className = "form-control mb-2 shadow-sm";
+            password.className = "form-control mb-2 shadow-sm ";
+            confpassword.className = "form-control mb-4 shadow-sm";
+
             username.type = "text";
             email.type = "text";
-            password.type = "text";
-            confpassword.type = "text";
-          form.append(username);
-          form.append(email);
-          form.append(password);
-          form.append(confpassword);
+            password.type = "password";
+            confpassword.type = "password";
+
             username.placeholder = "введите логин";
             email.placeholder = "e-mail";
             password.placeholder = "пароль";
             confpassword.placeholder = "повторите пароль";
+
+            form.append(username);
+            form.append(email);
+            form.append(password);
+            form.append(confpassword);
+
           let register = document.createElement("button");
             let buttontext = document.createTextNode("Register");
-          register.append(buttontext);
-          register.type = "button";
-          form.append(register);
+            register.append(buttontext);
+            register.type = "button";
+            register.className = "form-control btn btn-primary";
+            form.append(register);
 
-          register.addEventListener ("click", function() {
-            if (!username.value) {alert("Введите логин")}
-            if (!password.value) {alert("введите пароль")}
-            if (!email.value.includes("@")) {alert("Введите емэйл")}
-            if (!(password.value == confpassword.value)) {alert("Пароли не совпадают")}
-          })
+            register.addEventListener ("click", function() {
+              if (!username.value)
+                {alert("Введите логин")}
+              if (!email.value.includes("@"))
+                {alert("Введите емэйл")}
+              if (!password.value)
+                {alert("введите пароль")}
+              if (!(password.value == confpassword.value))
+                {alert("Пароли не совпадают")}
+            })
       })
-
     </script>
   </head>
   <body>
