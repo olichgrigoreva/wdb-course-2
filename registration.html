@@ -4,7 +4,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
             input {
@@ -44,12 +43,12 @@
 				document.querySelector("body").append(user_name_window);
             
                 let first_password_window = document.createElement("input");
-                first_password_window.type = "text";
+                first_password_window.type = "password";
                 first_password_window.placeholder = "Password";
                 document.querySelector("body").append(first_password_window);
 
                 let confirm_password_window = document.createElement("input");
-                confirm_password_window.type = "text";
+                confirm_password_window.type = "password";
                 confirm_password_window.placeholder = "Confirm password";
                 document.querySelector("body").append(confirm_password_window);
 
@@ -65,10 +64,22 @@
                 document.querySelector("button").addEventListener("click",registration);
             }
 
-            function registration(){
+            function proverka_na_pustotu(){
+                if (document.querySelector(".user_name_window").value == ""){
+                    if (document.querySelector(".first_password_window").value == ""){
+                        if (document.querySelector(".confim_password_window").value == ""){
+                            if (document.querySelector(".email_window").value == ""){
+                                alert("Что-то не заполнено");
+                                return false;
+                            }
+                        }
+                    }
+                }
 
             }
-        
+            //function proverka_email(){
+            //    if (document.querySelector)
+            //}
         </script>
         <title>Страница регистрации</title>
     </head>
