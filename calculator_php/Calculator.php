@@ -1,51 +1,57 @@
 <?php
-	ini_set("display_errors", 1); 
+	ini_set("display_errors", 1);
 	error_reporting(E_ALL);
 	
-	function calculator($num1, $num2, $radio){
-
-	$num1=$_REQUEST["num1"];
-	$num2=$_REQUEST["num2"];
-	$radio=$_REQUEST["radio"];
-	
-		if ($_REQUEST["radio"] == "+"){
-		$result = $num1 + $num;
-		echo "$result = $num1 + $num2";
+	function calculator($num1, $num2, $sign){
+		if ($sign=="+"){
+		$result=$num1+$num2;
 		}
-			if ($_REQUEST["radio"] == "-"){
-			$result = $num1 - $num;
-			echo "$result = $num1 - $num2";
+		if ($sign=="-"){
+		$result=$num1-$num2;
+		}
+		if ($sign=="*"){
+		$result=$num1*$num2;
+		}
+		if ($sign=="/"){
+			if ($num2=="0"){
+			$result = "False";
 			}
-				if ($_REQUEST["radio"] == "*"){
-				$result = $num1 * $num;
-				echo "$result = $num1 * $num2";
-				}
-					if ($_REQUEST["radio"] == "/"){
-					$result = $num1 / $num;
-					echo "$result = $num1 / $num2";
-					}	
-	return $result;
+				else{
+				$result=$num1/$num2;
+		}
+		}
+		return $result;
 	}		
-	if (!empty($_REQUEST["submit"])) {
-     	$calculator = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["radio"]);
+	if (!empty($_REQUEST["plus_button"])){
+     	$result = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["plus_button"]);
+	}
+	if (!empty($_REQUEST["minus_button"])){
+     	$result = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["minus_button"]);
+	}
+	if (!empty($_REQUEST["multiplication_button"])){
+     	$result = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["multiplication_button"]);
+	}
+	if (!empty($_REQUEST["division_button"])){
+     	$result = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["division_button"]);
 	}
 ?>
 <html>
 	<head>
 	</head>
 	<body>
-		<?php echo $result;?>	
 		<form method = "POST">
 			<p>First number:</br>
-			<input type = "number" id = "num1" name = "num1"/></p>
+			<input type = "number" class = "first_number" name = "num1"/></p>
 			<p>Second number:</br>
-			<input type = "number" id = "num2" name = "num2"/></p>
-				<input type = "button" name = "radio" placeholder = "plus" value = "+"/>
-				<input type = "button" name = "radio" placeholder = "minus" value = "-"/>
-				<input type = "button" name = "radio" placeholder = "multiplication" value = "*"/>
-				<input type = "button" name = "radio" placeholder = "division" value = "/"/>
-				<button type = "submit" name = "result" id= "result" value = "Result"/>Calculator</button>
-
+			<input type = "number" class = "second_number" name = "num2"/></p>
+				<input name = "plus_button" type = "submit" value = "+"/>
+				<input name = "minus_button" type = "submit" value = "-"/>
+				<input name = "multiplication_button" type = "submit" value = "*"/>
+				<input name = "division_button" type = "submit" value = "/"/>
 		</form>	
-	</body>
+				<fieldset>
+        			<legend><h2>Calculated result</h2></legend>
+        			<output name = "result"><?php echo $result;?></output>
+      				</fieldset>
+	<body>
 </html>
