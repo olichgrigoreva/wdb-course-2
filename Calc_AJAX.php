@@ -24,8 +24,15 @@ function calc($a,$b,$op){
     return $result;
     }
 
-$result = calc($_REQUEST["Input_A"],$_REQUEST["Input_B"],$_REQUEST["Operation"]); // 4 // 6.5
-echo $result;
+if($_REQUEST["Input_A"] !=="" || $_REQUEST["Input_B"] !=="" || $_REQUEST["Operation"] !=="") {
+    $result = calc($_REQUEST["Input_A"],$_REQUEST["Input_B"],$_REQUEST["Operation"]); // 4 // 6.5
+    echo $result;
+}
+else {
+    $result = "Заполните все поля!";
+    echo $result;
+}
+
 
 
 
