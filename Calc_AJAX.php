@@ -1,6 +1,6 @@
 <?php
-ini_set("display_errors", 1); // 1
-error_reporting(E_ALL);// 2
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 
 function calc($a,$b,$op){
 
@@ -24,12 +24,12 @@ function calc($a,$b,$op){
     return $result;
     }
 
-if($_REQUEST["Input_A"] !=="" || $_REQUEST["Input_B"] !=="" || $_REQUEST["Operation"] !=="") {
-    $result = calc($_REQUEST["Input_A"],$_REQUEST["Input_B"],$_REQUEST["Operation"]); // 4 // 6.5
+if($_REQUEST["Input_A"]=="" || $_REQUEST["Input_B"]=="" || $_REQUEST["Operation"]=="") {
+    $result = "Заполните все поля!";
     echo $result;
 }
 else {
-    $result = "Заполните все поля!";
+    $result = calc($_REQUEST["Input_A"],$_REQUEST["Input_B"],$_REQUEST["Operation"]);
     echo $result;
 }
 
