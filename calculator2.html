@@ -2,52 +2,64 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Калькулятор</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script>
-   document.addEventListener("DOMContentLoaded",loaded);
+   document.addEventListener("DOMContentLoaded", loaded);
    function loaded(){
     let number1 = document.createElement("input");
-     input type = "number";
-     number1.classList.add("input");
+     number1.type = "number";
+     number1.id = "number1";
      document.querySelector("body").append(number1);
     let select = document.createElement("select");
-     let options = ["+", "-", "*", "/"];
-     for(var i = 0; i < options.length; i++) {
-      var opt = options[i];
-      var el = document.createElement("option");
-      el.textContent = opt;
-      el.value = opt;
-      select.appendChild(el);
-     }​
+     select.id = "action";
+     document.querySelector("body").append(select);
+    let OptionDisabled = document.createElement("option");
+     OptionDisabled.innerHTML = "Выбрать действие";
+     document.querySelector("select").add(OptionDisabled); 
+    let option1 = document.createElement("option");
+     option1.value = "+";
+     option1.innerHTML = "+";
+     document.querySelector("select").add(option1);
+    let option2 = document.createElement("option");
+     option2.value = "-";
+     option2.innerHTML = "-";
+     document.querySelector("select").add(option2);
+    let option3 = document.createElement("option");
+     option3.value = "*";
+     option3.innerHTML = "*";
+     document.querySelector("select").add(option3);
+    let option4 = document.createElement("option");
+     option4.value = "/";
+     option4.innerHTML = "/";
+     document.querySelector("select").add(option4);
     let number2 = document.createElement("input");
-     input type = "number";
-     number2.classList.add("input");
+     number2.type = "number";
+     number2.id = "number2";
      document.querySelector("body").append(number2);
-    let button = document.CreateElement("button");
-     let buttonText = document.CreateTextNode ("Расчёт");
-     button.append (buttonText);
-     document.querySelector("body").append(button);
-     document.querySelector("button").addEventListener("click",Calculate);
-   });
-   function Calculate(){
-    let number1 = parseInt(document.getElementById('number1').value);
-    let number2 = parseInt(document.getElementById('number2').value;
-    let action = document.getElementById('action').value;
-    if (action == "+") {
+    let button_calc = document.createElement("button");
+     button_calc.append(document.createTextNode("Расчёт"));
+     button_calc.classList.add("button_calc");
+     document.querySelector("body").append(button_calc);
+     document.querySelector(".button_calc").addEventListener("click",calculate);
+    let result = document.createElement("div");
+     result.style = "font-weight:bold";
+     result.id = "result";
+     document.querySelector("body").append(result);
+   }
+   function calculate(){
+    var number1 = parseInt(document.getElementById('number1').value);
+    var action = document.getElementById('action').value;
+    var number2 = parseInt(document.getElementById('number2').value);
+    if (action=="+") {
      var result = number1 + number2;
     }
-    else if (action == "-") {
+    else if (action=="-") {
      var result = number1 - number2;
     }
-    else if (action == "*") {
+    else if (action=="*") {
      var result = number1 * number2;
     }
     else {
-     if (number2 == 0) {
-      var result = 'error';
-     }
      var result = number1 / number2;
     }
     document.getElementById('result').innerHTML = 'Результат: ' + result;
