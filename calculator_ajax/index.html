@@ -1,33 +1,38 @@
 <html>
 	<head>
 		<script>
-			function calculator(event){
-				event.preventDefault();
-					let form = document.querySelector("form");
-					fetch("C:/Users/Levashov/Documents/wdb-code/calculator.php", {
-					method: "POST",
-					body: new FormData(form)
-					})
-					.then(response => {
-						return response.text();
-					})
-					.then(text => {
-					document.querySelector(".result").innerHTML = text;
-					});
-			}
-		</script>
+    			function calculate(event) {
+      			event.preventDefault();
+      				let input_data = document.querySelector("form");
+      				fetch("calculator.php", {
+        			method: "POST",
+       				body: new FormData(input_data)
+     				})
+      				.then(response => {
+     				return response.text();
+      				})
+      				.then(text => {
+        			document.querySelector("output").innerHTML = text;
+      				});
+   				}
+  		 </script>
 	</head>
 	<body>
-		<form>
-			<p>First number:</br>
-			<input type = "text" class = "first_number" name = "num1"/></p>
-			<p>Second number:</br>
-			<input type = "text" class = "second_number" name = "num2"/></p>
-				<button onclick = "calculate(event)" button name = "plus_button" value = "+"/>+</button>
-				<button onclick = "calculate(event)" button name = "minus_button" value = "-"/>-</button>
-				<button onclick = "calculate(event)" button name = "multiplication_button" value = "*"/>*</button>
-				<button onclick = "calculate(event)" button name = "division_button" value = "/"/>/</button>
-					<span class = "result"></span>
-		</form>	
-	</body>
+	<form class = "input_fields">
+		<input type ="number" class="First_number" name="First_number">
+		<select name = "operation">
+                <option name = "Operation" value = "">Select operation</option>
+                <option name = "Operation" value = "+">+</option>
+                <option name = "Operation" value = "-">-</option>
+                <option name = "Operation" value = "*">*</option>
+                <option name = "Operation" value = "/">/</option>
+		</select>
+	<input type = "number" class = "Second_number" name = "Second_number">
+		<input onclick = "calculate(event)" name = "calculate_button" type = "button" value = "Calculate">
+        </form>
+	<fieldset>
+        <legend><h2>Calculated result</h2></legend>
+        <output name = "result"></output>
+	</fieldset>
+  	</body>
 </html>
