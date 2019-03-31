@@ -1,9 +1,9 @@
-<html>
+﻿<html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <style>
       .topic_text {
-        background-color: CCCCCC;
+        background-color: #CCCCCC;
         font-size: 32px;
         font-style: italic;
         color: red;
