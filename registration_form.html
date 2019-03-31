@@ -32,6 +32,7 @@
           elementName.className = className;
           form.append(elementName);
         }
+
         let username = document.createElement("input");
           createElementForm (username, "username", "text", "введите логин", "form-control mt-5 mb-2 shadow-sm");
 
@@ -42,7 +43,7 @@
           createElementForm (password, "password", "password", "пароль", "form-control mb-2 shadow-sm");
 
         let confirmpassword = document.createElement("input");
-          createElementForm (confirmpassword, "confirmpassword", "password", "повторите пароль", "form-control mb-2 shadow-sm");
+          createElementForm (confirmpassword, "confirmpassword", "password", "повторите пароль", "form-control mb-4 shadow-sm");
 
         let registerbutton = document.createElement("button");
           createElementForm (registerbutton, "registerbutton", "button", "", "form-control btn btn-primary");

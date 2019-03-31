@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Калькулятор AJAX 2.0</title>
+    <style>
+      select {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <script>
+    function calculate(event) {
+      event.preventDefault();
+      let form = document.querySelector("form");
+      fetch("calc.php", {
+        method: "POST",
+        body: new FormData(form)
+        })
+        .then(response => {
+        return response.text();
+        })
+        .then(text => {
+      document.querySelector(".result").innerHTML = text;
+      })
+    }
+  </script>
+  <body>
+    <form method="POST" action="">
+      <input type="number" name="operand_1"/>
+      <select name="operator">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+      </select>
+      <input type="number" name="operand_2"/>
+      <button onclick="calculate(event)">Calculate</button>
+    </form>
+    <div class="result"></div>
+  </body>
+</html>
