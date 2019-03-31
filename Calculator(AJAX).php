@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <style>
       .topic_text {
-        background-color: #CCCCCC;
+        background-color: CCCCCC;
         font-size: 32px;
         font-style: italic;
         color: red;
@@ -14,8 +14,24 @@
         padding: 10px;
       }
     </style>
+    <title> Калькулятор </title>
     <script type="text/javascript">
-      function Calc() {
+      function Calc(event) {
+        event.preventDefault();
+        let form = document.querySelector("form");
+        // AJAX Request
+        fetch("/wdb-course-2/Calculator(AJAX).php", {
+          method: "POST",
+          body: new FormData(form)
+        })
+        .then(response => {
+        return response.text();
+        })
+        .then(text => {
+          document.querySelector(".result").innerHTML = text;
+        });
+        }
+
         let n1=document.querySelector(".n1").value;
         let n2=document.querySelector(".n2").value;
         if ((!(!n1)) && (!(!n2))) {
@@ -62,7 +78,7 @@
         <option value="/">/</option>
 	    </select>
       <input type="text" class="n2">
- 	  	<button onclick="Calc()"> = </button>
+ 	  	<button onclick="Calc(event)"> = </button>
   	  <div class="result"></div>
     </div>
   </body>
