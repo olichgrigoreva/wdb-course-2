@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   ini_set("display_errors", 1);
   error_reporting(E_ALL);
 
@@ -75,6 +75,7 @@
       Калькулятор
       <hr>
     </div>
+
     <form method="POST">
       <input type="text" class="inputText" name="num1" value="<?php echo $_REQUEST["num1"]; ?>">
       <select name="oper" class="OperLi">
