@@ -2,8 +2,12 @@
   ini_set("display_errors", 1);
   error_reporting(E_ALL);
 
+  $calcRes = "?";
+  echo 1;
+  exit();
   function Calc($n1, $op, $n2) {
-    if ((!=(empty($n1))) && (!=(empty($n2)))) {
+    $res = "";
+    if ((!(empty($n1))) && (!(empty($n2)))) {
       if ($op=="+") {
         $res=parseFloat($n1)+parseFloat($n2);
       }
@@ -32,21 +36,18 @@
     return $res;
   }
 
-  $result = "";
-  echo "---0---".$result;
-  breack;
   if (!empty($_REQUEST["submit"])) {
-    $result = Calc($_REQUEST["num1"], $_REQUEST["oper"], $_REQUEST["num2"]);
+    $calc_Res = Calc($_REQUEST["num1"], $_REQUEST["oper"], $_REQUEST["num2"]);
     //echo $result;
   //   return $result;
   }
 ?>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <style>
       .topic_text {
-        background-color: CCCCCC;
+        background-color: #CCCCCC;
         font-size: 32px;
         font-style: italic;
         color: red;
@@ -66,23 +67,26 @@
 
   </head>
   <body>
-    <?php echo $result;?>
+    <?php
+    echo 1;
+    exit();
+    ?>
     <div class="topic_text" "space">
       Калькулятор
       <hr>
     </div>
     <form method="POST">
-      <input name="num1" type="text" class="inputText" value="<?php echo $_REQUEST["num1"] ?>" >
+      <input type="text" class="inputText" name="num1" value="<?php echo $_REQUEST["num1"]; ?>">
       <select name="oper" class="OperLi">
         <option value="+" selected="selected">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
         <option value="/">/</option>
       </select>
-      <input name="num2" type="text" class="inputText" value="<?php echo $_REQUEST["num2"] ?>" >
+      <input type="text" class="inputText" name="num2" value="<?php echo $_REQUEST["num2"]; ?>">
       <input type="submit" name="submit" value=" = ">
 
-      <a class="inputText" value="<?php echo $result ?>" >
+      <a class="inputText" value="<?php echo $calcRes ?>" >
       </a>
     </form>
   </body>
