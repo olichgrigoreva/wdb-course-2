@@ -16,6 +16,10 @@
           document.querySelector("body").append(divform);
           divform.classList.add("container");
 
+        let result = document.createElement("div");
+          document.querySelector("body").append(result);
+          result.className = "result p-5 text-center";
+
         let footer = document.createElement("footer");
           document.querySelector("body").append(footer);
           footer.append("FOOTER");
@@ -50,11 +54,25 @@
           let registerbuttontext = document.createTextNode("register");
           registerbutton.append(registerbuttontext);
 
-        registerbutton.addEventListener ("click", function() {
+        registerbutton.addEventListener ("click", function verify(event) {
+          event.preventDefault();
           if (!username.value) {alert("Введите логин")}
           if (!email.value.includes("@")) {alert("Введите емэйл")}
           if (!password.value) {alert("введите пароль")}
           if (!(password.value == confirmpassword.value)) {alert("Пароли не совпадают")}
+          if (username.value && email.value && password.value && (password.value == confirmpassword.value)) {
+            let form = document.querySelector("form");
+            fetch("script.php", {
+              method: "POST",
+              body: new FormData(form)
+              })
+              .then(response => {
+                return response.text();
+              })
+              .then(text => {
+                document.querySelector(".result").innerHTML = text;
+              })
+          }
         })
       })
     </script>
