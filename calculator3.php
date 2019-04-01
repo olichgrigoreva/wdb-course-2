@@ -1,23 +1,29 @@
 <?php
+ ini_set("display_errors,1");
+
  function calculate(){
   $number1 = $_POST['number1'];
   $action = $_POST['action'];
   $number2 = $_POST['number2'];
   if ($_POST['calculate']){
-   if (action=="+") {
+   if ($action=="+") {
     $result = $number1 + $number2;
    }
-   if (action=="-") {
+   elseif ($action=="-") {
     $result = $number1 - $number2;
    }
-   if (action=="*") {
+   elseif ($action=="*") {
     $result = $number1 * $number2;
    }
-   if (action=="/"){
+   elseif ($action=="/"){
     $result = $number1 / $number2;
    }
-  $result = 'Результат: ' + result;
+  return $result;
   }
+ }
+ if (!empty($_REQUEST["submit"])) {
+  $result = calculate ($_REQUEST['number1'], $_REQUEST['action'], $_REQUEST['number2']);
+  echo $result;
  }
 ?>
 
@@ -30,14 +36,14 @@
  </head>
  <body>
   <form method="POST">
-   <input type="number" id="number1">
-   <select id="action">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
+   <input type="number" name="number1">
+   <select name="action">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
    </select>
-   <input type="number" id="number2">
+   <input type="number" name="number2">
    <input type="submit" name="submit" value="calculate">
   </form>
   <?php echo $result;?>
