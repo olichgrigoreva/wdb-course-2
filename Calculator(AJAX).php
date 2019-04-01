@@ -14,54 +14,45 @@
         padding: 10px;
       }
     </style>
-    <title> Калькулятор </title>
     <script type="text/javascript">
-      function Calc(event) {
+      function Calc(n1, op, n2) {
+        res="";
+        if ((!(!n1)) && (!(!n2))) {
+          if (op=="+") { res=parseFloat(n1)+parseFloat(n2); }
+          else {
+            if (op=="-") { res=parseFloat(n1)-parseFloat(n2); }
+            else {
+              if (op=="*") { res=parseFloat(n1)*parseFloat(n2); }
+              else {
+                if (parseFloat(n2)==0) { res="На ноль не делится!"; }
+                else { res=parseFloat(n1)/parseFloat(n2); }
+              }
+            }
+          }
+        }
+        else { res="Ошибка ввода числа"; }
+        return res;
+ 	    }
+
+      function outRes(event) {
         event.preventDefault();
-        let form = document.querySelector("form");
-        // AJAX Request
-        fetch("/wdb-course-2/Calculator(AJAX).php", {
+        let form=document.querySelector("form");
+
+        let result=Calc(document.querySelector(".n1").value,
+                        document.querySelector(".OperLi").value,
+                        document.querySelector(".n2").value);
+
+        fetch("/Calculator(AJAX).php", {
           method: "POST",
           body: new FormData(form)
         })
-        .then(response => {
-        return response.text();
+        .then (response => {
+          return response.text();
         })
-        .then(text => {
-          document.querySelector(".result").innerHTML = text;
+        .then (text => {
+          document.querySelector(".result").innerHTML=text;
         });
-        }
-
-        let n1=document.querySelector(".n1").value;
-        let n2=document.querySelector(".n2").value;
-        if ((!(!n1)) && (!(!n2))) {
-          let op=document.querySelector(".OperLi").value;
-          if (op=="+") {
-            document.querySelector(".result").innerHTML=parseFloat(n1)+parseFloat(n2);
-          }
-          else {
-            if (op=="-") {
-              document.querySelector(".result").innerHTML=parseFloat(n1)-parseFloat(n2);
-            }
-            else {
-              if (op=="*") {
-                document.querySelector(".result").innerHTML=parseFloat(n1)*parseFloat(n2);
-              }
-              else {
-                if (parseFloat(n2)==0) {
-                  document.querySelector(".result").innerHTML="На ноль не делится!";
-                }
-                else {
-                  document.querySelector(".result").innerHTML=parseFloat(n1)/parseFloat(n2);
-                }
-              }
-            }
-          }
-        }
-        else {
-          document.querySelector(".result").innerHTML="Ошибка ввода числа";
-        }
- 	    }
+      }
     </script>
   </head>
   <body>
@@ -78,7 +69,7 @@
         <option value="/">/</option>
 	    </select>
       <input type="text" class="n2">
- 	  	<button onclick="Calc(event)"> = </button>
+ 	  	<button onclick="outRes(event)"> = </button>
   	  <div class="result"></div>
     </div>
   </body>
