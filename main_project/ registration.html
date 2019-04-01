@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8"> 
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+        <script>
+            document.addEventListener("DOMContentLoaded", drawing);
+            function drawing(event){
+                    
+                function create_div (div_name, div_class, div_querySelector) {
+                    div_name.class = div_class;
+                    document.querySelector(div_querySelector).append(div_name);
+                }
+                
+                function create_input (input_name, input_type, input_class, input_placeholder, input_classList){
+                    input_name.type = input_type;
+                    input_name.class = input_class;
+                    input_name.placeholder = input_placeholder;
+                    input_name.classList.add(input_classList);
+                    document.querySelector("div").append(input_name);
+                }
+
+                let main_container = document.createElement("div");
+                create_div (main_container, "container", "body");
+                
+                //create_div (main_form, div);
+                let div_username = document.createElement("div");
+                create_div (div_username, "form-group", "div");
+                let username = document.createElement("input");
+                create_input (username, "text", "form-control", "User Name", "user_name");
+
+                let div_password = document.createElement("div");
+                create_div (div_password, "form-group", "div");
+                let password = document.createElement("input");
+                create_input (password, "text", "form-control", "Password", "password");
+
+                let div_confPassword = document.createElement("div");
+                create_div (div_confPassword, "form-group", "div");
+                let confPassword = document.createElement("input");
+                create_input (confPassword, "text", "form-control", "Confirm password", "confPassword");
+
+                let div_email = document.createElement("div");
+                create_div (div_username, "form-group", "div");
+                let email = document.createElement("input");
+                create_input (email, "email", "form-control", "EMail", "email");
+
+                let div_button = document.createElement("div");
+                create_div (div_button, "form-group", "div");
+                
+                let reg_button = document.createElement("button");
+                reg_button.innerHTML = "Register";
+                reg_button.type = "submit";
+                reg_button.class = "btn-primary";
+                document.querySelector("div").append(reg_button);
+                
             
-            <script>
-                document.addEventListener("DOMContentLoaded", drawing);
-                function drawing(event){
-                    
-                    let main_container = document.createElement("div");
-                    main_container.class = "container";
-                    document.querySelector("body").append(main_container);
-
-                    let main_form = document.createElement("form");
-                    document.querySelector("div").append(main_form);
-
-                    let div_user_name = document.createElement("div");
-                    div_user_name.class = "form-group";
-                    document.querySelector("div").append(div_user_name);
-
-                    let input_user_name = document.createElement("input");
-                    input_user_name.type = "text";
-                    input_user_name.class = "form-control";
-                    input_user_name.placeholder = "User Name";
-                    input_user_name.classList.add("user_name");
-                    document.querySelector("div").append(input_user_name);
-                    
-                    let input_password = document.createElement("input");
-                    input_password.type = "text";
-                    input_password.class = "form-control";
-                    input_password.placeholder = "Password";
-                    input_password.classList.add("password");
-                    document.querySelector("div").append(input_password);
-                    
-                    let input_confirm_password = document.createElement("input");
-                    input_confirm_password.type = "text";
-                    input_confirm_password.class = "form-control";
-                    input_confirm_password.placeholder = "Confirm Password";
-                    input_confirm_password.classList.add("confirm_password");
-                    document.querySelector("div").append(input_confirm_password);
-                    
-                    let input_email = document.createElement("input");
-                    input_email.type = "email";
-                    input_email.class = "form-control";
-                    input_email.placeholder = "email";
-                    input_email.classList.add("email");
-                    document.querySelector("div").append(input_email);
+                document.querySelector("button").addEventListener("click", calc_2);
+                
+                
 
                     /*let test_button=document.createElement("button")
                     let test_button_text=document.createTextNode("TEST");
                     test_button.append(test_button_text);
+
                     document.querySelector("body").append(test_button);
                     document.querySelector("button").addEventListener("click", registration );
                     function registration(event) {
@@ -64,10 +76,10 @@
                             }
                     }*/
                 }
-            </script>
+        </script>
         </head>
         <body body class="text-center">
-            <!--<div class="container">
+           <!-- <div class="container">
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
@@ -81,7 +93,7 @@
                     </div> 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-            </div>-->
+            </div> -->
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
