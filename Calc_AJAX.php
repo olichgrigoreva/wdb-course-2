@@ -15,7 +15,7 @@ function calc($a,$b,$op){
 
     if($op=="/"){
 	    if($b=="0"){
-        $result = "На нуль делить нельзя!";	
+        $result = "division error by zero";	
 	    }
 
 	    else { $result=$a/$b;	

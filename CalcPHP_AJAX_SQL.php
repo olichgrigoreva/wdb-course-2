@@ -60,7 +60,17 @@
       </fieldset>
       <fieldset>
         <legend><h2>Last 5 results</h2></legend>
-      <output name="last_results"></output>
+      <output name="last_results">
+        <?php
+        $connection = mysqli_connect("localhost", "root", "virtual", "calc_base");
+        $query = mysqli_query($connection, "SELECT * FROM result_table ORDER BY id DESC LIMIT 5 ");
+        while($last_results = mysqli_fetch_assoc($query)) {
+        echo "<pre>";
+        print_r($last_results);
+        echo "</pre>";
+        }
+        ?>
+      </output>
     </fieldset>
     </section>
     </div>
