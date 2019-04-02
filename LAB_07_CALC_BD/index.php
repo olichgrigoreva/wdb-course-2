@@ -19,6 +19,7 @@
 //      $resultString.=$queryResult['created'];
 
       $lastDBRecords[$i]=$resultString;
+      $lastDBRecordsDates[$i]=$queryResult['created'];
       $i++;
       $queryResult=mysqli_fetch_assoc($query);
     }
@@ -96,7 +97,13 @@
       font-family:Arial;
       font-size:24px;
     }
-
+    
+    .dateCreated {
+      font-family:Arial;
+      font-size:12px;
+      margin: 0px 30px 0px 30px;
+    }
+                 
     </style>
 
   </head>
@@ -119,8 +126,9 @@
     <a class="result value_inp">
       <?php 
         $i=0;        
-        while($i<count($lastDBRecords)) {
-            echo ($lastDBRecords[$i]."<br>");
+        while($i<count($lastDBRecords)) {            
+            echo("<span class='dateCreated'>".$lastDBRecordsDates[$i]."</span>");
+            echo($lastDBRecords[$i]."<br>");
           $i++;
         }
       ?>
