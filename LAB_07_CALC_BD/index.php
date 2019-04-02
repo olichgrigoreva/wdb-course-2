@@ -1,6 +1,29 @@
 <?php
+  const CNT_RECORD_DISPLAY=5;
   ini_set("display_errors", 1);
   error_reporting(E_ALL);
+  $mysqli = mysqli_init();
+  $connection=mysqli_connect('127.0.0.1', 'aleks', '123', 'aleks');
+  if(!empty($connection)) {
+    $query=mysqli_query($connection, "SELECT * FROM calc ORDER BY id DESC LIMIT 1".CNT_RECORD_DISPLAY);
+    $queryResult=mysqli_fetch_assoc($query); // assoc - associated massive
+//    echo($query->num_rows);
+    $i=0;
+    while (!empty($queryResult) && $i<CNT_RECORD_DISPLAY) {
+      $resultString=$queryResult['value1']." ";
+      $resultString.=$queryResult['operation']." ";
+      $resultString.=$queryResult['value2']." ";
+      $resultString.="= ";
+      $resultString.=$queryResult['result'];
+//      $resultString.="  created: ";
+//      $resultString.=$queryResult['created'];
+
+      $lastDBRecords[$i]=$resultString;
+      $i++;
+      $queryResult=mysqli_fetch_assoc($query);
+    }
+  }
+
   $calcResult = "";
 
   function calc($val1, $val2, $operation) {
@@ -26,18 +49,22 @@
     return ($result);
   }
 
-  function fMain() {    
-    if (!empty($_REQUEST["submit"])) {
-      $tmpRes = calc($_REQUEST["val1"], $_REQUEST["val2"], $_REQUEST["operation"]);
-    } else {
-      $tmpRes = "";
-      $_REQUEST["val1"]="";
-      $_REQUEST["val2"]="";
-    }
-    return $tmpRes;
-  }
+  if (!empty($_REQUEST["submit"])) {
+    $val1=$_REQUEST["val1"];
+    $val2=$_REQUEST["val2"];
+    $op=$_REQUEST["operation"];
 
-  $calcResult = fMain();
+    $calcResult = calc($val1, $val2, $op);
+    if(!empty($connection)) {
+      $insertQuery=mysqli_query($connection, "INSERT INTO calc(value1, value2, operation, result) 
+        VALUES('$val1', '$val2', '$op', '$calcResult')");
+      mysqli_query($connection, $insertQuery);
+    }
+  } else {
+    $calcResult = "";
+    $_REQUEST["val1"]="";
+    $_REQUEST["val2"]="";
+  }
 ?>
 
 <html>
@@ -45,8 +72,9 @@
     <title>Calc</title>
     <style type="text/css">
       .value_inp {
-      font-size:24px;
-      width:150px;
+      font-family:Arial; 
+      font-size:24px;   
+      width:150px;      
     }
 
     .operationType {
@@ -65,6 +93,7 @@
     }
 
     .result {
+      font-family:Arial;
       font-size:24px;
     }
 
@@ -87,5 +116,14 @@
       </a>
       <input type="submit" class="value_inp" name="submit" value="Calculate">
     </form>
+    <a class="result value_inp">
+      <?php 
+        $i=0;        
+        while($i<count($lastDBRecords)) {
+            echo ($lastDBRecords[$i]."<br>");
+          $i++;
+        }
+      ?>
   </body>
 </html>
+ 

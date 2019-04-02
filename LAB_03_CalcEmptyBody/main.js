@@ -35,6 +35,7 @@ function createDiv(parentObject, className, value) {
   const divText=document.createTextNode(value);
   objDiv.append(divText);
   document.querySelector(parentObject).append(objDiv);
+  return objDiv;
 }
 
 function createButton(parentObject, className, value) {
