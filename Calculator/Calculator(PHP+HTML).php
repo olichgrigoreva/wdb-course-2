@@ -2,10 +2,6 @@
   ini_set("display_errors", 1);
   error_reporting(E_ALL);
 
-  $calcRes = "";
-  $num1 = "";
-  $num2 = "";
-
   function Calc($n1, $op, $n2) {
     $res = "";
     if ((!(empty($n1))) && (!(empty($n2)))) {
@@ -29,7 +25,7 @@
     if (!empty($_REQUEST["submit"])) {
       $res = Calc($_REQUEST["num1"], $_REQUEST["oper"], $_REQUEST["num2"]);
     }
-    else { $res = "";}
+    else { $res = ""; }
     return $res;
   }
 
@@ -68,16 +64,15 @@
       Калькулятор
       <hr>
     </div>
-
     <form method="POST">
-      <input type="text" class="inputText" name="num1" value="<?php echo $_REQUEST["num1"]; ?>">
+      <input type="text" class="inputText" name="num1" value="<?php if (!empty($_REQUEST["num1"])) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
       <select class="inputText" name="oper" class="OperLi">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
         <option value="/">/</option>
       </select>
-      <input type="text" class="inputText" name="num2" value="<?php echo $_REQUEST["num2"]; ?>">
+      <input type="text" class="inputText" name="num2" value="<?php if (!empty($_REQUEST["num2"])) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
       <input type="submit" class="inputText" name="submit" value=" = ">
       <a class="outputText"> <?php echo $calcRes ?> </a>
     </form>
