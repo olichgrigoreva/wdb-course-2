@@ -31,7 +31,17 @@ if($_REQUEST["Input_A"]=="" || $_REQUEST["Input_B"]=="" || $_REQUEST["Operation"
 else {
     $result = calc($_REQUEST["Input_A"],$_REQUEST["Input_B"],$_REQUEST["Operation"]);
     echo $result;
+
 }
+
+$connection = mysqli_connect("localhost", "root", "virtual", "calc_base");
+$a=$_REQUEST['Input_A'];
+$op=$_REQUEST['Operation'];
+$b=$_REQUEST['Input_B'];
+
+
+$insert_query = "INSERT INTO result_table(Input_A, Operation, Input_B, result) VALUES($a, '$op', $b , '$result')";
+mysqli_query($connection, $insert_query);
 
 
 
