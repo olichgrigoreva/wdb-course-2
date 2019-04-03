@@ -1,8 +1,8 @@
 <?php
  function calculate(){
-  $number1 = $_POST['number1'];
-  $action = $_POST['action'];
-  $number2 = $_POST['number2'];
+  $number1 = $_REQUEST['number1'];
+  $action = $_REQUEST['action'];
+  $number2 = $_REQUEST['number2'];
 
   if ($action=="+") {
    $result = $number1 + $number2;
