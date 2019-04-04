@@ -20,31 +20,19 @@
         let n2=document.querySelector(".n2").value;
         if ((!(!n1)) && (!(!n2))) {
           let op=document.querySelector(".OperLi").value;
-          if (op=="+") {
-            document.querySelector(".result").innerHTML=parseFloat(n1)+parseFloat(n2);
-          }
+          if (op=="+") { document.querySelector(".result").innerHTML=parseFloat(n1)+parseFloat(n2); }
           else {
-            if (op=="-") {
-              document.querySelector(".result").innerHTML=parseFloat(n1)-parseFloat(n2);
-            }
+            if (op=="-") { document.querySelector(".result").innerHTML=parseFloat(n1)-parseFloat(n2); }
             else {
-              if (op=="*") {
-                document.querySelector(".result").innerHTML=parseFloat(n1)*parseFloat(n2);
-              }
+              if (op=="*") { document.querySelector(".result").innerHTML=parseFloat(n1)*parseFloat(n2); }
               else {
-                if (parseFloat(n2)==0) {
-                  document.querySelector(".result").innerHTML="На ноль не делится!";
-                }
-                else {
-                  document.querySelector(".result").innerHTML=parseFloat(n1)/parseFloat(n2);
-                }
+                if (parseFloat(n2)==0) { document.querySelector(".result").innerHTML="На ноль не делится!"; }
+                else { document.querySelector(".result").innerHTML=parseFloat(n1)/parseFloat(n2); }
               }
             }
           }
         }
-        else {
-          document.querySelector(".result").innerHTML="Ошибка ввода числа";
-        }
+        else { document.querySelector(".result").innerHTML="Ошибка ввода числа"; }
  	    }
     </script>
   </head>

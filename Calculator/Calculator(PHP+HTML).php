@@ -66,7 +66,7 @@
     </div>
     <form method="POST">
       <input type="text" class="inputText" name="num1" value="<?php if (!empty($_REQUEST["num1"])) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
-      <select class="inputText" name="oper" class="OperLi">
+      <select class="inputText" class="OperLi" name="oper">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
