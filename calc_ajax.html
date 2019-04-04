@@ -8,17 +8,17 @@
   <script>
    function calculate (event){
     event.preventDefault();
-    let form = document.querySelector("form");
-    fetch("calc_ajax.php", {
+    var form = document.querySelector('form');
+    fetch('calc_ajax.php', {
      method: "POST",
-     body: new FormData(form)
+     body: new FormData(form),
     })
     .then(response => {
      return response.text();
     })
     .then(text => {
      document.querySelector(".result").innerHTML = text;
-    });
+    })
    }
   </script>
  </head>
