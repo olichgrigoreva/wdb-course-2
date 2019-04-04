@@ -31,6 +31,7 @@
 
   $calcRes = funcCalc();
 ?>
+
 <html>
   <head>
     <meta charset="utf-8">
