@@ -6,8 +6,7 @@
             function baylando(event){
                event.preventDefault();
                let form = document.querySelector("form");
-               //console.dir(text);
-               fetch("php_calc.php", {
+                   fetch("/php_calc.php", {
                    method: "POST",
                    body: new FormData(form)
                })
@@ -23,22 +22,20 @@
     </head>
     <body>
        
-	<form method = "POST">
-	<input name = "first_field" type = "number" placeholder = "Введите первое число">
-	<select name = "operation">
+	<form>
+	<input name = "first_field"  class = "first_field" type = "number" placeholder = "Введите первое число">
+	<select name = "operation" class = "operation">
         <option value = "">Выберите действие</option>
         <option value = "+">Сложение</option>
         <option value = "-">Вычитание</option>
         <option value = "*">Умножение</option>
         <option value = "/">Деление</option>
 	</select>
-	<input name = "second_field" type = "number" placeholder = "Введите второе число">
-	<input onclick="baylando(event)" name="count_up" type="button" value="Посчитать">
+	<input name = "second_field" class = "second_field" type = "number" placeholder = "Введите второе число">
+	<input onclick="baylando(event)" class = "count_up" name="count_up" type="button" value="Посчитать">
     </form>
-    
-	<?php 
-	echo $result ?>
+    <h1 class="result"></h1>
+	
 
-</body>
 </body>
 </html>
