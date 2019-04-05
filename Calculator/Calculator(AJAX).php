@@ -4,14 +4,14 @@
 
   function Calc($n1, $op, $n2) {
     $res = "";
-    if ((!(empty($n1))) && (!(empty($n2)))) {
+    if (($n1 || $n1==0 && $n1<>"") && ($n2 || $n2==0 && $n2<>"")) {
       if ($op=="+") { $res=floatval($n1)+floatval($n2); }
       else {
         if ($op=="-") { $res=floatval($n1)-floatval($n2); }
         else {
           if ($op=="*") { $res=floatval($n1)*floatval($n2); }
           else {
-            if (floatval($n2)==0) { $res="На ноль не делится!"; }
+            if ($n2==0) { $res="На ноль не делится!"; }
             else { $res=floatval($n1)/floatval($n2); }
           }
         }
