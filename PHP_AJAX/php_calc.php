@@ -16,9 +16,9 @@ function calculator($first_digit, $operation, $second_digit){
 	if($operation=="/"){
 		if($second_digit == "0"){
 			$resulstat="На ноль делить нельзя";
-		}
-		else{$resulstat=$first_digit/$second_digit;
-		}
+			}
+			else{$resulstat=$first_digit/$second_digit;
+			
 	}	
 	return $resulstat;
 }
