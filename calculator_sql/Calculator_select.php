@@ -25,6 +25,14 @@
 	if (!empty($_REQUEST["calculate_button"])){
      	$result = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["operation"]);
 	}
+
+	$connection = mysqli_connect("localhost", "root", "virtual", "calculator_select");
+	$query = mysqli_query($connection, "SELECT * FROM calculator_result ORDER BY id DESC LIMIT 5");
+	while($calculator_result = mysqli_fetch_assoc($query)){
+	echo "<pre>";
+	print_r($calculator_result);
+	echo "</pre>";
+	}
 ?>
 <html>
 	<head>
@@ -33,18 +41,18 @@
 		<form method = "POST">
 			<p>First number:</br>
 			<input type = "number" class = "first_number" name = "num1"/></p>
-			<p>Second number:</br>
-			<input type = "number" class = "second_number" name = "num2"/></p>
 			<select name = "operation">
 				<option value = "">Select operation</option>
                 		<option value = "+">+</option>
                 		<option value = "-">-</option>
                 		<option value = "*">*</option>
                 		<option value = "/">/</option>
-				<input name = "calculate_button" type = "submit" value = "Calculate">
 			</select>
-		</form>	
+			<p>Second number:</br>
+			<input type = "number" class = "second_number" name = "num2"/></p>
+				<input name = "calculate_button" type = "submit" value = "Calculate">
+		</form>
 				<hr>
-        			<p><output name = "result"><?php echo $result;?></output></p>
-		</body>
+				<p><output name = "result"><?php echo $result;?></output></p>
+	</body>
 </html>
