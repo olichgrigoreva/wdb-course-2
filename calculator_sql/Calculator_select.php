@@ -2,7 +2,7 @@
 	ini_set("display_errors", 1);
 	error_reporting(E_ALL);
 	
-	function calculator($num1, $num2, $operation){
+	function calculator($num1, $num2, $operation, $result){
 		if ($operation=="+"){
 		$result=$num1+$num2;
 		}
@@ -26,12 +26,22 @@
      	$result = calculator($_REQUEST["num1"], $_REQUEST["num2"], $_REQUEST["operation"]);
 	}
 
+	function DB($num1, $operation, $num2, $result){
+	$connection = mysqli_connect("localhost", "root", "virtual", "calculator_select");
+		if (!empty($connection)){
+			$strSQL = "INSERT INTO calculator_result (first_number, operation, second_number, result) VALUES ('$num1', '$operation', '$num2', '$result')";
+      	mysqli_query($connection, $strSQL);
+    		}
+ 	}
+	
+	function communication(){
 	$connection = mysqli_connect("localhost", "root", "virtual", "calculator_select");
 	$query = mysqli_query($connection, "SELECT * FROM calculator_result ORDER BY id DESC LIMIT 5");
-	while($calculator_result = mysqli_fetch_assoc($query)){
+		while($calculator_result = mysqli_fetch_assoc($query)){
 	echo "<pre>";
 	print_r($calculator_result);
 	echo "</pre>";
+		}
 	}
 ?>
 <html>
@@ -54,5 +64,7 @@
 		</form>
 				<hr>
 				<p><output name = "result"><?php echo $result;?></output></p>
+				<hr>
+				<div class = "bd_text" "space"><p><?php $communication = communication(); ?></p></div>
 	</body>
 </html>
