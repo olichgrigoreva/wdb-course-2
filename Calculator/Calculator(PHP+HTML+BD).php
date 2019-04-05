@@ -4,14 +4,14 @@
 
   function Calc($n1, $op, $n2) {
     $res = "";
-    if ((!(empty($n1))) && (!(empty($n2)))) {
+    if (($n1 || $n1==0 && $n1<>"") && ($n2 || $n2==0 && $n2<>"")) {
       if ($op=="+") { $res=floatval($n1)+floatval($n2); }
       else {
         if ($op=="-") { $res=floatval($n1)-floatval($n2); }
         else {
           if ($op=="*") { $res=floatval($n1)*floatval($n2); }
           else {
-            if (floatval($n2)==0) { $res="На ноль не делится!"; }
+            if ($n2==0) { $res="На ноль не делится!"; }
             else { $res=floatval($n1)/floatval($n2); }
           }
         }
@@ -89,14 +89,14 @@
       <hr>
     </div>
     <form method="POST">
-      <input type="text" class="inputText" name="num1" value="<?php if (!empty($_REQUEST["num1"])) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
+      <input type="text" class="inputText" name="num1" value="<?php if ($_REQUEST["num1"] || $_REQUEST["num1"] == 0) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
       <select class="inputText" class="OperLi" name="oper">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
         <option value="/">/</option>
       </select>
-      <input type="text" class="inputText" name="num2" value="<?php if (!empty($_REQUEST["num2"])) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
+      <input type="text" class="inputText" name="num2" value="<?php if ($_REQUEST["num2"] || $_REQUEST["num2"] == 0) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
       <input type="submit" class="inputText" name="submit" value=" = ">
       <a class="outputText"> <?php echo $calcRes ?> </a>
     </form>

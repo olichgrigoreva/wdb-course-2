@@ -65,15 +65,15 @@
       Калькулятор
       <hr>
     </div>
-    <form method="POST">
-      <input type="text" class="inputText" name="num1" value="<?php if ($_REQUEST["num1"] || $_REQUEST["num1"] == 0) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
+      <form method="POST">
+      <input type="text" class="inputText" name="num1" value="<?php if (isset($_REQUEST["num1"])) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
       <select class="inputText" class="OperLi" name="oper">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
         <option value="/">/</option>
       </select>
-      <input type="text" class="inputText" name="num2" value="<?php if ($_REQUEST["num2"] || $_REQUEST["num2"] == 0) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
+      <input type="text" class="inputText" name="num2" value="<?php if (isset($_REQUEST["num2"])) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
       <input type="submit" class="inputText" name="submit" value=" = ">
       <a class="outputText"> <?php echo $calcRes ?> </a>
     </form>
