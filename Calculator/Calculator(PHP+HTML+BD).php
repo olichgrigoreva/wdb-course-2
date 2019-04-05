@@ -21,18 +21,10 @@
     return $res;
   }
 
-  function funcCalc() {
-    if (!empty($_REQUEST["submit"])) {
-      $res = Calc($_REQUEST["num1"], $_REQUEST["oper"], $_REQUEST["num2"]);
-    }
-    else { $res = ""; }
-    return $res;
-  }
-
   function insertBD($n1, $op, $n2, $res) {
     $connection = mysqli_connect("localhost", "root", "virtual", "CalculatorRecords");
     if (!empty($connection)) {
-      $strSQL = "INSERT INTO Records(number1, operation, number2, result) VALUES ('$n1', '$op', '$n2', '$res')";
+      $strSQL = "INSERT INTO Records(number1, operation, number2, result) VALUES ('$n1', '$op', '$n2', $res)";
       mysqli_query($connection, $strSQL);
     }
   }
@@ -51,9 +43,10 @@
   }
 
   if (!empty($_REQUEST["submit"])) {
-    $calcRes = funcCalc();
+    $calcRes = Calc($_REQUEST["num1"], $_REQUEST["oper"], $_REQUEST["num2"]);
     $insBD = insertBD($_REQUEST["num1"], $_REQUEST["oper"], $_REQUEST["num2"], $calcRes);
   }
+  else { $calcRes = ""; }
 ?>
 
 <html>
