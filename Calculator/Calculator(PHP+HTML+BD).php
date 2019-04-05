@@ -24,8 +24,12 @@
   function insertBD($n1, $op, $n2, $res) {
     $connection = mysqli_connect("localhost", "root", "virtual", "CalculatorRecords");
     if (!empty($connection)) {
-      $strSQL = "INSERT INTO Records(number1, operation, number2, result) VALUES ('$n1', '$op', '$n2', $res)";
+      $strSQL = "INSERT INTO Records(number1, operation, number2, result) VALUES ('$n1', '$op', '$n2', '$res')";
       mysqli_query($connection, $strSQL);
+
+      echo "<pre>";
+      print_r($strSQL);
+      echo "</pre>";
     }
   }
 
@@ -89,14 +93,14 @@
       <hr>
     </div>
     <form method="POST">
-      <input type="text" class="inputText" name="num1" value="<?php if ($_REQUEST["num1"] || $_REQUEST["num1"] == 0) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
+      <input type="text" class="inputText" name="num1" value="<?php if (isset($_REQUEST["num1"])) { echo $_REQUEST["num1"]; } else { echo ""; } ?>">
       <select class="inputText" class="OperLi" name="oper">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
         <option value="/">/</option>
       </select>
-      <input type="text" class="inputText" name="num2" value="<?php if ($_REQUEST["num2"] || $_REQUEST["num2"] == 0) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
+      <input type="text" class="inputText" name="num2" value="<?php if (isset($_REQUEST["num2"])) { echo $_REQUEST["num2"]; } else { echo ""; } ?>">
       <input type="submit" class="inputText" name="submit" value=" = ">
       <a class="outputText"> <?php echo $calcRes ?> </a>
     </form>
