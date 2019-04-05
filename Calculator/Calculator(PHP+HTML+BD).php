@@ -41,7 +41,7 @@
     $connection = mysqli_connect("localhost", "root", "virtual", "CalculatorRecords");
     if (!empty($connection)) {
       $query = mysqli_query($connection, "SELECT * FROM Records ORDER BY id DESC LIMIT 5");
-      // Последние 5 записей БД отсортированы по id в обратном порядке 
+      // БД отсортирована по id в обратном порядке и взяты 5 первых записей
       while($rec = mysqli_fetch_assoc($query)) {
         echo "<pre>";
         print_r($rec);
