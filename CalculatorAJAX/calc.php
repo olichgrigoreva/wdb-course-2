@@ -28,4 +28,3 @@ function calc($firstNum, $secondNum, $operation) {
 }
 
 calc($_REQUEST["firstOperant"], $_REQUEST["secondOperant"], $_REQUEST["operation"]);
-?>
