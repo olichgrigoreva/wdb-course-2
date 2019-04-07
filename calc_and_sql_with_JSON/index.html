@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        function calc(event){
+        //AJAX request
+        event.preventDefault();//отмена действий бразузера по умолчанию
+        let form = document.querySelector("form");
+        //отправка AJAX запроса на сервер
+        fetch("calc_form_data.php", {//url [настройки запроса] к файлу calc.php
+          method: "POST", //методом post
+          body: new FormData(form) //с данными из формы
+        })
+        .then(response => {
+          return response.text();
+        })
+        .then(text => {
+          document.querySelector(".result").innerHTML=text;
+        })
+        }
+    </script>
+</head>
+<body>
+
+    <form>
+
+<div class="p-3">
+    <h4> Калькулятор </h4>
+    <input class="form-control mb-3" name="operand1" type="number" placeholder="Введите число">
+    <select class="form-control mb-3" name="operation">
+        <option value="+">Сложение</option>
+        <option value="-">Вычитание</option>
+        <option value="*">Умножение</option>
+        <option value="/">Деление</option>
+    </select>
+    <input class="form-control mb-3" name="operand2" type="number" placeholder="Сюда тоже число">
+    <button class="btn btn-info" onclick="calc(event)">Посчитать</button>
+<div class="result "></div>
+</div>
+
+</form>
+
+</body>
+</html>
