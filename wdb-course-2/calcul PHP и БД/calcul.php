@@ -13,7 +13,7 @@ $connection = mysqli_connect("localhost", "root", "virtual", "project");
     $sqloperator=$row["operator"];
     $sqlnum2=$row["num2"];
     $sqlresult=$row["result"];
-    echo " число 1 = $sqlnum1, действие = $sqloperator, число 2 = $sqlnum2, результат вычисления = $sqlresult"."<br>";
+    echo "$sqlnum1 $sqloperator $sqlnum2  = $sqlresult"."<br>";
 }}
 //echo "<pre>";
 //print_r($result);

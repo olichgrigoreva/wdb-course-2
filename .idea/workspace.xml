@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="696825a4-46e9-4034-878d-26361b93a2ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.css" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wdb-course-2/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/login/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wdb-course-2/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wdb-course-2/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wdb-course-2/login/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/login/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,7 +18,17 @@
     <favorites_list name="wdb-code" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,7 +36,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/s.html" />
         <option value="$PROJECT_DIR$/a.html" />
         <option value="$PROJECT_DIR$/calcul/calcul.html" />
         <option value="$PROJECT_DIR$/calcul1.html" />
@@ -81,6 +86,7 @@
         <option value="$PROJECT_DIR$/calcul FETCH/calcul.html" />
         <option value="$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.css" />
         <option value="$PROJECT_DIR$/calcul PHP/calcul.php" />
+        <option value="$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php" />
       </list>
     </option>
   </component>
@@ -108,6 +114,17 @@
             <path>
               <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
               <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
+              <item name="wdb-course-2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
+              <item name="wdb-course-2" type="462c0819:PsiDirectoryNode" />
+              <item name="calcul PHP и БД" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,11 +182,13 @@
       <workItem from="1554026292561" duration="11465000" />
       <workItem from="1554144070785" duration="5524000" />
       <workItem from="1554527435444" duration="23578000" />
+      <workItem from="1554576359004" duration="615000" />
+      <workItem from="1554617503332" duration="239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148247000" />
+    <option name="totallyTimeSpent" value="149101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -181,7 +200,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="867" y="70" width="1029" height="904" extended-state="0" />
+    <frame x="591" y="75" width="1029" height="904" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.1816387" />
       <window_info id="Structure" order="1" sideWeight="0.50057936" side_tool="true" weight="0.3375984" />
@@ -224,7 +244,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/images/facebook.svg" />
     <entry file="file://$PROJECT_DIR$/project/images/facebook2.svg" />
     <entry file="file://$PROJECT_DIR$/project/images/bird.svg" />
     <entry file="file://$PROJECT_DIR$/project/images/google-plus.svg" />
@@ -309,20 +328,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.php" />
+    <entry file="file://$PROJECT_DIR$/calcul JS/calcul.html" />
     <entry file="file://$PROJECT_DIR$/wdb-course-2/login/connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -337,13 +344,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.css" />
     <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -379,20 +380,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.html" />
+    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.php" />
     <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -417,17 +406,18 @@
     <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/calcul PHP/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="57" column="2" lean-forward="true" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/calcul PHP/calcul.php" />
     <entry file="file://$PROJECT_DIR$/wdb-course-2/calculBD.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
         </state>
       </provider>
     </entry>
