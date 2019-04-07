@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Регистрация</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                function createDiv(parentDiv, divName, className) {
+                    document.querySelector(parentDiv).append(divName);
+                    divName.className = className;
+                }
+
+                let header = document.createElement("header");
+                    createDiv("body", header, "bg-secondary p-4 text-center" );
+                    header.append(document.createTextNode("HEADER"));
+
+                let footer = document.createElement("footer");
+                    createDiv("body", footer, "fixed-bottom bg-secondary p-1 text-center");
+                    footer.append(document.createTextNode("FOOTER"));
+
+                let form = document.createElement("form");
+                    createDiv("body", form, "col-sm-7 col-lg-3 mx-auto");
+
+                function createElementForm(elementName, tagName, type, placeholder, className) {
+                    elementName.type = type;
+                    elementName.name = tagName;
+                    elementName.placeholder = placeholder;
+                    elementName.className = className;
+                    form.append(elementName);
+                }
+
+                    let username = document.createElement("input");
+                        createElementForm(username, "username", "text", "введите логин", "form-control mt-5 mb-2 shadow-sm");
+
+                    let email = document.createElement("input");
+                        createElementForm(email, "email", "email", "введите емэйл", "form-control mb-2 shadow-sm");
+
+                    let password = document.createElement("input");
+                        createElementForm(password, "password", "password", "пароль", "form-control mb-2 shadow-sm");
+
+                    let confirmpassword = document.createElement("input");
+                        createElementForm(confirmpassword, "confirmpassword", "password", "повторите пароль", "form-control mb-4 shadow-sm");
+
+                    let registerbutton = document.createElement("button");
+                        createElementForm(registerbutton, "registerbutton", "button", "", "form-control btn btn-primary font-weight-bold");
+                        registerbutton.append(document.createTextNode("register"));
+
+                let result = document.createElement("div");
+                    result.className = "result bg-success rounded font-weight-bold text-white mt-5 p-2 text-center";
+
+                let alertDiv = document.createElement("div");
+                    createDiv("body", alertDiv, "alertDiv container col-4 p-5 text-center");
+
+                function createAlert(divName, textNode) {
+                    divName.className = "alert alert-warning alert-dismissible mt-3"; // fade почему то, работает некорректно, элемент остаётся невидимым после закрытия.
+                    divName.append(document.createTextNode(textNode));
+                    let closeButton = document.createElement("button");
+                        closeButton.type = "button";
+                        closeButton.classList.add("close");
+                        closeButton.dataset.dismiss = "alert";
+                        // closeButton.setAttribute("aria-label", "close");
+                        // let cross = document.createElement("span");
+                        // cross.setAttribute("aria-hidden", "true");
+                        // cross.append(document.createTextNode("&times;"));
+                        // closeButton.append(cross);
+                        closeButton.append(document.createTextNode("X"));
+                    divName.append(closeButton);
+                }
+
+                    let alertUsername = document.createElement("div");
+                        createAlert(alertUsername, "Придумайте логин");
+
+                    let alertEmail = document.createElement("div");
+                        createAlert(alertEmail, "Введите email");
+
+                    let alertPasswordEmpty = document.createElement("div");
+                        createAlert(alertPasswordEmpty, "Введите пароль");
+
+                    let alertConfirmPassword = document.createElement("div");
+                        createAlert(alertConfirmPassword, "Пароли не совпадают");
+
+                registerbutton.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    if (!username.value) {
+                        document.querySelector(".alertDiv").append(alertUsername);}
+                    if (!email.value.includes("@")) {
+                        document.querySelector(".alertDiv").append(alertEmail);}
+                    if (!password.value) {
+                        document.querySelector(".alertDiv").append(alertPasswordEmpty);}
+                    if (!(password.value == confirmpassword.value)) {
+                        document.querySelector(".alertDiv").append(alertConfirmPassword);}
+                    if (username.value && email.value.includes("@") && password.value && (password.value == confirmpassword.value)) {
+                        $('.close').alert("close")
+                        fetch("script.php", {
+                            method: "POST",
+                            body: new FormData(form)
+                        })
+                        .then(response => {
+                            return response.text();
+                        })
+                        .then(text => {
+                            document.querySelector(".result").innerHTML = text;
+                        })
+                        document.querySelector(".alertDiv").append(result);
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
