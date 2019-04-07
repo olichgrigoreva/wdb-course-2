@@ -3,7 +3,7 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-$connection = mysqli_connect("localhost", "root", "", "calc_operations");//host,username,password,dbname,port,socket
+$connection = mysqli_connect("localhost", "user", "user", "calc_operations");//host,username,password,dbname,port,socket
 
 //функция расчета
 function calc($calc_a,$calc_operation,$calc_b) {
@@ -63,7 +63,7 @@ if (!empty($_REQUEST["submit"])) {
 
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf8">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
