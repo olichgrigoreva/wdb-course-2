@@ -33,11 +33,12 @@ function calc($calc_a,$calc_operation,$calc_b) {
     return $calc_result;
 }
 
-$result = "";//определение переменных
+//определение переменных
+$result = "";
 $calc_num1 = "";
 $operation = "";
 $calc_num2 = "";
-$last_result = "";
+//$last_result = "";
 
 //по нажатию submit, если ассоциативный массив передался не пустой (все, что есть в теге form), то выполняем расчет
 if (!empty($_REQUEST["submit"])) {
@@ -48,15 +49,15 @@ if (!empty($_REQUEST["submit"])) {
     
     $result=calc($calc_num1,$operation,$calc_num2);
     
+    //запрос на вставку данных в таблицу
     $insert_query = "INSERT INTO calc_table (first_operands, operations, second_operands, results) VALUES('$calc_num1' , '$operation' , '$calc_num2' , '$result')";
     echo $insert_query;
-    mysqli_query($connection, $insert_query);
-    //$last_result_query = "SELECT * FROM calc_table LIMIT 5";
     
+    //подключение к БД и передача запросса на запись результата в таблицу
+    mysqli_query($connection, $insert_query);    
     
- $query = mysqli_query($connection, "SELECT * FROM calc_table ORDER BY id DESC LIMIT 5");
- //$last_result = mysqli_fetch_assoc("SELECT * FROM calc_table LIMIT 5");
- 
+    //запрос на вывод 5 последних записей из таблицы
+    $select_query = mysqli_query($connection, "SELECT * FROM calc_table ORDER BY id DESC LIMIT 5");
 }
 ?>
 
@@ -87,17 +88,22 @@ if (!empty($_REQUEST["submit"])) {
             </select>
             <input required name="num2" class="form-control mb-3" placeholder="Введите число" type="text" />
             <input class="btn btn-info" name="submit" type="submit" value="Рассчитать">
-            <?php echo '<br> Входные данные: ' . $calc_num1 . $operation . $calc_num2;//склеивание: перенос строки и вывод результата
-                echo '<br> Результат: ' . $result;
-                echo '<br> Последние 5 записей БД:<br>';
-                while($last_result = mysqli_fetch_assoc($query)) {
- echo "<br>";
- echo $last_result['first_operands'] . $last_result['operations'] . $last_result['second_operands'] . "=" . $last_result['results'];
+            
+            <?php 
+                if (!empty($_REQUEST["submit"])) {
+                    echo '<br> Входные данные: ' . $calc_num1 . $operation . $calc_num2;//склеивание: перенос строки и вывод результата
+                    echo '<br> Результат: ' . $result;
+                    echo '<br> Последние 5 записей БД:<br>';
+                    
+                    /*вывод данных из таблицы mysqli_fetch_assoc($select_query) извлекает из таблицы по одной записи
+                    пока last_result не пустой, выводим записи*/
+                    while($last_result = mysqli_fetch_assoc($select_query)) {
+                        echo $last_result['first_operands'] . $last_result['operations'] . $last_result['second_operands'] . "=" . $last_result['results'] . "<br>";
+                        //print_r($last_result);
+                    }
+                }
+            ?>
 
-//print_r($last_result);
- //echo "</pre>";
-}
-            ?> 
             </div>
         </form>
     </body>
