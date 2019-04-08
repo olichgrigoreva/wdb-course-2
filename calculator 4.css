@@ -1,0 +1,14 @@
+.btn-success{
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    display: inline;
+    
+}
+.pole{
+    border: solid black 1px;
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+   display: inline;
+}
