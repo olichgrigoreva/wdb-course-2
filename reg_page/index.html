@@ -40,7 +40,7 @@
                         registerbutton.append(document.createTextNode("register"));
                 //создаём див для оповещений. сами оповещения, туда же сунем див с результатом обращения к базе данных
                 let alertDiv = document.createElement("div");
-                    createDiv("body", alertDiv, "alertDiv container col-sm-7 col-lg-3 p-5 text-center");
+                    createDiv("body", alertDiv, "container col-sm-7 col-lg-3 p-5 text-center");
                 let result = document.createElement("div");
                     result.className = "result bg-success rounded font-weight-bold text-white mt-5 p-2 text-center";
                 function createAlert(divName, textNode) {
@@ -55,7 +55,7 @@
                         // cross.setAttribute("aria-hidden", "true");
                         // cross.append(document.createTextNode("&times;"));
                         // closeButton.append(cross);
-                        closeButton.append(document.createTextNode("X"));
+                        closeButton.innerHTML = "&times;";
                     divName.append(closeButton);
                 }
                     let alertUsername = document.createElement("div");
@@ -70,13 +70,13 @@
                 registerbutton.addEventListener("click", function(event) {
                     event.preventDefault();
                     if (!username.value) {
-                        document.querySelector(".alertDiv").append(alertUsername);}
+                        alertDiv.append(alertUsername);}
                     if (!email.value.includes("@")) {
-                        document.querySelector(".alertDiv").append(alertEmail);}
+                        alertDiv.append(alertEmail);}
                     if (!password.value) {
-                        document.querySelector(".alertDiv").append(alertPasswordEmpty);}
+                        alertDiv.append(alertPasswordEmpty);}
                     if (!(password.value == confirmpassword.value)) {
-                        document.querySelector(".alertDiv").append(alertConfirmPassword);}
+                        alertDiv.append(alertConfirmPassword);}
                     if (username.value && email.value.includes("@") && password.value && (password.value == confirmpassword.value)) {
                         //закрываем все не закрытые ошибки
                         $('.close').alert("close")
@@ -90,15 +90,15 @@
                         .then(text => {
                             document.querySelector(".result").innerHTML = text;
                         })
-                        document.querySelector(".alertDiv").append(result);
+                        alertDiv.append(result);
                     }
                 })
             })
         </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
