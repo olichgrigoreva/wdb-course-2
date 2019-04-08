@@ -47,7 +47,7 @@ if (!empty($_REQUEST["count_up"])) {
 	<input name="count_up" type="submit" value="Посчитать">
 	</form>
 	<?php 
-	echo $result 
+	echo $result; 
 	?>
 
 </body>
