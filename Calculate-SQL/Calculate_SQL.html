@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script>
+        function calc(event) {
+            event.preventDefault();
+            let form = document.querySelector("form");
+            fetch("Calculate_SQL.php", {
+                method: "POST",
+                body: new FormData(form)
+            })
+                .then(response => {
+                    return response.text();
+                })
+                .then(text => {
+                    document.querySelector(".result").innerHTML = text;
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="number" name="operand1" class="calcul" />
+        <select name="operation" class="calcul">
+            <option value=""> Select operation </option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input type="number" name="operand2" class="calcul" />
+        <button onclick="calc(event)">Calculate</button>
+    </form>
+    <div class="result"></div>
+</body>
+
+</html>
