@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="CP1251">
+    <title>Notebook Web Form</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+      function toggleLogin(event) {
+        let obj=event.target;
+        let objOld;
+        obj.classList.replace("notActive", "active");
+        obj.classList.replace("btn-block", "btn-outline-primary");
+
+        if (obj.nextElementSibling) {objOld=obj.nextElementSibling}
+        else {objOld=obj.previousElementSibling};
+        objOld.classList.replace("active", "notActive");
+        objOld.classList.replace("btn-outline-primary", "btn-block");
+
+        let objPass = document.getElementById('confirmPassword');
+        let objMail = document.getElementById('email');
+        let objLogin = document.getElementById('hiddenRegister');
+        if (obj.name=="register") {
+          objPass.style.display="block";
+          objMail.style.display="block";
+          objLogin.value = "register";
+        } else {
+          objPass.style.display="none";
+          objMail.style.display="none";
+          objLogin.value = "login";
+        }
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <div class="textHeader">SUPER NOTEBOOK
+    </div>
+
+    <div class="container">
+
+      <form class="form-signin" action="/register.php" method=post>
+        <input type="hidden" name="login" id="hiddenRegister" value="login">
+        <div class="text-right">
+          <div class="btn-group">
+            <a class="btn btn-outline-primary btn-sm active" onclick="toggleLogin(event)">LOGIN</a>
+            <a class="btn btn-block btn-sm notActive" onclick="toggleLogin(event)">REGISTER</a>
+          </div>
+        </div>
+
+        <label for="Username" class="sr-only">Username</label>
+        <input type="text" name="Username" class="form-control formInput" placeholder="Username" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="Password" class="form-control formInput" placeholder="Password" required name=pass1>
+
+        <label for="confirmPassword" class="sr-only">Confirm password</label>
+        <input type="password" id="confirmPassword" class="form-control formInput" placeholder="Confirm password" required name=pass2>
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="email" name="Email" class="form-control formInput" placeholder="EMail" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      </form>
+
+      <form class="form-signin" action="/register" method=post
+            oninput='pass2.setCustomValidity(pass1.value != pass2.value ? "Passwords do not match." : "")'>
+
+        <label for="Username" class="sr-only">Username</label>
+        <input type="text" class="form-control formInput" placeholder="Username" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" class="form-control formInput" placeholder="Password" required name=pass1>
+
+        <label for="confirmPassword" class="sr-only">Confirm password</label>
+        <input type="password" class="form-control formInput" placeholder="Confirm password" required name=pass2>
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" class="form-control formInput" placeholder="EMail" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      </form>
+
+
+    </div> <!-- /container -->
+
+    <div class="textFooter">Copyrigth by ..., 2016
+    </div>
+
+  </body>
+</html>

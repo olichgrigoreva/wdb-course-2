@@ -1,0 +1,36 @@
+.textHeader {
+  padding:10px;
+  font-size:16px;
+  background:silver;
+  text-align:center;
+}
+
+.textFooter {
+  position:fixed;
+  bottom:0px;
+  margin:10px 0px;
+  padding:10px;
+  font-size:16px;
+  background:silver;
+  text-align:center;
+  width: 100%;
+}
+
+.container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.formInput {
+  margin:10px 0px;
+  border-radius:0px!important;
+  -webkit-border-radius:0px!important;
+  -moz-border-radius:0px!important;
+}
+
+.notActive{
+//  color: black;
+  color: #3276b1;
+  background-color: #fff;
+}

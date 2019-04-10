@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1251\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset204 Calibri;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qr\f0\fs22\lang1049 03\f1\lang1033 .0\f0\lang1049 4\f1\lang1033 .2019\par
+\f0\lang1049\par
+
+\pard\sa200\sl276\slmult1\'c4.\'c7. \'ca\'e0\'eb\'fc\'ea\'f3\'eb\'ff\'f2\'ee\'f0, \'e4\'e2\'e0 \'f1\'ea\'f0\'e8\'ef\'f2\'e0, \'f7\'f2\'ee\'e1\'fb \'ec\'e5\'e6\'e4\'f3 \'ed\'e8\'ec\'e8 \'e3\'ee\'ed\'ff\'eb\'e8\'f1\'fc \'e4\'e0\'ed\'ed\'fb\'e5.\par
+\par
+\'cf\'ee \f1\lang1033 fetch - \f0\lang1049\'ef\'ee\'eb\'f3\'f7\'e8\'f2\'fc/\'ee\'e1\'ed\'ee\'e2\'e8\'f2\'fc \'f2\'e5\'ea\'f1\'f2. \'c0 \'e5\'f1\'eb\'e8 \'ec\'ed\'ee\'e3\'ee \'ef\'e0\'f0\'e0\'ec\'e5\'f2\'f0\'ee\'e2? \f1\lang1033 JSON\f0\lang1049 .\f1\lang1033\par
+\f0\lang1049\'ea\'e0\'e6\'e4\'fb\'e9 \'fd\'eb\'e5\'ec\'e5\'ed\'f2 - \'ef\'e0\'f0\'e0 "\'ea\'eb\'fe\'f7"-"\'e7\'ed\'e0\'f7\'e5\'ed\'e8\'e5", \'f2\'ee \'e5\'f1\'f2\'fc \'e0\'f1\'f1\'ee\'f6\'e8\'e0\'f2\'e8\'e2\'ed\'fb\'e9 \'ec\'e0\'f1\'f1\'e8\'e2\par
+\f1\lang1033 let myObj=\{\par
+"key-1":"value",\par
+"key-2":\f0\lang1049 5\f1\lang1033 ,\par
+\}\par
+\f0\lang1049\'dd\'eb\'e5\'ec\'e5\'ed\'f2\'fb \'e2 \'ec\'e0\'f1\'f1\'e8\'e2\'e5 \'ec\'ee\'e6\'ed\'ee \'e2\'ea\'eb\'e0\'e4\'fb\'e2\'e0\'f2\'fc (\'fd\'f2\'ee\'f2 \'f2\'e5\'ea\'f1\'f2 \'ec\'ee\'e6\'ed\'ee \'ef\'e8\'f1\'e0\'f2\'fc \'cf\'d0\'df\'cc\'ce \'c2 \'ca\'ce\'cd\'d1\'ce\'cb\'c8):\par
+\f1\lang1033 let myObj=\{\par
+\tab "key-1":"value",\par
+\tab "key-2":\{\par
+\tab\tab "key-\f0\lang1049 3\f1\lang1033 ":"value\f0\lang1049 3\f1\lang1033 ",\par
+\tab\tab "key-\f0\lang1049 4\f1\lang1033 ":"value\f0\lang1049 4\f1\lang1033 ",\par
+\tab\}\par
+\tab "key-\f0\lang1049 5\f1\lang1033 ":[]\par
+\}\par
+"   \\" " \f0\lang1049\'e2\'ee\'f2 \'f2\'e0\'ea \'ec\'ee\'e6\'ed\'ee \'f1\'e4\'e5\'eb\'e0\'f2\'fc \'ea\'e0\'e2\'fb\'f7\'ea\'f3 \'e2\'ed\'f3\'f2\'f0\'e8 \'ea\'e0\'e2\'fb\'f7\'ea\'e8\f1\lang1033\par
+\f0\lang1049\'ca\'e0\'ea \'ee\'f2\'ef\'f0\'e0\'e2\'e8\'f2\'fc \f1\lang1033 JSON\f0\lang1049  \'ed\'e0 \'f1\'e5\'f0\'e2\'e5\'f0?\par
+\f1\lang1033 JSON.stringify(myObj); // \f0\lang1049\'cf\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'f2 \'e2 \'f1\'f2\'f0\'ee\'ea\'f3\par
+\f1\lang1033 JSON\f0\lang1049 _\f1\lang1033 DECODE($_REQUEST["myObj"]) \f0\lang1049 - \'ef\'f0\'e5\'e2\'f0\'e0\'f2\'e8\'f2 \'f1\'f2\'f0\'ee\'ea\'f3 \'e2 \'e0\'f1\'f1\'ee\'f6\'e8\'e0\'f2\'e8\'e2\'ed\'fb\'e9 \'ec\'e0\'f1\'f1\'e8\'e2\par
+\'ea\'e0\'ea \'ee\'f2\'ef\'f0\'e0\'e2\'e8\'f2\'fc \'f1 \'f1\'e5\'f0\'e2\'e5\'f0\'e0?\par
+\f1\lang1033 JSON_ENCODE($myObj); - \f0\lang1049\'ef\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'f2 \'ee\'e1\'fa\'e5\'ea\'f2 \'e2 \'f1\'f2\'f0\'ee\'ea\'f3 \f1\lang1033 JSON\f0\lang1049\par
+\f1\lang1033 JSON.parse(response); - \f0\lang1049\'ef\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'f2 \'f1\'f2\'f0\'ee\'ea\'f3 \f1\lang1033 JSON \f0\lang1049\'e2 \'ee\'e1\'fa\'e5\'ea\'f2 (\'e0\'f1\'f1\'ee\'f6\'e8\'e0\'f2\'e8\'e2\'ed\'fb\'e9 \'ec\'e0\'f1\'f1\'e8\'e2).\par
+\'c4\'cb\'c8\'cd\'c0 \'d1\'d2\'d0\'ce\'ca\'c8 - \'cb\'de\'c1\'c0\'df! \'cc.\'e1. \'ee\'e3\'f0\'e0\'ed\'e8\'f7\'e5\'ed\'e0 \'f2\'ee\'eb\'fc\'ea\'ee \'ed\'e0\'f1\'f2\'f0\'ee\'e9\'ea\'e0\'ec\'e8 \'f1\'e8\'f1\'f2\'e5\'ec\'fb \'ed\'e0 \'f1\'f2\'ee\'f0\'ee\'ed\'e5 \'f1\'e5\'f0\'e2\'e5\'f0\'e0.\par
+\'cc\'ee\'e6\'ed\'ee \'ee\'f2\'ef\'f0\'e0\'e2\'e8\'f2\'fc \'f4\'e5\'f2\'f7\'e5\'ec \'ed\'e5\'f1\'ea\'ee\'eb\'fc\'ea\'ee \'ee\'e1\'fa\'e5\'ea\'f2\'ee\'e2: \f1\lang1033 fetch ?p1=myObj1\f0\lang1049 ...\f1\lang1033\par
+PHP:\par
+\par
+<?php\par
+ $a = \{\par
+  "k1" => "test",\par
+  "k2" => 5,\line\};\par
+echo "<pre>"\par
+print_r($a);\par
+echo "</pre>"\par
+$r = json_encode($a);\par
+\par
+>\par
+\par
+        fetch("/calc.php", \{\par
+          method: "POST",\par
+          body: new FormData(form)\par
+        \}).then(response => \{\par
+          return response.json();\par
+        \}).then(json => \{\par
+          document.querySelector(".result").innerHTML = json.k1;\par
+        \}); \par
+k1 - \f0\lang1049\'fd\'f2\'ee \'e8\'ec\'ff \'ef\'e5\'f0\'e5\'ec\'e5\'ed\'ed\'ee\'e9 \'ef\'ee\'eb\'ff \'e2 \f1\lang1033 PHP \f0\lang1049\'f1\'ea\'f0\'e8\'ef\'f2\'e5, \'e8 \'e4\'ee\'eb\'e6\'ed\'ee \'f1\'ee\'e2\'ef\'e0\'e4\'e0\'f2\'fc \'f1 \'ef\'ee\'eb\'e5\'ec \'e2 \'e7\'e0\'ef\'f0\'ee\'f1\'e5 \f1\lang1033 JS\f0\lang1049\par
+\par
+\'ea\'e0\'ea \'ee\'f2\'ef\'f0\'e0\'e2\'e8\'f2\'fc \'ed\'e0 \'f1\'e5\'f0\'e2\'e5\'f0?\par
+\f1\lang1033 1. ?p1 querySelector\par
+2. JSON.stringify\par
+3. form (SUBMIT)\par
+\par
+\f0\lang1049\'c0 \'e5\'f1\'eb\'e8 \'e2 \'f4\'ee\'f0\'ec\'e5 \'ec\'e0\'f1\'f1\'e8\'e2\'e0 - \'f2\'ee \'f2\'e0\'ea (\'f2\'ee \'e5\'f1\'f2\'fc \'ed\'e0\'e7\'e2\'e0\'ed\'e8\'ff \'ea\'eb\'fe\'f7\'e5\'e9 \'f3\'e1\'e8\'f0\'e0\'e5\'f8\'fc):\f1\lang1033\par
+<?php\par
+ $a = \{\par
+  "test",\par
+  5\line\}; \par
+\par
+for (var key in json) \{\par
+  console.dir(json[key]);\par
+  console.log(json.length);\par
+\}\f0\lang1049  (\'e7\'e4\'e5\'f1\'fc \'ef\'ee\'eb\'f3\'f7\'e8\'f8\'fc \f1\lang1033 key \f0\lang1049\'f1 \'ed\'e0\'e7\'e2\'e0\'ed\'e8\'e5\'ec, \'ea\'ee\'f2\'ee\'f0\'ee\'e5 \'f3\'ea\'e0\'e7\'e0\'ed\'ee \'e2 \'f4\'ee\'f0\'ec\'e5 \f1\lang1033 FORM)\par
+\par
+\f0\lang1049\'c0\'c2\'d2\'ce\'d0\'c8\'c7\'c0\'d6\'c8\'df. \f1\lang1033 MAC \f0\lang1049\'e0\'e4\'f0\'e5\'f1 \'e2 \'eb\'e8\'ed\'f3\'ea\'f1\'e5 \'ef\'ee\'ec\'e5\'ed\'ff\'f2\'fc - \'ed\'e5 \'ef\'f0\'ee\'e1\'eb\'e5\'ec\'e0, \'e2 \'e2\'e8\'ed\'e4\'e5 - \'ef\'f0\'ee\'e1\'eb\'e5\'ec\'e0.\par
+\'ef\'f0\'e8 \'e2\'f5\'ee\'e4\'e5 \'ed\'e0 \'f1\'e0\'e9\'f2 - \'ef\'ee\'eb\'fc\'e7\'ee\'e2\'e0\'f2\'e5\'eb\'fc, \'ef\'e0\'f0\'ee\'eb\'fc, \'e8 \'f1\'e5\'f1\'f1\'e8\'ff.\par
+\f1\lang1033\par
+PHP\f0\lang1049  \'e2\'fb\'ef\'ee\'eb\'ed\'ff\'e5\'f2\'f1\'ff \'ed\'e0 \'f1\'e5\'f0\'e2\'e5\'f0\'e5 \'ee\'f2 \'ed\'e0\'f7\'e0\'eb\'e0 \'e4\'ee \'ea\'ee\'ed\'f6\'e0 \'e8 \'f1\'ee\'f1\'f2\'ee\'ff\'ed\'e8\'e5 \'ed\'e5 \'f1\'ee\'f5\'f0\'e0\'ed\'ff\'e5\'f2. \'d5\'ee\'f7\'e5\'f8\'fc \'f1\'ee\'f5\'f0\'e0\'ed\'e8\'f2\'fc - \'c1\'c4.\par
+\'c4\'e2\'e0 \'e7\'e0\'ef\'f0\'ee\'f1\'e0 \'ee\'f2 \'ea\'eb\'e8\'e5\'ed\'f2\'e0 - \f1\lang1033 test1.php\f0\lang1049 , \f1\lang1033 test2.php \f0\lang1049\'e4\'eb\'ff \'f1\'e5\'f0\'e2\'e5\'f0\'e0 \'ed\'e5 \'ee\'e4\'ed\'ee\'e7\'ed\'e0\'f7\'ed\'ee \'ee\'f2\'ef\'f0\'e0\'e2\'eb\'e5\'ed\'fb \'f1 \'ee\'e4\'ed\'ee\'e3\'ee \'ea\'eb\'e8\'e5\'ed\'f2\'e0, \'e2\'e5\'e4\'fc \f1\lang1033 Ip-\f0\lang1049\'e0\'e4\'f0\'e5\'f1\'e0 \'e8 \f1\lang1033 mac\f0\lang1049 -\'e0\'e4\'f0\'e5\'f1\'e0 \'ec\'e5\'ed\'ff\'fe\'f2\'f1\'ff.\par
+\par
+\f1\lang1033 <?php\par
+  session_start();\par
+  $_SESSION["id"]=5;\par
+>\par
+\f0\lang1049\'e8 \'ef\'ee\'f2\'ee\'ec \'e2\'f1\'e5 \'e7\'e0\'ef\'f0\'ee\'f1\'fb \'e1\'f3\'e4\'f3\'f2 \'ef\'f0\'e8\'e2\'ff\'e7\'e0\'ed\'fb \'ea \'ea\'eb\'e8\'e5\'ed\'f2\'f3.\par
+\'c1\'f0\'e0\'f3\'e7\'e5\'f0 \'f5\'f0\'e0\'ed\'e8\'f2 \'ea\'f3\'ea\'e8 (\'ef\'e0\'f0\'e0 \'ea\'eb\'fe\'f7 - \'e7\'ed\'e0\'f7\'e5\'ed\'e8\'e5).\par
+\'c5\'f1\'eb\'e8 \'f1\'e5\'f1\'f1\'e8\'e8 \'ed\'e5\'f2, \'f2\'ee\f1\lang1033  php \f0\lang1049\'f1\'ee\'e7\'e4\'e0\'e5\'f2 \'e2 \'ea\'f3\'ea\'e8 \'ef\'e0\'f0\'f3 \f1\lang1033 session id \f0\lang1049\'e8 \'ef\'ee\'ec\'e5\'f9\'e0\'e5\'f2 \'e5\'e3\'ee \'e2 \'ea\'f3\'ea\'e8\par
+\f1\lang1033 PHPSESS_ID => ... lifetime 1 day\par
+\f0\lang1049\'ea\'ee\'e3\'e4\'e0 \'e7\'e0\'ef\'f0\'ee\'f1 \f1\lang1033 test2\f0\lang1049  \'f2\'ee \f1\lang1033 php\f0\lang1049  \'f1\'ec\'ee\'f2\'f0\'e8\'f2 \'e2 \'ea\'f3\'ea\'e8 (\'f2\'ee\'f7\'ed\'e5\'e5, \'e1\'f0\'e0\'f3\'e7\'e5\'f0 \'e0\'e2\'f2\'ee\'ec\'e0\'f2\'ee\'ec \'ee\'f2\'ef\'f0\'e0\'e2\'eb\'ff\'e5\'f2 \'ea\'f3\'ea\'e8, \'e8 \'e5\'f1\'eb\'e8 \'f2\'e0\'ec \f1\lang1033 session id \f0\lang1049\'e5\'f1\'f2\'fc, \'f2\'ee \'e2\'f1\'e5 - \'ed\'e0\'f8 \'ef\'ee\'eb\'fc\'f9\'ee\'e2\'e0\'f2\'e5\'eb\'fc, \'e5\'f1\'eb\'e8 \'ed\'e5\'f2 - \'f1\'ee\'e7\'e4\'e0\'e5\'f2\'f1\'ff \'e8 \'f1\'f2\'e0\'e2\'e8\'f2\'fc\'f1\'ff \'ed\'e0 \'ea\'eb\'e8\'e5\'ed\'f2\'e5 \'e2 \'ea\'f3\'ea\'e0\'f5 \'e4\'e0\'f2\'e0 \'e8\'f1\'f2\'e5\'f7\'e5\'ed\'e8\'ff, \'e8 \'e5\'f1\'eb\'e8 \'e2\'f0\'e5\'ec\'ff \'ef\'f0\'ee\'e9\'e4\'e5\'f2 - \'ea\'f3\'ea\'e8 \'ee\'f7\'e8\'f1\'f2\'e8\'f2\'f1\'ff \'e8 \'ed\'e8\'f7\'e5\'e3\'ee \'ed\'e5 \'ee\'f2\'ef\'f0\'e0\'e2\'e8\'f2\'f1\'ff).\par
+\par
+\f1\lang1033 sess1.php\f0\lang1049  \par
+\f1\lang1033 <?php\par
+  session_start();\par
+\f0\lang1049  \f1\lang1033 $t = "user";\par
+$_SESSION["t"] = \f0\lang1049  \f1\lang1033 $t;\par
+>\par
+\f0\lang1049\par
+\f1\lang1033 sess2.php\f0\lang1049  \par
+\f1\lang1033 <?php\par
+  session_start();\par
+  echo $_SESSION["t"];\par
+  $_SESSION["t"] = $t;\par
+>\par
+\par
+\f0\lang1049\'e2\'ea\'eb\'e0\'e4\'ea\'e0 \f1\lang1033 HEADERS\f0\lang1049 : \'e2 \'f2\'e5\'ea\'f1\'f2\'e5\f1\lang1033  PHPSESSID=pesia579yhbjqeyw8y78\par
+\f0\lang1049\'f1\'ee\'e7\'e4\'e0\'e2 \'fd\'f2\'ee\'f2 \'ea\'f3\'ea\'e8 \'e2 \'eb\'fe\'e1\'ee\'ec \'e1\'f0\'e0\'f3\'e7\'e5\'f0\'e5, \'ec\'ee\'e6\'ed\'ee \'e7\'e0\'e9\'f2\'e8 \'ed\'e0 \'f1\'e0\'e9\'f2 \'ef\'ee\'e4 \'fd\'f2\'ee\'e9 \'f1\'e5\'f1\'f1\'e8\'e5\'e9 \'e8 \'e4\'e5\'eb\'e0\'f2\'fc \'e2\'f1\'e5 \'f7\'f2\'ee \'f3\'e3\'ee\'e4\'ed\'ee \'ea\'e0\'ea \'e0\'e2\'f2\'ee\'f0\'e8\'e7\'ee\'e2\'e0\'ed\'ed\'fb\'e9 \'ef\'ee\'eb\'fc\'e7\'ee\'e2\'e0\'f2\'e5\'eb\'fc\f1\lang1033\par
+}
+ 
