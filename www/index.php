@@ -1,3 +1,16 @@
+<?php
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+
+//Проверка на пустые поля
+if ($_REQUEST["username"] !== "" && $_REQUEST["password"] !== "") {
+    
+    echo ;
+    }
+//проверка что логин-пароль существуют и вход в систему
+
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -13,9 +26,9 @@
     
 <body>
     <nav class="navbar"> <h3><small>Super Notebook</small></h3></nav>
-    <form class="container form-group">
-        <input type="text" class="reg_fields" placeholder="Username">
-        <input type="text" class="reg_fields" placeholder="Password">
+    <form class="container form-group" method="POST">
+        <input name="username" type="text" class="reg_fields" placeholder="Username">
+        <input name="password" type="text" class="reg_fields" placeholder="Password">
         <input type="submit" class="btn-primary register_button" value="Login">
         <input type="button" class="btn-primary register_button" value="Register" onclick= "window.location.href='./register.html'">
     </form>
