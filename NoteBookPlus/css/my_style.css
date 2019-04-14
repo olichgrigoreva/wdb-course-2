@@ -1,0 +1,44 @@
+.width_1 {
+    width: 500px;
+  }
+
+.width_button_1 {
+    width: 150px;
+  }
+
+.panel_color {
+  background-color: #212529;
+  color: white;
+}
+
+.main_color {
+  background-color: #bab8b8;
+}
+
+.text_header {
+  font-size: 30px;
+}
+
+.text_footer {
+  font-size: 10px;
+}
+
+.centr {
+  text-align: center;
+}
+
+.podsvet_good {
+  background-color: #c0f0c5;
+}
+
+.podsvet_good:focus {
+  background-color: #c0f0c5;
+}
+
+.podsvet_bad {
+  background-color: #f0c0c5;
+}
+
+.podsvet_bad:focus {
+  background-color: #f0c0c5;
+}
