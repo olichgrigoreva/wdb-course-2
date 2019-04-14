@@ -1,0 +1,35 @@
+	#Header{
+	padding: 20px;
+	font-size: 18px;
+	background: #F5F5DC;
+	text-align: center;
+	}
+	#Footer{
+	position: fixed;
+  	bottom: 0px;
+ 	margin: 30px 0px;
+  	padding: 20px;
+  	font-size: 18px;
+  	background: #F5F5DC;
+  	text-align: center;
+  	width: 100%;
+	}
+	#register_form{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+	}
+	.formInput{
+  	margin: 20px 0px;
+  	border-radius: 0px!important;
+  	-webkit-border-radius: 0px!important;
+  	-moz-border-radius: 0px!important;
+	}
+	#button_registration{
+	display: block;
+	magrin: 20px 0px;
+	border-radius: 5px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	}
