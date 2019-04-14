@@ -12,7 +12,8 @@
 }*/
 
 function load_register(event) {
-    form('POST', 'registration_data.php'); //форма
+    //form('POST', 'registration_data.php'); //форма
+    form();
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
     input(true, 'Username', '', 'username'); //ввод пользователя
@@ -20,15 +21,28 @@ function load_register(event) {
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
     input_btn('inblock', 'submit'); //submit input
+    document.getElementById("inblock").onclick = ajaxRequest(event);
     footer('Copyright &copy; 2019'); //футер
 }
 
+function ajaxRequest(event){
+        //AJAX request
+        event.preventDefault();//отмена действий бразузера по умолчанию
+        let form = document.querySelector("form");
+        //отправка AJAX запроса на сервер
+        fetch("registration_data.php", {//url [настройки запроса] к файлу calc.php
+          method: "POST", //методом post
+          body: new FormData(form) //с данными из формы
+        })
+        
+        }
 //создание формы в body
-function form(method, handler) {
+function form() {
+    //function form(method, handler) {
     let form = document.createElement("form");
     document.querySelector("body").append(form);
-    form.method = method;
-    form.action = handler;
+    //form.method = method;
+    //form.action = handler;
 }
 
 //создание div в form (куда добавить блок, имя класса)
@@ -80,13 +94,15 @@ function footer(text) {
 }
 
 //создание тега input для отправки данных с формы (типа сабмит)
-function input_btn(id, name) {
+function input_btn(id, name, func) {
     let input = document.createElement("input");
     input.type = "submit";
     input.className = "button btn btn-info";
     input.value ='Register';
-    input.setAttribute('id',id);
+    input.setAttribute('id', id);
     input.name = name;
+    //input.addEventListener("click", calc(event));
+    input.onclick=func;
     document.querySelector("div").append(input);
 }
 
