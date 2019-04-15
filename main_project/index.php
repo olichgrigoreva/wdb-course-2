@@ -1,7 +1,7 @@
 <?php
 if ((!empty($_REQUEST["username"]))&&(!empty($_REQUEST["password"]))) {
     require_once("php/database.php");
-    require_once("php/login.php");
+    require_once("php/logination.php");
 
     echo "<pre>";
     print_r($result);
