@@ -2,18 +2,17 @@
 class BaseConnection {
 
     var $connection;
-    var $insert_query;
+    var $query;
 
     function write_to_DataBase() {
-        mysqli_query($connection, $insert_query);
+        mysqli_query($connection, $query);
         }
 
     function read_from_DataBase() {
-
-            $this->loggedIn = false;
-
+        while($query_results = mysqli_fetch_assoc($query)) {
+            echo "<pre>";
+            print_r($query_results);
+            echo "</pre>";        
           }
-        
-    
-    
+    }
 }
