@@ -1,0 +1,115 @@
+<html>
+	<head>
+	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity  = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
+	<script>
+		document.addEventListener("DOMContentLoaded", loaded);
+			function loaded(){
+				create_header();
+				function create_header(){
+				let div_header = document.createElement("header");
+				div_header.classList.add("header");
+				let header_text = document.createTextNode("SUPER NOTEBOOK");
+				div_header.append(header_text);
+				document.querySelector("body").append(div_header);
+				}
+					create_form();
+						function create_form(){
+						let form = document.createElement("form");
+						form.className = "form";
+						form.name = "form";
+						document.querySelector("body").append(form);
+						create_username();
+							function create_username(){
+							let username = document.createElement("input");
+							username.type = "text";
+							username.placeholder = "Username";
+							username.classList.add("username");
+							username.className = "form_control";
+							username.name = "username";
+							document.querySelector("form").append(username);
+							}
+						create_password();
+							function create_password(){
+							let password = document.createElement("input");
+							password.type = "password";
+							password.placeholder = "Password";
+							password.classList.add("password");
+							password.className = "form_control";
+							password.name = "password";
+							document.querySelector("form").append(password);
+							}
+						create_confirm_password();
+							function create_confirm_password(){
+							let confirm_password = document.createElement("input");
+							confirm_password.type = "password";
+							confirm_password.placeholder = "Confirm password";
+							confirm_password.classList.add("confirm_password");
+							confirm_password.className = "form_control";
+							confirm_password.name = "confirm_password";
+							document.querySelector("form").append(confirm_password);
+							}
+						create_e_mail();
+							function create_e_mail(){
+							let e_mail = document.createElement("input");
+							e_mail.type = "email";
+							e_mail.placeholder = "Email";
+							e_mail.ariaDescribedby = "emailHelp";
+							e_mail.classList.add("e_mail");
+							e_mail.className = "form_control";
+							e_mail.name = "e_mail";
+							document.querySelector("form").append(e_mail);
+							}
+						create_button();
+							function create_button(){
+							let button_registration = document.createElement("button");
+							let buttonText = document.createTextNode("Register");
+							button_registration.classList.add("button_registration");
+							button_registration.className = "btn-primary";
+							button_registration.name = "button_registration";
+							button_registration.append(buttonText);
+							document.querySelector("form").append(button_registration);
+							document.querySelector(".btn-primary").addEventListener("click", in_function);
+							}
+						}
+				create_footer();
+				function create_footer(){
+				let div_footer = document.createElement("footer");
+				div_footer.classList.add("footer");
+				let footer_text = document.createTextNode("Copyright by ... 2019");
+				div_footer.append(footer_text);
+				document.querySelector("body").append(div_footer);
+				}
+			}
+		function in_function(){
+			let user = document.querySelector("[name = 'username']").value;
+			let password = document.querySelector("[name = 'password']").value;
+			let confirm_password = document.querySelector("[name = 'confirm_password']").value;
+			let email = document.querySelector("[name = 'email']").value;
+				if (password !== confirm_password){
+					alert('Wrong password');
+				}
+		}
+		function registration(event){
+			event.preventDefault();
+				let form = document.querySelector("form");
+				fetch("local_php.php", {
+				method: "POST",
+				body: new FormData(form)
+				})
+				.then(response => {
+					return response.text();
+				})
+				.then(text => {
+				document.querySelector("form").innerHTML = text;
+				});
+		}
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin = "anonymous"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin = "anonymous"></script>
+		<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous"></script>
+	</body>
+</html>
