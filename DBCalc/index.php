@@ -11,7 +11,17 @@
     <div  style="text-align:center;">
       <h1> Калькулятор</h1>
   <?php
-    $connection = mysqli_connect("localhost", "root", "virtual", "Calc");
+    $connection = mysqli_connect ("localhost", "root", "virtual", "Calc");
+    //
+    $query = mysqli_query($connection, "SELECT * FROM Calculator ORDER BY id desc LIMIT 5");
+
+    function show_five_results ($first_number, $operand, $second_number, $result){
+      while($id = mysqli_fetch_assoc($query)) {
+        echo "<pre>";
+        print_r($first_number $operand $second_number '=' $result);
+        echo "</pre>";
+      }
+    }
 
     $first_number = $_REQUEST["first_number"];
     $operand = $_REQUEST["operand"];
@@ -28,8 +38,28 @@
             $result = $first_number / $second_number;
         }
 
+        // mysqli_query($connection, $insert_query);
+    function query ($connection, $insert_query){
+      return mysqli_query ($connection, $insert_query);
+    }
+// /переделать резуьтат
+
+    function fetch ($query){
+      $result=[];
+      while ($row = mysqli_fetch_assoc($query)) {
+           $result[] = $row;
+      }
+      return $result;
+    }
     $insert_query = "INSERT INTO Calculator (first_num, operation, second_num, result) VALUES('$first_number', '$operand', '$second_number', '$result')";
-    mysqli_query($connection, $insert_query);
+    query ("SELECT id,operand1,operation,operand2,result, date FROM result ORDER BY `id` DESC limit 5");
+    $query=query($connection, );
+
+    $fetch = $connection1->fetch($query);
+
+                    $echores = new EchoClass();
+                    $echores->echores($fetch);
+
   ?>
       <form name="calc" method="post">
         <p>
@@ -47,10 +77,16 @@
         <p>
           <input type="submit" value="Посчитать">
         </p>
-        <p>
-          РЕЗУЛЬТАТ<p name="res">
+          <p>
+            РЕЗУЛЬТАТ<p name="res">
             <?php
-            echo $result;
+              echo $result;
+            ?>
+          </p>
+          <p>
+            ПОСЛЕДНИЕ ВЫЧИСЛЕНИЯ:
+            <?php
+              echo show_five_results;
             ?>
           </p>
         </p>
