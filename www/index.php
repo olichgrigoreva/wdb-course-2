@@ -2,9 +2,11 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
+require_once("classes.php");
+
 //Проверка на пустые поля
 if ($_REQUEST["username"] !== "" && $_REQUEST["password"] !== "") {
-    
+    $loginconnect = new BaseConnection();
     echo ;
     }
 //проверка что логин-пароль существуют и вход в систему

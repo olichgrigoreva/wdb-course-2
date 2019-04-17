@@ -1,11 +1,21 @@
 <?php
 class BaseConnection {
+    private $connection;
+    private $query;
+    private $host = "localhost";
+    private $user = "root";
+    private $pass = "virtual";
 
-    var $connection;
-    var $query;
+    public function __construct($dbname) {
+        $this->connection = mysqli_connect(
+          $this->host,
+          $this->user,
+          $this->pass,
+          $dbname
+        );
 
-    function write_to_DataBase() {
-        mysqli_query($connection, $query);
+    public function write_to_DataBase() {
+        mysqli_query($this->connection, $query);
         }
 
     function read_from_DataBase() {
