@@ -1,5 +1,7 @@
 <?php
 //$connection = mysqli_connect("localhost", "user", "user", "registration_data");//host,username,password,dbname,port,socket
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 require("class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
 
