@@ -12,7 +12,7 @@
 }*/
 
 function load_register(event) {
-    form('POST', 'registration_data.php'); //форма
+    form(); //форма
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
     input(true, 'Username', '', 'username'); //ввод пользователя
@@ -20,16 +20,30 @@ function load_register(event) {
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
     input_btn('inblock', 'submit', 'Register'); //submit input
-    input_btn('inblock', '', 'Login'); //submit input
+    //input_btn('inblock', '', 'Login'); //submit input
+    document.getElementById("inblock").onclick = ajaxRequest;
     footer('Copyright &copy; 2019'); //футер
 }
 
+function ajaxRequest(event){
+    //AJAX request
+    event.preventDefault();//отмена действий бразузера по умолчанию
+    let form = document.querySelector("form");
+    //отправка AJAX запроса на сервер
+    fetch("registration_data.php", {//url [настройки запроса] к файлу calc.php
+        method: "POST", //методом post
+        body: new FormData(form) //с данными из формы
+        //success:  console.log("data");
+  
+    })        
+}
+
 //создание формы в body
-function form(method, handler) {
+function form() {
     let form = document.createElement("form");
     document.querySelector("body").append(form);
-    form.method = method;
-    form.action = handler;
+    //form.method = method;
+    //form.action = handler;
 }
 
 //создание div в form (куда добавить блок, имя класса)
