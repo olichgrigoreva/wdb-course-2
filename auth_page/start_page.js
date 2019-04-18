@@ -12,37 +12,24 @@
 }*/
 
 function load_register(event) {
-    //form('POST', 'registration_data.php'); //форма
-    form();
+    form('POST', 'registration_data.php'); //форма
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
     input(true, 'Username', '', 'username'); //ввод пользователя
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
-    input_btn('inblock', 'submit'); //submit input
-    document.getElementById("inblock").onclick = ajaxRequest(event);
+    input_btn('inblock', 'submit', 'Register'); //submit input
+    input_btn('inblock', '', 'Login'); //submit input
     footer('Copyright &copy; 2019'); //футер
 }
 
-function ajaxRequest(event){
-        //AJAX request
-        event.preventDefault();//отмена действий бразузера по умолчанию
-        let form = document.querySelector("form");
-        //отправка AJAX запроса на сервер
-        fetch("registration_data.php", {//url [настройки запроса] к файлу calc.php
-          method: "POST", //методом post
-          body: new FormData(form) //с данными из формы
-        })
-        
-        }
 //создание формы в body
-function form() {
-    //function form(method, handler) {
+function form(method, handler) {
     let form = document.createElement("form");
     document.querySelector("body").append(form);
-    //form.method = method;
-    //form.action = handler;
+    form.method = method;
+    form.action = handler;
 }
 
 //создание div в form (куда добавить блок, имя класса)
@@ -94,37 +81,12 @@ function footer(text) {
 }
 
 //создание тега input для отправки данных с формы (типа сабмит)
-function input_btn(id, name, func) {
+function input_btn(id, name, value) {
     let input = document.createElement("input");
     input.type = "submit";
     input.className = "button btn btn-info";
-    input.value ='Register';
-    input.setAttribute('id', id);
+    input.value =value;
+    input.setAttribute('id',id);
     input.name = name;
-    //input.addEventListener("click", calc(event));
-    input.onclick=func;
     document.querySelector("div").append(input);
-}
-
-//функция записи отправленных данных с инпутов
-function doSend() {
-    let user = document.querySelector("[name='username']").value;
-    let password = document.querySelector("[name='password']").value;
-    let confirm = document.querySelector("[name='confirm']").value;
-    let email = document.querySelector("[name='email']").value;
-
-    //1 вариант проверки правильности e-mail
-    /*if((email.indexOf("@",1))==-1){
-alert('Адрес e-mail указан неверно')
-document.user.email.select()
-document.user.email.focus()
-    }
-    else{
-document.user.submit();
-     }*/
-
-    //2 вариант проверки правильности e-mail
-    if (password !== confirm){
-alert('Пароли не совпадают!');
-    }
 }

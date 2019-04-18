@@ -1,18 +1,25 @@
-<!--<!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ru"><head>
     <meta charset="UTF-8">
-    <title>Авторизация</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script type="text/javascript" src="start_page.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", load_register);//по событию, когда весь HTML был полностью загружен - loaded
-    </script>
 </head>
 
 <body>
 
+<header class="footer navbar-fixed-bottom">Welcome!</header>
+
+<form method="POST" action="login_data.php">
+	<div class="p-3">
+		<input required="" type="" class="input form-control mb-3" placeholder="Username" name="username">
+		<input required="" type="password" class="input form-control mb-3" placeholder="Password" name="password">
+		<input type="submit" class="button btn btn-info" value="Register" id="inblock" name="submit">
+		<input type="submit" class="button btn btn-info" value="Login" id="inblock" name="">
+	</div>
+</form>
+
+<footer class="footer navbar-fixed-bottom">Copyright © 2019</footer>
 </body>
 </html>

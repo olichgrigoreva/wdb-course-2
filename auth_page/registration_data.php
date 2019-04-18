@@ -1,10 +1,8 @@
 <?php
-//echo "ghbdtn";
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
+//$connection = mysqli_connect("localhost", "user", "user", "registration_data");//host,username,password,dbname,port,socket
+require("class_DB.php");
+$db = new Database("localhost", "user", "user", "grigorieva");
 
-//соединение с БД
-$connection = mysqli_connect("localhost", "user", "user", "registration_data");//host,username,password,dbname,port,socket
 
 /*по нажатию submit, если ассоциативный массив передался не пустой (все, что есть в теге form), то выполняем расчет
 */
@@ -20,8 +18,13 @@ if (!empty($_REQUEST["submit"])) {
     }
     else{
         $insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
-        mysqli_query($connection, $insert_query);//запись значений запроса в таблицу
-        echo $insert_query;
+        $db -> connection($insert_query);
+        //mysqli_query($connection, $insert_query);//запись значений запроса в таблицу
+        //echo $insert_query;
+
+        echo "<pre>";
+        print_r($db);
+        echo "</pre>";
     }     
 }
 ?>
