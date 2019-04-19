@@ -14,14 +14,11 @@
   		text-align: center;
   		width: 100%;
 		}
-		.form{
-		display: flex;
-  		align-items: center;
-  		justify-content: center;
-		}
-		.form-control{
-  		margin: 20px 0px;
-  		border-radius: 0px!important;
-  		-webkit-border-radius: 0px!important;
-  		-moz-border-radius: 0px!important;
+  		input{
+		display: block;
+		margin: 20 0px;
+		width: 200px;
+		border-radius: 0px!important;
+		margin-left: auto;
+		margin-right: auto;
 		}

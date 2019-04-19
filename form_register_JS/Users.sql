@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Апр 16 2019 г., 09:07
+-- Время создания: Апр 19 2019 г., 14:45
 -- Версия сервера: 5.7.25-0ubuntu0.18.04.2
 -- Версия PHP: 7.3.2-3+ubuntu18.04.1+deb.sury.org+1
 
@@ -17,21 +17,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `Registration`
+-- База данных: `levashov`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Users`
+-- Структура таблицы `users`
 --
 
-CREATE TABLE `Users` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `confirm_password` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -40,9 +40,9 @@ CREATE TABLE `Users` (
 --
 
 --
--- Индексы таблицы `Users`
+-- Индексы таблицы `users`
 --
-ALTER TABLE `Users`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
@@ -51,9 +51,9 @@ ALTER TABLE `Users`
 --
 
 --
--- AUTO_INCREMENT для таблицы `Users`
+-- AUTO_INCREMENT для таблицы `users`
 --
-ALTER TABLE `Users`
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
