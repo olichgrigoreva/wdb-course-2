@@ -6,9 +6,14 @@ require_once("classes.php");
 
 //Проверка на пустые поля
 if ($_REQUEST["username"] !== "" && $_REQUEST["password"] !== "") {
-    $loginconnect = new BaseConnection();
+    $loginconnect = new BaseConnection("notebook");
+    $loginconnect->read_from_DataBase();
+    
     echo ;
     }
+else {
+    echo "заполните поля"
+}
 //проверка что логин-пароль существуют и вход в систему
 
 
