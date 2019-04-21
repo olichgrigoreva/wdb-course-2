@@ -78,8 +78,6 @@ function check_form(){
 }
 
 function send_data(event) {
-    if(document.querySelector(".username_field").value !== '' && document.querySelector(".pass_field").value !== '' && document.querySelector(".confirm_field").value !== '' && document.querySelector(".email_field").value !== '')
-
         event.preventDefault();
         let input_data = document.querySelector("form");
         fetch("/www/add_user.php", {
