@@ -3,7 +3,7 @@ ini_set("display_errors",1);
 error_reporting(E_ALL);
 //echo "<pre>";
 //print_r($_REQUEST);
-$connection = mysqli_connect("localhost", "root", "virtual", "project");
+$connection = mysqli_connect("localhost", "root", "virtual", "katasonova");
  if(!empty($connection)) {
    $query='SELECT * FROM calcul ORDER BY id DESC LIMIT 5';
    $result=mysqli_query($connection, $query)or die("Ошибка " . mysqli_error($link));
@@ -20,27 +20,24 @@ $connection = mysqli_connect("localhost", "root", "virtual", "project");
 //echo "<pre>";
 }
 $calcResult = "";
-function calcul($num1, $operator, $num2){
- $result=0;
-      switch($operator) {
-        case "+":
-          $result = $num1 + $num2;
-          break;
-        case "-":
-          $result = $num1 - $num2;
-          break;
-        case "*":
-          $result = $num1 * $num2;
-          break;
-        case "/":
-          if ($num2 != 0) {
-              $result = $num1 / $num2;
-            }
-          else
-            $result = "На 0 делить нельзя!";
-          break;
-      }
-    return ($result);
+function calcul($num1, $num2, $operator){
+    $num1 = $_REQUEST['num1'];
+    $num2 = $_REQUEST['num2'];
+    $operator = $_REQUEST['operator'];
+    if ($operator == '+'){
+        $result = $num1 + $num2;
+    }else if ($operator == '-'){
+        $result = $num1 - $num2;
+    }else if ($operator == '*'){
+        $result = $num1 * $num2;
+    }else if ($operator == '/'){
+         if ($num2 !== 0) {
+            $result = $num1 / $num2;
+         }else{
+            $result = "На 0 делить нельзя";
+              }
+    }
+    return $result;
   }
  if (!empty($_REQUEST["submit"]))  {
  $calcul = calcul($_REQUEST["num1"], $_REQUEST["operator"], $_REQUEST["num2"]);
@@ -56,6 +53,7 @@ function calcul($num1, $operator, $num2){
      }
    }
 ?>
+
 <html>
 <head>
     <meta charset="utf-8"/>
