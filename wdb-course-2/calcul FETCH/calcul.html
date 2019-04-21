@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="calcul.css">
+    <script>
+        function fetchData(event) {
+            event.preventDefault();
+            var form = document.querySelector('form');
+            fetch('calcul.php', {
+                method: "POST",
+                body: new FormData(form),
+            })
+                .then(response => {
+                    return response.text();
+                })
+                .then(text => {
+                    document.querySelector(".showResult").replaceWith(text);
+                })
+            return false;
+        }
+    </script>
+</head>
+<body background="image/matrix.jpg">
+<p>калькулятор</p>
+<div class="container">
+    <div class="calcul">
+        <form name="valu">
+            <input class="size" type="number" name="num1" placeholder="ввести число"/><br>
+            <select class="size" name="operator">
+                <option disabled> выбрать действие </option>
+                <option>/</option>
+                <option>*</option>
+                <option>-</option>
+                <option>+</option>
+            </select><br>
+            <input class="size" type="number" name="num2" placeholder="ввести число"/><br>
+            <input type="button" onclick="return fetchData(event)" class="size" value="Pешить"/><br>
+        </form>
+    </div>
+    <div class="resul">
+        Результат = <div class="showResult"></div>
+
+    </div>
+</div>
+</body>
+</html>
