@@ -1,12 +1,9 @@
 <?php
 if ((!empty($_REQUEST["username"]))&&(!empty($_REQUEST["password"]))) {
-    require_once("php/database.php");
+    require_once("php/Database.php");
     require_once("php/logination.php");
-
-    echo "<pre>";
-    print_r($result);
-    echo "<pre>";
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,11 +56,13 @@ if ((!empty($_REQUEST["username"]))&&(!empty($_REQUEST["password"]))) {
             border-radius: 8px;
         }
     </style>
+    <script>
+    </script>
 </head>
 <body>
     <div class="header">Header</div>
     <div align="center">
-        <form  class="form" action="">
+        <form  class="form" method="POST" action="">
             <input name="username" class="input" type="text" placeholder="USERNAME" required><br>
             <input name="password" class="input" type="password" placeholder="PASSWORD" required><br>
             <button class="button" type="submit">LOGIN</button>

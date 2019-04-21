@@ -5,14 +5,19 @@ error_reporting(E_ALL);
 $username = $_REQUEST["username"];
 $password = $_REQUEST["password"];
 
-$connection = $db->Connect();
-if (!empty($connection)) {
-    $verify_query = $db->Query("SELECT username, password FROM users WHERE username = '$username'");
-    $result = mysqli_fetch_assoc($verify_query);
+$db = new Database();
+$db->Connect("wdb");
+if (!empty($db->connection)) {
+    $select_query = $db->Query(
+        "SELECT id, username, password
+         FROM users
+         WHERE username = '$username'"
+    );
+    $result = $db->Fetch_assoc($select_query);
     if (!empty($result)&&(($result["password"]) == md5($password))) {
         echo "login successfully!";
     }
     else echo "invalid login or password!";
-    mysqli_close($connection);
+    $db->Close();
 }
 ?>

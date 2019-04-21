@@ -1,15 +1,25 @@
 <?php
 class Database {
-    var $host = "localhost";
-    var $username = "root";
-    var $password = "virtual";
-    var $name = "wdb";
-    function Connect() {
-        return mysqli_connect($this->host, $this->username, $this->password, $this->name);
+    public $connection;
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "virtual";
+
+    function Connect($dbname) {
+        $this->connection = mysqli_connect(
+            $this->host,
+            $this->username,
+            $this->password, $dbname
+        );
     }
-    function Query($query) {
-        return mysqli_query($this->Connect(), $query);
+    function Query($select_query) {
+        return mysqli_query($this->connection, $select_query);
+    }
+    function Fetch_assoc($query_result) {
+        return mysqli_fetch_assoc($query_result);
+    }
+    function Close() {
+        mysqli_close($this->connection);
     }
 }
-$db = new Database();
 ?>
