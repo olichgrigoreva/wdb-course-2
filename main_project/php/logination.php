@@ -15,6 +15,7 @@ if (!empty($db->connection)) {
     );
     $result = $db->Fetch_assoc($select_query);
     if (!empty($result)&&(($result["password"]) == md5($password))) {
+        $_SESSION["id"] = $result["id"];
         echo "login successfully!";
     }
     else echo "invalid login or password!";

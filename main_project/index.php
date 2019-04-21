@@ -1,9 +1,10 @@
 <?php
+require_once("php/Session.php");
+$session = new Session();
 if ((!empty($_REQUEST["username"]))&&(!empty($_REQUEST["password"]))) {
     require_once("php/Database.php");
     require_once("php/logination.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html>
