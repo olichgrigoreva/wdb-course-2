@@ -48,26 +48,59 @@ function check_form(){
         myalert.innerHTML='<strong>Fill all fields!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
        document.querySelector(".container").append(myalert);
     }
-
-    if (document.querySelector(".pass_field").value !== document.querySelector(".confirm_field").value){
-        let myalert = document.createElement("div");
-        myalert.className="alert alert-warning alert-dismissible fade show";
-        myalert.role = "alert";
-        myalert.innerHTML='<strong>Passwords d\'not match!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-       document.querySelector(".container").append(myalert);
-    }
-
-    var mailformat = /.+@.+\..+/i;
-    if(mailformat.test(document.querySelector(".email_field").value) == false){
-        let myalert = document.createElement("div");
-        myalert.className="alert alert-warning alert-dismissible fade show";
-        myalert.role = "alert";
-        myalert.innerHTML='<strong>Wrong email format!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-       document.querySelector(".container").append(myalert);
+    else{
+        if (document.querySelector(".pass_field").value !== document.querySelector(".confirm_field").value){
+            let myalert = document.createElement("div");
+            myalert.className="alert alert-warning alert-dismissible fade show";
+            myalert.role = "alert";
+            myalert.innerHTML='<strong>Passwords d\'not match!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+           document.querySelector(".container").append(myalert);
+        }
+        else{
+            var mailformat = /.+@.+\..+/i;
+            if(mailformat.test(document.querySelector(".email_field").value) == false){
+                let myalert = document.createElement("div");
+                myalert.className="alert alert-warning alert-dismissible fade show";
+                myalert.role = "alert";
+                myalert.innerHTML='<strong>Wrong email format!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+               document.querySelector(".container").append(myalert);
+            }
+            else {
+                send_data(event);
+            }
+        }
     }
 
     window.setTimeout(function(){
         $(".alert").alert('close');
-    },5000);
+    },10000);
+
+}
+
+function send_data(event) {
+    if(document.querySelector(".username_field").value !== '' && document.querySelector(".pass_field").value !== '' && document.querySelector(".confirm_field").value !== '' && document.querySelector(".email_field").value !== '')
+
+        event.preventDefault();
+        let input_data = document.querySelector("form");
+        fetch("/www/add_user.php", {
+        method: "POST",
+        body: new FormData(input_data)
+        })
+        .then(response => {
+        return response.text();
+        })
+        .then(text => {
+
+        let myalert = document.createElement("div");
+        myalert.className="alert alert-success alert-dismissible fade show";
+        myalert.role = "alert";
+        myalert.innerHTML='<strong>'+text+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+        document.querySelector(".container").append(myalert);
+
+        window.setTimeout(function(){
+            $(".alert").alert('close');
+        },5000);
+
+        });
 }
 
