@@ -1,8 +1,11 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>NoteBookPlus</title>
+
+    <?php echo $_SESSION['info_message'] ?>
 
     <script src="js/my_script_podsvet.js">
     </script>
@@ -24,6 +27,7 @@
       </div>
       <br>
     </header>
+
     <main class="main_color">
       <div class="width_1 container">
         <br> <br> <br>
@@ -32,19 +36,21 @@
           <label for="enter_username">Имя пользователя</label>
           <input class="form-control" type="text" name="username" value="" id="enter_username" onkeyup="podsvet_name(this.value, this.id)">
           <small class="form-text text-muted">Может содержать от 3 до 32 латинских букв, цифр, а также символы .  _  - . Должен начинаться и заканчиваться на букву или цифру, нельзя использовать подряд два одинаковых спецсимвола.</small>
-          <br> <br>
+          <br>
           <label for="enter_password">Пароль</label>
           <input class="form-control" type="password" name="password" value="" id="enter_password" onkeyup="podsvet_password(this.value, this.id)">
           <small class="form-text text-muted">Может содержать от 6 до 32 латинских букв, цифр.</small>
           <br> <br>
           <div class="centr">
-            <button class="btn btn-dark width_button_1" type="submit" name="button">Войти</button>
+            <button class="btn btn-dark width_button_1" type="submit" name="submit">Войти</button>
           </div>
           <br>
         </form>
 
         <div class="centr">
-          <button class="btn btn-secondary width_button_1" type="button" name="button">Регистрация</button>
+          <form action="registration.html">
+          <button class="btn btn-secondary width_button_1" type="submit" name="submit">Регистрация</button>
+          </form>
         </div>
         <br> <br> <br>
 

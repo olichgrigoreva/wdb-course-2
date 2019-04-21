@@ -1,6 +1,8 @@
 <?php
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+// error_reporting(E_ALL);
+
+session_start();
 
 require_once("Validation.php");
 require_once("Database.php");
@@ -8,20 +10,24 @@ require_once("Database.php");
 $username = $_REQUEST["username"];
 $password = $_REQUEST["password"];
 
-
 $validation = new Validation();
-$result_validation = $validation -> check_username($username).$validation -> check_password($password);
+$result_validation = $validation->check_username($username).$validation->check_password($password);
 if ($result_validation != "") {
-  echo "введены неверные данные";
-// отправить на страницу логинации с выводом соотв сообщения
-
+  $_SESSION['info_message'] = "<script>alert(\"Введены не правильные данные.\");</script>";
+  header("Location: authorization_body.php");
   die;
 }
 
-// проверить соответствие данных пользователя с базой данных
-
-// если верно открыть сессию
-
-// если не верно выдать сообщ об ошибке и вернуть на страницу логинации
+$auth_user = new Database();
+$user = $auth_user->auth_user($username, $password);
+if ($user == "true") {
+  $_SESSION['logged_in_user_name'] = $username;
+  header("Location: index.php");
+  die;
+}
+else {
+  header("Location: authorization_body.php");
+  $_SESSION['info_message'] = "<script>alert(\"Введены не правильные данные.\");</script>";
+}
 
 ?>

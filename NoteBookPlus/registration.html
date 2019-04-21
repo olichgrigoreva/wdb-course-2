@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NoteBookPlus</title>
+
+    <script src="js/my_script_header.js"></script>
+    <script src="js/my_script_main.js"></script>
+    <script src="js/my_script_footer.js"></script>
+    <script src="js/my_script_podsvet.js"></script>
+    <script src="js/Input.js"></script>
+    <script src="js/Button.js"></script>
+
+    <script type="text/javascript">
+
+    function registr(event) {
+
+            event.preventDefault();
+            let form = document.querySelector(".register_form");
+            fetch("registration.php", {
+            method: "POST",
+            body: new FormData(form)
+            })
+            .then(response => {
+            return response.text();
+            })
+            .then(text => {
+            alert(text);
+            })
+          }
+
+    function go_to_auth(event) {
+      document.location.href = "authorization_body.php";
+    }
+
+    document.addEventListener("DOMContentLoaded", header);
+    document.addEventListener("DOMContentLoaded", main);
+    document.addEventListener("DOMContentLoaded", footer);
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+
+  </head>
+  <body>
+  </body>
+</html>
