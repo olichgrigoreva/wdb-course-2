@@ -18,17 +18,17 @@
       .space {
         padding: 10px;
       }
-      .input_text {
-        font: 18px Arial;
-        padding: 10px;
-        margin: 15px;
-        width: 250px;
-        text-align: center;
-      }
-      .container {
+      #container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+      }
+      .input_text {
+        font: 16px Arial;
+        flex: 0 1 auto;
+        padding: 10px;
+        margin: 10px;
       }
       .footer_text {
         position: fixed;
@@ -96,8 +96,9 @@
         document.querySelector(parentObj).append(divObj);
       }
 
-      function newForm(parentObj) {
+      function newForm(parentObj, idName) {
         let formObj=document.createElement("form");
+        formObj.setAttribute("id", idName);
         document.querySelector(parentObj).append(formObj);
       }
 
@@ -141,7 +142,7 @@
 
       function loaded(event) {
         header=newDiv("body", "header_text", "SUPER NOTEBOOK");
-        form=newForm("body");
+        form=newForm("body", "container");
         userName=newInput("form","input_text","UserName","userName");
         password=newInput("form","input_text","Password","password");
         confirmPassword=newInput("form","input_text","Confirm password","confPassword");

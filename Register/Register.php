@@ -5,15 +5,14 @@
   require_once("DataBase.php");
 
   function addBD($name, $pass, $email) {
-    $db = new DataBase();
-    $db->connection();
+    DataBase::connect();
     $strSQL = "INSERT INTO List_users(Name, Password, EMAil) VALUES ('$name', '$pass', '$email')";
 
 //      echo "<pre>";
 //      print_r($strSQL);
 //      echo "</pre>";
 
-    $db->query($strSQL);
+    DateBase::query($strSQL);
   }
 
 //  $result = "1";

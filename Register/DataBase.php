@@ -1,22 +1,22 @@
 <?php
   class DataBase {
-    private $connection;
-    private $host   = "localhost";
-    private $user   = "root";
-    private $pass   = "virtual";
-    private $bdName = "Users";
+    private static $connection;
+    private static $host   = "localhost";
+    private static $user   = "root";
+    private static $pass   = "virtual";
+    private static $bdName = "Shargina";
 
-    public function connection() {
-      $this->connection = mysqli_connect($this->host, $this->user, $this->pass, $this->bdName);
+    public static function connect() {
+      self::connection = mysqli_connect(self::host, self::user, self::pass, self::bdName);
     }
 
-    public function query($strSQL) {
-      if (!empty($this->connection)) {
-        mysqli_query($this->connection, $strSQL);
+    public static function query($strSQL) {
+      if (!empty(self::connection)) {
+        mysqli_query(self::connection, $strSQL);
       }
     }
 
-    public function fetch($query) {
+    public static function fetch($query) {
       mysqli_fetch_assoc($query);
     }
   }
