@@ -77,12 +77,19 @@
 				event.preventDefault();
 				let textstring4 = document.createElement("div");
 				textstring4.append(document.createTextNode("Результат вычисления:"));
-				document.querySelector("body").append(textstring4);
+				document.querySelector("form").append(textstring4);
                                 let input3 = document.createElement("input");
 				input3.name = "input3";
-				document.querySelector("body").append(input3)
+				document.querySelector("form").append(input3)
                 document.querySelector("[name='apply2']").removeEventListener("click", createbyapply2button);
-								
+				
+				let textstring5 = document.createElement("div");
+				textstring5.append(document.createTextNode("Последние расчеты выполнявшиеся сервером:"));
+				document.querySelector("form").append(textstring5);
+				let textstring6 = document.createElement("div");
+				textstring6.append(document.createTextNode(" "));
+				document.querySelector("form").append(textstring6);
+				
 				let form = document.querySelector("form");
 				
 				<!-- AJAX Request -->
@@ -90,15 +97,19 @@
 					  method: "POST",
 					  body: new FormData(form)
 					})
-					
-				<!-- Обработка AJAX ?? ответа от сервера -->
-				.then(response => {
-				return response.json();
-					})
+				
+				.then(responce=>{
+				return responce.json();
+				})
 				
 				.then(json=>{
-				document.querySelector("[name='input3']").value=json;
-				});
+				//var info=json;
+				//var info = "[0, 1, 2, 3]";
+				//значение без точки
+				//numbers = JSON.parse(json);
+				document.querySelector(".report").innerHTML = json;
+				})
+				
 				}
 </script>                       
 
@@ -106,6 +117,7 @@
 <body>
 <form action="calcAJAXSQL.php" method="POST">
 </form>
+<div class="report"></div>
 </body>
 
 </html>
