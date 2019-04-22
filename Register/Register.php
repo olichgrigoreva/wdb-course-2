@@ -12,7 +12,7 @@
 //      print_r($strSQL);
 //      echo "</pre>";
 
-    DateBase::query($strSQL);
+    DataBase::query($strSQL);
   }
 
 //  $result = "1";
