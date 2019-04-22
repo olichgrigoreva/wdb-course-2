@@ -1,5 +1,5 @@
 <?php
- class Session (){
+ class Session {
    public static session_start();
 
    public static function save_session(){
