@@ -11,7 +11,7 @@
    $user = Database::select_query($_POST["username"]; $_POST["password"]);
    if(!empty($user)){
      Session::session_start();
-     Session::save_session($_SESSION["username"], $_SESSION["password"]);
+     Session::save_session($_POST["username"], $_POST["password"]);
    }
  }
 
