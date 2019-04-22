@@ -1,15 +1,22 @@
 <?php
- ini_set("display_errors,1");
- error_reporting(E-ALL);
+ ini_set("display_errors", 1);
+ error_reporting(E_ALL);
 
  require_once ("database.php");
+ require_once ("session.php");
 
- function Login(){
+ Database::connect();
 
+ if(!empty($_REQUEST["submit1"])){
+   $user = Database::select_query($_POST["username"]; $_POST["password"]);
+   if(!empty($user)){
+     Session::session_start();
+     Session::save_session($_SESSION["username"], $_SESSION["password"]);
+   }
  }
 
- function Registr(){
-
+ if(!empty($_REQUEST["submit2"])){
+ //переключение на страницу регистрации
  }
 ?>
 
@@ -31,8 +38,8 @@
 <form method="post">
   <input type="text" name="username" id="username" placeholder="Username" />
   <input type="text" name="password" id="password" placeholder="Password" />
-  <input type="submit" name="submit" id="submit" value="Login" />
-  <input type="submit" name="submit" id="submit" value="Register" />
+  <input type="submit" name="submit1" id="submit" value="Login" />
+  <input type="submit" name="submit2" id="submit" value="Register" />
 </form>
 <footer>
   Copyright by ..., 2016
