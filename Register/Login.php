@@ -1,4 +1,26 @@
 <?php
+  ini_set("display_errors", 1);
+  error_reporting(E_ALL);
+
+  require_once("Validator.php");
+
+  $check = new Validator();
+
+  if (!empty($_REQUEST["buttLogin"])) {
+    $res_text = "";
+    if ($check->not_empty($_REQUEST["userName"], $_REQUEST["password"])) {
+    //insertBD(event);
+      $res_text="Данные проверены в БД пользователей!";
+    }
+    else { $res_text="Ошибка ввода данных!"; }
+
+          echo "<pre>";
+          print_r($res_text);
+          echo "</pre>";
+
+    return $res_text;
+  }
+
   if (!empty($_REQUEST["buttRegister"])) {
     header("Location: Register.html");
     exit;
@@ -61,6 +83,7 @@
     <input type="text" class="input_text" name="password" placeholder="Password" value="<?php if (isset($_REQUEST["Password"])) { echo $_REQUEST["Password"]; } else { echo ""; } ?>">
     <input type="submit" class="input_text btn btn-primary" name="buttLogin"    value="Login">
     <input type="submit" class="input_text btn btn-primary" name="buttRegister" value="Register">
+    <a class="input_text" name="outRes"> </a>
   </form>
 
   <div class="footer_text">
