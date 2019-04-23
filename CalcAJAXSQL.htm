@@ -1,0 +1,144 @@
+<html>
+	<head>
+        <meta charset="utf-8" />
+	    <title>Калькулятор</title>
+		<script>
+		document.addEventListener("DOMContentLoaded", loaded);
+			function loaded() {
+   	             let textstring1 = document.createElement("div");
+				 textstring1.append(document.createTextNode("Введите первое число в поле ввода ниже:"));
+				 document.querySelector("form").append(textstring1);
+				 let input1 = document.createElement("input");
+				 input1.name = "input1";
+				 document.querySelector("form").append(input1)	
+				 let apply1button = document.createElement("button");
+				 apply1button.append(document.createTextNode("Подтвердить выбор первого числа"));
+				 apply1button.name="apply1";
+				 document.querySelector("form").append(apply1button);
+				 apply1button.addEventListener("click", createbyapply1button);
+				 }
+
+			function createbyapply1button() {
+				event.preventDefault(); 
+				let textstring2 = document.createElement("div");
+				textstring2.append(document.createTextNode("Выберите математическую операцию из списка ниже"));
+				document.querySelector("form").append(textstring2);
+				let selectoperation = document.createElement("select");
+				selectoperation.name = "select1";     
+
+				option = document.createElement("option");
+				option.value = 0;
+				option.text = " ";
+				selectoperation.appendChild(option);
+
+				option1 = document.createElement("option");
+				option1.value = 1;
+				option1.text = "Сложить";
+				selectoperation.appendChild(option1);
+
+				option2 = document.createElement("option");
+				option2.value = 2;
+				option2.text = "Вычесть";
+	            selectoperation.appendChild(option2);
+                
+				option3 = document.createElement("option");
+                option3.text = "Умножить";
+                option3.value = 3;
+				selectoperation.appendChild(option3);
+
+				option4 = document.createElement("option");
+				option4.value = 4;
+				option4.text = "Разделить";	
+                                selectoperation.appendChild(option4);
+
+                                selectoperation.addEventListener("change", createbyselect);
+				document.querySelector("form").append(selectoperation);
+				document.querySelector("[name='apply1']").removeEventListener("click", createbyapply1button);
+				}
+
+				function createbyselect() {
+				event.preventDefault();
+				document.querySelector("[name='select1']").removeEventListener("change",createbyselect);
+                                let textstring3 = document.createElement("div");
+				textstring3.append(document.createTextNode("Введите второе число в поле ввода ниже:"));
+				document.querySelector("form").append(textstring3);
+                                let input2 = document.createElement("input");
+                                input2.name = "input2";
+				document.querySelector("form").append(input2)
+	                        let apply2button = document.createElement("button");
+				apply2button.append(document.createTextNode("Подтвердить выбор второго числа и вычислить результат"));
+				apply2button.name="apply2";
+				apply2button.type="submit";
+				document.querySelector("form").append(apply2button);
+				apply2button.addEventListener("click", createbyapply2button);
+	                        }
+
+				function createbyapply2button() {
+				event.preventDefault();
+				let textstring4 = document.createElement("div");
+				textstring4.append(document.createTextNode("Результат вычисления:"));
+				document.querySelector("form").append(textstring4);
+                                let input3 = document.createElement("input");
+				input3.name = "input3";
+				document.querySelector("form").append(input3)
+                document.querySelector("[name='apply2']").removeEventListener("click", createbyapply2button);
+				
+				let textstring7 = document.createElement("div");
+				textstring7.append(document.createTextNode(" "));
+				document.querySelector("form").append(textstring7);
+				
+				let resetbutton = document.createElement("button");
+                                resetbutton.append(document.createTextNode("Сбросить результат вычисления:"));
+				document.querySelector("form").append(resetbutton);
+                                resetbutton.addEventListener("click", actionbyresetbutton);
+				
+				
+				function actionbyresetbutton() {
+				event.preventDefault();
+				location.reload();
+				}
+				
+				let textstring5 = document.createElement("div");
+				textstring5.append(document.createTextNode("Последние расчеты выполнявшиеся сервером:"));
+				document.querySelector("form").append(textstring5);
+				let textstring6 = document.createElement("div");
+				textstring6.class="report";
+				textstring6.append(document.createTextNode(" "));
+				document.querySelector("form").append(textstring6);
+				
+				let form = document.querySelector("form");
+				
+				<!-- AJAX Request -->
+				fetch("CalcAJAXSQL.php", {
+					  method: "POST",
+					  body: new FormData(form)
+					})
+				
+				.then(responce=>{
+				return responce.json();
+				})
+				
+				.then(json=>{
+				let s1=json;
+				let s2 = "";
+				document.querySelector("[name='input3']").value = s1;
+				for(let i = 0; i < s1.length; ++i){
+				let s3=0;
+				s3=s3++;
+				document.querySelector("[name='input3']").value = s1[s3].result;
+				s2 += "Результатов вычислений: " +s1[i].id + " " + s1[i].number1  + " "+s1[i].operation +" "+ s1[i].number2 + " = "+s1[i].result+";"+"<br/><br/>";
+				}
+				document.querySelector(".report").innerHTML = s2;
+				})
+				
+				}
+</script>                       
+
+
+<body>
+<form action="calcAJAXSQL.php" method="POST">
+</form>
+<div class="report"></div>
+</body>
+
+</html>
