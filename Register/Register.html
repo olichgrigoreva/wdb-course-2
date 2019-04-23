@@ -29,6 +29,7 @@
         flex: 0 1 auto;
         padding: 10px;
         margin: 10px;
+        width: 200;
       }
       .footer_text {
         position: fixed;
@@ -46,7 +47,6 @@
     <title> Notebook </title>
 
     <script type="text/javascript">
-      const opers=["+", "-", "*", "/"];
 
       function newInput(parentObj, className, value, name) {
         let inputObj=document.createElement("input");
@@ -71,11 +71,13 @@
         return selectObj;
       }
 
-      function newButton(parentObj, className, value) {
+      function newButton(parentObj, classNamesList, value) {
         let buttonObj=document.createElement("button");
         let buttonText=document.createTextNode(value);
         buttonObj.append(buttonText);
-        buttonObj.classList.add(className);
+        for (i=0; i<=classNamesList.length-1; i++) {
+          buttonObj.classList.add(classNamesList[i]);
+        }
         document.querySelector(parentObj).append(buttonObj);
         return buttonObj;
       }
@@ -147,7 +149,7 @@
         password=newInput("form","input_text","Password","password");
         confirmPassword=newInput("form","input_text","Confirm password","confPassword");
         email=newInput("form","input_text","EMail","email");
-        buttRegister=newButton("form","input_text","Register");
+        buttRegister=newButton("form",["input_text", "btn", "btn-primary"],"Register");
         outRes=newDisplay("form", "input_text", "");
         footer=newDiv("body", "footer_text", "Copyright by Rumka, 2019");
 

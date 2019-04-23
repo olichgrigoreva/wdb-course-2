@@ -1,4 +1,7 @@
 <?php
+/**
+ * Класс для работы с БД
+ */
   class DataBase {
     private static $connection;
     private static $host   = "localhost";
