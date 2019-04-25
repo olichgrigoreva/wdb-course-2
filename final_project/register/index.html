@@ -53,20 +53,20 @@
       let button_reg = document.createElement("button");
       button_reg.append(document.createTextNode("Register"));
       button_reg.classList.add("button_reg");
+      button_reg.onclick = save_user(event);
       document.querySelector("form").append(button_reg);
       document.querySelector(".button_reg").addEventListener("click", validate);
     }
 
-    function validate(){
-     var username = document.getElementById('username').value;
-     var pass = document.getElementById('pass').value;
-     var conf_pass = document.getElementById('conf_pass').value;
-     var mail = document.getElementById('mail').value;
+    function save_user(event){
+      event.preventDefault();
 
-     if (username.length==0 || pass.length==0 || conf_pass.length==0 || mail.length==0 || pass.value==conf_pass.value || mail.indexOf("@")>-1){
-      alert ("Проверьте правильность заполнения полей");
-      return false;
-     }
+      let form = document.querySelector("form");
+
+      fetch ("save_user.php", {
+        method: "POST",
+        body: new FormData (form)
+      })
     }
   </script>
 </head>
