@@ -17,7 +17,7 @@
 				body: new FormData(form)
 					})
 				}
-					function header(){
+					/*function header(){
 					let header = document.createElement("header");
 					header.classList.add("header");
 					let header_text = document.createTextNode("SUPER NOTEBOOK");
@@ -29,7 +29,7 @@
 						form.className = "form";
 						form.name = "form";
 						document.querySelector("body").append(form);
-						}
+					}*/
 							function username(){
 							let username = document.createElement("input");
 							username.type = "text";
@@ -70,19 +70,19 @@
 							function button(){
     							let button = document.createElement("button");
     							let buttonText = document.createTextNode("Register");
-  							button.type = "submit"; //('type',type);
-  							button.id = "inblock"; //('id',id);
+  							button.type = "submit";
+  							button.id = "inblock";
     							button.className = "btn-primary";
     							document.querySelector("form").append(button);
    							button.addEventListener('click',in_function);
 							}
-								function footer(){
+								/*function footer(){
 								let footer = document.createElement("footer");
 								footer.classList.add("footer");
 								let footer_text = document.createTextNode("Copyright by ... 2019");
 								footer.append(footer_text);
 								document.querySelector("body").append(footer);
-								}
+							}*/
 									function data_collection(id, name, value){
     									let input = document.createElement("input");
    									input.type = "submit";
