@@ -1,22 +1,22 @@
 <?php
-	ini_set("display_errors", 1);
-	error_reporting(E_ALL);
-		function enter(){
+	//ini_set("display_errors", 1);
+	//error_reporting(E_ALL);
+		require_once("database.php");
+		require_once("session.php");
 		$username = $_REQUEST["username"];
 		$password = $_REQUEST["password"];
 		$login = $_REQUEST["login"];
 		$register = $_REQUEST["register"];
-			if ($username != ""){
-				if ($password != ""){
-					if (!empty($_REQUEST["login"])){
-     					$result = enter($_REQUEST["username"], $_REQUEST["password"], $_REQUEST["login"]);
+			if(!empty($_REQUEST["button_login"])){
+				database::connect();
+				$username	= database::select_query($_POST["username"], $_POST["password"]);
+					if(!empty($username)){
+						session::save_session($_POST["username"], $_POST["password"]);
 					}
-				}
 			}
-			else{
-			$result = enter($_REQUEST["register"]);
-			}
-		}	
+						if(!empty($_REQUEST["button_register"])){
+							database::connect();
+}
 ?>
 <html>
 	<head>
@@ -43,5 +43,5 @@
        		<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous"></script>
 		<div class = "footer" id = "footer">Copyright by ... 2019
             	</div>
-	</body> 
+	</body>
 </html>
