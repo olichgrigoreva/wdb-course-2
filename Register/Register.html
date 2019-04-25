@@ -2,6 +2,7 @@
   <head>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="bootstrap/js/bootstrap.js"> </script>
+    <script src="Elements.js"> </script>
 
     <meta charset="utf-8" />
 
@@ -48,62 +49,6 @@
 
     <script type="text/javascript">
 
-      function newInput(parentObj, className, value, name) {
-        let inputObj=document.createElement("input");
-        inputObj.type="text";
-        inputObj.classList.add(className);
-        inputObj.placeholder=value;
-        inputObj.name=name;
-        document.querySelector(parentObj).append(inputObj);
-        return inputObj;
-      }
-
-      function newSelect(parentObj, className, valuesList, DefaultItemIndex) {
-        let selectObj=document.createElement("select");
-        for (i=0; i<=valuesList.length-1; i++) {
-          let optionObj=document.createElement("option");
-          optionObj.value=valuesList[i];
-          optionObj.text=valuesList[i];
-          selectObj.append(optionObj);
-        }
-        selectObj.classList.add(className);
-        document.querySelector(parentObj).append(selectObj);
-        return selectObj;
-      }
-
-      function newButton(parentObj, classNamesList, value) {
-        let buttonObj=document.createElement("button");
-        let buttonText=document.createTextNode(value);
-        buttonObj.append(buttonText);
-        for (i=0; i<=classNamesList.length-1; i++) {
-          buttonObj.classList.add(classNamesList[i]);
-        }
-        document.querySelector(parentObj).append(buttonObj);
-        return buttonObj;
-      }
-
-      function newDisplay(parentObj, className, value) {
-        let displObj=document.createElement("a");
-        displObj.classList.add(className);
-        displObj.innerHTML=value;
-        document.querySelector(parentObj).append(displObj);
-        return displObj
-      }
-
-      function newDiv(parentObj, className, value) {
-        let divObj=document.createElement("div");
-        divObj.classList.add(className);
-        let divText=document.createTextNode(value);
-        divObj.append(divText);
-        document.querySelector(parentObj).append(divObj);
-      }
-
-      function newForm(parentObj, idName) {
-        let formObj=document.createElement("form");
-        formObj.setAttribute("id", idName);
-        document.querySelector(parentObj).append(formObj);
-      }
-
       function insertBD(event) {
         event.preventDefault();
         let form=document.querySelector("form");
@@ -143,15 +88,15 @@
       }
 
       function loaded(event) {
-        header=newDiv("body", "header_text", "SUPER NOTEBOOK");
-        form=newForm("body", "container");
-        userName=newInput("form","input_text","UserName","userName");
-        password=newInput("form","input_text","Password","password");
-        confirmPassword=newInput("form","input_text","Confirm password","confPassword");
-        email=newInput("form","input_text","EMail","email");
-        buttRegister=newButton("form",["input_text", "btn", "btn-primary"],"Register");
-        outRes=newDisplay("form", "input_text", "");
-        footer=newDiv("body", "footer_text", "Copyright by Rumka, 2019");
+        header          = appElements.newDiv("body", "header_text", "SUPER NOTEBOOK");
+        form            = appElements.newForm("body", "container");
+        userName        = appElements.newInput("form", "text", "input_text", "UserName", "userName");
+        password        = appElements.newInput("form", "password", "input_text", "Password", "password");
+        confirmPassword = appElements.newInput("form", "password", "input_text", "Confirm password", "confPassword");
+        email           = appElements.newInput("form", "text", "input_text", "EMail", "email");
+        buttRegister    = appElements.newButton("form", ["input_text", "btn", "btn-primary"], "Register");
+        outRes          = appElements.newDisplay("form", "input_text", "");
+        footer          = appElements.newDiv("body", "footer_text", "Copyright by Rumka, 2019");
 
         buttRegister.addEventListener("click", function(event) {
           let res = checkData(userName.value, password.value, confirmPassword.value, email.value);

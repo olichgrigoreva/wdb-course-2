@@ -14,9 +14,9 @@
     }
     else { $res_text="Ошибка ввода данных!"; }
 
-          echo "<pre>";
-          print_r($res_text);
-          echo "</pre>";
+//          echo "<pre>";
+//      print_r($res_text);
+//          echo "</pre>";
 
     return $res_text;
   }
@@ -80,7 +80,7 @@
 
   <form id="container">
     <input type="text" class="input_text" name="userName" placeholder="Username" value="<?php if (isset($_REQUEST["userName"])) { echo $_REQUEST["userName"]; } else { echo ""; } ?>">
-    <input type="text" class="input_text" name="password" placeholder="Password" value="<?php if (isset($_REQUEST["Password"])) { echo $_REQUEST["Password"]; } else { echo ""; } ?>">
+    <input type="password" class="input_text" name="password" placeholder="Password" value="<?php if (isset($_REQUEST["Password"])) { echo $_REQUEST["Password"]; } else { echo ""; } ?>">
     <input type="submit" class="input_text btn btn-primary" name="buttLogin"    value="Login">
     <input type="submit" class="input_text btn btn-primary" name="buttRegister" value="Register">
     <a class="input_text" name="outRes"> </a>
