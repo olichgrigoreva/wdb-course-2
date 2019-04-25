@@ -2,20 +2,16 @@
  ini_set("display_errors", 1);
  error_reporting(E_ALL);
 
- require_once ("database.php");
- require_once ("session.php");
+ require_once ("../database.php");
+ require_once ("../session.php");
 
  Database::connect();
 
- if(!empty($_REQUEST["submit1"])){
-   $user = Database::select_query($_POST["username"], $_POST["password"]);
-   if(!empty($user)){
+ if(!empty($_REQUEST["submit"])){
+   $sql_command = "SELECT username, password FROM users";
+   if(!empty($sql_command)){
      Session::save_session($_POST["username"], $_POST["password"]);
    }
- }
-
- if(!empty($_REQUEST["submit2"])){
- //переключение на страницу регистрации
  }
 ?>
 
@@ -37,8 +33,8 @@
 <form method="post">
   <input type="text" name="username" id="username" placeholder="Username" />
   <input type="text" name="password" id="password" placeholder="Password" />
-  <input type="submit" name="submit1" id="submit" value="Login" />
-  <input type="submit" name="submit2" id="submit" value="Register" />
+  <input type="submit" name="submit" id="submit" value="Login" />
+  <input type="button" name="button" id="button" value="Register" onclick="location.href = '../register/index.html'"/>
 </form>
 <footer>
   Copyright by ..., 2016

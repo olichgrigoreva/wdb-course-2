@@ -22,7 +22,7 @@ form {
   width:200px;
 }
 
-#submit {
+#submit, #button {
   margin:auto;
   margin-top: 10px;
   padding: 10px;
