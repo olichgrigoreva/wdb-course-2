@@ -2,12 +2,12 @@
 //$connection = mysqli_connect("localhost", "user", "user", "registration_data");//host,username,password,dbname,port,socket
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
-require("class_DB.php");
+require_once("class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
 
 /*по нажатию submit, если ассоциативный массив передался не пустой (все, что есть в теге form), то выполняем расчет
 */
-if (!empty($_REQUEST["submit"])) {
+// if (!empty($_REQUEST["submit"])) {
     
      $username=$_REQUEST["username"];
      $password=$_REQUEST["password"];
@@ -30,6 +30,16 @@ if (!empty($_REQUEST["submit"])) {
         echo "</pre>";*/
         //alert( "Привет" );
       
-    }     
-}
+    }
+
+    /*session_start();
+
+if (!isset($_SESSION['count'])) {
+  $_SESSION['count'] = 0;
+  $session_id = $_SESSION['count'];
+} else {
+  $_SESSION['count']++;
+  $session_id = $_SESSION['count'];
+}   */
+// }
 ?>
