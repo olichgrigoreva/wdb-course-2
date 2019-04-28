@@ -12,7 +12,7 @@ class Database
     }
      
     function connection($query_db){
-        echo "Connect to DB. Query: ";
+        echo "\nConnect to DB. Query: ";
     	$connection = mysqli_connect($this->host, $this->user, $this->pass, $this->database);
    		echo $query_db;
         mysqli_query($connection, $query_db);

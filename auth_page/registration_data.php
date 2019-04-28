@@ -67,66 +67,26 @@ return $validateResult;
 require_once("class_validateInfo.php");
 $needValidData = new ValidateInfo($username, $password, $email);
 
-echo "Function completed ";
+echo "\nValidateInfo construct completed ";
 print_r($needValidData);
 
 
+
+
+$valid_fields = ($needValidData -> validUser()) * ($needValidData -> validPass()) * ($needValidData -> confirmPass($confirm)) * ($needValidData -> validEmail());
+echo "Show valid test: "."$valid_fields";
+
+
+
     
-    if (($password == $confirm) AND ($needValidData -> confirmPass($confirm))) {
-$insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
-$db -> connection($insert_query);
-    }
-
-    /*if ($needValidData -> confirmPass($confirm)) {
-      //$needValidData -> confirmPass($confirm);
-      echo 'Пароли совпадают!';
-    }*/  
-
-    else{
-        //$insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
-        //$db -> connection($insert_query);
-      echo "NO";
-
-        //Console.dir("<pre>"."$db"."</pre>");
-        //mysqli_query($connection, $insert_query);//запись значений запроса в таблицу
-        //echo $insert_query;
-
-        /*echo "<pre>";
-        print_r($db);
-        echo "</pre>";*/
-        //alert( "Привет" );
-      
-    }
-
-
-    /*if (($password !== $confirm) AND ($needValidData -> confirmPass($confirm)){
-      //$needValidData -> confirmPass($confirm);
+    if ($valid_fields == 1) {
       $insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
       $db -> connection($insert_query);
-      
     }
+
     else{
-        alert('Passwords do not match!');
+      echo "NO";      
+    }
 
-        //Console.dir("<pre>"."$db"."</pre>");
-        //mysqli_query($connection, $insert_query);//запись значений запроса в таблицу
-        //echo $insert_query;
 
-        /*echo "<pre>";
-        print_r($db);
-        echo "</pre>";
-        //alert( "Привет" );
-      
-    }*/
-
-    /*session_start();
-
-if (!isset($_SESSION['count'])) {
-  $_SESSION['count'] = 0;
-  $session_id = $_SESSION['count'];
-} else {
-  $_SESSION['count']++;
-  $session_id = $_SESSION['count'];
-}   */
-// }
 ?>
