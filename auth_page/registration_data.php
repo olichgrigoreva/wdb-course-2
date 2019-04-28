@@ -72,19 +72,20 @@ print_r($needValidData);
 
 
     
-    /*if (($password !== $confirm) AND ($needValidData -> confirmPass($confirm))) {
-      //$needValidData -> confirmPass($confirm);
-      alert('Пароли не совпадают!');
-    }*/
+    if (($password == $confirm) AND ($needValidData -> confirmPass($confirm))) {
+$insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
+$db -> connection($insert_query);
+    }
 
-    if ($needValidData -> confirmPass($confirm)) {
+    /*if ($needValidData -> confirmPass($confirm)) {
       //$needValidData -> confirmPass($confirm);
       echo 'Пароли совпадают!';
-    }  
+    }*/  
 
     else{
-        $insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
-        $db -> connection($insert_query);
+        //$insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
+        //$db -> connection($insert_query);
+      echo "NO";
 
         //Console.dir("<pre>"."$db"."</pre>");
         //mysqli_query($connection, $insert_query);//запись значений запроса в таблицу
