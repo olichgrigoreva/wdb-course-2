@@ -23,4 +23,3 @@
 						mysqli_query($connection, $insert_query);
 						echo $insert_query;
 			}*/
-?>

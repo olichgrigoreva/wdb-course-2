@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Апр 25 2019 г., 08:57
+-- Время создания: Апр 30 2019 г., 10:58
 -- Версия сервера: 5.7.25-0ubuntu0.18.04.2
 -- Версия PHP: 7.3.2-3+ubuntu18.04.1+deb.sury.org+1
 
@@ -48,7 +48,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `confirm_password`, `email`, 
 (10, 'test5', 'ec6a6536ca304edf844d1d248a4f08dc', 'ec6a6536ca304edf844d1d248a4f08dc', 'test5@www', '2019-04-25 07:28:25'),
 (12, 'test6', '81dc9bdb52d04dc20036dbd8313ed055', '81dc9bdb52d04dc20036dbd8313ed055', 'test6@www', '2019-04-25 07:33:45'),
 (14, 'test7', '81dc9bdb52d04dc20036dbd8313ed055', '81dc9bdb52d04dc20036dbd8313ed055', 'test7@www', '2019-04-25 07:34:42'),
-(16, 'test8', '81dc9bdb52d04dc20036dbd8313ed055', '81dc9bdb52d04dc20036dbd8313ed055', 'test8@www', '2019-04-25 07:41:20');
+(16, 'test8', '81dc9bdb52d04dc20036dbd8313ed055', '81dc9bdb52d04dc20036dbd8313ed055', 'test8@www', '2019-04-25 07:41:20'),
+(18, '12', 'c20ad4d76fe97759aa27a0c99bff6710', 'c20ad4d76fe97759aa27a0c99bff6710', '12', '2019-04-30 06:07:24');
 
 --
 -- Индексы сохранённых таблиц
@@ -69,7 +70,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

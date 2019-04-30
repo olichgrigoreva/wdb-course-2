@@ -1,24 +1,76 @@
-		header{
-		padding: 20px;
-		font-size: 18px;
-		background: #F5F5DC;
-		text-align: center;
-		}
-		footer{
-		position: fixed;
-  		bottom: 0px;
- 		margin: 30px 0px;
-  		padding: 20px;
-  		font-size: 18px;
-  		background: #F5F5DC;
-  		text-align: center;
-  		width: 100%;
-		}
-  		input{
-		display: block;
-		margin: 20 0px;
-		width: 200px;
-		border-radius: 0px!important;
-		margin-left: auto;
-		margin-right: auto;
-		}
+.header{
+  top: 0px;
+  0px 0px;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+}
+body{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+.footer{
+  position: fixed;
+  bottom: 0px;
+  margin: 0px 0px;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+.form{
+  width: 300px;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form_control{
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+#username{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 5;
+  border-bottom-left-radius: 5;
+}
+#password{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+}
+#confirm_password{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+}
+#e_mail{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-top-left-radius: 5;
+  border-top-right-radius: 5;
+}
+#inblock{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}

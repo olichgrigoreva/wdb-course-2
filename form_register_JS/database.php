@@ -17,4 +17,3 @@ class database{
       mysqli_query_assoc($query);
     }
   }
-?>
