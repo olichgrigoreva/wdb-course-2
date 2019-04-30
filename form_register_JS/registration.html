@@ -2,11 +2,34 @@
 	<head>
 		<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity  = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
 		<link rel = "stylesheet" href = "style.css">
-		<script type = "text/javascript" src = "registration.js"></script>
+		<script type = "text/javascript" src = "function_header.js"></script>
+		<script type = "text/javascript" src = "function_form.js"></script>
+		<script type = "text/javascript" src = "function_input.js"></script>
+		<script type = "text/javascript" src = "function_collection.js"></script>
+		<script type = "text/javascript" src = "function_button.js"></script>
 		<script>
 			document.addEventListener("DOMContentLoaded", loaded);
+				function loaded(event){
+					appHeader.newHeader();
+						appForm.newForm();
+							appInput.newUsername();
+								appInput.newPassword();
+									appInput.newConfirm_password();
+								appInput.newEmail();
+							appCollecton.newInput();
+						document.getElementById("inblock").onclick = registration;
+					appFooter.newFooter();
+				}
+
+					function registration(event){
+				  	event.preventDefault();
+							let form = document.querySelector("form");
+									fetch("registration_php.php", {
+								method: "POST",
+							body: new FormData(form)
+						})
+					}
 		</script>
-		<script type = "text/javascript" src = "function_input.js"></script>
 	</head>
 	<body>
 		<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin = "anonymous"></script>

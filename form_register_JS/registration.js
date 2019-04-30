@@ -31,7 +31,7 @@ function loaded(event){
 					form.name = "form";
 				document.querySelector("body").append(form);
 			}
-				/*function username(){
+				function username(){
 					let username = document.createElement("input");
 						username.type = "text";
 							username.placeholder = "Username";
@@ -71,7 +71,7 @@ function loaded(event){
 									e_mail.className = "form_control";
 								e_mail.name = "e_mail";
 							document.querySelector("form").append(e_mail);
-						}*/
+						}
 								function button(){
     							let button = document.createElement("button");
     								let buttonText = document.createTextNode("Register");
