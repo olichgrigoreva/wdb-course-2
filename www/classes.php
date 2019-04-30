@@ -14,7 +14,7 @@ class BaseConnection {
           $dbname
         );
 
-    public function write_to_DataBase() {
+    function write_to_DataBase() {
         mysqli_query($this->connection, $query);
         }
 
