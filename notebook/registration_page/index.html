@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script src="script/Elements.js"></script>
+      <meta charset="utf-8">
+      <link rel = "stylesheet" href = "css/style.css">
+      <script type="text/javascript">
+        function registration(event){
+          event.preventDefault();
+            let form = document.querySelector("form");
+                fetch("php/registration.php", {
+              method: "POST",
+            body: new FormData(form)
+          })
+        }
+        /*function check(username, password, confirm_password, e_mail) {
+          let res_text = "";
+            if ((!(!name)) && (!(!password)) && (!(!confirm_password)) && (!(!e_mail)) && (countSubstr('@', e_mail) == 1)) {
+              if (password == confirm_password) {
+              registration(event);
+                result_text="Successfully";
+              }
+                else { result_text="Warning!"; }
+              }
+                else { result_text="Wrong!"; }
+                  return result_text;
+          }*/
+            function loaded(event) {
+              header = appElements.newHeader("body");
+              form = appElements.newForm("body");
+              username = appElements.newUsername("form");
+              password = appElements.newPassword("form");
+              confirm_password = appElements.newConfirm_password("form");
+              e_mail = appElements.newE_mail("form");
+              //registration_button = appElements.newButton("form");
+              footer = appElements.newFooter("body");
+              data_collection = appElements.newData_collection("form");
+              document.getElementById("inblock").onclick = registration;
+              }
+                document.addEventListener("DOMContentLoaded", loaded);
+    </script>
+  </head>
+  <body>
+  </body>
+</html
