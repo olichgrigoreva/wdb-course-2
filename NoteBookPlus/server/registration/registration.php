@@ -4,8 +4,8 @@
 
 session_start();
 
-require_once("Validation.php");
-require_once("Database.php");
+require_once($_SERVER['DOCUMENT_ROOT']. "/NoteBookPlus/server/common/Validation.php");
+require_once($_SERVER['DOCUMENT_ROOT']. "/NoteBookPlus/server/common/Database.php");
 
 $username = $_REQUEST["username"];
 $email = $_REQUEST["email"];

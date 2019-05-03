@@ -26,7 +26,7 @@ function main(event) {
     "text",
     "username",
     "enter_username",
-    "podsvet_name(this.value, this.id)",
+    "podsvet.name(this.value, this.id)",
     "Может содержать от 3 до 32 латинских букв, цифр, а также символы .  _  - . Должен начинаться и заканчиваться на букву или цифру, нельзя использовать подряд два одинаковых спецсимвола."
   );
   form.append(input.input_type_1());
@@ -39,7 +39,7 @@ function main(event) {
     "email",
     "email",
     "enter_email",
-    "podsvet_email(this.value, this.id)",
+    "podsvet.email(this.value, this.id)",
     "Введите Ваш e-mail адрес в формате name@example.com."
   );
   form.append(input.input_type_1());
@@ -52,7 +52,7 @@ function main(event) {
     "password",
     "password",
     "enter_password",
-    "podsvet_password(this.value, this.id)",
+    "podsvet.password(this.value, this.id)",
     "Может содержать от 6 до 32 латинских букв, цифр."
   );
   form.append(input.input_type_1());
@@ -65,7 +65,7 @@ function main(event) {
     "password",
     "confirm_password",
     "enter_confirm_password",
-    "podsvet_confirm_password(this.value, document.getElementById('enter_password').value, this.id)",
+    "podsvet.confirm_password(this.value, document.getElementById('enter_password').value, this.id)",
     "Введите пароль еще раз. Он должен совпадать с полем Пароль."
   );
   form.append(input.input_type_1());

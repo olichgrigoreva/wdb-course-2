@@ -7,16 +7,16 @@
 
     <?php echo $_SESSION['info_message'] ?>
 
-    <script src="js/my_script_podsvet.js">
+    <script src="/NoteBookPlus/client/common/js/podsvet.js">
     </script>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" type="text/css" href="css/my_style.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="/NoteBookPlus/client/common/css/my_style.css">
 
   </head>
   <body>
@@ -32,13 +32,13 @@
       <div class="width_1 container">
         <br> <br> <br>
 
-        <form class="" action="authorization.php" method="post">
+        <form class="" action="/NoteBookPlus/server/authorization/authorization.php" method="post">
           <label for="enter_username">Имя пользователя</label>
-          <input class="form-control" type="text" name="username" value="" id="enter_username" onkeyup="podsvet_name(this.value, this.id)">
+          <input class="form-control" type="text" name="username" value="" id="enter_username" onkeyup="podsvet.name(this.value, this.id)">
           <small class="form-text text-muted">Может содержать от 3 до 32 латинских букв, цифр, а также символы .  _  - . Должен начинаться и заканчиваться на букву или цифру, нельзя использовать подряд два одинаковых спецсимвола.</small>
           <br>
           <label for="enter_password">Пароль</label>
-          <input class="form-control" type="password" name="password" value="" id="enter_password" onkeyup="podsvet_password(this.value, this.id)">
+          <input class="form-control" type="password" name="password" value="" id="enter_password" onkeyup="podsvet.password(this.value, this.id)">
           <small class="form-text text-muted">Может содержать от 6 до 32 латинских букв, цифр.</small>
           <br> <br>
           <div class="centr">
@@ -48,7 +48,7 @@
         </form>
 
         <div class="centr">
-          <form action="registration.html">
+          <form action="/NoteBookPlus/client/registration_page/registration.html">
           <button class="btn btn-secondary width_button_1" type="submit" name="submit">Регистрация</button>
           </form>
         </div>
