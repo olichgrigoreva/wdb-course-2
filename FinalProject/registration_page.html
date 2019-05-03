@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Notebook Регистраця</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", loaded);
+
+      function createbreak (){
+        var div_break=document.createElement("div");
+        div_break.type="p";
+        document.querySelector("body").append(div_break);
+      }
+
+      function loaded (event){
+          let div_head = document.createElement("div");
+          div_head.type="div";
+          div_head.class="jumbotron";
+          div_head.style="text-align:center"
+          let div_headText=document.createTextNode("uper NoteBook");
+          document.querySelector("body").append(div_head);
+
+          var div_usernameinput=document.createElement("div1");
+          div_usernameinput.type="p";
+          document.querySelector("body").append(div_usernameinput);
+
+          let input_username = document.createElement("input");
+          input_username.type = "text";
+          input_username.id = "username";
+          input_username.classList.add("input");
+          document.querySelector("div1").append(input_username);
+
+          createbreak();
+
+          var div_passwordinput=document.createElement("div2");
+          div_passwordinput.type="p";
+          document.querySelector("body").append(div_paswordinput);
+
+          let input_password=document.createElement("input");
+          input_password.type="password";
+          input_password.id="password";
+          input_password.classList.add("input");
+          document.querySelector("div2").append(input_password);
+
+          createbreak ();
+
+          var div_repeatpassinput=document.createElement("div3");
+          div_repeatpassinput.type="p";
+          document.querySelector("body").append(div_repeatpassinput);
+
+          let input_repeat_password=document.createElement("input");
+          input_repeat_password.type="password";
+          input_repeat_password.id="password";
+          input_repeat_password.classList.add("input");
+          document.querySelector("div3").append(input_repeat_password);
+
+          // createbreak ();
+
+          let input_email=document.createElement("input");
+          input_email.type="text";
+          input_email.id="password";
+          input_email.classList.add("input");
+          document.querySelector("body").append(input_email);
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
