@@ -1,15 +1,15 @@
        
 //элементы документа
-/*function load_login(event) {
+function load_login(event) {
     form(); //форма
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
     input(true, 'Username', '', 'username'); //ввод пользователя
     input(true, 'Password', 'password', 'password'); //ввод пароля
     
-    button('submit','inblock', doSend, 'Log in'); //отправка данных с формы
+    input_btn('submit_btn', 'submit', 'Login'); //submit input
     footer('Copyright &copy; 2019'); //футер
-}*/
+}
 
 function load_register(event) {
     form(); //форма
@@ -21,7 +21,7 @@ function load_register(event) {
     input(true, 'E-mail','email', 'email'); //ввод почты
     input_btn('inblock', 'submit', 'Register'); //submit input
     //input_btn('inblock', '', 'Login'); //submit input
-    document.getElementById("inblock").onclick = ajaxRequest;
+    document.getElementById("submit_btn").onclick = ajaxRequest;
     footer('Copyright &copy; 2019'); //футер
 }
 
