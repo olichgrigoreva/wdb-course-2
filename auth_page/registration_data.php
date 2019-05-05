@@ -1,5 +1,5 @@
 <?php
-//$connection = mysqli_connect("localhost", "user", "user", "registration_data");//host,username,password,dbname,port,socket
+//header( 'Location: http://google.ru/search?q=redirect' );
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
@@ -21,8 +21,6 @@ print_r($port);*/
 
 require_once("class_validateInfo.php");
 $needValidData = new ValidateInfo($username, $password, $email);
-
-echo "\nValidateInfo construct completed ";
 print_r($needValidData);
 
 
@@ -43,10 +41,10 @@ if ($valid_fields == 1) {
 	else{
 		echo "В БД такая запись существует! ";
 	}
-	
 
-  //header('Location: /login.html');
+
+	//header('Location: /login.html');
 }
 else {
- 	echo "\nfail test";      
+ 	echo "\nFail valid test";      
 }

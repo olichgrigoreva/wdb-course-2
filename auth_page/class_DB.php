@@ -33,14 +33,13 @@ class Database
     	return $row;
     }
 
-    function selectFromDB($isusedemail_query){
+    function selectFromDB($select_query){
         echo "\nSELECT from DB. Query: ";
-        echo $isusedemail_query;        
-        $result = mysqli_query($this -> connection(), $isusedemail_query);
+        echo $select_query;        
+        $result = mysqli_query($this -> connection(), $select_query);
         $row = mysqli_fetch_row($result);
-        echo "Вернулось из БД: ";
+        echo "Response: ";
         print_r($row);
-        echo "string" . $row;
         return $row;
     }    
 }

@@ -19,9 +19,9 @@ function load_register(event) {
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
-    input_btn('submit_btn', 'submit', 'Register'); //submit input
+    input_btn('submit', 'submit', 'Register'); //submit input
     //input_btn('inblock', '', 'Login'); //submit input
-    document.getElementById("submit_btn").onclick = ajaxRequest;
+    document.getElementById("submit").onclick = ajaxRequest;
     footer('Copyright &copy; 2019'); //футер
 }
 

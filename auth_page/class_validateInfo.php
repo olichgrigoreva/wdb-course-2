@@ -8,6 +8,7 @@ class ValidateInfo
         $this->user = $valid_user;
         $this->pass = $valid_pass;
         $this->email = $valid_email;
+        echo "\nValidateInfo construct completed ";
     }
 
     function validUser(){
