@@ -2,6 +2,7 @@
 //$connection = mysqli_connect("localhost", "user", "user", "registration_data");//host,username,password,dbname,port,socket
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
+
 require_once("class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
 
@@ -11,6 +12,12 @@ $username=$_REQUEST["username"];
 $password=$_REQUEST["password"];    
 $confirm=$_REQUEST["confirm"];
 $email=$_REQUEST["email"];
+
+/*$host=$_SERVER['SERVER_ADDR'];
+$port=$_SERVER['SERVER_PORT'];
+
+print_r($host);
+print_r($port);*/
 
 require_once("class_validateInfo.php");
 $needValidData = new ValidateInfo($username, $password, $email);
@@ -23,10 +30,23 @@ $valid_fields = ($needValidData -> validUser()) * ($needValidData -> validPass()
 echo "Show valid test: "."$valid_fields";
 
 if ($valid_fields == 1) {
-  $insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
-  $db -> connection($insert_query);
-  //header('Location: /auth_page/login.html');
+	$select_query = "SELECT usernames, emails FROM users WHERE usernames='$username' OR emails='$email'";
+	$num_rows = $db -> isUsedinDB($select_query);
+	
+	if ($num_rows == 0) {
+		echo "В БД нет такой записи! ";
+		print_r($db);
+		echo "Отправка запроса INSERT на сервер. ";
+		$insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
+  		$db -> insertToDB($insert_query);
+	}
+	else{
+		echo "В БД такая запись существует! ";
+	}
+	
+
+  //header('Location: /login.html');
 }
 else {
-  echo "\nfail test";      
+ 	echo "\nfail test";      
 }

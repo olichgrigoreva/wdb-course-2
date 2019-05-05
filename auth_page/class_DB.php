@@ -11,16 +11,37 @@ class Database
         $this->database = $dbname_db;
     }
      
-    function connection($query_db){
-        echo "\nConnect to DB. Query: ";
+    function connection(){
+        echo "\nConnect to DB.";
     	$connection = mysqli_connect($this->host, $this->user, $this->pass, $this->database);
-   		echo $query_db;
-        mysqli_query($connection, $query_db);
+        return $connection;
     }
 
-    function selectFromDB($query_db){
-    	$result = mysqli_fetch_assoc($this->$query_db);
-    	return $result;
+    function insertToDB($insert_query){
+        echo "\nINSERT to DB. Query: ";
+        echo $insert_query;
+        mysqli_query($this -> connection(), $insert_query);
     }
+
+    function isUsedinDB($isusedemail_query){
+        echo "\nIs this name/email used in DB. Query: ";
+        echo $isusedemail_query;        
+    	$result = mysqli_query($this -> connection(), $isusedemail_query);
+        $row = mysqli_fetch_row($result);
+        echo "Response: ";
+        print_r($row);
+    	return $row;
+    }
+
+    function selectFromDB($isusedemail_query){
+        echo "\nSELECT from DB. Query: ";
+        echo $isusedemail_query;        
+        $result = mysqli_query($this -> connection(), $isusedemail_query);
+        $row = mysqli_fetch_row($result);
+        echo "Вернулось из БД: ";
+        print_r($row);
+        echo "string" . $row;
+        return $row;
+    }    
 }
 ?>
