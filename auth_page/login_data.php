@@ -3,29 +3,23 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
+//session_start();
+
 require_once("class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
     
 $username=$_REQUEST["username"];
 $password=$_REQUEST["password"];    
-$confirm=$_REQUEST["confirm"];
-$email=$_REQUEST["email"];
 
-require_once("class_validateInfo.php");
-$needValidData = new ValidateInfo($username, $password, $email);
-
-echo "\nValidateInfo construct completed ";
-print_r($needValidData);
+$select_query = "SELECT id FROM users WHERE usernames='$username' AND passwords=MD5('$password')";
+	$select_result = $db -> selectFromDB($select_query);
+	$id = $select_result["id"];
+	print_r($id);
+	$_SESSION["id"] = $id;
 
 
-$valid_fields = ($needValidData -> validUser()) * ($needValidData -> validPass()) * ($needValidData -> confirmPass($confirm)) * ($needValidData -> validEmail());
-echo "Show valid test: "."$valid_fields";
-
-if ($valid_fields == 1) {
-	$select_query = "SELECT usernames, emails FROM users WHERE usernames='$username' OR emails='$email'";
-	$num_rows = $db -> isUsedinDB($select_query);
 	
-	if ($num_rows == 0) {
+	/*if ($num_rows == 0) {
 		echo "В БД нет такой записи! ";
 		print_r($db);
 		echo "Отправка запроса INSERT на сервер. ";
@@ -41,4 +35,4 @@ if ($valid_fields == 1) {
 }
 else {
  	echo "\nFail valid test";      
-}
+}*/
