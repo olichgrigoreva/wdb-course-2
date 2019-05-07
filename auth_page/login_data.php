@@ -1,9 +1,13 @@
 <?php
+//session_start();
+
+/*session_start();
+$session_id = session_id();
+echo "Session key: " . $session_id;*/
+
 
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
-
-//session_start();
 
 require_once("class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
@@ -14,10 +18,11 @@ $password=$_REQUEST["password"];
 $select_query = "SELECT id FROM users WHERE usernames='$username' AND passwords=MD5('$password')";
 	$select_result = $db -> selectFromDB($select_query);
 	$id = $select_result["id"];
-	print_r($id);
-	$_SESSION["id"] = $id;
+	//print_r($id);
+	//$_SESSION["id"] = $id;
 
-
+	$_SESSION ='Hello world!';
+	print_r($_SESSION);
 	
 	/*if ($num_rows == 0) {
 		echo "В БД нет такой записи! ";

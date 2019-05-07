@@ -1,5 +1,10 @@
 <?php
-//header( 'Location: http://google.ru/search?q=redirect' );
+session_start();
+$session_id = session_id();
+echo "Session key: " . $session_id;
+
+header( 'Location: login.html' );
+
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
@@ -12,12 +17,6 @@ $username=$_REQUEST["username"];
 $password=$_REQUEST["password"];    
 $confirm=$_REQUEST["confirm"];
 $email=$_REQUEST["email"];
-
-/*$host=$_SERVER['SERVER_ADDR'];
-$port=$_SERVER['SERVER_PORT'];
-
-print_r($host);
-print_r($port);*/
 
 require_once("class_validateInfo.php");
 $needValidData = new ValidateInfo($username, $password, $email);
@@ -41,9 +40,6 @@ if ($valid_fields == 1) {
 	else{
 		echo "В БД такая запись существует! ";
 	}
-
-
-	//header('Location: /login.html');
 }
 else {
  	echo "\nFail valid test";      
