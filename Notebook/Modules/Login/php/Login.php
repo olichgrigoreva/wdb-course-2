@@ -25,11 +25,6 @@
       $res_text = find_user($_REQUEST["userName"], MD5($_REQUEST["password"]));
     }
     else { $res_text="Ошибка ввода данных!"; }
-
-    //echo "<pre>";
-  //  print_r($res_text);
-  //  echo "</pre>";
-
   }
 
   if (!empty($_REQUEST["buttRegister"])) {
