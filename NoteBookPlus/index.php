@@ -12,4 +12,8 @@ if(!isset($_SESSION['logged_in_user_name'])){
 
 ?>
 
-Блокнот. пользователь: <?php echo $_SESSION['logged_in_user_name'] ?>
+<?php
+header("Location: /NoteBookPlus/client/notebook/public/index.html");
+die;
+// Блокнот. пользователь: <?php echo $_SESSION['logged_in_user_name']
+?>
