@@ -1,4 +1,5 @@
 import React from 'react';
+import './NameEditBlock.css';
 
 const NameEditBlock = () => {
   return (

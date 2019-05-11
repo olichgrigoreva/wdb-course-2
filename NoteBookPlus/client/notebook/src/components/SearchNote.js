@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchNote.css';
 
 const SearchNote = () => {
   return (

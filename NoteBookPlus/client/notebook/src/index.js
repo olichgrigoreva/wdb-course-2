@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './index.css';
+
 import SearchNote from './components/SearchNote.js';
 import ListNote from './components/ListNote.js';
-import ButtonNote from './components/ButtonNote.js';
+import ButtonNewNote from './components/ButtonNewNote.js';
+
 import NameEditBlock from './components/NameEditBlock.js';
-import InputDataNote from './components/InputDataNote.js';
-import CalendarNote from './components/CalendarNote.js';
+import InputNameNote from './components/InputNameNote.js';
+import InputDateNote from './components/InputDateNote.js';
+import InputContentNote from './components/InputContentNote.js';
+import ButtonSaveNote from './components/ButtonSaveNote.js';
 
 const BodyNotebook = () => {
   return (
@@ -15,16 +20,16 @@ const BodyNotebook = () => {
       <div className = "left_block">
       <SearchNote />
       <ListNote />
-      <ButtonNote />
+      <ButtonNewNote />
       </div>
 
       <div className = "richt_block">
         <NameEditBlock />
-        <InputDataNote />
-        <CalendarNote />
-        <InputDataNote />
+        <InputNameNote />
+        <InputDateNote />
+        <InputContentNote />
         <br></br>
-        <ButtonNote />
+        <ButtonSaveNote />
       </div>
 
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
+import './InputDateNote.css';
 
-const CalendarNote = () => {
+const InputDateNote = () => {
   return (
     <form>
        <input type="date" name="calendar" value = ""
@@ -9,4 +10,4 @@ const CalendarNote = () => {
   );
 };
 
-export default CalendarNote;
+export default InputDateNote;
