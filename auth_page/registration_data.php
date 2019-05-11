@@ -1,9 +1,10 @@
 <?php
-/*session_start();
+session_start();
 $session_id = session_id('Hello world!');
 echo "Session key: " . $session_id;
 $_SESSION["id"] = "Hello";
-print_r($_SESSION);*/
+print_r($_SESSION);
+/*если закомментить сессию, то приходит response в консоли хрома*/
 
 //header( 'Location: login.html' );
 

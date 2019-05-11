@@ -36,3 +36,13 @@ header, footer{
     border: 1px solid #005cff;
     margin-top: 1rem!important;
 }
+
+#link{
+    color: #292b2c;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #005cff;
+    border-radius: 20px;
+    font-weight: normal;
+}

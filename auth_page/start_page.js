@@ -6,9 +6,10 @@ function load_login(event) {
     header('Welcome!'); //хедер
     input(true, 'Username', '', 'username'); //ввод пользователя
     input(true, 'Password', 'password', 'password'); //ввод пароля
-    
     input_btn('submit', 'submit', 'Login'); //submit input
-    document.getElementById("submit").onclick = ajaxRequest_log;
+    document.getElementById("submit").onclick = bind(ajaxRequest, "login_data.php");
+    a('http://localhost:8080/auth_page/register.html');
+    document.getElementById("link").innerHTML = "Ещё не зарегистрированы?";
     footer('Copyright &copy; 2019'); //футер
 }
 
@@ -22,25 +23,18 @@ function load_register(event) {
     input(true, 'E-mail','email', 'email'); //ввод почты
     input_btn('submit', 'submit', 'Register'); //submit input
     document.getElementById("submit").onclick = bind(ajaxRequest, "registration_data.php");
+    a('http://localhost:8080/auth_page/login.html');
+    document.getElementById("link").innerHTML = "Уже зарегистрированы?";
     footer('Copyright &copy; 2019'); //футер
 }
 
+
+
+//функция для передачи параметров ajax запросу
 function bind(func, context) {
-  return function() { // (*)
+  return function() { // (*) анонимная функция
     return func.apply(context, arguments);
   };
-}
-
-function ajaxRequest_log(event){
-    //AJAX request
-    event.preventDefault();//отмена действий бразузера по умолчанию
-    let form = document.querySelector("form");
-    //отправка AJAX запроса на сервер
-    //fetch("registration_data.php", {//url [настройки запроса] к файлу calc.php
-    fetch("login_data.php", {//url [настройки запроса] к файлу calc.php    
-        method: "POST", //методом post
-        body: new FormData(form) //с данными из формы  
-    })        
 }
 
 function ajaxRequest(event){
@@ -55,21 +49,17 @@ function ajaxRequest(event){
     }) 
     /*.then(response => {
           return response.text();
-    })
-    .then(text => {
-          document.querySelector("footer").innerHTML=text;
-    }) */      
+    })*/
+    .then(result => {
+        window.location.href = 'http://localhost:8080/auth_page/login.html';
+          //document.querySelector("footer").innerHTML=text;
+    })       
 }
-
-//var g = bind(ajaxRequest, "registration_data.php");
-
 
 //создание формы в body
 function form() {
     let form = document.createElement("form");
     document.querySelector("body").append(form);
-    //form.method = method;
-    //form.action = handler;
 }
 
 //создание div в form (куда добавить блок, имя класса)
@@ -129,4 +119,13 @@ function input_btn(id, name, value) {
     input.setAttribute('id',id);
     input.name = name;
     document.querySelector("div").append(input);
+}
+
+//ссылка
+function a(href, text) {
+    let a = document.createElement("a");
+    a.className = "badge badge-primary";
+    a.setAttribute('id',"link");
+    a.setAttribute('href',href);
+    document.querySelector("div").append(a);
 }
