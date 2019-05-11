@@ -8,7 +8,7 @@ function load_login(event) {
     input(true, 'Password', 'password', 'password'); //ввод пароля
     
     input_btn('submit', 'submit', 'Login'); //submit input
-    document.getElementById("submit").onclick = ajaxRequest;
+    document.getElementById("submit").onclick = ajaxRequest_log;
     footer('Copyright &copy; 2019'); //футер
 }
 
@@ -21,11 +21,17 @@ function load_register(event) {
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
     input_btn('submit', 'submit', 'Register'); //submit input
-    document.getElementById("submit").onclick = ajaxRequest;
+    document.getElementById("submit").onclick = bind(ajaxRequest, "registration_data.php");
     footer('Copyright &copy; 2019'); //футер
 }
 
-/*function ajaxRequest(event){
+function bind(func, context) {
+  return function() { // (*)
+    return func.apply(context, arguments);
+  };
+}
+
+function ajaxRequest_log(event){
     //AJAX request
     event.preventDefault();//отмена действий бразузера по умолчанию
     let form = document.querySelector("form");
@@ -35,14 +41,14 @@ function load_register(event) {
         method: "POST", //методом post
         body: new FormData(form) //с данными из формы  
     })        
-}*/
+}
 
 function ajaxRequest(event){
     //AJAX request
     event.preventDefault();//отмена действий бразузера по умолчанию
     let form = document.querySelector("form");
     //отправка AJAX запроса на сервер
-    fetch("registration_data.php", {//url [настройки запроса] к файлу calc.php
+    fetch(this, {//url [настройки запроса] к файлу calc.php
     //fetch("login_data.php", {//url [настройки запроса] к файлу calc.php    
         method: "POST", //методом post
         body: new FormData(form) //с данными из формы  
@@ -54,6 +60,8 @@ function ajaxRequest(event){
           document.querySelector("footer").innerHTML=text;
     }) */      
 }
+
+//var g = bind(ajaxRequest, "registration_data.php");
 
 
 //создание формы в body

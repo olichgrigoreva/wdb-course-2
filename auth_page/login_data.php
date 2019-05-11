@@ -1,6 +1,6 @@
 <?php
 //session_start();
-
+//print_r($_SESSION);
 /*session_start();
 $session_id = session_id();
 echo "Session key: " . $session_id;*/
@@ -21,8 +21,8 @@ $select_query = "SELECT id FROM users WHERE usernames='$username' AND passwords=
 	//print_r($id);
 	//$_SESSION["id"] = $id;
 
-	$_SESSION ='Hello world!';
-	print_r($_SESSION);
+	
+	//print_r($_SESSION);
 	
 	/*if ($num_rows == 0) {
 		echo "В БД нет такой записи! ";

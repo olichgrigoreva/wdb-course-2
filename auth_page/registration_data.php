@@ -1,9 +1,11 @@
 <?php
-session_start();
-$session_id = session_id();
+/*session_start();
+$session_id = session_id('Hello world!');
 echo "Session key: " . $session_id;
+$_SESSION["id"] = "Hello";
+print_r($_SESSION);*/
 
-header( 'Location: login.html' );
+//header( 'Location: login.html' );
 
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
