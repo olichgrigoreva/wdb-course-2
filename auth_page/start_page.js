@@ -50,10 +50,10 @@ function ajaxRequest(event){
     /*.then(response => {
           return response.text();
     })*/
-    .then(result => {
+    /*.then(result => {
         window.location.href = 'http://localhost:8080/auth_page/login.html';
           //document.querySelector("footer").innerHTML=text;
-    })       
+    })*/       
 }
 
 //создание формы в body
