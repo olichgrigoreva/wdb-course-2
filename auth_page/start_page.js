@@ -21,14 +21,22 @@ function load_register(event) {
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
+    
     input_btn('submit', 'submit', 'Register'); //submit input
     document.getElementById("submit").onclick = bind(ajaxRequest, "registration_data.php");
+    
+    var rect = document.getElementById("submit");
+    rect.addEventListener("click", redirectToLogin);
+    
     a('http://localhost:8080/auth_page/login.html');
     document.getElementById("link").innerHTML = "Уже зарегистрированы?";
+    
     footer('Copyright &copy; 2019'); //футер
 }
 
-
+function redirectToLogin(e){
+    window.location.href = 'http://localhost:8080/auth_page/login.html';
+}
 
 //функция для передачи параметров ajax запросу
 function bind(func, context) {
@@ -52,7 +60,7 @@ function ajaxRequest(event){
     })*/
     /*.then(result => {
         window.location.href = 'http://localhost:8080/auth_page/login.html';
-          //document.querySelector("footer").innerHTML=text;
+        //document.querySelector("footer").innerHTML=text;
     })*/       
 }
 
