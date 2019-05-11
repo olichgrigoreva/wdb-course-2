@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <!-- <script src = "../src/index.js"> -->
+    <!-- </script> -->
 
+    <script src = "my_script_header.js">
     </script>
+
+    <script src = "my_script_footer.js">
+    </script>
+
     <title>NoteBookPlus</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="../src/css/notebook_style.css"> -->
+    <link rel="stylesheet" type="text/css" href="notebook_style.css">
+    <link rel="stylesheet" type="text/css" href="my_style.css">
+
+
   </head>
-  <body>
+  <body style = "margin:0px">
 
     <noscript>
       You need to enable JavaScript to run this app.
@@ -16,7 +28,15 @@
       Вам нужно включить JavaScript, чтобы запустить это приложение.
     </noscript>
 
+    <script type="text/javascript">
+      header();
+    </script>
+
     <div id="root"></div>
+
+    <script type="text/javascript">
+      footer();
+    </script>
 
   </body>
 </html>
