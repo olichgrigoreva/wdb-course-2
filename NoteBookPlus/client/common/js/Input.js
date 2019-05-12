@@ -1,4 +1,5 @@
 class Input {
+
   constructor(label_value, input_type, input_name, input_id, podsvet_function, small_value) {
     this.label_value = label_value;
     this.input_type = input_type;
@@ -7,6 +8,7 @@ class Input {
     this.podsvet_function = podsvet_function;
     this.small_value = small_value;
   }
+
   input_type_1() {
   let div=document.createElement("div");
   let label = document.createElement("label");

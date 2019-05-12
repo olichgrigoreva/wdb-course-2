@@ -1,4 +1,5 @@
 <?php
+
 class Database {
 
   private $connection;
@@ -24,6 +25,15 @@ class Database {
     or die("Ошибка. Имя пользователя занято");
   }
 
+  function new_password($user, $password) {
+    mysqli_query($this->connection, "UPDATE ".$this->db_table." SET password = MD5('$password') WHERE user_name = '$user'" )
+    or die("Ошибка!");
+  }
+
+  function info_user_email($user) {
+    $info_user = mysqli_fetch_assoc(mysqli_query($this->connection, "SELECT e_mail FROM ".$this->db_table." WHERE user_name = '$user'" ));
+    return $info_user["e_mail"];
+  }
 
   function auth_user($username, $password) {
     $massiv_users = mysqli_query($this->connection, "SELECT * FROM ".$this->db_table);
