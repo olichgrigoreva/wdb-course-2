@@ -4,25 +4,23 @@
 
   require_once("./System/Classes/php/Validator.php");
   require_once("./System/Classes/php/DataBase.php");
+  require_once("./System/Classes/php/Session.php");
 
-  function find_user($userName, $password) {
-    if (DataBase::connect()) {
-      $strSQL = "SELECT * FROM List_users WHERE Name = '".$userName."' AND Password = '".$password."' ORDER BY Name";
-      $query = DataBase::query($strSQL);
+  function findUser($userName, $password) {
 
-      if ($rec = DataBase::fetch($query))  {
-        $res = "Пользователь найден в БД пользователей!";
-      }
-      else { $res = "Неверный логин или пароль!"; }
-
-      return $res;
+    if ($rec = Validator::find_user_pass($userName, $password))  {
+        //$res = "Пользователь найден в БД пользователей!";
+      $res  = "Сессия: ".Session::open_session();
     }
+    else { $res = "Неверный логин или пароль!"; }
+
+    return $res;
   }
 
   if (!empty($_REQUEST["buttLogin"])) {
     $res_text = "";
     if (Validator::not_empty($_REQUEST["userName"], $_REQUEST["password"])) {
-      $res_text = find_user($_REQUEST["userName"], MD5($_REQUEST["password"]));
+      $res_text = findUser($_REQUEST["userName"], MD5($_REQUEST["password"]));
     }
     else { $res_text="Ошибка ввода данных!"; }
   }
@@ -35,6 +33,7 @@
 <html>
 <head>
   <link href="Modules/Bootstrap/css/bootstrap.css" rel="stylesheet">
+  <script src="Modules/Bootstrap/js/jquery-3.4.1.min.js"> </script>
   <script src="Modules/Bootstrap/js/bootstrap.js"> </script>
   <meta charset="utf-8">
 
