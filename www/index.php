@@ -2,19 +2,29 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-require_once("classes.php");
+require_once("Database.php");
 
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
+
+$username=$_REQUEST['username'];
+$user_password=$_REQUEST['password'];
 //Проверка на пустые поля
-if ($_REQUEST["username"] !== "" && $_REQUEST["password"] !== "") {
-    $loginconnect = new BaseConnection("notebook");
-    $loginconnect->read_from_DataBase();
-    
-    echo ;
-    }
+if ($username !== "" && $user_password !== "") {
+    //echo "<script>alert('есть данные в полях');</script>";
+    alert("есть данные в полях");
+}
+
 else {
-    echo "заполните поля"
+   // echo "<script>alert('заполните поля');</script>";
+   alert("заполните поля");
 }
 //проверка что логин-пароль существуют и вход в систему
+//        $loginconnect = new BaseConnection("notebook");
+//        $loginconnect->read_from_DataBase();
+
 
 
 ?>
@@ -29,6 +39,7 @@ else {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--My CSS-->
     <link rel="stylesheet" href="register.css">
+
 </head>
     
 <body>
