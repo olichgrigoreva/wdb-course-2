@@ -4,9 +4,10 @@ function loaded() {
     div_header.classList.add("header");
     let header_text = document.createTextNode("SUPER NOTEBOOK");
     div_header.append(header_text);
-    
+
     document.querySelector("body").append(div_header);
     let form_notebook = document.createElement("form");
+    form_notebook.classList.add("form-group");
     document.querySelector("body").append(form_notebook);
     create_div_input_username();
     function create_div_input_username() {
@@ -25,6 +26,7 @@ function loaded() {
         input_username.id = "id-input-username";
         document.querySelector(".username").append(input_username);
     }
+
     create_div_input_password();
     function create_div_input_password() {
         let div_input_password = document.createElement("div");
@@ -42,6 +44,7 @@ function loaded() {
         input_password.id = "id-input-password";
         document.querySelector(".password").append(input_password);
     }
+
     create_div_input_confirm_password();
     function create_div_input_confirm_password() {
         let div_input_confirm_password = document.createElement("div");
@@ -59,6 +62,7 @@ function loaded() {
         input_confirm_password.id = "id-input-confirm-password";
         document.querySelector(".confirm-password").append(input_confirm_password);
     }
+
     create_div_input_email();
     function create_div_input_email() {
         let div_input_email = document.createElement("div");
@@ -76,6 +80,7 @@ function loaded() {
         input_email.id = "id-input-email";
         document.querySelector(".email").append(input_email);
     }
+
     create_div_button();
     function create_div_button() {
         let div_button = document.createElement("div");
@@ -95,6 +100,7 @@ function loaded() {
         button.append(button_text);
         document.querySelector(".div-button").append(button);
     }
+    
     let div_footer = document.createElement("footer");
     div_footer.classList.add("footer");
     let footer_text = document.createTextNode("Copyrigth by ..., 2019");
