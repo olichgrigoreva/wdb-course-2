@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 
 require_once("Database.php");
 
+//функция для вывода результатат конекшена
 function debug($data){
     echo '<pre>' . print_r($data, 1) . '</pre>';
 }
@@ -15,23 +16,18 @@ $user_password=$_REQUEST['pass_field'];
 $email=$_REQUEST['email_field'];
 
 //проверка что юзер существует
-$check_query = "SELECT COUNT(username) FROM users WHERE username = '$username'";
-
-
-
-//$add_new_user_connect->check_in_DataBase($check_query);
+$check_query = "SELECT username FROM users WHERE username = '$username'";
 $check_results = $add_new_user_connect->check_in_DataBase($check_query);
 
-//echo $add_new_user_connect->check_in_DataBase($check_query);
-debug($add_new_user_connect);
+//debug($add_new_user_connect);
 
-if($check_results == "0") {
+if($check_results == "") {
     $insert_query = "INSERT INTO users(username, password, email) VALUES('$username', '$user_password', '$email')";
     $add_new_user_connect->write_to_DataBase($insert_query);
     echo "User is created";
 }
 else{
-    echo "User exist";
+    echo "This login is already in use";
 }
 
 

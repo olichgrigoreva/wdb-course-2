@@ -13,6 +13,11 @@ class Database {
     mysqli_query($this->connection, $sqlquery);
   }
 
+  public function check_in_DataBase($check_query) {
+    $this->check_results = mysqli_fetch_assoc(mysqli_query($this->connection, $check_query));
+    return $this->check_results['username'];
+  }
+
 /*   public function read_from_DataBase($sqlquery) {
     while($query_results = mysqli_fetch_assoc(mysqli_query($this->connection, $sqlquery))) {
       print_r($query_results);
@@ -20,13 +25,7 @@ class Database {
     return $this->$query_results;
   } */
 
-  public function check_in_DataBase($check_query) {
-    $this->result = mysqli_query($this->connection, $check_query);
-    $this->check_results = mysqli_num_rows($this->result);
 
-    //echo $this->check_results;
-    //return $this->check_results;
-  }
 
 }
  
