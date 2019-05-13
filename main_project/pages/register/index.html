@@ -9,42 +9,106 @@
         <script src="js/create_element.js"></script>
         <script src="js/create_alert.js"></script>
         <script>
-
             document.addEventListener("DOMContentLoaded", function() {
                 let header = document.createElement("header");
-                    app.createDiv("body", header, "bg-secondary p-4 text-center" );
+                    app.createDiv(
+                        "body",                         //родительский элемент
+                        header,                         //тэг
+                        "bg-secondary p-4 text-center"  //классы
+                    );
                     header.append(document.createTextNode("HEADER"));
                 let footer = document.createElement("footer");
-                    app.createDiv("body", footer, "fixed-bottom bg-secondary p-1 text-center");
+                    app.createDiv(
+                        "body",
+                        footer,
+                        "fixed-bottom bg-secondary p-1 text-center"
+                    );
                     footer.append(document.createTextNode("FOOTER"));
                 let form = document.createElement("form");
-                    app.createDiv("body", form, "col-sm-7 col-lg-3 mx-auto");
+                    app.createDiv(
+                        "body",
+                        form,
+                        "col-sm-7 col-lg-3 mx-auto"
+                    );
+
                 //создаем элементы формы
                     let username = document.createElement("input");
-                        app.createElmnt(username, "username", "text", "введите логин", "form-control mt-5 mb-2 shadow-sm", form);
+                        app.createElmnt(
+                            username,                           // element name
+                            "username",                         // name
+                            "text",                             // type
+                            "введите логин",                    // placeholder
+                            "form-control mt-5 mb-2 shadow-sm", // classes
+                            form                                // parent div
+                        );
                     let email = document.createElement("input");
-                        app.createElmnt(email, "email", "email", "введите емэйл", "form-control mb-2 shadow-sm", form);
+                        app.createElmnt(
+                            email,
+                            "email",
+                            "email",
+                            "введите емэйл",
+                            "form-control mb-2 shadow-sm",
+                            form
+                        );
                     let password = document.createElement("input");
-                        app.createElmnt(password, "password", "password", "пароль", "form-control mb-2 shadow-sm", form);
+                        app.createElmnt(
+                            password,
+                            "password",
+                            "password",
+                            "пароль",
+                            "form-control mb-2 shadow-sm",
+                            form
+                        );
                     let confirmpassword = document.createElement("input");
-                        app.createElmnt(confirmpassword, "confirmpassword", "password", "повторите пароль", "form-control mb-4 shadow-sm", form);
+                        app.createElmnt(
+                            confirmpassword,
+                            "confirmpassword",
+                            "password",
+                            "повторите пароль",
+                            "form-control mb-4 shadow-sm",
+                            form
+                        );
                     let registerbutton = document.createElement("button");
-                        app.createElmnt(registerbutton, "registerbutton", "button", "", "form-control btn btn-primary font-weight-bold", form);
+                        app.createElmnt(
+                            registerbutton,
+                            "registerbutton",
+                            "button",
+                            "",
+                            "form-control btn btn-primary font-weight-bold",
+                            form
+                        );
                         registerbutton.append(document.createTextNode("register"));
+
                 //создаём див для оповещений. сами оповещения, туда же сунем див с результатом обращения к базе данных
                 let alertDiv = document.createElement("div");
-                    app.createDiv("body", alertDiv, "container col-sm-7 col-lg-3 p-5 text-center");
+                    app.createDiv(
+                        "body",
+                        alertDiv,
+                        "container col-sm-7 col-lg-3 p-5 text-center"
+                    );
                 let result = document.createElement("div");
                     result.className = "result bg-success rounded font-weight-bold text-white mt-5 p-2 text-center";
 
                     let alertUsername = document.createElement("div");
-                        app.createAlert(alertUsername, "Придумайте логин");
+                        app.createAlert(
+                            alertUsername,
+                            "Придумайте логин"
+                        );
                     let alertEmail = document.createElement("div");
-                        app.createAlert(alertEmail, "Введите email");
+                        app.createAlert(
+                            alertEmail,
+                            "Введите email"
+                        );
                     let alertPasswordEmpty = document.createElement("div");
-                        app.createAlert(alertPasswordEmpty, "Введите пароль");
+                        app.createAlert(
+                            alertPasswordEmpty,
+                            "Введите пароль"
+                        );
                     let alertConfirmPassword = document.createElement("div");
-                        app.createAlert(alertConfirmPassword, "Пароли не совпадают");
+                        app.createAlert(
+                            alertConfirmPassword,
+                            "Пароли не совпадают"
+                        );
                 //проверяем поля, выводим ошибки, если все в порядке отправляем форму
                 registerbutton.addEventListener("click", function(event) {
                     event.preventDefault();
