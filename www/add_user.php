@@ -16,7 +16,7 @@ $user_password=$_REQUEST['pass_field'];
 $email=$_REQUEST['email_field'];
 
 //проверка что юзер существует
-$check_query = "SELECT username FROM users WHERE username = '$username'";
+$check_query = "SELECT * FROM users WHERE username = '$username'";
 $check_results = $add_new_user_connect->check_in_DataBase($check_query);
 
 //debug($add_new_user_connect);

@@ -97,7 +97,7 @@ function send_data(event) {
 
         window.setTimeout(function(){
             $(".alert").alert('close');
-        },5000);
+        },10000);
 
         });
 }
