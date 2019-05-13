@@ -19,13 +19,13 @@ function loaded() {
     document.querySelector("form").append(username);
 
     let password = document.createElement("input");
-     password.type        = "input";
+     password.type        = "password";
      password.id          = "password";
      password.placeholder = "Password";
     document.querySelector("form").append(password);
 
     let confirm_pass = document.createElement("input");
-     confirm_pass.type        = "input";
+     confirm_pass.type        = "password";
      confirm_pass.id          = "confirm_pass";
      confirm_pass.placeholder = "Confirm password";
     document.querySelector("form").append(confirm_pass);
