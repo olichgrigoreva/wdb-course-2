@@ -15,7 +15,7 @@ class Database {
 
   public function check_in_DataBase($check_query) {
     $this->check_results = mysqli_fetch_assoc(mysqli_query($this->connection, $check_query));
-    return $this->check_results['username'];
+    return $this->check_results;
   }
 
 /*   public function read_from_DataBase($sqlquery) {
