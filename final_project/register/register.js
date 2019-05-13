@@ -36,11 +36,11 @@ function loaded() {
      email.placeholder = "EMail";
     document.querySelector("form").append(email);
 
-    let button_reg = document.createElement("button");
-     button_reg.append(document.createTextNode("Register"));
-     button_reg.classList.add("button_reg");
-     button_reg.onclick = save_user;
-    document.querySelector("form").append(button_reg);
+    let button = document.createElement("button");
+     button.append(document.createTextNode("Register"));
+     button.classList.add("button");
+     button.onclick = save_user;
+    document.querySelector("form").append(button);
   }())
 
   (function (){
