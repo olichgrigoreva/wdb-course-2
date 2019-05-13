@@ -13,7 +13,7 @@ form {
   padding: 100px;
 }
 
-#username, #pass, #conf_pass, #mail {
+#username, #password, #confirm_pass, #email {
   margin:auto;
   border: solid 1px;
   display: block;
