@@ -5,67 +5,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Регистрация</title>
+        <script src="js/create_div.js"></script>
+        <script src="js/create_element.js"></script>
+        <script src="js/create_alert.js"></script>
         <script>
+
             document.addEventListener("DOMContentLoaded", function() {
-                function createDiv(parentDiv, divName, className) {
-                    document.querySelector(parentDiv).append(divName);
-                    divName.className = className;
-                }
                 let header = document.createElement("header");
-                    createDiv("body", header, "bg-secondary p-4 text-center" );
+                    app.createDiv("body", header, "bg-secondary p-4 text-center" );
                     header.append(document.createTextNode("HEADER"));
                 let footer = document.createElement("footer");
-                    createDiv("body", footer, "fixed-bottom bg-secondary p-1 text-center");
+                    app.createDiv("body", footer, "fixed-bottom bg-secondary p-1 text-center");
                     footer.append(document.createTextNode("FOOTER"));
                 let form = document.createElement("form");
-                    createDiv("body", form, "col-sm-7 col-lg-3 mx-auto");
+                    app.createDiv("body", form, "col-sm-7 col-lg-3 mx-auto");
                 //создаем элементы формы
-                function createElementForm(elementName, tagName, type, placeholder, className) {
-                    elementName.type = type;
-                    elementName.name = tagName;
-                    elementName.placeholder = placeholder;
-                    elementName.className = className;
-                    form.append(elementName);
-                }
                     let username = document.createElement("input");
-                        createElementForm(username, "username", "text", "введите логин", "form-control mt-5 mb-2 shadow-sm");
+                        app.createElmnt(username, "username", "text", "введите логин", "form-control mt-5 mb-2 shadow-sm", form);
                     let email = document.createElement("input");
-                        createElementForm(email, "email", "email", "введите емэйл", "form-control mb-2 shadow-sm");
+                        app.createElmnt(email, "email", "email", "введите емэйл", "form-control mb-2 shadow-sm", form);
                     let password = document.createElement("input");
-                        createElementForm(password, "password", "password", "пароль", "form-control mb-2 shadow-sm");
+                        app.createElmnt(password, "password", "password", "пароль", "form-control mb-2 shadow-sm", form);
                     let confirmpassword = document.createElement("input");
-                        createElementForm(confirmpassword, "confirmpassword", "password", "повторите пароль", "form-control mb-4 shadow-sm");
+                        app.createElmnt(confirmpassword, "confirmpassword", "password", "повторите пароль", "form-control mb-4 shadow-sm", form);
                     let registerbutton = document.createElement("button");
-                        createElementForm(registerbutton, "registerbutton", "button", "", "form-control btn btn-primary font-weight-bold");
+                        app.createElmnt(registerbutton, "registerbutton", "button", "", "form-control btn btn-primary font-weight-bold", form);
                         registerbutton.append(document.createTextNode("register"));
                 //создаём див для оповещений. сами оповещения, туда же сунем див с результатом обращения к базе данных
                 let alertDiv = document.createElement("div");
-                    createDiv("body", alertDiv, "container col-sm-7 col-lg-3 p-5 text-center");
+                    app.createDiv("body", alertDiv, "container col-sm-7 col-lg-3 p-5 text-center");
                 let result = document.createElement("div");
                     result.className = "result bg-success rounded font-weight-bold text-white mt-5 p-2 text-center";
-                function createAlert(divName, textNode) {
-                    divName.className = "alert alert-warning alert-dismissible mt-3"; // fade show почему то, работает некорректно, элемент остаётся невидимым после закрытия и повторного размещения
-                    divName.append(document.createTextNode(textNode));
-                    let closeButton = document.createElement("button");
-                        closeButton.type = "button";
-                        closeButton.classList.add("close");
-                        closeButton.dataset.dismiss = "alert";
-                        // closeButton.setAttribute("aria-label", "close");
-                        // let cross = document.createElement("span");
-                        // cross.setAttribute("aria-hidden", "true");
-                        // cross.append(document.createTextNode("&times;"));
-                        // closeButton.append(cross);
-                        closeButton.innerHTML = "&times;";
-                    divName.append(closeButton);
-                }
+
                     let alertUsername = document.createElement("div");
-                        createAlert(alertUsername, "Придумайте логин");
+                        app.createAlert(alertUsername, "Придумайте логин");
                     let alertEmail = document.createElement("div");
-                        createAlert(alertEmail, "Введите email");
+                        app.createAlert(alertEmail, "Введите email");
                     let alertPasswordEmpty = document.createElement("div");
-                        createAlert(alertPasswordEmpty, "Введите пароль");
+                        app.createAlert(alertPasswordEmpty, "Введите пароль");
                     let alertConfirmPassword = document.createElement("div");
-                        createAlert(alertConfirmPassword, "Пароли не совпадают");
+                        app.createAlert(alertConfirmPassword, "Пароли не совпадают");
                 //проверяем поля, выводим ошибки, если все в порядке отправляем форму
                 registerbutton.addEventListener("click", function(event) {
                     event.preventDefault();
@@ -80,7 +59,7 @@
                     if (username.value && email.value.includes("@") && password.value && (password.value == confirmpassword.value)) {
                         //закрываем все не закрытые ошибки
                         $('.close').alert("close")
-                        fetch("script.php", {
+                        fetch("./php/script.php", {
                             method: "POST",
                             body: new FormData(form)
                         })
