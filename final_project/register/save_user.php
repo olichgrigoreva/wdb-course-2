@@ -13,7 +13,7 @@
      $result = Database::query($sql_command);
 
      if (!empty($result)){
-       echo "Пользователь с таким ником уже существует. Попробуйте ещё раз"
+       echo "Пользователь с таким ником уже существует. Попробуйте ещё раз";
      }
      else{
        $sql_command = "INSERT INTO users (username, password, e-mail) VALUES ('$username', MD5'$password', '$email')";
