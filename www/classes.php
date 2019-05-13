@@ -13,10 +13,11 @@ class BaseConnection {
           $this->pass,
           $dbname
         );
+    }
 
     function write_to_DataBase() {
         mysqli_query($this->connection, $query);
-        }
+    }
 
     function read_from_DataBase() {
         while($query_results = mysqli_fetch_assoc($query)) {
