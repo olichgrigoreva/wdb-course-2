@@ -2,16 +2,27 @@
  ini_set("display_errors", 1);
  error_reporting(E_ALL);
 
- require_once ("../validator.php");
- require_once ("../database.php");
- require_once ("../session.php");
+ require_once ("../common/validator.php");
+ require_once ("../common/database.php");
+ require_once ("../common/session.php");
 
- Database::connect();
+ if (!empty($_POST["submit"])){
+   if (Validator::validate_login()){
+     Database::connect();
+     $sql_command = "SELECT username, password FROM users WHERE username = '{$username}' AND password = MD5'{$password}' LIMIT 1";
+     $result = Database::query($sql_command);
 
- if(!empty($_REQUEST["submit"])){
-   $sql_command = "SELECT username, password FROM users";
-   if(!empty($sql_command)){
-     Session::save_session($_POST["username"], $_POST["password"]);
+     if (!empty($result)){
+       $user = $result[0]['username'];
+       Session::set('user', $user);
+       header("location:/notebook/index.html");
+     }
+     else {
+       echo "Такого пользователя не существует";
+     }
+   };
+   else {
+     echo "Проверьте правильность заполнения полей";
    }
  }
 ?>
