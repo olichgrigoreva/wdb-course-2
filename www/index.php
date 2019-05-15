@@ -1,20 +1,28 @@
 <?php
+session_start();
+
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
 require_once("Database.php");
 
 function alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
+    //echo "<script type='text/javascript'>alert('$msg');</script>";
+    $alert_div = "<div class='alert alert-primary alert-dismissible fade show' role='alert'>$msg<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+    echo $alert_div;
 }
 
 
-$username=$_REQUEST['username'];
-$user_password=$_REQUEST['password'];
+$username=$_REQUEST["username"];
+$user_password=$_REQUEST["password"];
+
 //Проверка на пустые поля
 if ($username !== "" && $user_password !== "") {
+    $add_new_user_connect = new Database("localhost", "root", "virtual", "cherepanov");
+    $check_query = "SELECT * FROM users WHERE username = '$username'";
+    $check_results = $add_new_user_connect->check_in_DataBase($check_query);
     //echo "<script>alert('есть данные в полях');</script>";
-    alert("есть данные в полях");
+    //alert("есть данные в полях");
 }
 
 else {
@@ -34,18 +42,24 @@ else {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Register form</title>
+    <title>Login form</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--My CSS-->
     <link rel="stylesheet" href="register.css">
+
+    <script>
+        window.setTimeout(function(){
+        $(".alert").alert('close');
+    },5000);
+    </script>
 
 </head>
     
 <body>
     <nav class="navbar"> <h3><small>Super Notebook</small></h3></nav>
     <form class="container form-group" method="POST">
-        <input name="username" type="text" class="reg_fields" placeholder="Username">
+        <input name="username" type="text" class="reg_fields" placeholder="Username" >
         <input name="password" type="text" class="reg_fields" placeholder="Password">
         <input type="submit" class="btn-primary register_button" value="Login">
         <input type="button" class="btn-primary register_button" value="Register" onclick= "window.location.href='./register.html'">

@@ -41,6 +41,7 @@ function loaded() {
 
  
 function check_form(){
+    event.preventDefault();
     if (document.querySelector(".username_field").value == '' || document.querySelector(".pass_field").value == '' || document.querySelector(".confirm_field").value == '' || document.querySelector(".email_field").value == '') {
         let myalert = document.createElement("div");
         myalert.className="alert alert-warning alert-dismissible fade show";
@@ -98,6 +99,10 @@ function send_data(event) {
         window.setTimeout(function(){
             $(".alert").alert('close');
         },10000);
+
+        if (text == "User is created"){
+            window.location.href = "/www/index.php";
+        }
 
         });
 }
