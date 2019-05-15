@@ -21,7 +21,6 @@
 
        $user = $result[0]['username'];
        Session::set('user', $user);
-       header("location:/notebook/index.html");
      }
     else {
       echo "Проверьте правильность заполнения полей";
