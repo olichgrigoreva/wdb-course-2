@@ -1,4 +1,5 @@
-       
+
+
 //элементы документа
 function load_login(event) {
     form(); //форма
@@ -13,7 +14,8 @@ function load_login(event) {
     footer('Copyright &copy; 2019'); //футер
 }
 
-function load_register(event) {
+export default function load_register(event) {
+    console.dir("+START+");
     form(); //форма
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
