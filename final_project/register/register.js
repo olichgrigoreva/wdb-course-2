@@ -5,7 +5,13 @@ function loaded() {
     let header = document.createElement("HEADER");
      header.append(document.createTextNode("SUPER NOTEBOOK"));
     document.querySelector("body").append(header);
-  }())
+  }());
+
+  (function (){
+    let footer = document.createElement("FOOTER");
+     footer.append(document.createTextNode("Copyright by ..., 2016"));
+    document.querySelector("body").append(footer);
+  }());
 
   (function (){
     let form = document.createElement("FORM");
@@ -15,24 +21,28 @@ function loaded() {
     let username = document.createElement("input");
      username.type        = "input";
      username.id          = "username";
+     username.name        = "username";
      username.placeholder = "Username";
     document.querySelector("form").append(username);
 
     let password = document.createElement("input");
      password.type        = "password";
      password.id          = "password";
+     password.name        = "password";
      password.placeholder = "Password";
     document.querySelector("form").append(password);
 
     let confirm_pass = document.createElement("input");
      confirm_pass.type        = "password";
      confirm_pass.id          = "confirm_pass";
+     confirm_pass.name        = "confirm_pass";
      confirm_pass.placeholder = "Confirm password";
     document.querySelector("form").append(confirm_pass);
 
     let email = document.createElement("input");
      email.type        = "input";
      email.id          = "email";
+     email.name        = "email";
      email.placeholder = "EMail";
     document.querySelector("form").append(email);
 
@@ -41,28 +51,5 @@ function loaded() {
      button.classList.add("button");
      button.onclick = save_user;
     document.querySelector("form").append(button);
-  }())
-
-  (function (){
-    let footer = document.createElement("FOOTER");
-     footer.append(document.createTextNode("Copyright by ..., 2016"));
-    document.querySelector("body").append(footer);
-  }())
-}
-
-function save_user(event){
-  event.preventDefault();
-
-  let form = document.querySelector("form");
-
-  fetch ("save_user.php", {
-    method: "POST",
-    body: new FormData (form)
-  })
-  .then (response => {
-    return response.text ();
-  })
-  .then (text => {
-   window.location.href = "/notebook/index.html";
-  })
+  }());
 }

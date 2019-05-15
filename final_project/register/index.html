@@ -10,7 +10,25 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 
-  <script src="register.js">
+  <script src="register.js"></script>
+
+  <script>
+  function save_user(event){
+    event.preventDefault();
+
+    let form = document.querySelector("form");
+
+    fetch ("save_user.php", {
+      method: "POST",
+      body: new FormData (form),
+    })
+    .then (response => {
+      return response.text ();
+    })
+    .then (text => {
+     window.location.href = "../notebook/index.html";
+    })
+  }
   </script>
 </head>
 

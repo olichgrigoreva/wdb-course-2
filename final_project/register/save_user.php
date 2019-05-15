@@ -16,7 +16,7 @@
        echo "Пользователь с таким ником уже существует. Попробуйте ещё раз";
      }
      else{
-       $sql_command = "INSERT INTO users (username, password, e-mail) VALUES ('$username', MD5'$password', '$email')";
+       $sql_command = "INSERT INTO users (username, password, e-mail) VALUES ('$username', md5 '$password', '$email')";
        $result = Database::query($sql_command);
 
        $user = $result[0]['username'];
