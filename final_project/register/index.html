@@ -11,25 +11,6 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="register.js"></script>
-
-  <script>
-  function save_user(event){
-    event.preventDefault();
-
-    let form = document.querySelector("form");
-
-    fetch ("save_user.php", {
-      method: "POST",
-      body: new FormData (form),
-    })
-    .then (response => {
-      return response.text ();
-    })
-    .then (text => {
-     window.location.href = "../notebook/index.html";
-    })
-  }
-  </script>
 </head>
 
 <body>

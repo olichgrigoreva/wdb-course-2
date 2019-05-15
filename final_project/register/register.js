@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", loaded);
 
 function loaded() {
-  (function (){
+  (function() {
     let header = document.createElement("HEADER");
      header.append(document.createTextNode("SUPER NOTEBOOK"));
     document.querySelector("body").append(header);
   }());
 
-  (function (){
+  (function() {
     let footer = document.createElement("FOOTER");
      footer.append(document.createTextNode("Copyright by ..., 2016"));
     document.querySelector("body").append(footer);
   }());
 
-  (function (){
+  (function() {
     let form = document.createElement("FORM");
      form.method = "POST";
     document.querySelector("body").append(form);
@@ -52,4 +52,27 @@ function loaded() {
      button.onclick = save_user;
     document.querySelector("form").append(button);
   }());
+}
+
+function save_user(event) {
+  event.preventDefault();
+
+  let form = document.querySelector("form");
+
+  fetch("/wdb-course-2/final_project/register/save_user.php", {
+      method: "POST",
+      body: new FormData(form),
+    })
+    .then(response => {
+      return response.text();
+    })
+    .then(text => {
+      let result = text;
+        if (!empty(result)) {
+          window.location.href = "../notebook/index.html";
+        }
+        else {
+          console.dir ("Не получилось");
+        }
+    })
 }
