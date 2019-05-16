@@ -7,9 +7,17 @@ error_reporting(E_ALL);
 require_once("Database.php");
 
 function alert($msg) {
-    //echo "<script type='text/javascript'>alert('$msg');</script>";
-    $alert_div = "<div class='alert alert-primary alert-dismissible fade show' role='alert'>$msg<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-    echo $alert_div;
+
+/*     $alert_div = "<div class='alert alert-primary alert-dismissible fade show' role='alert'>$msg<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+    echo $alert_div; */
+
+    echo "<script type='text/javascript'>
+    let myalert = document.createElement('div');
+    myalert.className='alert alert-success alert-dismissible fade show';
+    myalert.role = 'alert';
+    myalert.innerHTML='<strong>'+'$msg'+'</strong><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>';
+    document.querySelector('.container').append(myalert);
+    </script>";    
 }
 
 
