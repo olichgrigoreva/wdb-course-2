@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 
 require_once("Database.php");
 
-//функция для вывода результатат конекшена
+//функция для дебага результата конекшена
 function debug($data){
     echo '<pre>' . print_r($data, 1) . '</pre>';
 }

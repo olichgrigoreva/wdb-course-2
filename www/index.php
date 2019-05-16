@@ -11,13 +11,27 @@ function alert($msg) {
 /*     $alert_div = "<div class='alert alert-primary alert-dismissible fade show' role='alert'>$msg<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
     echo $alert_div; */
 
+ 
     echo "<script type='text/javascript'>
+    document.addEventListener('DOMContentLoaded', loaded);
+    function loaded(event){
     let myalert = document.createElement('div');
-    myalert.className='alert alert-success alert-dismissible fade show';
+    myalert.className='alert alert-warning alert-dismissible fade show';
     myalert.role = 'alert';
-    myalert.innerHTML='<strong>'+'$msg'+'</strong><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>';
+    myalert.innerHTML = '<strong>'+'$msg'+'</strong>';
+        let myalert_close_btn = document.createElement('button');
+        myalert_close_btn.type = 'button';
+        myalert_close_btn.className='close';
+        myalert_close_btn.setAttribute('data-dismiss', 'alert');
+        myalert_close_btn.setAttribute('aria-label', 'Close');
+            let cross = document.createElement('span');
+            cross.setAttribute('aria-hidden', 'true');
+            cross.innerHTML = '&times;';
+        myalert_close_btn.appendChild(cross);
+    myalert.appendChild(myalert_close_btn);
     document.querySelector('.container').append(myalert);
-    </script>";    
+    }
+    </script>";
 }
 
 
@@ -29,20 +43,19 @@ if ($username !== "" && $user_password !== "") {
     $add_new_user_connect = new Database("localhost", "root", "virtual", "cherepanov");
     $check_query = "SELECT * FROM users WHERE username = '$username'";
     $check_results = $add_new_user_connect->check_in_DataBase($check_query);
-    //echo "<script>alert('есть данные в полях');</script>";
-    //alert("есть данные в полях");
+
+    if ($check_results["username"] == $username && $check_results["password"] == $user_password) {
+        header('Location: /www/note.html'); exit;
+    }
+
+    else{
+        alert("не верный логин или пароль");
+    }
 }
 
 else {
-   // echo "<script>alert('заполните поля');</script>";
-   alert("заполните поля");
+   alert("заполните все поля");
 }
-//проверка что логин-пароль существуют и вход в систему
-//        $loginconnect = new BaseConnection("notebook");
-//        $loginconnect->read_from_DataBase();
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
