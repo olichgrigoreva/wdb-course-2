@@ -1,18 +1,23 @@
 <?php
-class database{
+class database {
   private static $connection;
+  private static $query;
   private static $host = "localhost";
   private static $user = "root";
   private static $password = "virtual";
   private static $databaseName = "levashov";
-    public static function connect(){
-      self::$connection = mysqli_connect(self::$host, self::$user, self::$password, self::$databaseName);
-    }
-        public static function insert_query($insert_query){
-            return self::$insert_query = mysqli_query($connection, "INSERT INTO users (username, password) VALUES ('$username', MD5('$password'))");
+
+  public function __construct($host, $user, $password, $databaseName) {
+      $this->connection = mysqli_connect($host, $user, $password, $databaseName);
+        if (!$this->connection) {
+          throw new Exception("Couldn't connect to database");
         }
-    public function select_query($query){
-     return self::$select_query = mysqli_query($connection, "SELECT username, password FROM users");
     }
-  }
-?>
+    public function write_to_database($sqlquery) {
+      mysqli_query($this->connection, $sqlquery);
+    }
+    public function check_in_database($check_query) {
+      $this->check_results = mysqli_fetch_assoc(mysqli_query($this->connection, $check_query));
+      return $this->check_results;
+    }
+}
