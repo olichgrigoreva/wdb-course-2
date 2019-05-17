@@ -46,6 +46,7 @@ if ($username !== "" && $user_password !== "") {
 
     if ($check_results["username"] == $username && $check_results["password"] == $user_password) {
         header('Location: /www/note.html'); exit;
+        //header('Refresh: 10; URL=https://bloggood.ru/');
     }
 
     else{
