@@ -52,6 +52,12 @@ function loaded() {
      button.onclick = save_user;
     document.querySelector("form").append(button);
   }());
+
+  (function (){
+    let div = document.createElement("div");
+     div.classlist.add("result");
+    document.querySelector("body").append(div);
+  }());
 }
 
 function save_user(event) {
@@ -67,12 +73,6 @@ function save_user(event) {
       return response.text();
     })
     .then(text => {
-      let result = text;
-        if (!empty(result)) {
-          window.location.href = "../notebook/index.html";
-        }
-        else {
-          console.dir ("Не получилось");
-        }
+      window.location.href = "../notebook/index.html";
     })
 }

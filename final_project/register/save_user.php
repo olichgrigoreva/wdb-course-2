@@ -7,24 +7,58 @@
  require_once ("../common/session.php");
 
  if (!empty($_POST)) {
-   if (Validator::validate_register()){
+   $username     = $_POST['username'];
+   $password     = $_POST['password'];
+   $confirm_pass = $_POST['confirm_pass'];
+   $email        = $_POST['email'];
+
+   $username     = Validator::clean($username);
+   $password     = Validator::clean($password);
+   $confirm_pass = Validator::clean($confirm_pass);
+   $email        = Validator::clean($email);
+
+   if (!empty($username) && !empty($password) && !empty($confirm_pass) && !empty($email) && Validator::passwords_match($password, $confirm_pass)){
+     $email = Validator::check_email($email);
+
      Database::connect();
-     $sql_command = "SELECT * FROM users WHERE username = '{$username}'";
-     $result = Database::query($sql_command);
+     $sql_command = "SELECT * FROM users WHERE username = '$username'";
+     $query = "";
+     Database::query($sql_command);
+     Database::fetch_assoc();
 
-     if (!empty($result)){
-       echo "Пользователь с таким ником уже существует. Попробуйте ещё раз";
-     }
-     else{
-       $sql_command = "INSERT INTO users (username, password, e-mail) VALUES ('$username', md5 '$password', '$email')";
-       $result = Database::query($sql_command);
+     echo "<pre>";
+     print_r ($user);
+     echo "</pre>";
 
-       $user = $result[0]['username'];
-       Session::set('user', $user);
+     if (empty($user)){
+       $sql_command = "INSERT into users (username, password, email) VALUES ('$username', md5 '$password', '$email')";
+       Database::query($sql_command);
+
+       if (!empty($query)){
+         Session::set('username', $username);
+         if (!empty($_SESSION('username'))){
+           $result = ;
+         }
+       }
+
+       else {
+         return false;
+       }
      }
-    else {
-      echo "Проверьте правильность заполнения полей";
-    }
+
+     else {
+       return false;
+     }
+   }
+
+   else {
+     return false;
    }
  }
+
+ else {
+   exit ("Проверьте правильность заполнения полей.");
+ }
+
+ //echo $username."<br />".$password."<br />".$confirm_pass."<br />".$email."<br />";
  ?>
