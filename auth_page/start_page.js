@@ -1,7 +1,8 @@
 
 
 //элементы документа
-function load_login(event) {
+export default function load_login(event) {
+    console.dir("load_login func");
     form(); //форма
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
@@ -9,13 +10,14 @@ function load_login(event) {
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input_btn('submit', 'submit', 'Login'); //submit input
     document.getElementById("submit").onclick = bind(ajaxRequest, "login_data.php");
-    a('http://localhost:8080/auth_page/register.html');
+    //a('http://localhost:8080/auth_page/register.html');
+    a('./register.html');
     document.getElementById("link").innerHTML = "Ещё не зарегистрированы?";
     footer('Copyright &copy; 2019'); //футер
 }
 
-export default function load_register(event) {
-    console.dir("+START+");
+export function load_register(event) {
+    console.dir("load_register func");
     form(); //форма
     div('form','p-3'); //div в форме
     header('Welcome!'); //хедер
@@ -30,14 +32,15 @@ export default function load_register(event) {
     var rect = document.getElementById("submit");
     rect.addEventListener("click", redirectToLogin);
     
-    a('http://localhost:8080/auth_page/login.html');
+    a('./login.html');
     document.getElementById("link").innerHTML = "Уже зарегистрированы?";
     
     footer('Copyright &copy; 2019'); //футер
 }
 
 function redirectToLogin(e){
-    window.location.href = 'http://localhost:8080/auth_page/login.html';
+    //window.location.href = 'http://localhost:8080/auth_page/login.html';
+    window.location.href = './login.html';
 }
 
 //функция для передачи параметров ajax запросу
