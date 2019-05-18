@@ -73,6 +73,10 @@ function save_user(event) {
       return response.text();
     })
     .then(text => {
+      console.log(text);
       window.location.href = "../notebook/index.html";
+    })
+    .catch (() => {
+      console.log('ошибка');
     })
 }
