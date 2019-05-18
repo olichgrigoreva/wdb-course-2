@@ -11,6 +11,15 @@
    }
 
    public static function query($sql_command){
-     return self::$query = mysqli_query(self::$connection, $sql_command) or die(mysql_error());
+     return $query = mysqli_query(self::$connection, $sql_command) or die(mysql_error());
+   }
+
+   public static function fetch_assoc($query){
+     return $user = mysqli_fetch_assoc($query);
+     while (!empty($user)){
+       echo "<pre>";
+       print_r ($user);
+       echo "</pre>";
+     }
    }
  }

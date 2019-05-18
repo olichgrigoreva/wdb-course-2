@@ -1,30 +1,24 @@
 <?php
  class Validator {
-   private static $username;
-   private static $password;
-   private static $confirm_pass;
-   private static $email;
+   public static function clean($value = ""){
+     $value = trim($value); //для удаления пробелов с начала и конца строки
+     $value = stripslashes($value); //для удаления экранированных символов
+     $value = strip_tags($value); //для удаления HTML и PHP тегов
+     $value = htmlspecialchars($value); //для преобразования спецсимволов в HTML-сущности
 
-   function __construct(){
-     self::$username     = $_POST["username"];
-     self::$password     = $_POST["password"];
-     self::$confirm_pass = $_POST["confirm_pass"];
-     self::$email        = $_POST["email"];
+     return $value;
    }
 
-   public static function validate_login(){
-    return !empty(self::$username) && !empty(self::$password);
+   public static function check_register(){
+     return !empty($username) && !empty($password) && !empty($confirm_pass) && !empty($email);
    }
 
-   public static function passwords_match(){
-     return self::$password == self::$confirm_pass;
+   public static function check_email($value = ""){
+     return filter_var($value, FILTER_VALIDATE_EMAIL); //для проверки корректности email
    }
 
-   public static function check_email(){
-     return filter_var(self::$email, FILTER_VALIDATE_EMAIL);
-   }
-
-   public static function validate_register(){
-     return !empty(self::$username) && !empty(self::$password) && !empty(self::$confirm_pass) && !empty(self::$email) && self::passwords_match() && self::check_email();
+   public static function passwords_match($password, $confirm_pass){
+     return $password == $confirm_pass;
    }
  }
+ //   $validate_register = Validator::check_register() && Validator::check_email($email) && Validator::passwords_match();
