@@ -1,3 +1,11 @@
 .SearchNote {
-  
+
+}
+
+.input-background {
+  background-color: #e0e0d1;
+}
+
+.input-background:focus {
+  background-color: #e0e0d1;
 }

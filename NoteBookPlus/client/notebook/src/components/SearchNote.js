@@ -3,7 +3,7 @@ import './SearchNote.css';
 
 const SearchNote = () => {
   return (
-    <input placeholder = "Поиск" />
+    <input className = "form-control input-background" placeholder = "Поиск" />
   );
 };
 

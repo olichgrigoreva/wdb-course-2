@@ -3,7 +3,7 @@ import './ButtonNewNote.css';
 
 const ButtonNewNote = () => {
   return (
-    <button>Создать новую запись</button>
+    <button className = "btn btn-dark">Создать новую запись</button>
   );
 };
 

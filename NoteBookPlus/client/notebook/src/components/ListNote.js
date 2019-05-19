@@ -1,11 +1,27 @@
 import React from 'react';
 import './ListNote.css';
 
-const ListNote = () => {
+import ListNoteItem from './ListNoteItem.js';
+const ListNote = ( {notes_data} ) => {
+
+  const elements = notes_data.map((item) => {
+    return (
+      <li
+        key={item.id} className = "list-group-item"
+        style = { {backgroundColor: "#e0e0d1"} } >
+      <ListNoteItem
+        // name_note = {item.name_note}
+        // date_note = {item.date_note}
+        { ... item }
+      />
+      </li>
+    )
+  });
+
+
   return (
-    <ul>
-      <li>Запись 1</li>
-      <li>Запись 2</li>
+    <ul className = "list-group">
+      {elements}
     </ul>
 
   );

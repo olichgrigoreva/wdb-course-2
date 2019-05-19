@@ -3,7 +3,7 @@ import './ButtonSaveNote.css';
 
 const ButtonSaveNote = () => {
   return (
-    <button>Сохранить</button>
+    <button className = "btn btn-dark">Сохранить</button>
   );
 };
 

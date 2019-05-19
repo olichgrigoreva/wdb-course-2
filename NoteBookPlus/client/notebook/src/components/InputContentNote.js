@@ -3,7 +3,7 @@ import './InputContentNote.css';
 
 const InputContentNote = () => {
   return (
-    <input placeholder = "содержимое заметки" />
+    <textarea className = "form-control input-background" placeholder = "содержимое заметки" />
   );
 };
 
