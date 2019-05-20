@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(60);
 session_start();
 
 ini_set("display_errors", 1);
@@ -34,7 +35,6 @@ function alert($msg) {
     </script>";
 }
 
-
 $username=$_REQUEST["username"];
 $user_password=$_REQUEST["password"];
 
@@ -45,8 +45,10 @@ if ($username !== "" && $user_password !== "") {
     $check_results = $add_new_user_connect->check_in_DataBase($check_query);
 
     if ($check_results["username"] == $username && $check_results["password"] == $user_password) {
-        header('Location: /www/note.html'); exit;
-        //header('Refresh: 10; URL=https://bloggood.ru/');
+        $_SESSION['login'] = $username;
+        //header('Location: /www/note.html'); exit;
+        alert("успешный вход");
+        header('Refresh: 1; URL=/www/note.html');
     }
 
     else{
@@ -71,6 +73,8 @@ else {
     <link rel="stylesheet" href="register.css">
 
     <script>
+        //event.preventDefault();
+
         window.setTimeout(function(){
         $(".alert").alert('close');
     },5000);

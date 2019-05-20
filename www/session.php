@@ -1,16 +1,17 @@
 <?php
 class Session {
 // Открытие сессии PHP
+    function create_session($username) {
     session_start();
-
     // Устанавливаем переменные сессии
-    $_SESSION["userID"] = "php_user";
-    $_SESSION["password"] = "tutorials";
-    echo "<br>Сессия PHP начата и переменные сессии заданы!";
+    $_SESSION['login'] = $username;
+    //$_SESSION["password"] = "tutorials";
+    //echo "<br>Сессия PHP начата и переменные сессии заданы!";
+    }
 
-
+    function close_session() {
     session_unset();
-    print_r($_SESSION);
     // удаляем сессию PHP
     session_destroy();
+    }
 }
