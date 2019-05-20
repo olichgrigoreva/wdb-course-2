@@ -1,5 +1,5 @@
 import React from 'react';
-import './AppFooter';
+import ('../css/AppFooter.css');
 let AppFooter = () => {
   return (
     <div className="app-footer d-flex">

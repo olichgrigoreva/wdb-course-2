@@ -1,5 +1,11 @@
 .app-header {
-  align-items: flex-end;
+  position: relative;
+  height: 100%;
+  padding: 20px;
+  font-size: 18px;
+  background: #F5F5DC;
+  text-align: center;
+  width: 100%;
 }
 .app-header h3 {
   flex-grow: 1;

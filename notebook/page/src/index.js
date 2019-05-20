@@ -5,6 +5,11 @@ import SearchPanel from './elements/SearchPanel';
 import TodoList from './elements/TodoList';
 import AppFooter from './elements/AppFooter';
 import ItemStatusFilter from './elements/ItemStatusFilter';
+import AddNewNoteButton from './elements/AddNewNoteButton';
+import ButtonSaveNote from './elements/ButtonSaveNote';
+import InputContentNote from './elements/InputContentNote';
+import InputData from './elements/InputData';
+import InputContent from './elements/InputContent';
 import './index.css';
 
 let App = () => {
@@ -21,6 +26,11 @@ let App = () => {
           <ItemStatusFilter/>
           </div>
         <TodoList todos={todoData}/>
+        <AddNewNoteButton/>
+        <ButtonSaveNote/>
+        <InputContentNote/>
+        <InputData/>
+        <InputContent/>
         <AppFooter/>
       </div>
     );

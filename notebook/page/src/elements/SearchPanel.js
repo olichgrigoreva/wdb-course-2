@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchPanel.css';
+import ('../css/SearchPanel.css');
 let SearchPanel = () => {
   return (
     <input type="text"
