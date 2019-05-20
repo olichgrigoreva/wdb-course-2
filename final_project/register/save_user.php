@@ -26,7 +26,13 @@
      Database::query($sql_command);
      Database::fetch_assoc();
 
-     if (empty($user)){
+     while (!empty($user)){
+       echo "<pre>";
+       print_r ($user);
+       echo "</pre>";
+     }
+
+     /*if (empty($user)){
        $sql_command = "INSERT into users (username, password, email) VALUES ('$username', md5 '$password', '$email')";
        Database::query($sql_command);
 
@@ -44,7 +50,7 @@
 
      else {
        return false;
-     }
+     }*/
    }
 
    else {

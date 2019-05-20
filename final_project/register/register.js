@@ -55,7 +55,7 @@ function loaded() {
 
   (function (){
     let div = document.createElement("div");
-     div.classlist.add("result");
+     div.classList.add("result");
     document.querySelector("body").append(div);
   }());
 }
