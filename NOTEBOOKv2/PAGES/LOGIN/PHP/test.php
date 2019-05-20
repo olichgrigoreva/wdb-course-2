@@ -1,0 +1,1 @@
+echo('_PAGES/LOGIN/PHP_PATH_');

@@ -1,0 +1,1 @@
+echo('_SYSTEM/PHP/CLASSES_PATH_');

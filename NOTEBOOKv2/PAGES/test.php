@@ -1,0 +1,1 @@
+echo('_PAGES_PATH_');

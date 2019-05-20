@@ -1,0 +1,1 @@
+echo('_ROOT_PATH_');

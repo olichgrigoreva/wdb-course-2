@@ -1,0 +1,1 @@
+echo('_THEMES/PHP_PATH_');

@@ -1,0 +1,1 @@
+echo('_PAGES/NOTEBOOK/PHP_PATH_');

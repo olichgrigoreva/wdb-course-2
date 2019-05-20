@@ -1,0 +1,1 @@
+echo('_SYSTEM_PATH_');
