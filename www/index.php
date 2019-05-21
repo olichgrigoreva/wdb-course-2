@@ -83,7 +83,7 @@ else {
 </head>
     
 <body>
-    <nav class="navbar"> <h3><small>Super Notebook</small></h3></nav>
+    <nav class="navbar d-flex justify-content-center"> <h3><small>Super Notebook</small></h3></nav>
     <form class="container form-group" method="POST">
         <input name="username" type="text" class="reg_fields" placeholder="Username" >
         <input name="password" type="text" class="reg_fields" placeholder="Password">
