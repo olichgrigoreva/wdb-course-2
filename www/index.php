@@ -1,18 +1,10 @@
 <?php
-session_set_cookie_params(60);
-session_start();
-
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
 require_once("Database.php");
 
 function alert($msg) {
-
-/*     $alert_div = "<div class='alert alert-primary alert-dismissible fade show' role='alert'>$msg<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-    echo $alert_div; */
-
- 
     echo "<script type='text/javascript'>
     document.addEventListener('DOMContentLoaded', loaded);
     function loaded(event){
@@ -35,30 +27,37 @@ function alert($msg) {
     </script>";
 }
 
-$username=$_REQUEST["username"];
-$user_password=$_REQUEST["password"];
-
-//Проверка на пустые поля
-if ($username !== "" && $user_password !== "") {
-    $add_new_user_connect = new Database("localhost", "root", "virtual", "cherepanov");
-    $check_query = "SELECT * FROM users WHERE username = '$username'";
-    $check_results = $add_new_user_connect->check_in_DataBase($check_query);
-
-    if ($check_results["username"] == $username && $check_results["password"] == $user_password) {
-        $_SESSION['login'] = $username;
-        //header('Location: /www/note.html'); exit;
-        alert("успешный вход");
-        header('Refresh: 1; URL=/www/note.html');
+if (isset($_REQUEST["login"])) {
+    $username=$_REQUEST["username"];
+    $user_password=$_REQUEST["password"];
+    
+    //Проверка на пустые поля
+    if ($username !== "" && $user_password !== "") {
+        $add_new_user_connect = new Database("localhost", "root", "virtual", "cherepanov");
+        $check_query = "SELECT * FROM users WHERE username = '$username'";
+        $check_results = $add_new_user_connect->check_in_DataBase($check_query);
+    
+        if ($check_results["username"] == $username && $check_results["password"] == $user_password) {
+            session_set_cookie_params(15);
+            session_start();
+            $_SESSION['login'] = $username;
+            
+            alert("успешный вход");
+            //header('Location: /www/note.html'); exit;
+            header('Refresh: 5; URL=/www/note.html');
+        }
+    
+        else{
+            alert("не верный логин или пароль");
+        }
     }
-
-    else{
-        alert("не верный логин или пароль");
+    
+    else {
+       alert("заполните все поля");
     }
 }
 
-else {
-   alert("заполните все поля");
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -73,8 +72,6 @@ else {
     <link rel="stylesheet" href="register.css">
 
     <script>
-        //event.preventDefault();
-
         window.setTimeout(function(){
         $(".alert").alert('close');
     },5000);
@@ -87,7 +84,7 @@ else {
     <form class="container form-group" method="POST">
         <input name="username" type="text" class="reg_fields" placeholder="Username" >
         <input name="password" type="text" class="reg_fields" placeholder="Password">
-        <input type="submit" class="btn-primary register_button" value="Login">
+        <input name="login" type="submit" class="btn-primary register_button" value="Login">
         <input type="button" class="btn-primary register_button" value="Register" onclick= "window.location.href='./register.html'">
     </form>
 
