@@ -38,7 +38,7 @@ if (isset($_REQUEST["login"])) {
         $check_results = $add_new_user_connect->check_in_DataBase($check_query);
     
         if ($check_results["username"] == $username && $check_results["password"] == $user_password) {
-            session_set_cookie_params(15);
+            session_set_cookie_params(300);
             session_start();
             $_SESSION['login'] = $username;
             
