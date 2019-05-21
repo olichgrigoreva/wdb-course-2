@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="696825a4-46e9-4034-878d-26361b93a2ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/register/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/register/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/register/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/register/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/register/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/register/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/register/reg.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/register/reg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/register/save_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/register/save_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdb-course-2/register/testreg.php" beforeDir="false" afterPath="$PROJECT_DIR$/wdb-course-2/register/testreg.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,93 +23,21 @@
     <favorites_list name="wdb-code" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/save_user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/1/index.php">
+        <entry file="file://$PROJECT_DIR$/wdb-course-2/register/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="493">
+              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/testreg.php">
+        <entry file="file://$PROJECT_DIR$/wdb-course-2/register/testreg.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2/testreg.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/index1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/reg.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="87" column="58" lean-forward="true" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="119">
+              <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -117,12 +50,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/project/registration/registration.html" />
-        <option value="$PROJECT_DIR$/project/main.css" />
-        <option value="$PROJECT_DIR$/Notebook/page.html" />
-        <option value="$PROJECT_DIR$/Notebook/page.css" />
-        <option value="$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.php" />
-        <option value="$PROJECT_DIR$/wdb-course-2/login/sms.php" />
         <option value="$PROJECT_DIR$/wdb-course-2/login/sms2.php" />
         <option value="$PROJECT_DIR$/wdb-course-2/login/progondalee.php" />
         <option value="$PROJECT_DIR$/wdb-course-2/login/check_length.php" />
@@ -168,16 +95,22 @@
         <option value="$PROJECT_DIR$/1/testreg.php" />
         <option value="$PROJECT_DIR$/1/index1.php" />
         <option value="$PROJECT_DIR$/1/index.php" />
+        <option value="$PROJECT_DIR$/wdb-course-2/register/save_user.php" />
+        <option value="$PROJECT_DIR$/wdb-course-2/register/testreg.php" />
+        <option value="$PROJECT_DIR$/wdb-course-2/register/db.php" />
+        <option value="$PROJECT_DIR$/wdb-course-2/register/reg.php" />
+        <option value="$PROJECT_DIR$/wdb-course-2/register/main.css" />
+        <option value="$PROJECT_DIR$/wdb-course-2/register/index.php" />
       </list>
     </option>
   </component>
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
-    <option name="y" value="60" />
-    <option name="width" value="1389" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="360" />
+    <option name="y" value="38" />
+    <option name="width" value="952" />
     <option name="height" value="947" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -198,24 +131,13 @@
             <path>
               <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
               <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
-              <item name="1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
               <item name="wdb-course-2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
               <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
               <item name="wdb-course-2" type="462c0819:PsiDirectoryNode" />
-              <item name="calcul PHP и БД" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wdb-code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wdb-code" type="462c0819:PsiDirectoryNode" />
-              <item name="wdb-course-2" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,11 +204,13 @@
       <workItem from="1555841147332" duration="2478000" />
       <workItem from="1555858542834" duration="3710000" />
       <workItem from="1555862387569" duration="8027000" />
+      <workItem from="1555957216724" duration="2766000" />
+      <workItem from="1558450391780" duration="3006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174787000" />
+    <option name="totallyTimeSpent" value="180559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -298,10 +222,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="60" width="1389" height="947" extended-state="0" />
-    <editor active="true" />
+    <frame x="360" y="38" width="952" height="947" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.13401312" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.1965812" />
       <window_info id="Structure" order="1" sideWeight="0.50057936" side_tool="true" weight="0.3375984" />
       <window_info id="Favorites" order="2" sideWeight="0.50086355" side_tool="true" weight="0.3375984" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
@@ -342,37 +265,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/bd.php" />
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.html" />
-    <entry file="file://$PROJECT_DIR$/calcul FETCH/calcul.php" />
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calcul PHP/calcul.php" />
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/2/login.php" />
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/2/login.js" />
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/2/login.html" />
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-611">
-          <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul JS/calcul.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
@@ -404,46 +296,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login2.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/reg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/reg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/save_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wdb-course-2/login/testreg.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wdb-course-2/login/bd.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -452,10 +306,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/connection.php">
+    <entry file="file://$PROJECT_DIR$/2/login.css" />
+    <entry file="file://$PROJECT_DIR$/2/login.js" />
+    <entry file="file://$PROJECT_DIR$/2/save_user.php" />
+    <entry file="file://$PROJECT_DIR$/2/bd.php" />
+    <entry file="file://$PROJECT_DIR$/2/login.php" />
+    <entry file="file://$PROJECT_DIR$/2/index.php" />
+    <entry file="file://$PROJECT_DIR$/1/main.css" />
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul PHP/calcul.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1/login.php" />
+    <entry file="file://$PROJECT_DIR$/2/reg.php" />
+    <entry file="file://$PROJECT_DIR$/1/db.php" />
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="50" column="16" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="52" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1/save_user.php" />
+    <entry file="file://$PROJECT_DIR$/1/testreg.php" />
+    <entry file="file://$PROJECT_DIR$/2/testreg.php" />
+    <entry file="file://$PROJECT_DIR$/1/index1.php" />
+    <entry file="file://$PROJECT_DIR$/1/reg.php" />
+    <entry file="file://$PROJECT_DIR$/1/register.html" />
+    <entry file="file://$PROJECT_DIR$/1/register.js" />
+    <entry file="file://$PROJECT_DIR$/1/register.php" />
+    <entry file="file://$PROJECT_DIR$/1/index.php" />
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/index1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/save_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/reg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -466,156 +416,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2/login.css">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/2/login.js">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+        <state relative-caret-position="272">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1/login.php">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
+        <state relative-caret-position="17">
+          <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2/save_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="55" lean-forward="true" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2/bd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1/main.css">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login2.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul PHP/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2/reg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wdb-course-2/calcul PHP и БД/calcul.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="50" column="16" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="52" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2/testreg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wdb-course-2/login/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        <state relative-caret-position="237">
+          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1/reg.php">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/reg.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        <state relative-caret-position="204">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="87" column="58" lean-forward="true" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1/save_user.php">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/reg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="27" />
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1/testreg.php">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/login/save_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1/index1.php">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/testreg.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1/index.php">
+    <entry file="file://$PROJECT_DIR$/wdb-course-2/register/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="493">
+          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
         </state>
       </provider>
     </entry>

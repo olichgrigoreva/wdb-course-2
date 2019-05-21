@@ -17,7 +17,7 @@
         <input class="Password" type="password" name="Password" placeholder="Password">
         <input class="EMail" type="text" name="EMail" placeholder="EMail">
         <input class="register" type="submit" value="Зарегистрироваться">
-
+        <input value="Войти" type="button" onclick="location.href='index.php'" />
     </form>
 </div>
 <header></header>
