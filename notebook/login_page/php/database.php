@@ -1,15 +1,10 @@
 <?php
-class database {
-  private static $connection;
-  private static $query;
-  private static $host = "localhost";
-  private static $user = "root";
-  private static $password = "virtual";
-  private static $databaseName = "levashov";
+class Database {
+  private $connection;
 
   public function __construct($host, $user, $password, $databaseName) {
       $this->connection = mysqli_connect($host, $user, $password, $databaseName);
-        if (!$this->connection) {
+        if(!$this->connection) {
           throw new Exception("Couldn't connect to database");
         }
     }
