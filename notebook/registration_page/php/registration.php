@@ -1,7 +1,7 @@
 <?php
 	ini_set("display_errors", 1);
 	error_reporting(E_ALL);
-	require_once("database.php");
+	require_once("Database.php");
 		function additionDB($username, $password, $confirm_password, $e_mail){
 			$username = $_REQUEST["username"];
 			$password = $_REQUEST["password"];

@@ -14,7 +14,7 @@ error_reporting(E_ALL);
       if($check_results == "") {
         $insert_query = "INSERT INTO users(username, password, email) VALUES ('$username', '$password', '$email')";
         $add_new_user_connet->write_to_Database($insert_query);
-        echo "User is created";
+        echo "User created";
       }
         else {
           echo "This login has already use";
