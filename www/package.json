@@ -4,9 +4,9 @@
   "description": "",
   "main": "scripts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "lite-server"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "lite-server": "^2.2.1"
+  }
 }
