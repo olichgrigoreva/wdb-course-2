@@ -21,13 +21,18 @@
      $email = Validator::check_email($email);
 
      Database::connect();
-     $sql_command = "SELECT * FROM users WHERE username = '$username'";
+     $sql_command = "SELECT * FROM `users` WHERE `username` = '$username'";
      $query = "";
      Database::query($sql_command);
-     $user = "";
+
+     echo "<pre>";
+     print_r ($query);
+     echo "</pre>";
+
+     /*$user = "";
      Database::fetch_assoc();
 
-     /*if (empty($user)){
+     if (empty($user)){
        $sql_command = "INSERT into users (username, password, email) VALUES ('$username', md5 '$password', '$email')";
        Database::query($sql_command);
 
