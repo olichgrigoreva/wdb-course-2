@@ -15,6 +15,10 @@
    }
 
    public static function fetch_assoc($query){
-     return $user = mysqli_fetch_assoc($query);
+     while ($user = mysqli_fetch_assoc($query)){
+       echo "<pre>";
+       print_r ($user);
+       echo "</pre>";
+     }
    }
  }
