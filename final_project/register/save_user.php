@@ -24,13 +24,8 @@
      $sql_command = "SELECT * FROM users WHERE username = '$username'";
      $query = "";
      Database::query($sql_command);
+     $user = "";
      Database::fetch_assoc();
-
-     while (!empty($user)){
-       echo "<pre>";
-       print_r ($user);
-       echo "</pre>";
-     }
 
      /*if (empty($user)){
        $sql_command = "INSERT into users (username, password, email) VALUES ('$username', md5 '$password', '$email')";
