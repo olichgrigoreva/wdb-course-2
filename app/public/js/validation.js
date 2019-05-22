@@ -10,7 +10,7 @@ var emailid = document.registration.email;
 					if (confirm_password_validation(passid,confpassid)){
 					alert("Данные в форму регистрации занесены корректно");
 					<!-- AJAX Request -->
-					fetch("register.php", {
+					fetch("../components/register.php", {
 					method: "POST",
 					body: new FormData(registration)
 					})
@@ -25,7 +25,7 @@ var emailid = document.registration.email;
 					}
 					else {
 					alert("Новый пользователь успешно зарегистрирован");
-					location.href='http://wdb.virtual/auth.htm';
+					//location.href='auth.htm';
 					}
 					})
 					}
