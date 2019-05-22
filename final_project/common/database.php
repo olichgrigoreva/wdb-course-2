@@ -11,7 +11,7 @@
    }
 
    public static function query($sql_command){
-     return $query = mysqli_query(self::$connection, $sql_command) or die(mysql_error());
+     return $query = mysqli_query(self::$connection, $sql_command) or die ("Неправильный запрос!");
    }
 
    public static function fetch_assoc($query){
