@@ -16,5 +16,32 @@ $username=$_REQUEST["username"];
 $password=$_REQUEST["password"];    
 
 $select_query = "SELECT id FROM users WHERE usernames='$username' AND passwords=MD5('$password')";
-	$select_result = $db -> selectFromDB($select_query);
-	$id = $select_result["id"];
+$select_result = $db -> selectFromDB($select_query);
+$id = $select_result["id"];
+
+require_once("class_validateInfo.php");
+$needValidData = new ValidateInfo($username, $password, $email);
+print_r($needValidData);
+
+
+$valid_fields = ($needValidData -> validUser()) * ($needValidData -> validPass()) * ($needValidData -> confirmPass($confirm)) * ($needValidData -> validEmail());
+echo "Show valid test: "."$valid_fields";
+
+if ($valid_fields == 1) {
+	$select_query = "SELECT usernames, emails FROM users WHERE usernames='$username' OR emails='$email'";
+	$num_rows = $db -> isUsedinDB($select_query);
+	
+	if ($num_rows == 0) {
+		echo "В БД нет такой записи! ";
+		print_r($db);
+		echo "Отправка запроса INSERT на сервер. ";
+		$insert_query = "INSERT INTO users (usernames, passwords, confirm_pass, emails) VALUES('$username', MD5('$password'), MD5('$confirm'), '$email')";
+  		$db -> insertToDB($insert_query);
+	}
+	else{
+		echo "В БД такая запись существует! ";
+	}
+}
+else {
+ 	echo "\nFail valid test";      
+}

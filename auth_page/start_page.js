@@ -1,7 +1,8 @@
 
 
 //элементы документа
-export default function load_login(event) {
+//export function load_login(event) {
+    function load_login(event) {
     console.dir("load_login func");
     form(); //форма
     div('form','p-3'); //div в форме
@@ -9,14 +10,15 @@ export default function load_login(event) {
     input(true, 'Username', '', 'username'); //ввод пользователя
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input_btn('submit', 'submit', 'Login'); //submit input
-    document.getElementById("submit").onclick = bind(ajaxRequest, "login_data.php");
+    document.getElementById("submit").onclick = bind(ajaxRequest, "./login_data.php");
     //a('http://localhost:8080/auth_page/register.html');
     a('./register.html');
     document.getElementById("link").innerHTML = "Ещё не зарегистрированы?";
     footer('Copyright &copy; 2019'); //футер
 }
 
-export function load_register(event) {
+//export default function load_register(event) {
+    function load_register(event){
     console.dir("load_register func");
     form(); //форма
     div('form','p-3'); //div в форме
