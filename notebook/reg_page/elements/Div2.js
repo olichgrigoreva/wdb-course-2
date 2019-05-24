@@ -1,3 +1,4 @@
+import "../css/Form-group.css";
 export default class Div2 {
   static open(pageNode) {
     let div2 = document.createElement("div2");

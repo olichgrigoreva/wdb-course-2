@@ -1,4 +1,4 @@
-//import "./Header.css";
+import "../css/Header.css";
 export default class Header {
   static open(pageNode) {
     let header = document.createElement("header");

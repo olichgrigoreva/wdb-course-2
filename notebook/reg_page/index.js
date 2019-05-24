@@ -13,16 +13,16 @@ import Footer from "./elements/Footer.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   let node = document.querySelector(".page");
-  Header.open(node);
-  Form.open(node);
-  Div1.open(node);
-  Username.open(node);
-  Div2.open(node);
-  Password.open(node);
-  Div3.open(node);
-  ConfirmPassword.open(node);
-  Div4.open(node);
-  Email.open(node);
-  Button.open(node);
-  Footer.open(node);
+    Header.open(node);
+    Form.open(node);
+    Div1.open(node);
+    Username.open(node);
+    Div2.open(node);
+    Password.open(node);
+    Div3.open(node);
+    ConfirmPassword.open(node);
+    Div4.open(node);
+    Email.open(node);
+    Button.open(node);
+    Footer.open(node);
 })

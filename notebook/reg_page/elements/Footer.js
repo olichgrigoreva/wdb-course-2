@@ -1,3 +1,4 @@
+import "../css/Footer.css";
 export default class Footer {
   static open(pageNode) {
     let footer = document.createElement("footer");

@@ -1,3 +1,4 @@
+import "../css/Form.css";
 export default class Form {
   static open(pageNode) {
     let form = document.createElement("form");

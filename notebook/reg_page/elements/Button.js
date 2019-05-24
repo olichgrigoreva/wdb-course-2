@@ -1,3 +1,4 @@
+import "../css/Button.css";
 export default class Button {
   static open(pageNode) {
     let button = document.createElement("button");
@@ -8,6 +9,6 @@ export default class Button {
     button.name = "register";
     button.append(buttonText);
     document.querySelector("form").append(button);
-    //button.addEventListener("click", check_form);
+    button.addEventListener("click", check_form);
   }
 }

@@ -1,5 +1,5 @@
-import {check_form} export function from ("../elements/Button.js");
-check_form() {
+import {check_form} export function check_form() from "../elements/Button.js";
+import {send_data} export function send_data() from "./Send.js";
   function check_form() {
       event.preventDefault();
         if (document.querySelector("username").value == '' || document.querySelector("password").value == '' || document.querySelector("confirm_password").value == '' || document.querySelector("e_mail").value == '') {
@@ -31,4 +31,7 @@ check_form() {
               }
           }
       }
+      window.setTimeout(function() {
+        $(".alert").alert('close');
+    },10000);
 }
