@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './NameEditBlock.css';
 
-const NameEditBlock = () => {
-  return (
-    <div>
-      Режим редактирования/Запись 1
-      <hr></hr>
-    </div>
-  );
-};
+export default class NameEditBlock extends Component {
 
-export default NameEditBlock;
+
+  render() {
+
+    const { note_view_name } = this.props;
+    return (
+      <div>
+        <span>
+          {note_view_name}
+        </span>
+        <hr></hr>
+      </div>
+    );
+  }
+}

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './ContentNote.css';
 
-const ContentNote = () => {
-  return (
-    <div>
-    бла мцмовцмтзц мзцымтц зцткизмтцкотыи
-    цикиукзитпозит озпкт изпи
-    </div>
-  );
-};
-
-export default ContentNote;
+export default class ContentNote extends Component {
+  render() {
+    const { note_view_content } = this.props;
+    return (
+      <div>
+      {note_view_content}
+      </div>
+    );
+  }
+}
