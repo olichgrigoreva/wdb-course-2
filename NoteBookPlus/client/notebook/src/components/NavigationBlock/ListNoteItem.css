@@ -1,7 +1,10 @@
 .ListNoteItem {
-
 }
 
 .selected_note {
+  color: green;
+}
+
+.edit_note {
   color: red;
 }

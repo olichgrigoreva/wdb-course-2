@@ -7,18 +7,22 @@ export default class ListNote extends Component {
 
   render() {
 
-    const { notes_data, onSelected } = this.props;
+    const { navigation_block, onSelected, onEdited, onDeleted } = this.props;
 
-    const elements = notes_data.map((item) => {
+    const elements = navigation_block.map((item) => {
       return (
         <li
-          key={item.id} className = "list-group-item"
-          style = { {backgroundColor: "#e0e0d1"} } >
+          className = "list-group-item ListNote"
+          key={item.id}
+        >
         <ListNoteItem
           // name_note = {item.name_note}
           // date_note = {item.date_note}
           { ... item }
-          onSelected = { () => onSelected(item.id) } />
+          onSelected = { () => onSelected(item.id) }
+          onEdited = { () => onEdited(item.id) }
+          onDeleted = { () => onDeleted(item.id) }
+          />
         </li>
       )
     });

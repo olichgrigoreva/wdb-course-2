@@ -3,10 +3,10 @@ import './ContentNote.css';
 
 export default class ContentNote extends Component {
   render() {
-    const { note_view_content } = this.props;
+    const { content_note } = this.props;
     return (
       <div>
-      {note_view_content}
+      {content_note}
       </div>
     );
   }
