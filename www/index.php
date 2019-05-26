@@ -42,18 +42,18 @@ if (isset($_REQUEST["login"])) {
             session_start();
             $_SESSION['login'] = $username;
             
-            alert("успешный вход");
+            $msg = "успешный вход";
             //header('Location: /www/note.html'); exit;
             header('Refresh: 5; URL=/www/note.html');
         }
     
         else{
-            alert("не верный логин или пароль");
+            $msg = "не верный логин или пароль";
         }
     }
     
     else {
-       alert("заполните все поля");
+       $msg = "заполните все поля";
     }
 }
 
@@ -70,6 +70,8 @@ if (isset($_REQUEST["login"])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--My CSS-->
     <link rel="stylesheet" href="register.css">
+
+    <?php if (isset($msg)) {alert($msg);} ?>
 
     <script>
         window.setTimeout(function(){
