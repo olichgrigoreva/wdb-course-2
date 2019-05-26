@@ -6,12 +6,10 @@ $_SESSION["id"] = "Hello";
 print_r($_SESSION);
 /*если закомментить сессию, то приходит response в консоли хрома*/
 
-//header( 'Location: login.html' );
-
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-require_once("class_DB.php");
+require_once("../class/class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
 
 // if (!empty($_REQUEST["submit"])) {
@@ -21,7 +19,7 @@ $password=$_REQUEST["password"];
 $confirm=$_REQUEST["confirm"];
 $email=$_REQUEST["email"];
 
-require_once("class_validateInfo.php");
+require_once("../class/class_validateInfo.php");
 $needValidData = new ValidateInfo($username, $password);
 print_r($needValidData);
 

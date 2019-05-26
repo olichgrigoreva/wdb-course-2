@@ -9,7 +9,7 @@ echo "Session key: " . $session_id;*/
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-require_once("class_DB.php");
+require_once("../class/class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
 
 $username=$_REQUEST["username"];
@@ -20,7 +20,7 @@ $select_result = $db -> selectFromDB($select_query);
 $id = $select_result["id"];*/
 
 //Валидация данных
-require_once("class_validateInfo.php");
+require_once("../class/class_validateInfo.php");
 $needValidData = new ValidateInfo($username, $password);
 print_r($needValidData);
 
@@ -39,7 +39,7 @@ if ($valid_fields == 1) {
 	}
 	else{
     echo "User is authorized ";
-    echo "<script type='text/javascript'> alert( 'Привет ); </script>";
+    //echo "<script type='text/javascript'> alert( 'Привет ); </script>";
     $select_result = $db -> selectFromDB($select_query);
     $id = $select_result["id"];
 	}

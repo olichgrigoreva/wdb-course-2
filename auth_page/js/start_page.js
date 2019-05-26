@@ -10,7 +10,7 @@
     input(true, 'Username', '', 'username'); //ввод пользователя
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input_btn('submit', 'submit', 'Login'); //submit input
-    document.getElementById("submit").onclick = bind(ajaxRequest, "./login_data.php");
+    document.getElementById("submit").onclick = bind(ajaxRequest, "../auth_page/server/login_data.php");
     //a('http://localhost:8080/auth_page/register.html');
     a('./register.html');
     document.getElementById("link").innerHTML = "Ещё не зарегистрированы?";
@@ -27,16 +27,16 @@
     input(true, 'Password', 'password', 'password'); //ввод пароля
     input(true, 'Confirm password','password','confirm'); //подтверждение правильности пароля
     input(true, 'E-mail','email', 'email'); //ввод почты
-    
+
     input_btn('submit', 'submit', 'Register'); //submit input
-    document.getElementById("submit").onclick = bind(ajaxRequest, "registration_data.php");
-    
+    document.getElementById("submit").onclick = bind(ajaxRequest, "../auth_page/server/registration_data.php");
+
     var rect = document.getElementById("submit");
     rect.addEventListener("click", redirectToLogin);
-    
+
     a('./login.html');
     document.getElementById("link").innerHTML = "Уже зарегистрированы?";
-    
+
     footer('Copyright &copy; 2019'); //футер
 }
 
@@ -58,17 +58,17 @@ function ajaxRequest(event){
     let form = document.querySelector("form");
     //отправка AJAX запроса на сервер
     fetch(this, {//url [настройки запроса] к файлу calc.php
-    //fetch("login_data.php", {//url [настройки запроса] к файлу calc.php    
+    //fetch("login_data.php", {//url [настройки запроса] к файлу calc.php
         method: "POST", //методом post
-        body: new FormData(form) //с данными из формы  
-    }) 
+        body: new FormData(form) //с данными из формы
+    })
     /*.then(response => {
           return response.text();
     })*/
     /*.then(result => {
         window.location.href = 'http://localhost:8080/auth_page/login.html';
         //document.querySelector("footer").innerHTML=text;
-    })*/       
+    })*/
 }
 
 //создание формы в body
