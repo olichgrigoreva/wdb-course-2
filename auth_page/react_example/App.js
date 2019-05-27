@@ -11,10 +11,14 @@ export default class App extends Component {
   componentDidMount() {
     // alert123();
     fetch("./users.php")//вывод даных
-      .then(response => response.json())
+      .then(response => {
+        response.json()})
+      //console.log("response1")})
       .then(json => {
         this.setState({users: json});
       })
+        //this.setState({users: json}),
+        //console.log("response2")})
   }
 
   render() {

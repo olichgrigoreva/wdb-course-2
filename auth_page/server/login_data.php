@@ -1,10 +1,10 @@
 <?php
+session_start();
+//$session_id = session_id();
+//echo "Session key: " . $session_id;
+
 //session_start();
 //print_r($_SESSION);
-/*session_start();
-$session_id = session_id();
-echo "Session key: " . $session_id;*/
-
 
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
@@ -14,10 +14,6 @@ $db = new Database("localhost", "user", "user", "grigorieva");
 
 $username=$_REQUEST["username"];
 $password=$_REQUEST["password"];
-
-/*$select_query = "SELECT id FROM users WHERE usernames='$username' AND passwords=MD5('$password')";
-$select_result = $db -> selectFromDB($select_query);
-$id = $select_result["id"];*/
 
 //Валидация данных
 require_once("../class/class_validateInfo.php");
@@ -41,7 +37,9 @@ if ($valid_fields == 1) {
     echo "User is authorized ";
     //echo "<script type='text/javascript'> alert( 'Привет ); </script>";
     $select_result = $db -> selectFromDB($select_query);
-    $id = $select_result["id"];
+    //$id = $select_result["id"];
+    $_SESSION["id"] = $select_result["id"];
+    echo "Session ID: " . $_SESSION["id"];
 	}
 }
 
