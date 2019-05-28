@@ -2,8 +2,12 @@ import React, {Component} from 'react';
 
 import NavigationBlock from './block_of_navigation/NavigationBlock.js';
 import PrimaryBlock from './primary_block/PrimaryBlock.js';
+import Header from './header_and_footer/Header.js';
+import Footer from './header_and_footer/Footer.js';
+import "./AppNotebook.css";
 
 export default class AppNotebook extends Component {
+  maxId = 100;
   state = {
     noteNavigationBlock: [
       { id: 1, name_note: "Note1", data_note: "01.01.2020", content_note: "Note1", mode: "START_MODE"  },
@@ -12,10 +16,17 @@ export default class AppNotebook extends Component {
       { id: 4, name_note: "Note4", data_note: "01.01.2020", content_note: "Note4", mode: "START_MODE"  },
       { id: 5, name_note: "Note5", data_note: "01.01.2020", content_note: "Note5", mode: "START_MODE"  },
       { id: 6, name_note: "Note6", data_note: "01.01.2020", content_note: "Note6", mode: "START_MODE"  },
-      { id: 7, name_note: "Note7", data_note: "01.01.2020", content_note: "Note6", mode: "START_MODE"  },
     ],
     notePrimaryBlock: { name_note: "", data_note: "", content_note: "", mode: "START_MODE" }
   };
+    /*createNoteItem(label) {
+      return {
+        id: this.maxId++,
+        name_note: "text",
+        data_note: "date",
+        content_note: "text"
+      }
+    }*/
     selectItem = (id) => {
       this.setState(({noteNavigationBlock}) => {
         let index = noteNavigationBlock.findIndex((element) => element.id === id);
@@ -79,13 +90,15 @@ console.log(id);
 render() {
     return (
       <div className = "AppNotebook">
+       <Header/>
         <NavigationBlock
           navigation_block = { this.state.noteNavigationBlock }
           onSelected = { this.selectItem }
           onEdited = { this.editNote }
           onDeleted = { this.deleteNote }/>
-        <PrimaryBlock
-          primary_block = { this.state.notePrimaryBlock }/>
+          <PrimaryBlock
+            primary_block = { this.state.notePrimaryBlock }/>
+        <Footer/>
       </div>
     );
   }

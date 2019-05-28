@@ -1,20 +1,22 @@
-import React/*, {Component}*/ from 'react';
+import React, {Component} from 'react';
+import ("../../css/primary_block/NameEditBlock.css");
 
-let NameEditBlock = () => {
-  let { name_note, data_note } = this.props;
-    return (
-      <div>
+export default class NameEditBlock extends Component {
+  render() {
+    const { name_note, date_note } = this.props;
+      return (
         <div>
-        <span style = { { float: "left" } }>
-        { name_note }
-        </span>
-        <span style = { { float: "right" } }>
-        { data_note }
-        </span>
+          <div>
+          <span style = { { float: "left" } }>
+            {name_note}
+          </span>
+          <span style = { { float: "right" } }>
+            {date_note}
+          </span>
+          </div>
+          <br></br>
+          <hr></hr>
         </div>
-        <br></br>
-        <hr></hr>
-      </div>
-    );
-};
-export default NameEditBlock;
+      );
+  }
+}

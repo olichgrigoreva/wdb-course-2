@@ -1,11 +1,13 @@
-import React/*, {Component}*/ from 'react';
+import React, {Component} from 'react';
+import ("../../css/primary_block/ContentNote.css");
 
-let ContentNote = () => {
-  let { content_note } = this.props;
+export default class ContentNote extends Component {
+  render() {
+    const { content_note } = this.props;
     return (
       <div>
-        { content_note }
+      {content_note}
       </div>
     );
-};
-export default ContentNote;
+  }
+}

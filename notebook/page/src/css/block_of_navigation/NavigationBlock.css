@@ -1,0 +1,10 @@
+.NavigationBlock {
+  padding: 10px;
+  float: left;
+  width: 30%;
+  height: 100%;
+  border-right: double;
+  border-color: #212529;
+  background-color: #ffffff;
+  text-align: center;
+}

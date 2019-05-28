@@ -1,4 +1,5 @@
 import React/*, {Component}*/ from 'react';
+import ("../../css/primary_block/InputContentNote.css");
 
 let InputContentNote = () => {
   return (
