@@ -1,0 +1,32 @@
+img {
+    height: 400px;
+    width: 450px;
+    margin-left: 20px;
+}
+.zagl{
+    Color: red;
+    margin-left: 550px;
+}
+.from_right_to_the_picture{
+    float: right;
+    border:double green 4px;
+    background-color: grey;
+    margin-right: 20px;
+    height: 400px;
+    width: 450px;
+}
+.all{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.foto{
+    height: 400px;
+    width: 300px;
+    margin-left: 10px;
+    float: left;
+}
+p{
+    color:yellow;
+    
+}

@@ -1,0 +1,40 @@
+.pole1{
+            margin-top: 100px;
+            padding: 100px;
+        }
+        .pole{
+            margin:auto;
+            border: solid 1px;
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            width:200px;
+                    
+        }
+        
+        
+        .div_head{
+            width: 100%;
+            height: 50px;
+            background: #B0E0E6; 
+            top:0%;
+            position: fixed;
+            text-align:center;
+        }
+        .div_foot{
+            width: 100%;
+            height: 50px;
+            background: #B0E0E6; 
+            top:92%;
+            position: fixed;
+            text-align:center;
+        }
+        
+        .button_reg{
+            margin:auto;
+            margin-top: 10px;
+            padding: 10px;
+            width:200px;
+            display: block;
+            border-radius: 15px;
+        }

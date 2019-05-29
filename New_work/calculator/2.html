@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf8"/>
+       <script>
+       function plus(event){
+           let text = document.querySelector(".name").value;
+            
+            fetch("1.php?name="+text)
+            .then(response =>{
+               return response.text();
+                
+            })
+            
+            .then(text => {
+                document.querySelector(".result").innerHTML = text; 
+            });
+          
+          
+           
+       }
+       </script>
+       
+    </head> 
+    
+    <!--<body>-->
+    <!--    <input type="text" class="name" />-->
+        <!--<input type="text" class="name" />-->
+    <!--    <button onclick="plus()" >+ </button>-->
+         <!--<button onclick="minus(event)" >- </button>-->
+    <!--     <div class="result"></div>-->
+    <!--</body>-->
+    <body>
+        <form>
+            <input class="pole" type="text" name="val1" placeholder=" введите число" />
+            <input class="pole" type="text" name="val2" placeholder=" введите число" /> <br>
+            <!--<?php echo "Ответ:".$result; ?> <br>-->
+            
+            <hr>
+            <button class="btn btn-success" onclick="plus()" > + </button>
+            <button class="btn btn-success" type="submit" name="minus" value="-" > - </button>
+            <button class="btn btn-success" type="submit" name="ymnogit" value="*" > * </button>
+            <button class="btn btn-success" type="submit" name="delit"  > / </button>
+        </form>
+        <div class="result">
+            
+        </div>
+    </body>
+    
+    
+    
+</html>

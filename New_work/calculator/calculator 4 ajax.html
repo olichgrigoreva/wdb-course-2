@@ -1,0 +1,40 @@
+<html>
+    <head>
+           
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="calculator 4.css">
+        <script>
+            function gamk(event) {
+                    // event.preventDefault(); 
+                    let form = document.querySelector("form");
+                    fetch("calculator_4_ajax.php", {
+                    method: "POST",
+                    body: new FormData(form)
+                    }) 
+                    .then(response => {
+                    return response.text();
+                    })
+                    .then(text => {
+                    document.querySelector(".result").innerHTML = text;
+                    });
+                }
+        </script>
+
+    </head>  
+    <body>
+        <form>
+            <input class="pole" type="text" name="val1" placeholder=" введите число" />
+            <input class="pole" type="text" name="val2" placeholder=" введите число" /> <br>
+            <hr>
+            <button class="btn btn-success" onclick="gamk(event)"  name="plus">  + </button>
+            <button class="btn btn-success" onclick="gamk(event)"  name="minus"> - </button>
+            <button class="btn btn-success" onclick="gamk(event)"  name="ymnogit"> * </button>
+            <button class="btn btn-success" onclick="gamk(event)"  name="delit"> / </button>
+        </form>
+        <div class="result">
+            
+        </div>
+    </body>
+
+</html>
