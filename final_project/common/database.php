@@ -7,11 +7,13 @@
    private   static $dbname = "wdb";
 
    public static function connect(){
-     return self::$connection = mysqli_connect(self::$host, self::$user, self::$pass, self::$dbname) or die ("Невозможно соединиться с базой данных");
+     self::$connection = mysqli_connect(self::$host, self::$user, self::$pass, self::$dbname) or die ("Невозможно соединиться с базой данных");
+     return self::$connection;
    }
 
    public static function query($sql_command){
-     return $sql_query = mysqli_query(self::$connection, $sql_command) or die ("Неправильный запрос!");
+     $sql_query = mysqli_query(self::$connection, $sql_command) or die ("Неправильный запрос!");
+     return $sql_query;
    }
 
    public static function fetch_assoc($query){
