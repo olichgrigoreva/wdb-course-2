@@ -1,7 +1,8 @@
-class Hello extends React.Component {
-    render() {
-        return <h1>Hello, React</h1>;
-    }
-}
+import Hello from './App';
 
-ReactDOM.render(<Hello></Hello>, document.getElementById("app"))
+ReactDOM.render(
+    <Hello></Hello>,
+    document.getElementById("app"),
+
+    function(){ console.log("успешный рендеринг элемента React");}
+    )
