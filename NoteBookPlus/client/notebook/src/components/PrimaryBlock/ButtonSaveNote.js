@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './ButtonSaveNote.css';
 
-const ButtonSaveNote = () => {
-  return (
-    <button className = "btn btn-dark">Сохранить</button>
-  );
-};
+export default class ButtonSaveNote extends Component {
 
-export default ButtonSaveNote;
+  render() {
+
+    const { onSaveNote } = this.props;
+
+    return (
+      <button onClick = { onSaveNote } className = "btn btn-dark">Сохранить</button>
+    );
+  }
+}

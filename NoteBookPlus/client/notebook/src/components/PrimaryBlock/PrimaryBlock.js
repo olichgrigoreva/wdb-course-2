@@ -11,7 +11,7 @@ import ContentNote from './ContentNote.js';
 export default class PrimaryBlock extends Component {
   render() {
 
-    const { primary_block } = this.props;
+    const { primary_block, editNameNote, editDateNote, editContentNote, onSaveNote } = this.props;
     let div_PrimaryBlock_part1;
     let div_PrimaryBlock_part2;
     let div_PrimaryBlock_part3;
@@ -30,10 +30,13 @@ export default class PrimaryBlock extends Component {
     };
 
     if ( primary_block.mode === "EDIT_MODE" ) {
-        div_PrimaryBlock_part1 = <InputNameNote name_note = { primary_block.name_note } />;
-        div_PrimaryBlock_part2 = <InputDateNote />;
-        div_PrimaryBlock_part3 = <InputContentNote />;
-        div_PrimaryBlock_part4 = <ButtonSaveNote />;
+        div_PrimaryBlock_part1 = <InputNameNote name_note = { primary_block.name_note }
+                                                editNameNote = { editNameNote } />;
+        div_PrimaryBlock_part2 = <InputDateNote date_note = { primary_block.date_note }
+                                                editDateNote = { editDateNote } />;
+        div_PrimaryBlock_part3 = <InputContentNote content_note = { primary_block.content_note }
+                                                    editContentNote = { editContentNote } />;
+        div_PrimaryBlock_part4 = <ButtonSaveNote onSaveNote = { () => onSaveNote(primary_block) } />;
     };
 
     return(

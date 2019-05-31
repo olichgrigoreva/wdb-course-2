@@ -9,12 +9,13 @@ export default class NavigationBlock extends Component {
 
   render() {
 
-    const { navigation_block, onSelected, onEdited, onDeleted } = this.props;
+    const { navigation_block, onSelected, onEdited, onDeleted, searchNote, onNewNote } = this.props;
 
     return (
       <div className = "NavigationBlock">
 
-        <SearchNote />
+        <SearchNote
+          searchNote = { searchNote } />
 
         <ListNote
           navigation_block = { navigation_block }
@@ -22,7 +23,7 @@ export default class NavigationBlock extends Component {
           onEdited = { onEdited }
           onDeleted = { onDeleted }/>
 
-        <ButtonNewNote />
+        <ButtonNewNote onNewNote = { onNewNote } />
 
       </div>
     )

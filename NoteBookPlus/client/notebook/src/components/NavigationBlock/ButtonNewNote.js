@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './ButtonNewNote.css';
 
-const ButtonNewNote = () => {
-  return (
-    <button className = "btn btn-dark">Создать новую запись</button>
-  );
-};
+export default class ButtonNewNote extends Component {
+  render() {
 
-export default ButtonNewNote;
+    const { onNewNote } = this.props;
+
+    return (
+      <button onClick = { onNewNote } className = "btn btn-dark">Создать новую запись</button>
+    );
+  }
+}
