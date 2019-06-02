@@ -21,26 +21,12 @@
      $email = Validator::check_email($email);
 
      $connection = Database::connect();
-     /*echo "<pre>";
-     print_r ($connection);
-     echo "</pre>";
-     echo "<pre>";
-     print_r (mysqli_connect_error());
-     echo "</pre>";
-     echo "<pre>";
-     echo mysqli_errno($connection);
-     echo "</pre>";
-     echo "<pre>";
-     print_r (mysqli_error($connection));
-     echo "</pre>";*/
      $sql_command = "SELECT * FROM users_ziazova WHERE username='".$username."' ORDER BY username";
-     //echo $sql_command;
      $query = Database::query($sql_command);
      $user  = Database::fetch_assoc($query);
 
-     if (empty($user)){
-       $sql_command = "INSERT into users_ziazova (username, password, email) VALUES ('".$username."', md5 '".$password', '$email')";
-       $query = Database::query($sql_command);
+     if (!empty($user)){
+       return false;
 
        /*if (!empty($query)){
          Session::set('username', $username);
@@ -60,7 +46,12 @@
    }
 
    else {
-     return false;
+     $sql_command = "INSERT INTO users_ziazova (username, password, email) VALUES ('$username', '$password', '$email')";
+     echo $sql_command;
+     $query = Database::query($sql_command);
+     echo "<pre>";
+     print_r ($query);
+     echo "</pre>";
    }
  }
 
@@ -68,5 +59,15 @@
    exit ("Проверьте правильность заполнения полей.");
  }
 
- //echo $username."<br />".$password."<br />".$confirm_pass."<br />".$email."<br />";
- ?>
+ /*echo "<pre>";
+ print_r ($connection);
+ echo "</pre>";
+ echo "<pre>";
+ print_r (mysqli_connect_error());
+ echo "</pre>";
+ echo "<pre>";
+ echo mysqli_errno($connection);
+ echo "</pre>";
+ echo "<pre>";
+ print_r (mysqli_error($connection));
+ echo "</pre>";*/
