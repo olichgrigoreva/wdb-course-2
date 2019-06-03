@@ -1,37 +1,65 @@
 export default class Hello extends React.Component {
     
-/* $(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myList li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+/*   <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
     });
   });
-}); */
+  </script>  */
     
     render() {
-        return <div class="container-fluid">
-                <div class="row d-flex p-3">
+      return <div class="container-fluid">
+              <div class="d-flex p-3">
+                  
+                <div class="col-sm-3 col-md-3 col-lg-3 p-2 note_sidebar">
+                    <input class="form-control search_input" id="myInput" type="text" placeholder="Search.."></input>
+
+                    <table class="table table-striped table-hover table-sm" id="myList">
+                    <tbody>
+                      <tr>
+                        <td>First item</td>
+                      </tr>
+                      <tr>
+                        <td>Second item</td>
+                      </tr>
+                      <tr>
+                        <td>Third item</td>
+                      </tr>
+                      <tr>
+                        <td>Fourth</td>
+                      </tr>                     
+                    </tbody>
+                    </table>
+                    <br></br>
+                    <button class="btn btn-primary btn-block add_button">Add new note</button>
+                </div>
+
+
+                <div class="col-sm-9 col-md-9 col-lg-9 p-2">
+                  <div class="d-flex">
                     
-                    <div class="col-sm-3 col-md-3 col-lg-3 p-2">
-                        <strong>note_sidebar</strong>
-                        <input class="form-control" id="myInput" type="text" placeholder="Search.."></input>
-
-                        <ul class="list-group" id="myList">
-                            <li class="list-group-item">First item</li>
-                            <li class="list-group-item">Second item</li>
-                            <li class="list-group-item">Third item</li>
-                            <li class="list-group-item">Fourth</li>
-                        </ul>
-                        <br></br>  
+                    <div class="p-2 mr-auto">
+                      <strong>note_Name</strong> 
                     </div>
 
-
-                    <div class="col-sm-9 col-md-9 col-lg-9 p-2">
-                    <strong>note_content</strong> 
+                    <div class="p-2 ml-auto">
+                    <strong>date</strong>
                     </div>
+
+                  </div>
+                  <hr align="center" color="#dddddd"></hr>
+                  <div>
+                    Content
+                  </div>
+                  
 
                 </div>
-            </div>;
+
+              </div>
+          </div>;
     }
 }
