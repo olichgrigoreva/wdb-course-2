@@ -12,9 +12,9 @@ function loaded() {
   div4();
   e_mail();
   button();
-  button.addEventListener("click", function(event) {
-    check(event);
-  })
+  //button.addEventListener("click", function(event) {
+    //check(event);
+  //})
   footer();
 }
 
@@ -46,6 +46,7 @@ function loaded() {
     username.classList.add("username_field");
     username.className = "form-control";
     username.placeholder = "Username";
+    username.setAttribute('username', 1);
     username.id = "username";
     username.name = "username";
     document.querySelector("div1").append(username);
@@ -105,18 +106,6 @@ function loaded() {
     document.querySelector("div4").append(e_mail);
   }
 
-  function button() {
-    let button = document.createElement("button");
-    let buttonText = document.createTextNode("Register");
-    button.type = "submit";
-    button.id = "button_register";
-    button.className = "btn btn-primary";
-    button.name = "register";
-    button.append(buttonText);
-    document.querySelector("form").append(button);
-    document.querySelector("button").addEventListener("click", check());
-  }
-
   function footer() {
     let footer = document.createElement("footer");
     footer.classList.add("footer");
@@ -126,9 +115,21 @@ function loaded() {
     document.querySelector("body").append(footer);
   }
 
+  function button() {
+    let button = document.createElement("button");
+    let buttonText = document.createTextNode("Register");
+    button.type = "submit";
+    button.id = "button_register";
+    button.className = "btn btn-primary";
+    button.name = "register";
+    button.append(buttonText);
+    document.querySelector("form").append(button);
+    document.querySelector("button").addEventListener("click", check);
+  }
+
   function check() {
     event.preventDefault();
-      if(document.querySelector(".username_field").value == '' || document.querySelector(".password_field").value == '' || document.querySelector(".confirm_password_field").value == '' || document.querySelector(".e_mail_field").value == '') {
+      if(document.querySelector("username").value == '' || document.querySelector("password").value == '' || document.querySelector("confirm_password").value == '' || document.querySelector("e_mail").value == '') {
         let myalert = document.createElement("div");
         myalert.className="alert alert-info alert-dismissible fade show";
         myalert.role = "alert";
@@ -136,7 +137,7 @@ function loaded() {
         document.querySelector(".container").append(myalert);
     }
       else {
-        if(document.querySelector(".password_field").value !== document.querySelector(".confirm_password_field").value) {
+        if(document.querySelector("password").value !== document.querySelector("confirm_password").value) {
             let myalert = document.createElement("div");
             myalert.className="alert alert-info alert-dismissible fade show";
             myalert.role = "alert";
@@ -145,7 +146,7 @@ function loaded() {
         }
         else {
             var mailformat = /.+@.+\..+/i;
-            if(mailformat.test(document.querySelector(".e_mail_field").value) == false) {
+            if(mailformat.test(document.querySelector("e_mail").value) == false) {
                 let myalert = document.createElement("div");
                 myalert.className="alert alert-info alert-dismissible fade show";
                 myalert.role = "alert";
