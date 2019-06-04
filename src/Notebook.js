@@ -6,7 +6,7 @@ import './Notebook.css';
 export default class Notebook extends Component {
   componentDidMount() {
     // alert123();
-    fetch("/src/note_list.php")
+    fetch("/src/notes_list.php")
       .then(response => response.json())
       .then(json => {
         this.setState({notes: json});
@@ -22,14 +22,15 @@ export default class Notebook extends Component {
     return (
       <div>
 
-        {notes.map(user => (
-          <span key={user.id}> {user.id}: {user.username}</span>
+        {notes.map(note => (
+          <div key={note.id} className="notes_list"> {note.note_name} {note.text} {note.date}</div>
         ))}
 
       </div>
     );
   }
 }
+
 
 
 // export default class App extends Component {

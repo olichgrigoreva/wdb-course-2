@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 } */
+.notes_list {
+  border: 3px inset skyblue;
+  padding: 5px;
+  margin: 2px;
+}

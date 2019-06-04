@@ -25869,7 +25869,7 @@ function (_Component) {
       var _this = this;
 
       // alert123();
-      fetch("/src/note_list.php").then(function (response) {
+      fetch("/src/notes_list.php").then(function (response) {
         return response.json();
       }).then(function (json) {
         _this.setState({
@@ -25886,10 +25886,11 @@ function (_Component) {
         notes = this.state.notes;
       }
 
-      return _react.default.createElement("div", null, notes.map(function (user) {
-        return _react.default.createElement("span", {
-          key: user.id
-        }, " ", user.id, ": ", user.username);
+      return _react.default.createElement("div", null, notes.map(function (note) {
+        return _react.default.createElement("div", {
+          key: note.id,
+          className: "notes_list"
+        }, " ", note.note_name, " ", note.text, " ", note.date);
       }));
     }
   }]);
@@ -25962,7 +25963,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57342" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64214" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

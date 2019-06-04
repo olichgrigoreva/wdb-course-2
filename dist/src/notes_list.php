@@ -10,10 +10,10 @@ $connection = mysqli_connect("localhost", "root", "virtual", "wdb");
 // print_r(mysqli_connect_error())
 // echo "</pre>";
 
-$query = mysqli_query($connection, "SELECT * FROM users");
-$users = [];
+$query = mysqli_query($connection, "SELECT * FROM `123`");
+$notes = [];
 while ($row = mysqli_fetch_assoc($query)) {
-  $users[] = $row;
+  $notes[] = $row;
 }
 
-echo json_encode($users);
+echo json_encode($notes);
