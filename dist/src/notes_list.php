@@ -10,6 +10,7 @@ $connection = mysqli_connect("localhost", "root", "virtual", "wdb");
 // print_r(mysqli_connect_error())
 // echo "</pre>";
 
+mysqli_set_charset($connection, "utf8");
 $query = mysqli_query($connection, "SELECT * FROM `123`");
 $notes = [];
 while ($row = mysqli_fetch_assoc($query)) {

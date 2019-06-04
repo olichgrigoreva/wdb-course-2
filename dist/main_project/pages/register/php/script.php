@@ -21,11 +21,11 @@ if (!empty($connection)) {
       UNIQUE `note_name` (`note_name`)
     )";
       if (mysqli_query($connection, $userNewTable)) {
-        echo "Таблица $username создана успешно";
+        echo "Таблица $username создана успешно.";
       } else {
          echo "Ошибка создания таблицы: " . mysqli_error($connection);
       }
-    echo "Registration successfully!";
+    echo "<br/> Registration successfully!";
   }
 mysqli_close($connection);
 
