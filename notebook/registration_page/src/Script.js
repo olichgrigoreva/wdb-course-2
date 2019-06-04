@@ -43,12 +43,14 @@ function loaded() {
   function username() {
     let username = document.createElement("input");
     username.type = "text";
-    username.classList.add("username_field");
+    username.class = "form-control";
     username.className = "form-control";
     username.placeholder = "Username";
     username.setAttribute('username', 1);
     username.id = "username";
     username.name = "username";
+    username.classList.add("reg_fields");
+    username.classList.add("username_field");
     document.querySelector("div1").append(username);
   }
 
@@ -61,12 +63,13 @@ function loaded() {
   function password() {
     let password = document.createElement("input");
     password.type = "password";
-    password.classList.add("password_field");
+    password.class = "form-control";
     password.className = "form-control";
     password.placeholder = "Password";
     password.id = "password";
     password.name = "password";
-    //password.value = "Password";
+    password.classList.add("reg_fields");
+    password.classList.add("password_field");
     document.querySelector("div2").append(password);
   }
 
@@ -79,12 +82,13 @@ function loaded() {
   function confirm_password() {
     let confirm_password = document.createElement("input");
     confirm_password.type = "password";
-    confirm_password.classList.add("confirm_password_field");
+    confirm_password.class = "form-control";
     confirm_password.className = "form-control";
     confirm_password.placeholder = "Confirm Password";
     confirm_password.id = "confirm_password";
     confirm_password.name = "confirm_password";
-    //confirm_password.value = "Confirm password";
+    confirm_password.classList.add("reg_fields");
+    confirm_password.classList.add("confirm_password_field");
     document.querySelector("div3").append(confirm_password);
   }
 
@@ -97,22 +101,14 @@ function loaded() {
   function e_mail() {
     let e_mail = document.createElement("input");
     e_mail.type = "e_mail";
-    e_mail.classList.add("e_mail_field");
+    e_mail.class = "form-control";
     e_mail.className = "form-control";
     e_mail.placeholder = "Email";
     e_mail.id = "e_mail";
     e_mail.name = "e_mail";
-    //e_mail.value = "Email";
+    e_mail.classList.add("reg_fields");
+    e_mail.classList.add("e_mail_field");
     document.querySelector("div4").append(e_mail);
-  }
-
-  function footer() {
-    let footer = document.createElement("footer");
-    footer.classList.add("footer");
-    footer.className = "footer";
-    let footer_text = document.createTextNode("Copyright by ... 2019");
-    footer.append(footer_text);
-    document.querySelector("body").append(footer);
   }
 
   function button() {
@@ -127,9 +123,18 @@ function loaded() {
     document.querySelector("button").addEventListener("click", check);
   }
 
+  function footer() {
+    let footer = document.createElement("footer");
+    footer.classList.add("footer");
+    footer.className = "footer";
+    let footer_text = document.createTextNode("Copyright by ... 2019");
+    footer.append(footer_text);
+    document.querySelector("body").append(footer);
+  }
+
   function check() {
     event.preventDefault();
-      if(document.querySelector("username").value == '' || document.querySelector("password").value == '' || document.querySelector("confirm_password").value == '' || document.querySelector("e_mail").value == '') {
+      if(document.querySelector(".username_field").value == '' || document.querySelector(".password_field").value == '' || document.querySelector(".confirm_password_field").value == '' || document.querySelector(".e_mail_field").value == '') {
         let myalert = document.createElement("div");
         myalert.className="alert alert-info alert-dismissible fade show";
         myalert.role = "alert";
@@ -137,16 +142,16 @@ function loaded() {
         document.querySelector(".container").append(myalert);
     }
       else {
-        if(document.querySelector("password").value !== document.querySelector("confirm_password").value) {
-            let myalert = document.createElement("div");
-            myalert.className="alert alert-info alert-dismissible fade show";
-            myalert.role = "alert";
-            myalert.innerHTML='<strong>Passwords d\'not match!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-            document.querySelector(".container").append(myalert);
+        if(document.querySelector(".password_field").value !== document.querySelector(".confirm_password_field").value) {
+          let myalert = document.createElement("div");
+          myalert.className="alert alert-info alert-dismissible fade show";
+          myalert.role = "alert";
+          myalert.innerHTML='<strong>Passwords d\'not match!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          document.querySelector(".container").append(myalert);
         }
         else {
             var mailformat = /.+@.+\..+/i;
-            if(mailformat.test(document.querySelector("e_mail").value) == false) {
+              if(mailformat.test(document.querySelector(".e_mail_field").value) == false) {
                 let myalert = document.createElement("div");
                 myalert.className="alert alert-info alert-dismissible fade show";
                 myalert.role = "alert";
@@ -154,29 +159,27 @@ function loaded() {
                document.querySelector(".container").append(myalert);
             }
             else {
-                send_data(event);
+                  send_data(event);
             }
         }
     }
-
-    window.setTimeout(function() {
-      $(".alert").alert('close');
-  }, 10000);
+      window.setTimeout(function() {
+        $(".alert").alert('close');
+    }, 5000);
 
 }
 
   function send_data(event) {
     event.preventDefault();
       let input_data = document.querySelector("form");
-      fetch("../server/AddUser.php", {
+      fetch("server/AddUser.php", {
       method: "POST",
       body: new FormData(input_data)
       })
       .then(response => {
-          return response.text();
+        return response.text();
       })
       .then(text => {
-
         let myalert = document.createElement("div");
         myalert.className="alert alert-success alert-dismissible fade show";
         myalert.role = "alert";
@@ -184,11 +187,11 @@ function loaded() {
         document.querySelector(".container").append(myalert);
 
           window.setTimeout(function() {
-              $(".alert").alert('close');
-          },10000);
+            $(".alert").alert('close');
+          },5000);
 
-            if (text == "User has created") {
-                //window.location.href = "../login_page/index.php";
+            if(text == "User has created") {
+                window.location.href = "../login_page/index.php";
             }
         });
-}
+    }
