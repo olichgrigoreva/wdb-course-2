@@ -1,0 +1,93 @@
+aside {
+    background: #f0f0f0;
+    padding: 10px;
+    width: 400px;
+    float: left;
+	
+	/*Text style*/
+	color: #FFFFFF;
+    display: block;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	list-style-type: none;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #777777;
+    text-transform: uppercase;
+	   }
+	   
+  input[type=search] {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: white;
+  background-image: url(../images/search.png);
+  background-position: bottom 5px right 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px;
+  
+  }
+
+header {color: #FFFFFF;
+    display: block;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	list-style-type: none;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #777777;
+    text-transform: uppercase;
+	
+width: 99%;
+display: flex;
+height: 120px; /* Высота блока footer */
+background: -moz-linear-gradient(19% 75% 90deg, #848484, #D6D6D6) repeat scroll 0 0 transparent;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#848484), to(#D6D6D6));
+border-radius: 20px 20px 20px 20px;
+justify-content: center;
+align-items: center;
+
+}
+
+label {
+    color: #FFFFFF;
+    display: block;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    list-style-type: none;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #777777;
+    text-transform: uppercase;
+}
+
+/* Правила для footer сайта */
+.footer {
+color: #FFFFFF;
+    display: block;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	list-style-type: none;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #777777;
+    text-transform: uppercase;
+	
+position: absolute;
+bottom: 0;
+width: 99%;
+display: flex;
+height: 20px; /* Высота блока footer */
+background: -moz-linear-gradient(19% 75% 90deg, #848484, #D6D6D6) repeat scroll 0 0 transparent;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#848484), to(#D6D6D6));
+border-radius: 20px 20px 20px 20px;
+justify-content: center;
+align-items: center;
+}
+
