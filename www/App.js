@@ -16,7 +16,7 @@ export default class Hello extends React.Component {
               <div class="d-flex p-3">
                   
                 <div class="col-sm-3 col-md-3 col-lg-3 p-2 note_sidebar">
-                    <input class="form-control search_input" id="myInput" type="text" placeholder="Search.."></input>
+                    <input class="form-control search_input" id="myInput" type="text" placeholder="Search note"></input>
 
                     <table class="table table-striped table-hover table-sm" id="myList">
                     <tbody>
