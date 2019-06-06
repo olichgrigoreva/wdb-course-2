@@ -1,7 +1,11 @@
-.container {
+html, body, .container {
     height: 100%;
 }
+#app {
+    min-height: 600px;
+}
 .navbar {
+    height: 50px;
     background-color: #d8d2d2;
     text-align: center;
 }
