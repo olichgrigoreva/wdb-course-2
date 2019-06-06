@@ -49,3 +49,7 @@ input {
 .add_button {
     border-radius: 10px;  
 }
+
+.note_item:nth-child(odd) {
+   background: #dee2e6; 
+}

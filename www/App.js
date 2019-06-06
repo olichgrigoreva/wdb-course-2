@@ -16,26 +16,43 @@ export default class Hello extends React.Component {
               <div class="d-flex p-3">
                   
                 <div class="col-sm-3 col-md-3 col-lg-3 p-2 note_sidebar">
+                  <div>
                     <input class="form-control search_input" id="myInput" type="text" placeholder="Search note"></input>
+                  </div>
 
-                    <table class="table table-striped table-hover table-sm" id="myList">
+                  <div>
+                    <table class="table table-striped table-hover table-sm flex-grow-1" id="myList">
                     <tbody>
                       <tr>
+                        <div>&gt;</div>
                         <td>First item</td>
+                        <div>&#128393;</div>
+                        <div>&times;</div>
+                        
                       </tr>
                       <tr>
+                        <div></div>
                         <td>Second item</td>
+                        <img src="pencil.png"></img>
+                        <div>&times;</div>
                       </tr>
                       <tr>
+                        <div></div>
                         <td>Third item</td>
+                        <div>&times;</div>
                       </tr>
                       <tr>
+                        <div></div>
                         <td>Fourth</td>
-                      </tr>                     
+                        <div>&times;</div>
+                      </tr>
+                 
                     </tbody>
                     </table>
+                  </div>
+
                     <br></br>
-                    <button class="btn btn-primary btn-block add_button">Add new note</button>
+                    <button class="btn btn-primary btn-block add_button ml-auto">Add new note</button>
                 </div>
 
 
