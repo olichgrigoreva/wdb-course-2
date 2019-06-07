@@ -13,22 +13,21 @@ export default class Hello extends React.Component {
     
     render() {
       return <div class="container-fluid">
-              <div class="d-flex p-3">
+              <div class="row p-3 workarea">
                   
-                <div class="col-sm-3 col-md-3 col-lg-3 p-2 note_sidebar">
+                <div class="d-flex flex-column justify-content-between col-sm-3 col-md-3 col-lg-3 p-2 note_sidebar">
                   <div>
                     <input class="form-control search_input" id="myInput" type="text" placeholder="Search note"></input>
                   </div>
 
-                  <div>
-                    <table class="table table-striped table-hover table-sm flex-grow-1" id="myList">
+                  <div class="note_list flex-grow-1">
+                    <table class="table table-striped table-hover table-sm" id="myList">
                     <tbody>
                       <tr>
                         <div>&gt;</div>
                         <td>First item</td>
                         <div>&#128393;</div>
                         <div>&times;</div>
-                        
                       </tr>
                       <tr>
                         <div></div>
@@ -46,13 +45,73 @@ export default class Hello extends React.Component {
                         <td>Fourth</td>
                         <div>&times;</div>
                       </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+                      <tr>
+                        <div></div>
+                        <td>Fourth</td>
+                        <div>&times;</div>
+                      </tr>
+
                  
                     </tbody>
                     </table>
                   </div>
 
-                    <br></br>
-                    <button class="btn btn-primary btn-block add_button ml-auto">Add new note</button>
+                  <button class="btn btn-primary btn-block add_button">Add new note</button>
                 </div>
 
 

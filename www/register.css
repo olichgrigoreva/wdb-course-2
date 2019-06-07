@@ -8,18 +8,37 @@ html, body, .container {
     padding-left: 0px;
     padding-right: 0px;
 }
+    .workarea {
+        min-height: 600px;
+    }
+        .search_input {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .note_list {
+            overflow: auto;
+            height: 500px;
+        }
+            .note_item:nth-child(odd) {
+                background: #dee2e6; 
+            }
+        .add_button {
+            border-radius: 10px;  
+        }
+
 .navbar {
     height: 50px;
     background-color: #d8d2d2;
     text-align: center;
-}
-.head_block{
-    position: relative;
-}
-.welcome_block{
-    position: absolute;
-    right: 0px;
-}
+    }
+    .head_block{
+        position: relative;
+    }
+    .welcome_block{
+        position: absolute;
+        right: 0px;
+    }
+
 footer {
     background-color: #d8d2d2;
     position: fixed;
@@ -48,16 +67,4 @@ input {
     border-radius: 6px;
     margin-left: auto;
 	margin-right: auto
-}
-
-.search_input {
-    margin-top: 5px;
-}
-
-.add_button {
-    border-radius: 10px;  
-}
-
-.note_item:nth-child(odd) {
-   background: #dee2e6; 
 }
