@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 //$session_id = session_id();
 //echo "Session key: " . $session_id;
 
@@ -8,6 +8,8 @@ session_start();
 
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
+
+$errors = [];
 
 require_once("../class/class_DB.php");
 $db = new Database("localhost", "user", "user", "grigorieva");
@@ -44,5 +46,7 @@ if ($valid_fields == 1) {
 }
 
 else {
- 	echo "\nFail valid test";
+ 	// echo "\nFail valid test";
+  $errors[] = ["\nFail valid test"];
+  json_encode($errors);
 }

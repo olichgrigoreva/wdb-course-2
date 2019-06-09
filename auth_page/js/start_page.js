@@ -62,13 +62,12 @@ function ajaxRequest(event){
         method: "POST", //методом post
         body: new FormData(form) //с данными из формы
     })
-    /*.then(response => {
-          return response.text();
-    })*/
-    /*.then(result => {
-        window.location.href = 'http://localhost:8080/auth_page/login.html';
-        //document.querySelector("footer").innerHTML=text;
-    })*/
+    .then(response => {
+      return response.json()})
+    //console.log("response1")
+    .then(json => {
+      alert(json)})
+      //console.log("response2")
 }
 
 //создание формы в body
@@ -91,6 +90,8 @@ function header(text) {
     document.querySelector("body").append(header);
     document.querySelector('header').innerHTML=text;
 }
+
+export { header };
 
 //создание тега input (обязательное/необязательное, подсказка, тип, имя поля)
 function input(required, in_placeholder, input_type, name) {
