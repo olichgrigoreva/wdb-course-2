@@ -1,8 +1,10 @@
 .note-list-item .note-list-item-lable {
   font-size: 1.25rem;
+  height: 30px;
 }
 
 .note-list-item button {
-  width: 35px;
+  width: 30px;
   margin: 3px;
+  float: right;
 }

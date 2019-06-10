@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import NoteListItem from "./note-list-item";
-import "./note-list.css";
+import NoteListItem from './note-list-item';
+import './note-list.css';
 
 export default class NoteList extends Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
+
+  componentDidMount() {
+    console.log("Hi!");
+  }
+
   render() {
     return (
       <ul className="list-group note-list">

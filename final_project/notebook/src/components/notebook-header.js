@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
+import './notebook-header.css';
 
 export default class NotebookHeader extends Component {
   render() {
