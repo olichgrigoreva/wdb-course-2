@@ -22,114 +22,49 @@ export default class Hello extends React.Component {
 
                   <div class="note_list flex-grow-1">
                     <table class="table table-striped table-hover table-sm" id="myList">
-                    <tbody>
-                      <tr>
-                        <div>&gt;</div>
-                        <td>First item</td>
-                        <div>&#128393;</div>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Second item</td>
-                        <img src="pencil.png"></img>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Third item</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-                      <tr>
-                        <div></div>
-                        <td>Fourth</td>
-                        <div>&times;</div>
-                      </tr>
-
-                 
-                    </tbody>
+                      <tbody>
+                        <tr class="d-flex">
+                          <div class="note_row_icon text-center align-self-center">&gt;</div>
+                          <td class="flex-grow-1">First item</td>
+                          <div class="note_row_icon text-center align-self-center">&#128393;</div>
+                          <div class="note_row_icon text-center align-self-center">&times;</div>
+                        </tr>
+                        <tr class="d-flex">
+                          <div class="note_row_icon text-center align-self-center"></div>
+                          <td class="flex-grow-1">First item</td>
+                          <div class="note_row_icon text-center align-self-center">&#128393;</div>
+                          <div class="note_row_icon text-center align-self-center">&times;</div>
+                        </tr>
+                  
+                      </tbody>
                     </table>
                   </div>
 
-                  <button class="btn btn-primary btn-block add_button">Add new note</button>
+                  <button class="btn btn-primary btn-block add_note_button">Add new note</button>
                 </div>
 
 
                 <div class="col-sm-9 col-md-9 col-lg-9 p-2">
-                  <div class="d-flex">
-                    
-                    <div class="p-2 mr-auto">
+                  
+                  <div class="note_content d-flex">
+                    <div class="note_content_title p-2 mr-auto">
                       <strong>note_Name</strong> 
                     </div>
 
-                    <div class="p-2 ml-auto">
+                    <div class="note_content_date p-2 ml-auto">
                     <strong>date</strong>
                     </div>
-
                   </div>
+
                   <hr align="center" color="#dddddd"></hr>
-                  <div>
-                    Content
+                  
+                  <div class="d-flex flex-column form-group">
+                    <input class="form-control note_name_input" id="note_name" type="text" placeholder="Enter note name"></input>
+                    <input class="form-control note_name_input" id="note_name" type="date" placeholder="Enter note name"  min="2019-01-01"></input>
+                    <textarea id="note_description" class="form-control" rows="12"></textarea>
+
+                    <button class="btn btn-primary save_note_button align-self-center">Save</button>
+                    
                   </div>
                   
 

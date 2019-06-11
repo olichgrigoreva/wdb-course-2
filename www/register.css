@@ -11,7 +11,7 @@ html, body, .container {
     .workarea {
         min-height: 600px;
     }
-        .search_input {
+        .search_input, .note_name_input {
             margin-top: 5px;
             margin-bottom: 5px;
         }
@@ -22,8 +22,19 @@ html, body, .container {
             .note_item:nth-child(odd) {
                 background: #dee2e6; 
             }
-        .add_button {
+            .note_row_icon {
+                width: 25px;
+            }
+            .table td {
+                border-top: none;
+            }
+        .add_note_button {
             border-radius: 10px;  
+        }
+        .save_note_button {
+            margin: 20px;
+            border-radius: 10px;
+            width: 250px;
         }
 
 .navbar {
