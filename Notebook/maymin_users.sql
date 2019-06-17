@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 28, 2019 at 09:10 PM
+-- Generation Time: Jun 17, 2019 at 05:28 AM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.3.2-3+ubuntu18.04.1+deb.sury.org+1
 
@@ -23,6 +23,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `label` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `text` text CHARACTER SET utf8 NOT NULL,
+  `date` varchar(70) CHARACTER SET utf8 NOT NULL,
+  `important` tinyint(1) NOT NULL,
+  `done` tinyint(1) NOT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `label`, `user_id`, `text`, `date`, `important`, `done`, `create_time`) VALUES
+(3, '', 1, 'sdvdsv', 'ss/ss/ss', 0, 0, '2019-06-10 02:25:54'),
+(5, '', 4, 'sdv', 'ss/ss/ss', 0, 0, '2019-06-10 02:26:39'),
+(6, 'Drink Coffee', 10, 'Drink coffee', '14/09/2100', 0, 0, '2019-06-12 00:09:23');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -35,15 +61,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `user_name`, `email`, `pass`, `create`) VALUES
-(1, 'Vova', 'vova@pupkin.com', '698d51a19d8a121ce581499d7b701668', '2019-04-28 21:09:31');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -57,10 +82,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
