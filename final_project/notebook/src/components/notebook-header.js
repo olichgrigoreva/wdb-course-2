@@ -7,7 +7,10 @@ export default class NotebookHeader extends Component {
     return (
       <header className="notebook-header">
         <p>SUPER NOTEBOOK</p>
-        <p>Welcome, {this.props.username}. Logout</p>
+        <p>
+          Welcome, <a href="../../../profile/index.html">{this.props.username}</a>.
+          <a href="../../../log_in/login.php"> Logout</a>
+        </p>
       </header>
     );
   }
