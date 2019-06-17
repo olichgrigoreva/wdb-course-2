@@ -10,20 +10,22 @@ export default class NoteList extends Component {
   }
 
   componentDidMount() {
-    console.log("Hi!");
+    fetch("../services/get-notes.php")
+      .then(response => response.text())
+      .then(data => console.log(data))
   }
 
   render() {
     return (
       <ul className="list-group note-list">
         <li>
-          <NoteListItem label="Note1" />
+          <NoteListItem label="Note1 12.03.2019" />
         </li>
         <li>
-          <NoteListItem label="Note2" />
+          <NoteListItem label="Note2 13.03.2019" />
         </li>
         <li>
-          <NoteListItem label="Note3" />
+          <NoteListItem label="Note3 14.03.2019" />
         </li>
       </ul>
     );

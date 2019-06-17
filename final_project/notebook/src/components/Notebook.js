@@ -13,7 +13,7 @@ export default class Notebook extends Component {
   render() {
     return (
       <div className="Notebook">
-        <NotebookHeader />
+        <NotebookHeader username="user" />
         <div className="top-panel d-flex">
           <div>
             <SearchPanel />
