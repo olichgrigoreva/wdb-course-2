@@ -1,30 +1,37 @@
 <?php 
-    /*
-    require_once "../PhpClasses/data_base.php";
-    session_start();
 
-    Data_base::connect("maymin_users");
-
-    Data_base::query("INSERT INTO `notes` (`user_name`, `email`, `pass`) VALUES ('$user_name', '$email', '$pass')");
-    */
-
-    //$data_back = json_decode(file_get_contents('php://input'), true);
-/*
-    header("Content-Type: application/json");
-    // build a PHP variable from JSON sent using POST method
-    $v = json_decode(stripslashes(file_get_contents("php://input")));
-    // build a PHP variable from JSON sent using GET method
-    $v = json_decode(stripslashes($_GET["data"]));
-    // encode the PHP variable to JSON and send it back on client-side
-    echo json_encode($v);
-*/
     ini_set("display_errors", 1);
     error_reporting(E_ALL);
 
+    header("Access-Control-Max-Age: 3600");
+    header("Access-Control-Expose-Headers: X-Auth-Token");
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, X-Auth-Token, Content-Type, Accept, Credentials");
+    header('Content-Type: application/json');
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+        exit(0);
+    }
+    
+    require_once "../PhpClasses/data_base.php";
+    session_start();
+    
     $data = file_get_contents('php://input');
-    echo $data;
+    $data_decode = json_decode($data);
 
-    $json = file_get_contents('php://input'); 
-    $obj = json_decode($json);
+    $label = $data_decode->label;
+    $text = $data_decode->text;
+    $date = $data_decode->date;
 
-    var_dump($obj);
+    Data_base::connect("maymin_users");
+        
+    $user = $_SESSION['user'];
+    $user_data =  Data_base::query_select("SELECT * FROM users WHERE `user_name`='$user'");
+    $user_id = $user_data[0]['id'];
+
+    Data_base::query("INSERT INTO `notes` (`label`, `text`, `date`) VALUES ('$label', '$text', '$date')");
