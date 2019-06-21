@@ -20,7 +20,7 @@
     
     require_once "../PhpClasses/data_base.php";
     session_start();
-    
+
     $data = file_get_contents('php://input');
     $data_decode = json_decode($data);
 
@@ -34,4 +34,4 @@
     $user_data =  Data_base::query_select("SELECT * FROM users WHERE `user_name`='$user'");
     $user_id = $user_data[0]['id'];
 
-    Data_base::query("INSERT INTO `notes` (`label`, `text`, `date`) VALUES ('$label', '$text', '$date')");
+    Data_base::query("INSERT INTO `notes` (`label`, `text`, `user_id`, `date`) VALUES ('$label', '$text','$user_id', '$date')");
