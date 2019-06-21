@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './item-add-form.css';
 
@@ -48,11 +49,8 @@ export default class ItemAddForm extends Component {
     this.setState({
        text: e.target.value
      })
- };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-
+    };
+    /*
     fetch('http://wdb.virtual/wdb-course-2/Notebook/Api/add_note.php', {
         method: 'POST',
         credentials: "same-origin",
@@ -66,8 +64,21 @@ export default class ItemAddForm extends Component {
             text: this.state.text
     })
  })
+ */
+onSubmit = (e) => {
+  e.preventDefault();
+  
+  const { label, date, text } = this.state;
+  
+  const serverport = {
+    label,
+    date,
+    text
+  }
+  
+  axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/add_note.php', serverport)
+      .then(res => console.log(res.data));
 
-    const { label, date, text } = this.state;
     this.setState({ label: '', 
                      date: '',
                      text: '' 
