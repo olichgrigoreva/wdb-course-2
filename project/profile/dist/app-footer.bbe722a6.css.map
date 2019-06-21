@@ -1,0 +1,1 @@
+{"version":3,"sources":["style/app-footer.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"app-footer.bbe722a6.css","sourceRoot":"..","sourcesContent":[".footer {\r\nposition: fixed;\r\nbottom: 0px;\r\npadding: 20px;\r\nfont-size: 18px;\r\nbackground: #F5F5DC;\r\ntext-align: center;\r\nwidth: 100%;\r\n}\r\n"]}
