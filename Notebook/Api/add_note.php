@@ -1,5 +1,4 @@
 <?php 
-
     ini_set("display_errors", 1);
     error_reporting(E_ALL);
 
@@ -23,15 +22,21 @@
 
     $data = file_get_contents('php://input');
     $data_decode = json_decode($data);
+    
+    if(!empty($_SESSION) && !empty($data)) {
 
-    $label = $data_decode->label;
-    $text = $data_decode->text;
-    $date = $data_decode->date;
+        $label = $data_decode->label;
+        $text = $data_decode->text;
+        $date = $data_decode->date;
+    
+        Data_base::connect("maymin_users");
+            
+        $user = $_SESSION['user'];
+        $user_data =  Data_base::query_select("SELECT * FROM users WHERE `user_name`='$user'");
+        $user_id = $user_data[0]['id'];
+    
+        print_r($_SESSION);
+    
+        Data_base::query("INSERT INTO `notes` (`label`, `text`, `user_id`, `date`) VALUES ('$label', '$text','$user_id', '$date')");
 
-    Data_base::connect("maymin_users");
-        
-    $user = $_SESSION['user'];
-    $user_data =  Data_base::query_select("SELECT * FROM users WHERE `user_name`='$user'");
-    $user_id = $user_data[0]['id'];
-
-    Data_base::query("INSERT INTO `notes` (`label`, `text`, `user_id`, `date`) VALUES ('$label', '$text','$user_id', '$date')");
+    }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './alert-modal.css';
 
-const AlertModal = ({modalToggleOff, modalToggleOn, onDelete, isOpen, deleteItem}) => isOpen ? ReactDOM.createPortal(
+const AlertModal = ({modalToggleOff, onDelete, isOpen, deleteItem}) => isOpen ? ReactDOM.createPortal(
   <><div className="overlay">
       <div className="modal-dialog alert-modal" role="document">
           <div className="modal-content">

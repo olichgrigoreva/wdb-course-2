@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import NoteapiService from '../../services'
 import AppHeader from '../app-header';
@@ -19,11 +20,7 @@ export default class App extends Component {
   maxId = 100;
 
   state = {
-    items: [
-      { id: 1, label: 'Drink Coffee', date: '', text: '', important: false, done: false },
-      { id: 2, label: 'Learn React', date: '', text: '', important: true, done: false },
-      { id: 3, label: 'Make Awesome App', date: '15/2/3', text: 'aaa', important: false, done: false }
-    ],
+    items: [],
     isOpen: false,
     itemUpdate: false,
     ItemAddedToggle: false,
@@ -32,6 +29,14 @@ export default class App extends Component {
     search: '',
     ItemId: null,
   };
+
+  componentDidMount() {
+    axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/get_notes.php')
+        .then(res => res.data)
+        .then(items => {
+            this.setState({ items })
+        })
+  }
 
   itemUpdate = (item) => {
     const idx = this.findIndex(item, this.state.items);
@@ -76,6 +81,16 @@ export default class App extends Component {
     const item = this.createItem(label, date, text);
 
     if(this.state.itemUpdate) {
+
+        const updateItem = {
+            id: this.state.itemUpdate.id,
+            label: item.label,
+            text: item.text,
+            date: item.date
+        }
+        
+        axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/update_note.php', updateItem)
+    
         this.setState(({ itemUpdate, itemId, ...state}) => {
             const idx = this.findIndex(itemUpdate.id, state.items);
             const items = [
@@ -92,6 +107,17 @@ export default class App extends Component {
             }
         })    
     } else {
+        const { label, date, text } = item;
+  
+        const serverport = {
+          label,
+          date,
+          text
+        }
+        
+        axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/add_note.php', serverport)
+            .then(res => console.log(res.data));
+
         this.setState((state) => {
           return { 
               items: [...state.items, item],
@@ -154,6 +180,14 @@ export default class App extends Component {
   };
 
   onDelete = () => {
+
+    const delItem = {
+      id: this.state.ItemId
+    }
+
+    axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/delete_note.php', delItem)
+      .then(res => console.log(res.data));
+
     this.setState(({isOpen, ItemId, ...state}) => {
       const idx = this.findIndex(ItemId, state.items);
        

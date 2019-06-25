@@ -23,7 +23,8 @@
                 $_SESSION['user'] = $data_user[0]['user_name'];
                 $_SESSION['email'] = $data_user[0]['email'];
                 $_SESSION['pass'] = $data_user[0]['pass'];
-                header("Location: ../Note/note.php");
+                $_SESSION['id'] = $data_user[0]['id'];
+                header("Location: ../Note/index.html");
             } else {
                 $reject = Validator::alert_mess("Неверное имя пользователя или пароль");
             };

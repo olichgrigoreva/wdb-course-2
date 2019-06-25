@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 17, 2019 at 05:28 AM
+-- Generation Time: Jun 25, 2019 at 03:55 PM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.3.2-3+ubuntu18.04.1+deb.sury.org+1
 
@@ -32,8 +32,6 @@ CREATE TABLE `notes` (
   `user_id` int(10) NOT NULL,
   `text` text CHARACTER SET utf8 NOT NULL,
   `date` varchar(70) CHARACTER SET utf8 NOT NULL,
-  `important` tinyint(1) NOT NULL,
-  `done` tinyint(1) NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,10 +39,9 @@ CREATE TABLE `notes` (
 -- Dumping data for table `notes`
 --
 
-INSERT INTO `notes` (`id`, `label`, `user_id`, `text`, `date`, `important`, `done`, `create_time`) VALUES
-(3, '', 1, 'sdvdsv', 'ss/ss/ss', 0, 0, '2019-06-10 02:25:54'),
-(5, '', 4, 'sdv', 'ss/ss/ss', 0, 0, '2019-06-10 02:26:39'),
-(6, 'Drink Coffee', 10, 'Drink coffee', '14/09/2100', 0, 0, '2019-06-12 00:09:23');
+INSERT INTO `notes` (`id`, `label`, `user_id`, `text`, `date`, `create_time`) VALUES
+(130, 'Hello', 1, 'a', '2019-06-24', '2019-06-25 15:48:20'),
+(131, 'Hi', 2, 'Hi', '2019-06-21', '2019-06-25 15:50:02');
 
 -- --------------------------------------------------------
 
@@ -59,6 +56,14 @@ CREATE TABLE `users` (
   `pass` varchar(100) CHARACTER SET utf8 NOT NULL,
   `create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `user_name`, `email`, `pass`, `create`) VALUES
+(1, 'Nana', 'aaa@aaa.com', '698d51a19d8a121ce581499d7b701668', '2019-06-21 16:00:25'),
+(2, 'Nanan', 'sss@sss.com', '698d51a19d8a121ce581499d7b701668', '2019-06-25 15:49:30');
 
 --
 -- Indexes for dumped tables
@@ -85,12 +90,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

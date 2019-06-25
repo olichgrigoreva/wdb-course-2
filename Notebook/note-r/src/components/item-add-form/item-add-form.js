@@ -69,15 +69,6 @@ onSubmit = (e) => {
   e.preventDefault();
   
   const { label, date, text } = this.state;
-  
-  const serverport = {
-    label,
-    date,
-    text
-  }
-  
-  axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/add_note.php', serverport)
-      .then(res => console.log(res.data));
 
     this.setState({ label: '', 
                      date: '',

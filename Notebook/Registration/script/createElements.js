@@ -31,7 +31,7 @@ const checkValidation = {};
                 }
     
             } else {
-                document.location.href = "../Note/note.php";
+                document.location.href = "../Note/index.html";
             }
         }
 
@@ -45,7 +45,7 @@ const checkValidation = {};
             } else if(txt === 'user and mail false') {
                 document.getElementById("txtHeader").insertAdjacentHTML('afterend',  this.alertElement(`Такой пользователь и email уже существуют`))
             } else {
-                document.location.href = "../Note/note.php";
+                document.location.href = "../Note/index.html";
             }
         }
     
