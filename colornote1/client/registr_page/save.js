@@ -6,12 +6,12 @@
                 if(validate()){                
                     event.preventDefault();
                     let form = document.querySelector("form");
-                    fetch ("registr.php", {
+                    fetch ("/colornote1/server/registr_page/registr.php", {
                         method: "POST",
-                        body: new FormDate(form)
+                        body: new FormData(form)
                     })
                     .then (response=> {
-                        return response.text(); 
+                        return response.text();  
                     })
                     .then (text=>{
                         document.querySelector(".error").innerHTML = text;
@@ -23,17 +23,4 @@
     
     }(save_in_bd));
             
-    // function gamk(event) {
-    //     // event.preventDefault(); 
-    //     let form = document.querySelector("form");
-    //     fetch("calculator_4_ajax.php", {
-    //     method: "POST",
-    //     body: new FormData(form)
-    //     }) 
-    //     .then(response => {
-    //     return response.text();
-    //     })
-    //     .then(text => {
-    //     document.querySelector(".result").innerHTML = text;
-    //     });
-    // }
+    

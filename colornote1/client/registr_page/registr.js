@@ -26,7 +26,7 @@ function validate(){
         check_input.check_password_user();
         check_input.check_confirm_password();
         check_input.check_email_user();
-              
+        return true;
 }
 
 function save(){

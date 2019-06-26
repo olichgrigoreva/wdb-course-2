@@ -3,9 +3,7 @@
 class Database {
      
     private $connection;
-    // private $query;
-    // private $fetch_assoc;
-    
+        
     public function connect (){
         
         $this-> connection = mysqli_connect("localhost","root","virtual","Korotkov");
