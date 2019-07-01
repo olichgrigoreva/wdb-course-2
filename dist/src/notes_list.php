@@ -16,5 +16,5 @@ $notes = [];
 while ($row = mysqli_fetch_assoc($query)) {
   $notes[] = $row;
 }
-
+mysqli_close($connection);
 echo json_encode($notes);

@@ -25865,7 +25865,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Notebook).call(this));
     _this.state = {
-      select: 0
+      select: 1
     };
     return _this;
   }
@@ -25929,35 +25929,53 @@ function (_Component2) {
   _inherits(NoteSelected, _Component2);
 
   function NoteSelected() {
+    var _this4;
+
     _classCallCheck(this, NoteSelected);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(NoteSelected).apply(this, arguments));
-  }
+    _this4 = _possibleConstructorReturn(this, _getPrototypeOf(NoteSelected).call(this));
+    _this4.state = {
+      note: {}
+    };
+    return _this4;
+  } // shouldComponentUpdate(nextProps) {
+  //   return (this.props.id !== nextProps.id)
+  // }
+
 
   _createClass(NoteSelected, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var id = this.props.id;
-      fetch("/src/note_selected.php", {
-        method: 'post',
-        body: JSON.stringify({
-          id: id
-        }),
-        headers: {
-          'content-type': 'application/json'
-        }
-      }).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        return console.log(json);
-      });
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      var _this5 = this;
+
+      if (this.props.id !== nextProps.id) {
+        var id = this.props.id;
+        fetch("/src/note_selected.php", {
+          method: 'post',
+          body: JSON.stringify({
+            id: id
+          }),
+          headers: {
+            'content-type': 'application/json'
+          }
+        }).then(function (response) {
+          return response.json();
+        }).then(function (json) {
+          _this5.setState({
+            note: json
+          });
+        });
+      }
     }
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("p", {
+      var note = this.state.note;
+      return _react.default.createElement("div", null, _react.default.createElement("p", {
         className: "noteSelected"
-      }, " ", this.props.id, " ");
+      }, " ", note.name, " "), _react.default.createElement("p", {
+        className: "noteSelected"
+      }, " ", note.text, " "));
     }
   }]);
 

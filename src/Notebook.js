@@ -10,7 +10,7 @@ export default class Notebook extends Component {
   constructor() {
     super();
     this.state = {
-      select: 0,
+      select: 1,
     };
   }
   componentDidMount() {
@@ -47,20 +47,43 @@ export default class Notebook extends Component {
 }
 
 class NoteSelected extends Component {
-  componentDidMount() {
-    let id= this.props.id
-    fetch("/src/note_selected.php", {
-      method: 'post',
-      body: JSON.stringify({id: id}),
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(json => console.log (json) );
+  constructor() {
+    super();
+    this.state = {
+      note: {}
+    };
+  }
+
+  // shouldComponentUpdate(nextProps) {
+  //   return (this.props.id !== nextProps.id)
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.id !== nextProps.id) {
+      let id= this.props.id
+      fetch("/src/note_selected.php", {
+        method: 'post',
+        body: JSON.stringify({id: id}),
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          note: json
+        })
+      });
+    }
   }
 
   render() {
-    return <p className="noteSelected"> {this.props.id} </p>
+    let note = this.state.note;
+    return (
+      <div>
+        <p className="noteSelected"> {note.name} </p>
+        <p className="noteSelected"> {note.text} </p>
+      </div>
+    )
   }
 }
