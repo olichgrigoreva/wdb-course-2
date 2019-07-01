@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+// import { createStore } from 'redux';
+// import store from './store';
 import './Notebook.css';
+// import Connect from './note_select';
+
 
 
 export default class Notebook extends Component {
+  constructor() {
+    super();
+    this.state = {
+      select: 0,
+    };
+  }
   componentDidMount() {
-    // alert123();
     fetch("/src/notes_list.php")
       .then(response => response.json())
       .then(json => {
@@ -18,40 +26,41 @@ export default class Notebook extends Component {
     if (this.state && this.state.notes) {
       notes = this.state.notes;
     }
-
+    let select = this.state.select;
     return (
       <div>
-
+        <div className="logout">logout</div>
+        <div className="header">header</div>
         {notes.map(note => (
-          <div key={note.id} className="notes_list"> {note.note_name} {note.text} {note.date}</div>
+          <div
+            onClick={() => {
+              this.setState({select: note.id})
+            }}
+            key={note.id} id={note.id} className="notes_list"> {note.name} {note.text} {note.date}
+          </div>
         ))}
-
+        <div className="footer">footer</div>
+        <NoteSelected id={this.state.select}/>
       </div>
     );
   }
 }
 
+class NoteSelected extends Component {
+  componentDidMount() {
+    let id= this.props.id
+    fetch("/src/note_selected.php", {
+      method: 'post',
+      body: JSON.stringify({id: id}),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(json => console.log (json) );
+  }
 
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
+  render() {
+    return <p className="noteSelected"> {this.props.id} </p>
+  }
+}

@@ -11,7 +11,7 @@ $connection = mysqli_connect("localhost", "root", "virtual", "wdb");
 // echo "</pre>";
 
 mysqli_set_charset($connection, "utf8");
-$query = mysqli_query($connection, "SELECT * FROM `123`");
+$query = mysqli_query($connection, "SELECT * FROM notes");
 $notes = [];
 while ($row = mysqli_fetch_assoc($query)) {
   $notes[] = $row;

@@ -35,4 +35,30 @@
   border: 3px inset skyblue;
   padding: 5px;
   margin: 2px;
+  float: left;
+  width: 50%;
+}
+.header {
+  text-align: center;
+  padding: 3em;
+  background-color: grey;
+}
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 2em;
+  background-color: grey;
+}
+.logout {
+  position: absolute;
+  right: 0;
+  top:0;
+  margin: 1em;
+}
+.noteSelected {
+  float: right;
+  width: auto;
 }

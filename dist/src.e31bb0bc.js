@@ -25852,27 +25852,33 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+// import Connect from './note_select';
 var Notebook =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Notebook, _Component);
 
   function Notebook() {
+    var _this;
+
     _classCallCheck(this, Notebook);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Notebook).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Notebook).call(this));
+    _this.state = {
+      select: 0
+    };
+    return _this;
   }
 
   _createClass(Notebook, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this = this;
+      var _this2 = this;
 
-      // alert123();
       fetch("/src/notes_list.php").then(function (response) {
         return response.json();
       }).then(function (json) {
-        _this.setState({
+        _this2.setState({
           notes: json
         });
       });
@@ -25880,47 +25886,83 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var notes = [];
 
       if (this.state && this.state.notes) {
         notes = this.state.notes;
       }
 
-      return _react.default.createElement("div", null, notes.map(function (note) {
+      var select = this.state.select;
+      return _react.default.createElement("div", null, _react.default.createElement("div", {
+        className: "logout"
+      }, "logout"), _react.default.createElement("div", {
+        className: "header"
+      }, "header"), notes.map(function (note) {
         return _react.default.createElement("div", {
+          onClick: function onClick() {
+            _this3.setState({
+              select: note.id
+            });
+          },
           key: note.id,
+          id: note.id,
           className: "notes_list"
-        }, " ", note.note_name, " ", note.text, " ", note.date);
+        }, " ", note.name, " ", note.text, " ", note.date);
+      }), _react.default.createElement("div", {
+        className: "footer"
+      }, "footer"), _react.default.createElement(NoteSelected, {
+        id: this.state.select
       }));
     }
   }]);
 
   return Notebook;
-}(_react.Component); // export default class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
-
+}(_react.Component);
 
 exports.default = Notebook;
+
+var NoteSelected =
+/*#__PURE__*/
+function (_Component2) {
+  _inherits(NoteSelected, _Component2);
+
+  function NoteSelected() {
+    _classCallCheck(this, NoteSelected);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(NoteSelected).apply(this, arguments));
+  }
+
+  _createClass(NoteSelected, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var id = this.props.id;
+      fetch("/src/note_selected.php", {
+        method: 'post',
+        body: JSON.stringify({
+          id: id
+        }),
+        headers: {
+          'content-type': 'application/json'
+        }
+      }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        return console.log(json);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("p", {
+        className: "noteSelected"
+      }, " ", this.props.id, " ");
+    }
+  }]);
+
+  return NoteSelected;
+}(_react.Component);
 },{"react":"../node_modules/react/index.js","./Notebook.css":"Notebook.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -25932,9 +25974,18 @@ var _Notebook = _interopRequireDefault(require("./Notebook"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { Provider } from 'react-redux';
+// import store from './store';
+// import { Router, Route }from 'react-router';
 document.addEventListener("DOMContentLoaded", function () {
   _reactDom.default.render(_react.default.createElement(_Notebook.default, null), document.querySelector(".root"));
-});
+}); // document.addEventListener("DOMContentLoaded", function () {
+//   ReactDOM.render(<Provider store={store}>
+//   <Router>
+//     <Route path="/" component={Notebook} />
+//   </Router>
+//   </Provider>, document.querySelector(".root"));
+// })
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Notebook":"Notebook.js"}],"../../../Users/Natasha/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -25963,7 +26014,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64214" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63239" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

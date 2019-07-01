@@ -13,18 +13,7 @@ if (!empty($connection)) {
   if ($username_verify) {echo "Login already exist";}
   else {
     $userNew = mysqli_query($connection, "INSERT INTO users(username, email, password) VALUES('$username', '$email', MD5('$password')) ");
-    $userNewTable = "CREATE TABLE `{$username}`(
-      id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-      note_name VARCHAR(256) NOT NULL ,
-      text TEXT NOT NULL,
-      date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-      UNIQUE `note_name` (`note_name`)
-    )";
-      if (mysqli_query($connection, $userNewTable)) {
-        echo "Таблица $username создана успешно.";
-      } else {
-         echo "Ошибка создания таблицы: " . mysqli_error($connection);
-      }
+
     echo "<br/> Registration successfully!";
   }
 mysqli_close($connection);
