@@ -19,9 +19,9 @@ html, body, .container {
             overflow: auto;
             height: 500px;
         }
-            .note_item:nth-child(odd) {
+/*             .note_item:nth-child(odd) {
                 background: #dee2e6; 
-            }
+            } */
             .note_row_icon {
                 width: 25px;
             }

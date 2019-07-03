@@ -1,4 +1,4 @@
-export default class Hello extends React.Component {
+export default class App extends React.Component {
     
 /*   <script>
   $(document).ready(function(){
@@ -44,7 +44,7 @@ export default class Hello extends React.Component {
                 </div>
 
 
-                <div class="col-sm-9 col-md-9 col-lg-9 p-2">
+                <div class="col-sm-9 col-md-9 col-lg-9 p-2 note_info">
                   
                   <div class="note_content d-flex">
                     <div class="note_content_title p-2 mr-auto">
