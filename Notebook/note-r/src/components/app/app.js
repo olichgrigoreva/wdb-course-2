@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import NoteapiService from '../../services'
 import AppHeader from '../app-header';
 import TodoList from '../todo-list';
 import SearchPanel from '../search-panel';
@@ -258,11 +257,13 @@ export default class App extends Component {
 
     return (
     <>
+    <div className = "container-fluid">
       <div className = "row">
           <div className= "col">
             <NoteHeader />
           </div>
       </div>
+    </div>
       <div className="row mb2">
         <div className="col-md-6">
             <div className="todo-app">
