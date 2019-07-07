@@ -1,9 +1,7 @@
 <?php
-    ini_set("display_errors", 1);
-    error_reporting(E_ALL);
 
-    require_once "../PhpClasses/Data_base.php";
-    require_once "../PhpClasses/Validator.php";
+    require_once "../Php/PhpClasses/Data_base.php";
+    require_once "../Php/PhpClasses/Validator.php";
 
     if(!empty($_POST['username']) && !empty($_POST['pass'])) {
 
@@ -20,10 +18,8 @@
 
             if(!empty($data_user)) {
                 session_start();
-                $_SESSION['user'] = $data_user[0]['user_name'];
-                $_SESSION['email'] = $data_user[0]['email'];
-                $_SESSION['pass'] = $data_user[0]['pass'];
                 $_SESSION['id'] = $data_user[0]['id'];
+                
                 header("Location: ../Note/index.html");
             } else {
                 $reject = Validator::alert_mess("Неверное имя пользователя или пароль");
