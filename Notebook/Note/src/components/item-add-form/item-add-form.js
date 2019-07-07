@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import './item-add-form.css';
 
@@ -50,21 +49,7 @@ export default class ItemAddForm extends Component {
        text: e.target.value
      })
     };
-    /*
-    fetch('http://wdb.virtual/wdb-course-2/Notebook/Api/add_note.php', {
-        method: 'POST',
-        credentials: "same-origin",
-        headers: {
-            'Accept': 'application/json', 
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify( {
-            label: this.state.label,
-            date: this.state.date,
-            text: this.state.text
-    })
- })
- */
+
 onSubmit = (e) => {
   e.preventDefault();
   

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import AppHeader from '../app-header';
 import TodoList from '../todo-list';
@@ -10,6 +9,7 @@ import ItemAddForm from '../item-add-form';
 import ItemDetalis from '../item-detalis';
 import AlertModal from '../alert-modal';
 import NoteHeader from '../note-header';
+import NoteService from '../../services/note-services';
 
 import './app.css';
 
@@ -28,12 +28,15 @@ export default class App extends Component {
     ItemId: null,
   };
 
+  noteService = new NoteService();
+
   componentDidMount() {
-    axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/get_notes.php')
-        .then(res => res.data)
-        .then(items => {
+
+    this.noteService
+        .getNotes('get_notes.php')
+          .then(items => {
             this.setState({ items })
-        })
+          })
   }
 
   itemUpdate = (item) => {
@@ -87,7 +90,8 @@ export default class App extends Component {
             date: item.date
         }
         
-        axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/update_note.php', updateItem)
+        this.noteService
+          .sendResource('update_note.php', updateItem)
     
         this.setState(({ itemUpdate, itemId, ...state}) => {
             const idx = this.findIndex(itemUpdate.id, state.items);
@@ -113,7 +117,8 @@ export default class App extends Component {
           text
         }
         
-        axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/add_note.php', serverport)
+        this.noteService
+          .sendResource('add_note.php', serverport)
 
         this.setState((state) => {
           return { 
@@ -182,7 +187,8 @@ export default class App extends Component {
       id: this.state.ItemId
     }
 
-    axios.post('http://wdb.virtual/wdb-course-2/Notebook/Api/delete_note.php', delItem)
+    this.noteService
+      .sendResource('delete_note.php', delItem)
 
     this.setState(({isOpen, ItemId, ...state}) => {
       const idx = this.findIndex(ItemId, state.items);

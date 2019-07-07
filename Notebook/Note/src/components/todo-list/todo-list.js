@@ -4,7 +4,7 @@ import TodoListItem from '../todo-list-item/todo-list-item';
 
 import './todo-list.css';
 
-const TodoList = ({ items, itemId, onItemSelected, onToggleImportant, 
+const TodoList = ({ items, onItemSelected, onToggleImportant, 
                onToggleDone, modalToggleOn, itemUpdate, onDelete }) => {
 
   const elements = items.map((item) => {
